@@ -167,6 +167,7 @@ namespace ttManager
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Tabletennis Manager";
             this.menuStrip1.ResumeLayout(false);

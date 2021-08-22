@@ -29,6 +29,7 @@ namespace ttManager.forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateMatch));
             this.lblPlayerLeft = new System.Windows.Forms.Label();
             this.cboPlayerLeft = new System.Windows.Forms.ComboBox();
             this.lblPlayerRight = new System.Windows.Forms.Label();
@@ -218,6 +219,8 @@ namespace ttManager.forms
             this.Controls.Add(this.lblPlayerRight);
             this.Controls.Add(this.cboPlayerLeft);
             this.Controls.Add(this.lblPlayerLeft);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "CreateMatch";
             this.Text = "Spel aanmaken";
             this.ResumeLayout(false);

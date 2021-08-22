@@ -29,6 +29,7 @@ namespace ttManager.forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayMatch));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.txtLeft = new System.Windows.Forms.TextBox();
             this.btnLeftScore = new System.Windows.Forms.Button();
@@ -137,8 +138,10 @@ namespace ttManager.forms
             this.Controls.Add(this.btnStartNewGame);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.txtWinner);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PlayMatch";
             this.Text = "PlayMatch";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PlayMatch_KeyUp);
             this.Resize += new System.EventHandler(this.PlayMatch_Resize);
             this.splitContainer.Panel1.ResumeLayout(false);

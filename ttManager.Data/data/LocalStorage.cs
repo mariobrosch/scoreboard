@@ -95,7 +95,13 @@ namespace ttManager.Data.data
                         foreach (Match match in allMatches)
                         {
                             var value = match.GetType().GetProperty(filterObject.Column).GetValue(match, null);
-                            if (value.ToString() == filterObject.Value)
+                            if (filterObject.Value == "ISNULL")
+                            {
+                                if (value == null)
+                                {
+                                    matchSelection.Add(match);
+                                }
+                            } else if (value.ToString() == filterObject.Value)
                             {
                                 matchSelection.Add(match);
                             }

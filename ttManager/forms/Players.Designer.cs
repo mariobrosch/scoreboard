@@ -29,8 +29,11 @@ namespace ttManager.forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlayers));
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.pnlPlayer = new System.Windows.Forms.Panel();
+            this.lblMatchResults = new System.Windows.Forms.Label();
+            this.lblPlayedMatches = new System.Windows.Forms.Label();
             this.lblRemoved = new System.Windows.Forms.Label();
             this.chkRemoved = new System.Windows.Forms.CheckBox();
             this.lblEnabled = new System.Windows.Forms.Label();
@@ -47,8 +50,6 @@ namespace ttManager.forms
             this.btnNew = new System.Windows.Forms.Button();
             this.pnlPlayerlist = new System.Windows.Forms.Panel();
             this.chkDisplayRemoved = new System.Windows.Forms.CheckBox();
-            this.lblPlayedMatches = new System.Windows.Forms.Label();
-            this.lblMatchResults = new System.Windows.Forms.Label();
             this.pnlPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.pnlPlayerlist.SuspendLayout();
@@ -86,6 +87,23 @@ namespace ttManager.forms
             this.pnlPlayer.Name = "pnlPlayer";
             this.pnlPlayer.Size = new System.Drawing.Size(800, 450);
             this.pnlPlayer.TabIndex = 1;
+            // 
+            // lblMatchResults
+            // 
+            this.lblMatchResults.AutoSize = true;
+            this.lblMatchResults.Location = new System.Drawing.Point(292, 371);
+            this.lblMatchResults.Name = "lblMatchResults";
+            this.lblMatchResults.Size = new System.Drawing.Size(0, 13);
+            this.lblMatchResults.TabIndex = 14;
+            // 
+            // lblPlayedMatches
+            // 
+            this.lblPlayedMatches.AutoSize = true;
+            this.lblPlayedMatches.Location = new System.Drawing.Point(165, 371);
+            this.lblPlayedMatches.Name = "lblPlayedMatches";
+            this.lblPlayedMatches.Size = new System.Drawing.Size(114, 13);
+            this.lblPlayedMatches.TabIndex = 13;
+            this.lblPlayedMatches.Text = "Gespeelde wedstrijden";
             // 
             // lblRemoved
             // 
@@ -236,23 +254,6 @@ namespace ttManager.forms
             this.chkDisplayRemoved.UseVisualStyleBackColor = true;
             this.chkDisplayRemoved.CheckedChanged += new System.EventHandler(this.ChkDisplayRemoved_CheckedChanged);
             // 
-            // lblPlayedMatches
-            // 
-            this.lblPlayedMatches.AutoSize = true;
-            this.lblPlayedMatches.Location = new System.Drawing.Point(165, 371);
-            this.lblPlayedMatches.Name = "lblPlayedMatches";
-            this.lblPlayedMatches.Size = new System.Drawing.Size(114, 13);
-            this.lblPlayedMatches.TabIndex = 13;
-            this.lblPlayedMatches.Text = "Gespeelde wedstrijden";
-            // 
-            // lblMatchResults
-            // 
-            this.lblMatchResults.AutoSize = true;
-            this.lblMatchResults.Location = new System.Drawing.Point(292, 371);
-            this.lblMatchResults.Name = "lblMatchResults";
-            this.lblMatchResults.Size = new System.Drawing.Size(0, 13);
-            this.lblMatchResults.TabIndex = 14;
-            // 
             // FrmPlayers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +261,7 @@ namespace ttManager.forms
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlPlayerlist);
             this.Controls.Add(this.pnlPlayer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPlayers";
             this.Text = "Spelers";
             this.pnlPlayer.ResumeLayout(false);

@@ -85,7 +85,17 @@ namespace ttManager.Data.Helpers
                     return PlayerSide.Right;
                 }
             }
-            else
+            else if (currentGame.TeamLeftScore == 0 && currentGame.TeamRightScore ==0)
+            {
+                if (playersInGame.IndexOf(playerFirstServeThisGame) % 2 == 0)
+                {
+                    return PlayerSide.Left;
+                }
+                else
+                {
+                    return PlayerSide.Right;
+                }
+            } else
             {
                 int numberOfServiceTurns = (currentGame.TeamRightScore + currentGame.TeamLeftScore) / matchType.ServiceChangeEveryNumberOfServices;
                 if (numberOfServiceTurns == 0)
@@ -103,11 +113,11 @@ namespace ttManager.Data.Helpers
                 var playerToServe = playersInGame[(positionFirstServicePlayerThisGame + numberOfServiceTurns - 1) % playersInGame.Count];
                 if (playersInGame.IndexOf(playerToServe) % 2 == 0)
                 {
-                    return PlayerSide.Left;
+                    return PlayerSide.Right;
                 }
                 else
                 {
-                    return PlayerSide.Right;
+                    return PlayerSide.Left;
                 }
             }
         }

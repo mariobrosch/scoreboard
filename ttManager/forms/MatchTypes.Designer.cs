@@ -29,6 +29,7 @@ namespace ttManager.forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMatchTypes));
             this.lbMatchTypes = new System.Windows.Forms.ListBox();
             this.pnlPlayer = new System.Windows.Forms.Panel();
             this.numServiceChangeOnShootOutPer = new System.Windows.Forms.NumericUpDown();
@@ -394,6 +395,8 @@ namespace ttManager.forms
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlPlayerlist);
             this.Controls.Add(this.pnlPlayer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmMatchTypes";
             this.Text = "Wedstrijd types";
             this.pnlPlayer.ResumeLayout(false);

@@ -29,6 +29,7 @@ namespace ttManager.forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContinueMatchSelection));
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.lbUnfinishedMatches = new System.Windows.Forms.ListBox();
             this.pnlMain = new System.Windows.Forms.Panel();
@@ -188,6 +189,8 @@ namespace ttManager.forms
             this.ClientSize = new System.Drawing.Size(800, 357);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlLeft);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ContinueMatchSelection";
             this.Text = "Verder met een wedstrijd";
             this.pnlLeft.ResumeLayout(false);
