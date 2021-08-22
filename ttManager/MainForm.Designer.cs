@@ -29,6 +29,7 @@ namespace ttManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnPlayers = new System.Windows.Forms.Button();
             this.btnMatchTypes = new System.Windows.Forms.Button();
             this.btnNewMatch = new System.Windows.Forms.Button();
@@ -36,6 +37,11 @@ namespace ttManager
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataExporterenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spelersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.speltypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spelenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verderSpelenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nieuwSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfdZipfile = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +93,10 @@ namespace ttManager
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
+            this.menuToolStripMenuItem,
+            this.spelersToolStripMenuItem,
+            this.speltypesToolStripMenuItem,
+            this.spelenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(655, 24);
@@ -105,9 +114,46 @@ namespace ttManager
             // dataExporterenToolStripMenuItem
             // 
             this.dataExporterenToolStripMenuItem.Name = "dataExporterenToolStripMenuItem";
-            this.dataExporterenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dataExporterenToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.dataExporterenToolStripMenuItem.Text = "Data exporteren";
             this.dataExporterenToolStripMenuItem.Click += new System.EventHandler(this.DataExporterenToolStripMenuItem_Click);
+            // 
+            // spelersToolStripMenuItem
+            // 
+            this.spelersToolStripMenuItem.Name = "spelersToolStripMenuItem";
+            this.spelersToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.spelersToolStripMenuItem.Text = "Spelers";
+            this.spelersToolStripMenuItem.Click += new System.EventHandler(this.SpelersToolStripMenuItem_Click);
+            // 
+            // speltypesToolStripMenuItem
+            // 
+            this.speltypesToolStripMenuItem.Name = "speltypesToolStripMenuItem";
+            this.speltypesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.speltypesToolStripMenuItem.Text = "Speltypes";
+            this.speltypesToolStripMenuItem.Click += new System.EventHandler(this.SpeltypesToolStripMenuItem_Click);
+            // 
+            // spelenToolStripMenuItem
+            // 
+            this.spelenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verderSpelenToolStripMenuItem,
+            this.nieuwSpelToolStripMenuItem});
+            this.spelenToolStripMenuItem.Name = "spelenToolStripMenuItem";
+            this.spelenToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.spelenToolStripMenuItem.Text = "Spelen";
+            // 
+            // verderSpelenToolStripMenuItem
+            // 
+            this.verderSpelenToolStripMenuItem.Name = "verderSpelenToolStripMenuItem";
+            this.verderSpelenToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.verderSpelenToolStripMenuItem.Text = "Verder spelen";
+            this.verderSpelenToolStripMenuItem.Click += new System.EventHandler(this.VerderSpelenToolStripMenuItem_Click);
+            // 
+            // nieuwSpelToolStripMenuItem
+            // 
+            this.nieuwSpelToolStripMenuItem.Name = "nieuwSpelToolStripMenuItem";
+            this.nieuwSpelToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.nieuwSpelToolStripMenuItem.Text = "Nieuw spel";
+            this.nieuwSpelToolStripMenuItem.Click += new System.EventHandler(this.NieuwSpelToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -119,6 +165,7 @@ namespace ttManager
             this.Controls.Add(this.btnMatchTypes);
             this.Controls.Add(this.btnPlayers);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Tabletennis Manager";
@@ -139,6 +186,11 @@ namespace ttManager
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataExporterenToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfdZipfile;
+        private System.Windows.Forms.ToolStripMenuItem spelersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem speltypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spelenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verderSpelenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nieuwSpelToolStripMenuItem;
     }
 }
 

@@ -143,5 +143,25 @@ namespace ttManager
                 zip.Save(sfdZipfile.FileName);
             }
         }
+
+        private void VerderSpelenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BtnContinue_Click(sender, e);
+        }
+
+        private void NieuwSpelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BtnNewMatch_Click(sender, e);
+        }
+
+        private void SpeltypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BtnMatchTypes_Click(sender, e);
+        }
+
+        private void SpelersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BtnPlayers_Click(sender, e);
+        }
     }
 }
