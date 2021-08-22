@@ -49,10 +49,10 @@ namespace ttManager
                         return;
                     }
 
-                    this.Hide();
+                    Hide();
                     var frmCreateMatch = new CreateMatch();
                     frmCreateMatch.ShowDialog();
-                    this.Show();
+                    Show();
                 }
                 return;
             }
@@ -69,10 +69,10 @@ namespace ttManager
 
                 if (MessageBox.Show(text, "Verder gaan met deze wedstrijd?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    this.Hide();
+                    Hide();
                     PlayMatch playMatch = new PlayMatch(foundMatch);
                     playMatch.ShowDialog();
-                    this.Show();
+                    Show();
                 }
             }
 
@@ -107,10 +107,10 @@ namespace ttManager
                 return;
             }
 
-            this.Hide();
+            Hide();
             var frmCreateMatch = new CreateMatch();
             frmCreateMatch.ShowDialog();
-            this.Show();
+            Show();
         }
 
         private void DataExporterenToolStripMenuItem_Click(object sender, EventArgs e)

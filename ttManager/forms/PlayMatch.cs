@@ -23,7 +23,7 @@ namespace ttManager.forms
             match = m;
             if (match.Id == 0)
             {
-                this.Close();
+                Close();
             }
             matchSummary = MatchHelper.GetMatchSummary(match);
             if (matchSummary.Games.Count == 0)
@@ -50,7 +50,7 @@ namespace ttManager.forms
         {
             try
             {
-                splitContainer.SplitterDistance = this.Width / 2;
+                splitContainer.SplitterDistance = Width / 2;
             }
             #pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)

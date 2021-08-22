@@ -38,16 +38,16 @@ namespace ttManager.forms
 
             if (matchesWithoutWinner.Count == 0)
             {
-                this.Close();
+                Close();
             }
         }
 
         private void BtnContinueMatch_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             PlayMatch playMatch = new PlayMatch(((Match)lbUnfinishedMatches.SelectedItem));
             playMatch.ShowDialog();
-            this.Close();
+            Close();
         }
 
         private void LoadMatch(Match match)
