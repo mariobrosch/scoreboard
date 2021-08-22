@@ -52,12 +52,12 @@ namespace ttManager.forms
             {
                 splitContainer.SplitterDistance = Width / 2;
             }
-            #pragma warning disable CA1031 // Do not catch general exception types
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
             {
                 Console.Write(ex.Message);
             }
-            #pragma warning restore CA1031 // Do not catch general exception types
+#pragma warning restore CA1031 // Do not catch general exception types
         }
 
         private void FillTopInfo()
@@ -78,16 +78,44 @@ namespace ttManager.forms
             UpdateScore(false);
         }
 
-        private void UpdateScore(bool isForLeft)
+        private void UpdateScore(bool isForLeft, bool negativeScore = false)
         {
             if (isForLeft)
             {
-                currentGame.TeamLeftScore++;
+                if (negativeScore)
+                {
+                    if (currentGame.GameWinnerId.HasValue)
+                    {
+                        MessageBox.Show("Set is al gespeeld, punten aftrekken niet mogelijk");
+                    }
+                    else
+                    {
+                        currentGame.TeamLeftScore--;
+                    }
+                }
+                else
+                {
+                    currentGame.TeamLeftScore++;
+                }
                 btnLeftScore.Text = currentGame.TeamLeftScore.ToString();
             }
             else
             {
-                currentGame.TeamRightScore++;
+                if (negativeScore)
+                {
+                    if (currentGame.GameWinnerId.HasValue)
+                    {
+                        MessageBox.Show("Set is al gespeeld, punten aftrekken niet mogelijk");
+                    }
+                    else
+                    {
+                        currentGame.TeamRightScore--;
+                    }
+                }
+                else
+                {
+                    currentGame.TeamRightScore++;
+                }
                 btnRightScore.Text = currentGame.TeamRightScore.ToString();
             }
             IsGameWinner();
@@ -136,7 +164,7 @@ namespace ttManager.forms
 
                 MatchData.Update(match);
                 matchSummary = MatchHelper.GetMatchSummary(match);
-                
+
                 return;
             }
 
@@ -145,11 +173,13 @@ namespace ttManager.forms
             {
                 btnLeftScore.BackColor = Color.Yellow;
                 btnRightScore.BackColor = SystemColors.Control;
-            } else if (teamToServe == PlayerSide.Right)
+            }
+            else if (teamToServe == PlayerSide.Right)
             {
                 btnLeftScore.BackColor = SystemColors.Control;
                 btnRightScore.BackColor = Color.Yellow;
-            } else
+            }
+            else
             {
                 btnLeftScore.BackColor = SystemColors.Control;
                 btnRightScore.BackColor = SystemColors.Control;
@@ -194,7 +224,7 @@ namespace ttManager.forms
 
         private void BtnStartNewGame_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Start de volgende set?","Volgende set starten?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Start de volgende set?", "Volgende set starten?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 btnStartNewGame.Visible = false;
                 btnLeftScore.Text = "0";
@@ -251,6 +281,8 @@ namespace ttManager.forms
                 helpText += "L, Linker shift, Links, Numpad 0, 1, 4 en 7\r\n\r\n";
                 helpText += "Voor het rechterteam:\r\n";
                 helpText += "R, Rechter shift, Rechts, Numpad 3, 6 en 9\r\n";
+                helpText += "Z voor minpunt linker team\r\n\r\n";
+                helpText += "X voor minpunt rechterteam\r\n\r\n";
 
                 MessageBox.Show(helpText, "Help!");
             }
@@ -258,11 +290,21 @@ namespace ttManager.forms
             if (playerLeftKeys.Contains(e.KeyCode))
             {
                 UpdateScore(true);
-            } 
+            }
 
             if (playerRightKeys.Contains(e.KeyCode))
             {
                 UpdateScore(false);
+            }
+
+            if (e.KeyCode == Keys.Z)
+            {
+                UpdateScore(false, true);
+            }
+
+            if (e.KeyCode == Keys.X)
+            {
+                UpdateScore(false, true);
             }
         }
     }
