@@ -60,5 +60,10 @@ namespace ttManager.forms
             txtGames.Text = matchSummary.GamesSummary;
             txtStandings.Text = matchSummary.Standings;
         }
+
+        private void LbUnfinishedMatches_DoubleClick(object sender, EventArgs e)
+        {
+            BtnContinueMatch_Click(sender, e);
+        }
     }
 }

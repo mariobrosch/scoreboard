@@ -66,6 +66,7 @@ namespace ttManager.forms
             this.lbUnfinishedMatches.Size = new System.Drawing.Size(281, 357);
             this.lbUnfinishedMatches.TabIndex = 0;
             this.lbUnfinishedMatches.SelectedIndexChanged += new System.EventHandler(this.LbUnfinishedMatches_SelectedIndexChanged);
+            this.lbUnfinishedMatches.DoubleClick += new System.EventHandler(this.LbUnfinishedMatches_DoubleClick);
             // 
             // pnlMain
             // 

@@ -139,6 +139,7 @@ namespace ttManager.forms
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.txtWinner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "PlayMatch";
             this.Text = "PlayMatch";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
