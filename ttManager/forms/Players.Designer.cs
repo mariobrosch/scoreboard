@@ -50,6 +50,8 @@ namespace ttManager.forms
             this.btnNew = new System.Windows.Forms.Button();
             this.pnlPlayerlist = new System.Windows.Forms.Panel();
             this.chkDisplayRemoved = new System.Windows.Forms.CheckBox();
+            this.lblSinglePlayerMatches = new System.Windows.Forms.Label();
+            this.lblOfTheLabelSinglePlayerMatches = new System.Windows.Forms.Label();
             this.pnlPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.pnlPlayerlist.SuspendLayout();
@@ -58,7 +60,9 @@ namespace ttManager.forms
             // lbPlayers
             // 
             this.lbPlayers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPlayers.FormattingEnabled = true;
+            this.lbPlayers.ItemHeight = 25;
             this.lbPlayers.Location = new System.Drawing.Point(0, 0);
             this.lbPlayers.Name = "lbPlayers";
             this.lbPlayers.Size = new System.Drawing.Size(151, 450);
@@ -67,6 +71,8 @@ namespace ttManager.forms
             // 
             // pnlPlayer
             // 
+            this.pnlPlayer.Controls.Add(this.lblSinglePlayerMatches);
+            this.pnlPlayer.Controls.Add(this.lblOfTheLabelSinglePlayerMatches);
             this.pnlPlayer.Controls.Add(this.lblMatchResults);
             this.pnlPlayer.Controls.Add(this.lblPlayedMatches);
             this.pnlPlayer.Controls.Add(this.lblRemoved);
@@ -145,7 +151,7 @@ namespace ttManager.forms
             // 
             this.pbPhoto.Location = new System.Drawing.Point(295, 112);
             this.pbPhoto.Name = "pbPhoto";
-            this.pbPhoto.Size = new System.Drawing.Size(316, 240);
+            this.pbPhoto.Size = new System.Drawing.Size(316, 220);
             this.pbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPhoto.TabIndex = 8;
             this.pbPhoto.TabStop = false;
@@ -254,6 +260,23 @@ namespace ttManager.forms
             this.chkDisplayRemoved.UseVisualStyleBackColor = true;
             this.chkDisplayRemoved.CheckedChanged += new System.EventHandler(this.ChkDisplayRemoved_CheckedChanged);
             // 
+            // lblSinglePlayerMatches
+            // 
+            this.lblSinglePlayerMatches.AutoSize = true;
+            this.lblSinglePlayerMatches.Location = new System.Drawing.Point(292, 349);
+            this.lblSinglePlayerMatches.Name = "lblSinglePlayerMatches";
+            this.lblSinglePlayerMatches.Size = new System.Drawing.Size(0, 13);
+            this.lblSinglePlayerMatches.TabIndex = 16;
+            // 
+            // lblOfTheLabelSinglePlayerMatches
+            // 
+            this.lblOfTheLabelSinglePlayerMatches.AutoSize = true;
+            this.lblOfTheLabelSinglePlayerMatches.Location = new System.Drawing.Point(187, 349);
+            this.lblOfTheLabelSinglePlayerMatches.Name = "lblOfTheLabelSinglePlayerMatches";
+            this.lblOfTheLabelSinglePlayerMatches.Size = new System.Drawing.Size(92, 13);
+            this.lblOfTheLabelSinglePlayerMatches.TabIndex = 15;
+            this.lblOfTheLabelSinglePlayerMatches.Text = "Single player stats";
+            // 
             // FrmPlayers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,7 +285,9 @@ namespace ttManager.forms
             this.Controls.Add(this.pnlPlayerlist);
             this.Controls.Add(this.pnlPlayer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmPlayers";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Spelers";
             this.pnlPlayer.ResumeLayout(false);
             this.pnlPlayer.PerformLayout();
@@ -295,5 +320,7 @@ namespace ttManager.forms
         private System.Windows.Forms.CheckBox chkDisplayRemoved;
         private System.Windows.Forms.Label lblMatchResults;
         private System.Windows.Forms.Label lblPlayedMatches;
+        private System.Windows.Forms.Label lblSinglePlayerMatches;
+        private System.Windows.Forms.Label lblOfTheLabelSinglePlayerMatches;
     }
 }

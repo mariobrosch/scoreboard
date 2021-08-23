@@ -179,6 +179,7 @@ namespace ttManager
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Tabletennis Manager";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

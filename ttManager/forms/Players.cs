@@ -49,6 +49,16 @@ namespace ttManager.forms
 
             btnDelete.Visible = true;
 
+            var singlePlayerMatches = SinglePlayerGameData.GetForPlayer(player.Id);
+            if (singlePlayerMatches.Count > 0)
+            {
+                var bestGame = singlePlayerMatches.OrderBy(x => x.HighScore).Last();
+                lblSinglePlayerMatches.Text = singlePlayerMatches.Count + " gespeeld waarvan de hoogste score op " + bestGame.MatchDateParsed.ToString("yyyy-MM-dd") + " met als score " + bestGame.HighScore.ToString();
+            } else
+            {
+                lblSinglePlayerMatches.Text = "-";
+            }
+
             var matchesForPlayer = MatchData.GetForPlayer(player.Id);
             var matchesWon = matchesForPlayer.Where(m => m.WinnerId == player.Id).ToList().Count;
             lblMatchResults.Text = matchesForPlayer.Count > 0 ? matchesForPlayer.Count.ToString() + " gespeeld en " + matchesWon.ToString() + " gewonnen" : "0";

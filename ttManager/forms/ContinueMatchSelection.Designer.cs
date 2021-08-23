@@ -193,6 +193,7 @@ namespace ttManager.forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ContinueMatchSelection";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Verder met een wedstrijd";
             this.pnlLeft.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);

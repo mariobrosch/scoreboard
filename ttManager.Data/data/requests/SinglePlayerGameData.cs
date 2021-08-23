@@ -69,5 +69,15 @@ namespace ttManager.Data.data.requests
             singlePlayerGame.SetProperty(property, value);
             return Update(singlePlayerGame);
         }
+
+        public static List<SinglePlayerGame> GetForPlayer(int playerId)
+        {
+            var filter = new FilterObject
+            {
+                Column = "PlayerId",
+                Value = playerId.ToString()
+            };
+            return Get(filter);
+        }
     }
 }

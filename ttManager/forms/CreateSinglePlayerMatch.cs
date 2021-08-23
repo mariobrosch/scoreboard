@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using ttManager.Data.data.requests;
 using ttManager.Data.models;
@@ -32,7 +33,7 @@ namespace ttManager.forms
 
         private void LoadData()
         {
-            cboPlayer.DataSource = PlayerData.Get();
+            cboPlayer.DataSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
             cboPlayer.DisplayMember = "Name";
         }
     }

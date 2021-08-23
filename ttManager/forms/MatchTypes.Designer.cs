@@ -398,6 +398,7 @@ namespace ttManager.forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmMatchTypes";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Wedstrijd types";
             this.pnlPlayer.ResumeLayout(false);
             this.pnlPlayer.PerformLayout();
