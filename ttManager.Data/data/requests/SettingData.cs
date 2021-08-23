@@ -7,7 +7,7 @@ using static ttManager.Data.data.Filter;
 
 namespace ttManager.Data.data.requests
 {
-    public static class SettingsData
+    public static class SettingData
     {
         private const string tableName = "Settingss";
 

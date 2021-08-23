@@ -73,7 +73,7 @@
     <Compile Include="data\LocalStorage\Get.cs" />
     <Compile Include="data\LocalStorage\LocalStorage.cs" />
     <Compile Include="data\LocalStorage\Update.cs" />
-    <Compile Include="data\requests\SettingsData.cs" />
+    <Compile Include="data\requests\SettingData.cs" />
     <Compile Include="data\requests\SinglePlayerGameData.cs" />
     <Compile Include="data\requests\GameData.cs" />
     <Compile Include="data\requests\MatchData.cs" />
@@ -93,6 +93,7 @@
     <Compile Include="models\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="data\RequestHandler.cs" />
+    <Compile Include="SettingsHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
