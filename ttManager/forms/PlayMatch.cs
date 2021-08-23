@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.IO;
+using System.Media;
 using System.Windows.Forms;
 using ttManager.Data.data.requests;
 using ttManager.Data.enums;
@@ -150,6 +151,7 @@ namespace ttManager.forms
 
                 if (matchWinner == PlayerSide.Left)
                 {
+                    FormsHelper.PlaySound(SoundTypes.Applause);
                     match.WinnerId = match.PlayerLeftId;
                     match.WinnerId2 = match.PlayerLeftId2;
                     txtLeft.BackColor = Color.Green;
@@ -161,6 +163,7 @@ namespace ttManager.forms
 
                 if (matchWinner == PlayerSide.Right)
                 {
+                    FormsHelper.PlaySound(SoundTypes.Applause);
                     match.WinnerId = match.PlayerRightId;
                     match.WinnerId2 = match.PlayerRightId2;
                     txtRight.BackColor = Color.Green;
