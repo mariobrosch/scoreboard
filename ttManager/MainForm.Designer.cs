@@ -41,16 +41,16 @@ namespace ttManager
             this.speltypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spelenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verderSpelenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.singlePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nieuwSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfdZipfile = new System.Windows.Forms.SaveFileDialog();
-            this.singlePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPlayers
             // 
             this.btnPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayers.Location = new System.Drawing.Point(12, 33);
+            this.btnPlayers.Location = new System.Drawing.Point(12, 47);
             this.btnPlayers.Name = "btnPlayers";
             this.btnPlayers.Size = new System.Drawing.Size(311, 229);
             this.btnPlayers.TabIndex = 1;
@@ -61,7 +61,7 @@ namespace ttManager
             // btnMatchTypes
             // 
             this.btnMatchTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMatchTypes.Location = new System.Drawing.Point(12, 268);
+            this.btnMatchTypes.Location = new System.Drawing.Point(12, 282);
             this.btnMatchTypes.Name = "btnMatchTypes";
             this.btnMatchTypes.Size = new System.Drawing.Size(311, 229);
             this.btnMatchTypes.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace ttManager
             // btnNewMatch
             // 
             this.btnNewMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewMatch.Location = new System.Drawing.Point(329, 33);
+            this.btnNewMatch.Location = new System.Drawing.Point(329, 47);
             this.btnNewMatch.Name = "btnNewMatch";
             this.btnNewMatch.Size = new System.Drawing.Size(311, 229);
             this.btnNewMatch.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace ttManager
             // btnContinue
             // 
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.Location = new System.Drawing.Point(329, 268);
+            this.btnContinue.Location = new System.Drawing.Point(329, 282);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(311, 229);
             this.btnContinue.TabIndex = 4;
@@ -93,6 +93,7 @@ namespace ttManager
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.spelersToolStripMenuItem,
@@ -100,7 +101,7 @@ namespace ttManager
             this.spelenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(655, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(655, 38);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,27 +110,27 @@ namespace ttManager
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataExporterenToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(79, 34);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // dataExporterenToolStripMenuItem
             // 
             this.dataExporterenToolStripMenuItem.Name = "dataExporterenToolStripMenuItem";
-            this.dataExporterenToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.dataExporterenToolStripMenuItem.Size = new System.Drawing.Size(236, 34);
             this.dataExporterenToolStripMenuItem.Text = "Data exporteren";
             this.dataExporterenToolStripMenuItem.Click += new System.EventHandler(this.DataExporterenToolStripMenuItem_Click);
             // 
             // spelersToolStripMenuItem
             // 
             this.spelersToolStripMenuItem.Name = "spelersToolStripMenuItem";
-            this.spelersToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.spelersToolStripMenuItem.Size = new System.Drawing.Size(91, 34);
             this.spelersToolStripMenuItem.Text = "Spelers";
             this.spelersToolStripMenuItem.Click += new System.EventHandler(this.SpelersToolStripMenuItem_Click);
             // 
             // speltypesToolStripMenuItem
             // 
             this.speltypesToolStripMenuItem.Name = "speltypesToolStripMenuItem";
-            this.speltypesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.speltypesToolStripMenuItem.Size = new System.Drawing.Size(113, 34);
             this.speltypesToolStripMenuItem.Text = "Speltypes";
             this.speltypesToolStripMenuItem.Click += new System.EventHandler(this.SpeltypesToolStripMenuItem_Click);
             // 
@@ -140,35 +141,35 @@ namespace ttManager
             this.singlePlayerToolStripMenuItem,
             this.nieuwSpelToolStripMenuItem});
             this.spelenToolStripMenuItem.Name = "spelenToolStripMenuItem";
-            this.spelenToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.spelenToolStripMenuItem.Size = new System.Drawing.Size(87, 34);
             this.spelenToolStripMenuItem.Text = "Spelen";
             // 
             // verderSpelenToolStripMenuItem
             // 
             this.verderSpelenToolStripMenuItem.Name = "verderSpelenToolStripMenuItem";
-            this.verderSpelenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verderSpelenToolStripMenuItem.Size = new System.Drawing.Size(212, 34);
             this.verderSpelenToolStripMenuItem.Text = "Verder spelen";
             this.verderSpelenToolStripMenuItem.Click += new System.EventHandler(this.VerderSpelenToolStripMenuItem_Click);
-            // 
-            // nieuwSpelToolStripMenuItem
-            // 
-            this.nieuwSpelToolStripMenuItem.Name = "nieuwSpelToolStripMenuItem";
-            this.nieuwSpelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nieuwSpelToolStripMenuItem.Text = "Nieuw spel";
-            this.nieuwSpelToolStripMenuItem.Click += new System.EventHandler(this.NieuwSpelToolStripMenuItem_Click);
             // 
             // singlePlayerToolStripMenuItem
             // 
             this.singlePlayerToolStripMenuItem.Name = "singlePlayerToolStripMenuItem";
-            this.singlePlayerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.singlePlayerToolStripMenuItem.Size = new System.Drawing.Size(212, 34);
             this.singlePlayerToolStripMenuItem.Text = "Single Player";
             this.singlePlayerToolStripMenuItem.Click += new System.EventHandler(this.SinglePlayerToolStripMenuItem_Click);
+            // 
+            // nieuwSpelToolStripMenuItem
+            // 
+            this.nieuwSpelToolStripMenuItem.Name = "nieuwSpelToolStripMenuItem";
+            this.nieuwSpelToolStripMenuItem.Size = new System.Drawing.Size(212, 34);
+            this.nieuwSpelToolStripMenuItem.Text = "Nieuw spel";
+            this.nieuwSpelToolStripMenuItem.Click += new System.EventHandler(this.NieuwSpelToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 509);
+            this.ClientSize = new System.Drawing.Size(655, 518);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnNewMatch);
             this.Controls.Add(this.btnMatchTypes);

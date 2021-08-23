@@ -152,6 +152,28 @@ namespace ttManager.Data.data
                         }
                     }
                     return JsonConvert.SerializeObject(gameSelection);
+                case "SinglePlayerGames":
+                    var allSpGames = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                    var spGameSelection = new List<SinglePlayerGame>();
+
+                    if (!string.IsNullOrEmpty(key))
+                    {
+                        spGameSelection = allSpGames.Where(g => g.Id == int.Parse(key)).ToList();
+                    }
+                    else
+                    {
+                        var filterObject = Filter.Deserialize(filter);
+
+                        foreach (SinglePlayerGame game in allSpGames)
+                        {
+                            var value = game.GetType().GetProperty(filterObject.Column).GetValue(game, null);
+                            if (value.ToString() == filterObject.Value)
+                            {
+                                spGameSelection.Add(game);
+                            }
+                        }
+                    }
+                    return JsonConvert.SerializeObject(spGameSelection);
             }
 
             return "";
@@ -214,6 +236,19 @@ namespace ttManager.Data.data
                     allGames.Add(newGame);
                     newId = newGameId.ToString();
                     return JsonConvert.SerializeObject(allGames);
+                case "SinglePlayerGames":
+                    var allSpGames = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                    var newSpGameId = 1;
+                    if (allSpGames.Count > 0)
+                    {
+                        newSpGameId = allSpGames.OrderBy(g => g.Id).Last().Id + 1;
+                    }
+
+                    var newSpGame = JsonConvert.DeserializeObject<SinglePlayerGame>(data);
+                    newSpGame.Id = newSpGameId;
+                    allSpGames.Add(newSpGame);
+                    newId = newSpGameId.ToString();
+                    return JsonConvert.SerializeObject(allSpGames);
             }
             return "";
         }
@@ -287,6 +322,22 @@ namespace ttManager.Data.data
                         }
                     }
                     return JsonConvert.SerializeObject(allGames);
+                case "SinglePlayerGames":
+                    var allspGames = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                    var spGameToUpdate = allspGames.FirstOrDefault(p => p.Id == Int32.Parse(key));
+                    if (spGameToUpdate == null) { }
+                    else
+                    {
+                        var index = allspGames.IndexOf(spGameToUpdate);
+
+                        if (index != -1)
+                        {
+                            isUpdated = "1";
+                            var updatedGame = JsonConvert.DeserializeObject<SinglePlayerGame>(data);
+                            allspGames[index] = updatedGame;
+                        }
+                    }
+                    return JsonConvert.SerializeObject(allspGames);
             }
             return "";
         }
@@ -390,6 +441,29 @@ namespace ttManager.Data.data
                     }
                     removeCount = (allGames.Count - newGames.Count).ToString();
                     return JsonConvert.SerializeObject(newGames);
+                case "SinglePlayerGames":
+                    var allSpGames = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                    var newSpGames = new List<SinglePlayerGame>();
+                    foreach (var game in allSpGames)
+                    {
+                        if (!string.IsNullOrEmpty(key))
+                        {
+                            if (game.Id.ToString() != key)
+                            {
+                                newSpGames.Add(game);
+                            }
+                        }
+                        else
+                        {
+                            var value = game.GetType().GetProperty(filterObject.Column).GetValue(game, null);
+                            if (value.ToString() != filterObject.Value)
+                            {
+                                newSpGames.Add(game);
+                            }
+                        }
+                    }
+                    removeCount = (allSpGames.Count - newSpGames.Count).ToString();
+                    return JsonConvert.SerializeObject(newSpGames);
             }
             return "";
         }

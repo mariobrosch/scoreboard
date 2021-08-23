@@ -69,7 +69,7 @@
     <Compile Include="data\Filter.cs" />
     <Compile Include="data\Helper.cs" />
     <Compile Include="data\LocalStorage.cs" />
-    <Compile Include="data\requests\SinglePlayerGame.cs" />
+    <Compile Include="data\requests\SinglePlayerGameData.cs" />
     <Compile Include="data\requests\GameData.cs" />
     <Compile Include="data\requests\MatchData.cs" />
     <Compile Include="data\requests\MatchTypeData.cs" />

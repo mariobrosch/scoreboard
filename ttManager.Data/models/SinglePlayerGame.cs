@@ -6,6 +6,7 @@ namespace ttManager.Data.models
     public class SinglePlayerGame
     {
         public int Id { get; set; }
+        public int PlayerId { get; set; }
         public int HighScore { get; set; }
         public string MatchDate { get; set; }
         [JsonIgnore]
