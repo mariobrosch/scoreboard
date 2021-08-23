@@ -42,16 +42,6 @@ namespace ttManager.Data.data.requests
             return RequestHandler.MakeRequest(HttpMethods.GET, tableName, key, filter);
         }
 
-        public static int Delete()
-        {
-            return Delete("", "");
-        }
-
-        public static int Delete(int key)
-        {
-            return Delete(key.ToString(), "");
-        }
-
         public static int Delete(FilterObject filter)
         {
             return Delete("", CreateFilter(filter));

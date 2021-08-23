@@ -163,5 +163,10 @@ namespace ttManager
         {
             BtnPlayers_Click(sender, e);
         }
+
+        private void SinglePlayerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Helaas, single player werkt nog niet");
+        }
     }
 }

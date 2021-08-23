@@ -43,16 +43,6 @@ namespace ttManager.Data.data.requests
             return RequestHandler.MakeRequest(HttpMethods.GET, tableName, key, filter);
         }
 
-        public static int Delete()
-        {
-            return Delete("", "");
-        }
-
-        public static int Delete(FilterObject filter)
-        {
-            return Delete("", CreateFilter(filter));
-        }
-
         public static int Delete(string key, string filter = "")
         {
             string numberOfRowsDeleted = RequestHandler.MakeRequest(HttpMethods.DELETE, tableName, key, filter);

@@ -43,6 +43,7 @@ namespace ttManager
             this.verderSpelenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nieuwSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfdZipfile = new System.Windows.Forms.SaveFileDialog();
+            this.singlePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +137,7 @@ namespace ttManager
             // 
             this.spelenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verderSpelenToolStripMenuItem,
+            this.singlePlayerToolStripMenuItem,
             this.nieuwSpelToolStripMenuItem});
             this.spelenToolStripMenuItem.Name = "spelenToolStripMenuItem";
             this.spelenToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
@@ -144,16 +146,23 @@ namespace ttManager
             // verderSpelenToolStripMenuItem
             // 
             this.verderSpelenToolStripMenuItem.Name = "verderSpelenToolStripMenuItem";
-            this.verderSpelenToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.verderSpelenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verderSpelenToolStripMenuItem.Text = "Verder spelen";
             this.verderSpelenToolStripMenuItem.Click += new System.EventHandler(this.VerderSpelenToolStripMenuItem_Click);
             // 
             // nieuwSpelToolStripMenuItem
             // 
             this.nieuwSpelToolStripMenuItem.Name = "nieuwSpelToolStripMenuItem";
-            this.nieuwSpelToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.nieuwSpelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nieuwSpelToolStripMenuItem.Text = "Nieuw spel";
             this.nieuwSpelToolStripMenuItem.Click += new System.EventHandler(this.NieuwSpelToolStripMenuItem_Click);
+            // 
+            // singlePlayerToolStripMenuItem
+            // 
+            this.singlePlayerToolStripMenuItem.Name = "singlePlayerToolStripMenuItem";
+            this.singlePlayerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.singlePlayerToolStripMenuItem.Text = "Single Player";
+            this.singlePlayerToolStripMenuItem.Click += new System.EventHandler(this.SinglePlayerToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -192,6 +201,7 @@ namespace ttManager
         private System.Windows.Forms.ToolStripMenuItem spelenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verderSpelenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nieuwSpelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem singlePlayerToolStripMenuItem;
     }
 }
 
