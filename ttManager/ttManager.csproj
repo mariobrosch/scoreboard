@@ -17,20 +17,25 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>Z:\RELEASES\ttManager\</PublishUrl>
+    <PublishUrl>Y:\ttManager\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\nas\web\ttManager\</UpdateUrl>
+    <ProductName>ttManager</ProductName>
+    <PublisherName>Mario van der Niet</PublisherName>
+    <SuiteName>Suite Brosch</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
