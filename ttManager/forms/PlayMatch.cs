@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using ttManager.Data.data.requests;
 using ttManager.Data.enums;
@@ -90,7 +92,10 @@ namespace ttManager.forms
                     }
                     else
                     {
-                        currentGame.TeamLeftScore--;
+                        if (currentGame.TeamLeftScore > 0)
+                        {
+                            currentGame.TeamLeftScore--;
+                        }
                     }
                 }
                 else
@@ -109,7 +114,10 @@ namespace ttManager.forms
                     }
                     else
                     {
-                        currentGame.TeamRightScore--;
+                        if (currentGame.TeamRightScore > 0)
+                        {
+                            currentGame.TeamRightScore--;
+                        }
                     }
                 }
                 else
@@ -299,12 +307,32 @@ namespace ttManager.forms
 
             if (e.KeyCode == Keys.Z)
             {
-                UpdateScore(false, true);
+                UpdateScore(true, true);
             }
 
             if (e.KeyCode == Keys.X)
             {
                 UpdateScore(false, true);
+            }
+        }
+
+        private void PlayMatch_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string backupLocation = ConfigurationManager.AppSettings["backupLocation"];
+            string localStoragePath = ConfigurationManager.AppSettings["localStoragePath"];
+            string backupDrive = ConfigurationManager.AppSettings["backupDrive"];
+
+            if (Directory.Exists(backupDrive))
+            {
+                if (!Directory.Exists(backupLocation))
+                {
+                    Directory.CreateDirectory(backupLocation);
+                }
+
+                foreach (string file in Directory.GetFiles(localStoragePath, "*.*", SearchOption.AllDirectories))
+                {
+                    File.Copy(file, file.Replace(localStoragePath, backupLocation), true);
+                }
             }
         }
     }

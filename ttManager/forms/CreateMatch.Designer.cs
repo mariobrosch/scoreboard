@@ -61,10 +61,11 @@ namespace ttManager.forms
             this.cboPlayerLeft.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboPlayerLeft.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPlayerLeft.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPlayerLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPlayerLeft.FormattingEnabled = true;
             this.cboPlayerLeft.Location = new System.Drawing.Point(69, 12);
             this.cboPlayerLeft.Name = "cboPlayerLeft";
-            this.cboPlayerLeft.Size = new System.Drawing.Size(160, 21);
+            this.cboPlayerLeft.Size = new System.Drawing.Size(160, 33);
             this.cboPlayerLeft.TabIndex = 1;
             // 
             // lblPlayerRight
@@ -81,10 +82,11 @@ namespace ttManager.forms
             this.cboPlayerRight.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboPlayerRight.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPlayerRight.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPlayerRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPlayerRight.FormattingEnabled = true;
             this.cboPlayerRight.Location = new System.Drawing.Point(434, 12);
             this.cboPlayerRight.Name = "cboPlayerRight";
-            this.cboPlayerRight.Size = new System.Drawing.Size(160, 21);
+            this.cboPlayerRight.Size = new System.Drawing.Size(160, 33);
             this.cboPlayerRight.TabIndex = 3;
             // 
             // cboPlayerRight2
@@ -92,17 +94,18 @@ namespace ttManager.forms
             this.cboPlayerRight2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboPlayerRight2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPlayerRight2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPlayerRight2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPlayerRight2.FormattingEnabled = true;
-            this.cboPlayerRight2.Location = new System.Drawing.Point(434, 59);
+            this.cboPlayerRight2.Location = new System.Drawing.Point(434, 77);
             this.cboPlayerRight2.Name = "cboPlayerRight2";
-            this.cboPlayerRight2.Size = new System.Drawing.Size(160, 21);
+            this.cboPlayerRight2.Size = new System.Drawing.Size(160, 33);
             this.cboPlayerRight2.TabIndex = 5;
             this.cboPlayerRight2.Visible = false;
             // 
             // lblPlayerRight2
             // 
             this.lblPlayerRight2.AutoSize = true;
-            this.lblPlayerRight2.Location = new System.Drawing.Point(382, 62);
+            this.lblPlayerRight2.Location = new System.Drawing.Point(382, 77);
             this.lblPlayerRight2.Name = "lblPlayerRight2";
             this.lblPlayerRight2.Size = new System.Drawing.Size(46, 13);
             this.lblPlayerRight2.TabIndex = 4;
@@ -114,17 +117,18 @@ namespace ttManager.forms
             this.cboPlayerLeft2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboPlayerLeft2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPlayerLeft2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPlayerLeft2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPlayerLeft2.FormattingEnabled = true;
-            this.cboPlayerLeft2.Location = new System.Drawing.Point(69, 59);
+            this.cboPlayerLeft2.Location = new System.Drawing.Point(69, 77);
             this.cboPlayerLeft2.Name = "cboPlayerLeft2";
-            this.cboPlayerLeft2.Size = new System.Drawing.Size(160, 21);
+            this.cboPlayerLeft2.Size = new System.Drawing.Size(160, 33);
             this.cboPlayerLeft2.TabIndex = 7;
             this.cboPlayerLeft2.Visible = false;
             // 
             // lblPlayerLeft2
             // 
             this.lblPlayerLeft2.AutoSize = true;
-            this.lblPlayerLeft2.Location = new System.Drawing.Point(17, 62);
+            this.lblPlayerLeft2.Location = new System.Drawing.Point(18, 77);
             this.lblPlayerLeft2.Name = "lblPlayerLeft2";
             this.lblPlayerLeft2.Size = new System.Drawing.Size(46, 13);
             this.lblPlayerLeft2.TabIndex = 6;
@@ -134,7 +138,8 @@ namespace ttManager.forms
             // chkTwoVsTwoGame
             // 
             this.chkTwoVsTwoGame.AutoSize = true;
-            this.chkTwoVsTwoGame.Location = new System.Drawing.Point(69, 39);
+            this.chkTwoVsTwoGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTwoVsTwoGame.Location = new System.Drawing.Point(69, 57);
             this.chkTwoVsTwoGame.Name = "chkTwoVsTwoGame";
             this.chkTwoVsTwoGame.Size = new System.Drawing.Size(15, 14);
             this.chkTwoVsTwoGame.TabIndex = 9;
@@ -144,7 +149,7 @@ namespace ttManager.forms
             // lblTwoVsTwoPlayerGame
             // 
             this.lblTwoVsTwoPlayerGame.AutoSize = true;
-            this.lblTwoVsTwoPlayerGame.Location = new System.Drawing.Point(27, 39);
+            this.lblTwoVsTwoPlayerGame.Location = new System.Drawing.Point(27, 58);
             this.lblTwoVsTwoPlayerGame.Name = "lblTwoVsTwoPlayerGame";
             this.lblTwoVsTwoPlayerGame.Size = new System.Drawing.Size(36, 13);
             this.lblTwoVsTwoPlayerGame.TabIndex = 10;
@@ -155,10 +160,11 @@ namespace ttManager.forms
             this.cboMatchType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cboMatchType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboMatchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMatchType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMatchType.FormattingEnabled = true;
             this.cboMatchType.Location = new System.Drawing.Point(69, 116);
             this.cboMatchType.Name = "cboMatchType";
-            this.cboMatchType.Size = new System.Drawing.Size(160, 21);
+            this.cboMatchType.Size = new System.Drawing.Size(160, 33);
             this.cboMatchType.TabIndex = 11;
             this.cboMatchType.SelectedIndexChanged += new System.EventHandler(this.CboMatchType_SelectedIndexChanged);
             // 
@@ -173,6 +179,7 @@ namespace ttManager.forms
             // 
             // txtMatchTypeDescription
             // 
+            this.txtMatchTypeDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatchTypeDescription.Location = new System.Drawing.Point(251, 116);
             this.txtMatchTypeDescription.Multiline = true;
             this.txtMatchTypeDescription.Name = "txtMatchTypeDescription";
@@ -182,9 +189,10 @@ namespace ttManager.forms
             // 
             // btnStartNewGame
             // 
-            this.btnStartNewGame.Location = new System.Drawing.Point(519, 287);
+            this.btnStartNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartNewGame.Location = new System.Drawing.Point(499, 271);
             this.btnStartNewGame.Name = "btnStartNewGame";
-            this.btnStartNewGame.Size = new System.Drawing.Size(75, 23);
+            this.btnStartNewGame.Size = new System.Drawing.Size(95, 39);
             this.btnStartNewGame.TabIndex = 14;
             this.btnStartNewGame.Text = "Start";
             this.btnStartNewGame.UseVisualStyleBackColor = true;
@@ -193,9 +201,10 @@ namespace ttManager.forms
             // lblHelp
             // 
             this.lblHelp.AutoSize = true;
-            this.lblHelp.Location = new System.Drawing.Point(249, 292);
+            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.Location = new System.Drawing.Point(129, 278);
             this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(179, 13);
+            this.lblHelp.Size = new System.Drawing.Size(364, 25);
             this.lblHelp.TabIndex = 15;
             this.lblHelp.Text = "Startspeler wordt willekeurig bepaald";
             // 

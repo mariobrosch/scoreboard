@@ -77,7 +77,7 @@ namespace ttManager.forms
             // btnLeftScore
             // 
             this.btnLeftScore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLeftScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeftScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 128.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeftScore.Location = new System.Drawing.Point(0, 0);
             this.btnLeftScore.Name = "btnLeftScore";
             this.btnLeftScore.Size = new System.Drawing.Size(400, 334);
@@ -99,7 +99,7 @@ namespace ttManager.forms
             // btnRightScore
             // 
             this.btnRightScore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRightScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRightScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 128.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRightScore.Location = new System.Drawing.Point(0, 0);
             this.btnRightScore.Name = "btnRightScore";
             this.btnRightScore.Size = new System.Drawing.Size(399, 334);
@@ -143,6 +143,7 @@ namespace ttManager.forms
             this.Name = "PlayMatch";
             this.Text = "PlayMatch";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayMatch_FormClosing);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PlayMatch_KeyUp);
             this.Resize += new System.EventHandler(this.PlayMatch_Resize);
             this.splitContainer.Panel1.ResumeLayout(false);
