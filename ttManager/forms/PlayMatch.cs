@@ -322,6 +322,8 @@ namespace ttManager.forms
             string localStoragePath = ConfigurationManager.AppSettings["localStoragePath"];
             string backupDrive = ConfigurationManager.AppSettings["backupDrive"];
 
+            backupLocation = backupLocation.Replace("[computername]", Environment.MachineName);
+
             if (Directory.Exists(backupDrive))
             {
                 if (!Directory.Exists(backupLocation))
