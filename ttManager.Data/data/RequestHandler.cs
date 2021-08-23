@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using ttManager.Data.data;
+using ttManager.Data.data.LocalStorage;
 using ttManager.Data.enums;
 
 namespace ttManager.Data

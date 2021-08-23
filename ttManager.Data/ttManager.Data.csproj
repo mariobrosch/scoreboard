@@ -68,7 +68,12 @@
     <Compile Include="data\FilterObject.cs" />
     <Compile Include="data\Filter.cs" />
     <Compile Include="data\Helper.cs" />
-    <Compile Include="data\LocalStorage.cs" />
+    <Compile Include="data\LocalStorage\Create.cs" />
+    <Compile Include="data\LocalStorage\Delete.cs" />
+    <Compile Include="data\LocalStorage\Get.cs" />
+    <Compile Include="data\LocalStorage\LocalStorage.cs" />
+    <Compile Include="data\LocalStorage\Update.cs" />
+    <Compile Include="data\requests\SettingsData.cs" />
     <Compile Include="data\requests\SinglePlayerGameData.cs" />
     <Compile Include="data\requests\GameData.cs" />
     <Compile Include="data\requests\MatchData.cs" />
@@ -79,6 +84,7 @@
     <Compile Include="enums\PlayerSide.cs" />
     <Compile Include="Helpers\GameHelper.cs" />
     <Compile Include="Helpers\MatchHelper.cs" />
+    <Compile Include="models\Setting.cs" />
     <Compile Include="models\SinglePlayerGame.cs" />
     <Compile Include="models\Game.cs" />
     <Compile Include="models\Match.cs" />
