@@ -17,15 +17,15 @@ namespace ttManager.forms
 
         private void LoadData()
         {
-            cboPlayerLeft.DataSource = PlayerData.Get();
-            cboPlayerLeft2.DataSource = PlayerData.Get();
-            cboPlayerRight.DataSource = PlayerData.Get();
-            cboPlayerRight2.DataSource = PlayerData.Get();
+            cboPlayerLeft.DataSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
+            cboPlayerLeft2.DataSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
+            cboPlayerRight.DataSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
+            cboPlayerRight2.DataSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
             cboPlayerLeft.DisplayMember = "Name";
             cboPlayerLeft2.DisplayMember = "Name";
             cboPlayerRight.DisplayMember = "Name";
             cboPlayerRight2.DisplayMember = "Name";
-            cboMatchType.DataSource = MatchTypeData.Get();
+            cboMatchType.DataSource = MatchTypeData.Get().OrderBy(m => m.Type).ToList();
             cboMatchType.DisplayMember = "Type";
         }
 

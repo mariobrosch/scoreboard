@@ -32,7 +32,7 @@
     <PublisherName>Mario van der Niet</PublisherName>
     <SuiteName>Suite Brosch</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>38</ApplicationRevision>
+    <ApplicationRevision>39</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
