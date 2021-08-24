@@ -38,6 +38,9 @@ The application has a list of functionality, in short these are implemented:
   - If matchwinner it's properly displayed on screen
   - If setwinner it's properly displayed on screen and ability to start new set
   - Service turn is displayed in yellow who to serve.
+- Data can be stored via two methods:
+  - MySql database via a simple rest endpoints (provided as php script)
+  - Local file storage using JSON files 
 
 ### Future functionality
 On the wishlist there are currently the following functionalities:
