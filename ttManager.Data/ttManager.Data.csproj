@@ -79,7 +79,8 @@
     <Compile Include="data\requests\MatchData.cs" />
     <Compile Include="data\requests\MatchTypeData.cs" />
     <Compile Include="data\requests\PlayerData.cs" />
-    <Compile Include="data\Rest.cs" />
+    <Compile Include="data\Rest\DbHelper.cs" />
+    <Compile Include="data\Rest\Rest.cs" />
     <Compile Include="enums\HttpMethods.cs" />
     <Compile Include="enums\PlayerSide.cs" />
     <Compile Include="Helpers\GameHelper.cs" />

@@ -1,5 +1,5 @@
 ﻿using System.Configuration;
-using ttManager.Data.data;
+using ttManager.Data.data.Rest;
 using ttManager.Data.data.LocalStorage;
 using ttManager.Data.enums;
 

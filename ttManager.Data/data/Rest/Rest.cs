@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using ttManager.Data.enums;
 
-namespace ttManager.Data.data
+namespace ttManager.Data.data.Rest
 {
     class Rest
     {
