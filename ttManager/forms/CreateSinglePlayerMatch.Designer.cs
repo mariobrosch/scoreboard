@@ -45,7 +45,7 @@ namespace ttManager.forms
             this.cboPlayer.Location = new System.Drawing.Point(101, 12);
             this.cboPlayer.Name = "cboPlayer";
             this.cboPlayer.Size = new System.Drawing.Size(160, 33);
-            this.cboPlayer.TabIndex = 2;
+            this.cboPlayer.TabIndex = 0;
             // 
             // lblSelectPlayer
             // 
@@ -62,7 +62,7 @@ namespace ttManager.forms
             this.btnStart.Location = new System.Drawing.Point(166, 51);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(95, 40);
-            this.btnStart.TabIndex = 4;
+            this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);

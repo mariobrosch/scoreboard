@@ -103,7 +103,7 @@ namespace ttManager.forms
             this.btnRightScore.Location = new System.Drawing.Point(0, 0);
             this.btnRightScore.Name = "btnRightScore";
             this.btnRightScore.Size = new System.Drawing.Size(399, 334);
-            this.btnRightScore.TabIndex = 1;
+            this.btnRightScore.TabIndex = 0;
             this.btnRightScore.Text = "Rechts";
             this.btnRightScore.UseVisualStyleBackColor = true;
             this.btnRightScore.Click += new System.EventHandler(this.BtnRightScore_Click);
@@ -124,7 +124,7 @@ namespace ttManager.forms
             this.btnStartNewGame.Location = new System.Drawing.Point(220, 375);
             this.btnStartNewGame.Name = "btnStartNewGame";
             this.btnStartNewGame.Size = new System.Drawing.Size(362, 63);
-            this.btnStartNewGame.TabIndex = 3;
+            this.btnStartNewGame.TabIndex = 0;
             this.btnStartNewGame.Text = "Start nieuwe set";
             this.btnStartNewGame.UseVisualStyleBackColor = true;
             this.btnStartNewGame.Visible = false;

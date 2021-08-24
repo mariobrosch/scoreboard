@@ -53,7 +53,7 @@ namespace ttManager
             this.btnPlayers.Location = new System.Drawing.Point(12, 47);
             this.btnPlayers.Name = "btnPlayers";
             this.btnPlayers.Size = new System.Drawing.Size(311, 229);
-            this.btnPlayers.TabIndex = 1;
+            this.btnPlayers.TabIndex = 0;
             this.btnPlayers.Text = "Spelers";
             this.btnPlayers.UseVisualStyleBackColor = true;
             this.btnPlayers.Click += new System.EventHandler(this.BtnPlayers_Click);
@@ -75,7 +75,7 @@ namespace ttManager
             this.btnNewMatch.Location = new System.Drawing.Point(329, 47);
             this.btnNewMatch.Name = "btnNewMatch";
             this.btnNewMatch.Size = new System.Drawing.Size(311, 229);
-            this.btnNewMatch.TabIndex = 3;
+            this.btnNewMatch.TabIndex = 1;
             this.btnNewMatch.Text = "Nieuw spel";
             this.btnNewMatch.UseVisualStyleBackColor = true;
             this.btnNewMatch.Click += new System.EventHandler(this.BtnNewMatch_Click);
@@ -86,7 +86,7 @@ namespace ttManager
             this.btnContinue.Location = new System.Drawing.Point(329, 282);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(311, 229);
-            this.btnContinue.TabIndex = 4;
+            this.btnContinue.TabIndex = 3;
             this.btnContinue.Text = "Verder spelen";
             this.btnContinue.UseVisualStyleBackColor = true;
             this.btnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
@@ -102,7 +102,7 @@ namespace ttManager
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(655, 38);
-            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem

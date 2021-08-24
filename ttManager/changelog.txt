@@ -1,0 +1,3 @@
+﻿1.1.0.0 24-08-2021
+
+First version without significant missing functionality

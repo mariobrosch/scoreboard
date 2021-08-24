@@ -66,7 +66,7 @@ namespace ttManager.forms
             this.cboPlayerLeft.Location = new System.Drawing.Point(69, 12);
             this.cboPlayerLeft.Name = "cboPlayerLeft";
             this.cboPlayerLeft.Size = new System.Drawing.Size(160, 33);
-            this.cboPlayerLeft.TabIndex = 1;
+            this.cboPlayerLeft.TabIndex = 0;
             // 
             // lblPlayerRight
             // 
@@ -87,7 +87,7 @@ namespace ttManager.forms
             this.cboPlayerRight.Location = new System.Drawing.Point(434, 12);
             this.cboPlayerRight.Name = "cboPlayerRight";
             this.cboPlayerRight.Size = new System.Drawing.Size(160, 33);
-            this.cboPlayerRight.TabIndex = 3;
+            this.cboPlayerRight.TabIndex = 1;
             // 
             // cboPlayerRight2
             // 
@@ -99,7 +99,7 @@ namespace ttManager.forms
             this.cboPlayerRight2.Location = new System.Drawing.Point(434, 77);
             this.cboPlayerRight2.Name = "cboPlayerRight2";
             this.cboPlayerRight2.Size = new System.Drawing.Size(160, 33);
-            this.cboPlayerRight2.TabIndex = 5;
+            this.cboPlayerRight2.TabIndex = 4;
             this.cboPlayerRight2.Visible = false;
             // 
             // lblPlayerRight2
@@ -122,7 +122,7 @@ namespace ttManager.forms
             this.cboPlayerLeft2.Location = new System.Drawing.Point(69, 77);
             this.cboPlayerLeft2.Name = "cboPlayerLeft2";
             this.cboPlayerLeft2.Size = new System.Drawing.Size(160, 33);
-            this.cboPlayerLeft2.TabIndex = 7;
+            this.cboPlayerLeft2.TabIndex = 3;
             this.cboPlayerLeft2.Visible = false;
             // 
             // lblPlayerLeft2
@@ -142,7 +142,7 @@ namespace ttManager.forms
             this.chkTwoVsTwoGame.Location = new System.Drawing.Point(69, 57);
             this.chkTwoVsTwoGame.Name = "chkTwoVsTwoGame";
             this.chkTwoVsTwoGame.Size = new System.Drawing.Size(15, 14);
-            this.chkTwoVsTwoGame.TabIndex = 9;
+            this.chkTwoVsTwoGame.TabIndex = 2;
             this.chkTwoVsTwoGame.UseVisualStyleBackColor = true;
             this.chkTwoVsTwoGame.CheckedChanged += new System.EventHandler(this.ChkTwoVsTwoGame_CheckedChanged);
             // 
@@ -165,7 +165,7 @@ namespace ttManager.forms
             this.cboMatchType.Location = new System.Drawing.Point(69, 116);
             this.cboMatchType.Name = "cboMatchType";
             this.cboMatchType.Size = new System.Drawing.Size(160, 33);
-            this.cboMatchType.TabIndex = 11;
+            this.cboMatchType.TabIndex = 5;
             this.cboMatchType.SelectedIndexChanged += new System.EventHandler(this.CboMatchType_SelectedIndexChanged);
             // 
             // lblMatchType
@@ -193,7 +193,7 @@ namespace ttManager.forms
             this.btnStartNewGame.Location = new System.Drawing.Point(499, 271);
             this.btnStartNewGame.Name = "btnStartNewGame";
             this.btnStartNewGame.Size = new System.Drawing.Size(95, 39);
-            this.btnStartNewGame.TabIndex = 14;
+            this.btnStartNewGame.TabIndex = 6;
             this.btnStartNewGame.Text = "Start";
             this.btnStartNewGame.UseVisualStyleBackColor = true;
             this.btnStartNewGame.Click += new System.EventHandler(this.BtnStartNewGame_Click);

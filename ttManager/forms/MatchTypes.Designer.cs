@@ -119,7 +119,7 @@ namespace ttManager.forms
             0});
             this.numServiceChangeOnShootOutPer.Name = "numServiceChangeOnShootOutPer";
             this.numServiceChangeOnShootOutPer.Size = new System.Drawing.Size(226, 20);
-            this.numServiceChangeOnShootOutPer.TabIndex = 34;
+            this.numServiceChangeOnShootOutPer.TabIndex = 7;
             this.numServiceChangeOnShootOutPer.Value = new decimal(new int[] {
             1,
             0,
@@ -132,7 +132,7 @@ namespace ttManager.forms
             this.chkTwoPointsDifferenceToWin.Location = new System.Drawing.Point(314, 321);
             this.chkTwoPointsDifferenceToWin.Name = "chkTwoPointsDifferenceToWin";
             this.chkTwoPointsDifferenceToWin.Size = new System.Drawing.Size(15, 14);
-            this.chkTwoPointsDifferenceToWin.TabIndex = 33;
+            this.chkTwoPointsDifferenceToWin.TabIndex = 6;
             this.chkTwoPointsDifferenceToWin.UseVisualStyleBackColor = true;
             // 
             // lblAvailableForTwoVsTwo
@@ -150,7 +150,7 @@ namespace ttManager.forms
             this.chkAvailableForTwoVsTwo.Location = new System.Drawing.Point(314, 372);
             this.chkAvailableForTwoVsTwo.Name = "chkAvailableForTwoVsTwo";
             this.chkAvailableForTwoVsTwo.Size = new System.Drawing.Size(15, 14);
-            this.chkAvailableForTwoVsTwo.TabIndex = 31;
+            this.chkAvailableForTwoVsTwo.TabIndex = 8;
             this.chkAvailableForTwoVsTwo.UseVisualStyleBackColor = true;
             // 
             // lblServiceChangeOnShootOutPer
@@ -181,7 +181,7 @@ namespace ttManager.forms
             0});
             this.numServiceChangeEveryNumberOfServices.Name = "numServiceChangeEveryNumberOfServices";
             this.numServiceChangeEveryNumberOfServices.Size = new System.Drawing.Size(226, 20);
-            this.numServiceChangeEveryNumberOfServices.TabIndex = 26;
+            this.numServiceChangeEveryNumberOfServices.TabIndex = 5;
             this.numServiceChangeEveryNumberOfServices.Value = new decimal(new int[] {
             1,
             0,
@@ -207,7 +207,7 @@ namespace ttManager.forms
             0});
             this.numScorePerGameToWin.Name = "numScorePerGameToWin";
             this.numScorePerGameToWin.Size = new System.Drawing.Size(226, 20);
-            this.numScorePerGameToWin.TabIndex = 24;
+            this.numScorePerGameToWin.TabIndex = 4;
             this.numScorePerGameToWin.Value = new decimal(new int[] {
             1,
             0,
@@ -233,7 +233,7 @@ namespace ttManager.forms
             0});
             this.numNumberOfGamesToWin.Name = "numNumberOfGamesToWin";
             this.numNumberOfGamesToWin.Size = new System.Drawing.Size(226, 20);
-            this.numNumberOfGamesToWin.TabIndex = 22;
+            this.numNumberOfGamesToWin.TabIndex = 3;
             this.numNumberOfGamesToWin.Value = new decimal(new int[] {
             1,
             0,
@@ -255,7 +255,7 @@ namespace ttManager.forms
             this.lblMatchResults.Location = new System.Drawing.Point(317, 394);
             this.lblMatchResults.Name = "lblMatchResults";
             this.lblMatchResults.Size = new System.Drawing.Size(0, 13);
-            this.lblMatchResults.TabIndex = 16;
+            this.lblMatchResults.TabIndex = 9;
             // 
             // lblPlayedMatches
             // 
@@ -281,7 +281,7 @@ namespace ttManager.forms
             this.chkRemoved.Location = new System.Drawing.Point(314, 415);
             this.chkRemoved.Name = "chkRemoved";
             this.chkRemoved.Size = new System.Drawing.Size(15, 14);
-            this.chkRemoved.TabIndex = 11;
+            this.chkRemoved.TabIndex = 10;
             this.chkRemoved.UseVisualStyleBackColor = true;
             // 
             // lblDescription
@@ -299,7 +299,7 @@ namespace ttManager.forms
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(226, 149);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.TabIndex = 2;
             // 
             // lblType
             // 
@@ -315,7 +315,7 @@ namespace ttManager.forms
             this.txtType.Location = new System.Drawing.Point(314, 60);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(226, 20);
-            this.txtType.TabIndex = 4;
+            this.txtType.TabIndex = 1;
             // 
             // txtId
             // 
@@ -323,7 +323,7 @@ namespace ttManager.forms
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(226, 20);
-            this.txtId.TabIndex = 3;
+            this.txtId.TabIndex = 0;
             // 
             // lblId
             // 
@@ -339,7 +339,7 @@ namespace ttManager.forms
             this.btnDelete.Location = new System.Drawing.Point(632, 415);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Verwijderen";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
@@ -349,7 +349,7 @@ namespace ttManager.forms
             this.btnSave.Location = new System.Drawing.Point(713, 415);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Opslaan";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -383,7 +383,7 @@ namespace ttManager.forms
             this.chkDisplayRemoved.Location = new System.Drawing.Point(0, 410);
             this.chkDisplayRemoved.Name = "chkDisplayRemoved";
             this.chkDisplayRemoved.Size = new System.Drawing.Size(151, 17);
-            this.chkDisplayRemoved.TabIndex = 3;
+            this.chkDisplayRemoved.TabIndex = 1;
             this.chkDisplayRemoved.Text = "Toon verwijderde spelers";
             this.chkDisplayRemoved.UseVisualStyleBackColor = true;
             this.chkDisplayRemoved.CheckedChanged += new System.EventHandler(this.ChkDisplayRemoved_CheckedChanged);

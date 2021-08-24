@@ -42,7 +42,7 @@ namespace ttManager.forms
             this.btnSave.Location = new System.Drawing.Point(272, 111);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 42);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Opslaan";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -67,7 +67,7 @@ namespace ttManager.forms
             0});
             this.numScore.Name = "numScore";
             this.numScore.Size = new System.Drawing.Size(120, 31);
-            this.numScore.TabIndex = 2;
+            this.numScore.TabIndex = 0;
             // 
             // lblPreviousRecord
             // 

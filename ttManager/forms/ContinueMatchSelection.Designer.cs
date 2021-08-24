@@ -85,7 +85,7 @@ namespace ttManager.forms
             this.pnlMain.Location = new System.Drawing.Point(281, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(519, 357);
-            this.pnlMain.TabIndex = 1;
+            this.pnlMain.TabIndex = 0;
             // 
             // lblGames
             // 
@@ -103,7 +103,7 @@ namespace ttManager.forms
             this.txtGames.Name = "txtGames";
             this.txtGames.ReadOnly = true;
             this.txtGames.Size = new System.Drawing.Size(219, 190);
-            this.txtGames.TabIndex = 9;
+            this.txtGames.TabIndex = 4;
             // 
             // lblMatchDate
             // 
@@ -120,7 +120,7 @@ namespace ttManager.forms
             this.txtMatchDate.Name = "txtMatchDate";
             this.txtMatchDate.ReadOnly = true;
             this.txtMatchDate.Size = new System.Drawing.Size(219, 20);
-            this.txtMatchDate.TabIndex = 7;
+            this.txtMatchDate.TabIndex = 2;
             // 
             // txtStandings
             // 
@@ -128,7 +128,7 @@ namespace ttManager.forms
             this.txtStandings.Name = "txtStandings";
             this.txtStandings.ReadOnly = true;
             this.txtStandings.Size = new System.Drawing.Size(219, 20);
-            this.txtStandings.TabIndex = 6;
+            this.txtStandings.TabIndex = 3;
             // 
             // lblStandings
             // 
@@ -145,7 +145,7 @@ namespace ttManager.forms
             this.txtTeamRight.Name = "txtTeamRight";
             this.txtTeamRight.ReadOnly = true;
             this.txtTeamRight.Size = new System.Drawing.Size(219, 20);
-            this.txtTeamRight.TabIndex = 4;
+            this.txtTeamRight.TabIndex = 1;
             // 
             // txtTeamLeft
             // 
@@ -153,7 +153,7 @@ namespace ttManager.forms
             this.txtTeamLeft.Name = "txtTeamLeft";
             this.txtTeamLeft.ReadOnly = true;
             this.txtTeamLeft.Size = new System.Drawing.Size(219, 20);
-            this.txtTeamLeft.TabIndex = 3;
+            this.txtTeamLeft.TabIndex = 0;
             // 
             // lblTeamRight
             // 
@@ -178,7 +178,7 @@ namespace ttManager.forms
             this.btnContinueMatch.Location = new System.Drawing.Point(403, 322);
             this.btnContinueMatch.Name = "btnContinueMatch";
             this.btnContinueMatch.Size = new System.Drawing.Size(104, 23);
-            this.btnContinueMatch.TabIndex = 0;
+            this.btnContinueMatch.TabIndex = 5;
             this.btnContinueMatch.Text = "Verder spelen";
             this.btnContinueMatch.UseVisualStyleBackColor = true;
             this.btnContinueMatch.Click += new System.EventHandler(this.BtnContinueMatch_Click);

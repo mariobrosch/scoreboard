@@ -32,6 +32,8 @@ namespace ttManager.forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlayers));
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.pnlPlayer = new System.Windows.Forms.Panel();
+            this.lblSinglePlayerMatches = new System.Windows.Forms.Label();
+            this.lblOfTheLabelSinglePlayerMatches = new System.Windows.Forms.Label();
             this.lblMatchResults = new System.Windows.Forms.Label();
             this.lblPlayedMatches = new System.Windows.Forms.Label();
             this.lblRemoved = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@ namespace ttManager.forms
             this.btnNew = new System.Windows.Forms.Button();
             this.pnlPlayerlist = new System.Windows.Forms.Panel();
             this.chkDisplayRemoved = new System.Windows.Forms.CheckBox();
-            this.lblSinglePlayerMatches = new System.Windows.Forms.Label();
-            this.lblOfTheLabelSinglePlayerMatches = new System.Windows.Forms.Label();
             this.pnlPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.pnlPlayerlist.SuspendLayout();
@@ -92,7 +92,24 @@ namespace ttManager.forms
             this.pnlPlayer.Location = new System.Drawing.Point(0, 0);
             this.pnlPlayer.Name = "pnlPlayer";
             this.pnlPlayer.Size = new System.Drawing.Size(800, 450);
-            this.pnlPlayer.TabIndex = 1;
+            this.pnlPlayer.TabIndex = 0;
+            // 
+            // lblSinglePlayerMatches
+            // 
+            this.lblSinglePlayerMatches.AutoSize = true;
+            this.lblSinglePlayerMatches.Location = new System.Drawing.Point(292, 349);
+            this.lblSinglePlayerMatches.Name = "lblSinglePlayerMatches";
+            this.lblSinglePlayerMatches.Size = new System.Drawing.Size(0, 13);
+            this.lblSinglePlayerMatches.TabIndex = 16;
+            // 
+            // lblOfTheLabelSinglePlayerMatches
+            // 
+            this.lblOfTheLabelSinglePlayerMatches.AutoSize = true;
+            this.lblOfTheLabelSinglePlayerMatches.Location = new System.Drawing.Point(187, 349);
+            this.lblOfTheLabelSinglePlayerMatches.Name = "lblOfTheLabelSinglePlayerMatches";
+            this.lblOfTheLabelSinglePlayerMatches.Size = new System.Drawing.Size(92, 13);
+            this.lblOfTheLabelSinglePlayerMatches.TabIndex = 15;
+            this.lblOfTheLabelSinglePlayerMatches.Text = "Single player stats";
             // 
             // lblMatchResults
             // 
@@ -126,7 +143,7 @@ namespace ttManager.forms
             this.chkRemoved.Location = new System.Drawing.Point(295, 415);
             this.chkRemoved.Name = "chkRemoved";
             this.chkRemoved.Size = new System.Drawing.Size(15, 14);
-            this.chkRemoved.TabIndex = 11;
+            this.chkRemoved.TabIndex = 4;
             this.chkRemoved.UseVisualStyleBackColor = true;
             // 
             // lblEnabled
@@ -144,7 +161,7 @@ namespace ttManager.forms
             this.chkEnabled.Location = new System.Drawing.Point(295, 393);
             this.chkEnabled.Name = "chkEnabled";
             this.chkEnabled.Size = new System.Drawing.Size(15, 14);
-            this.chkEnabled.TabIndex = 9;
+            this.chkEnabled.TabIndex = 3;
             this.chkEnabled.UseVisualStyleBackColor = true;
             // 
             // pbPhoto
@@ -170,7 +187,7 @@ namespace ttManager.forms
             this.txtPhoto.Location = new System.Drawing.Point(295, 86);
             this.txtPhoto.Name = "txtPhoto";
             this.txtPhoto.Size = new System.Drawing.Size(226, 20);
-            this.txtPhoto.TabIndex = 6;
+            this.txtPhoto.TabIndex = 2;
             this.txtPhoto.TextChanged += new System.EventHandler(this.TxtPhoto_TextChanged);
             // 
             // lblName
@@ -187,7 +204,7 @@ namespace ttManager.forms
             this.txtName.Location = new System.Drawing.Point(295, 60);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(226, 20);
-            this.txtName.TabIndex = 4;
+            this.txtName.TabIndex = 1;
             // 
             // txtId
             // 
@@ -195,7 +212,7 @@ namespace ttManager.forms
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(226, 20);
-            this.txtId.TabIndex = 3;
+            this.txtId.TabIndex = 0;
             // 
             // lblId
             // 
@@ -211,7 +228,7 @@ namespace ttManager.forms
             this.btnDelete.Location = new System.Drawing.Point(632, 415);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Verwijderen";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
@@ -221,7 +238,7 @@ namespace ttManager.forms
             this.btnSave.Location = new System.Drawing.Point(713, 415);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Opslaan";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -255,27 +272,10 @@ namespace ttManager.forms
             this.chkDisplayRemoved.Location = new System.Drawing.Point(0, 410);
             this.chkDisplayRemoved.Name = "chkDisplayRemoved";
             this.chkDisplayRemoved.Size = new System.Drawing.Size(151, 17);
-            this.chkDisplayRemoved.TabIndex = 3;
+            this.chkDisplayRemoved.TabIndex = 1;
             this.chkDisplayRemoved.Text = "Toon verwijderde spelers";
             this.chkDisplayRemoved.UseVisualStyleBackColor = true;
             this.chkDisplayRemoved.CheckedChanged += new System.EventHandler(this.ChkDisplayRemoved_CheckedChanged);
-            // 
-            // lblSinglePlayerMatches
-            // 
-            this.lblSinglePlayerMatches.AutoSize = true;
-            this.lblSinglePlayerMatches.Location = new System.Drawing.Point(292, 349);
-            this.lblSinglePlayerMatches.Name = "lblSinglePlayerMatches";
-            this.lblSinglePlayerMatches.Size = new System.Drawing.Size(0, 13);
-            this.lblSinglePlayerMatches.TabIndex = 16;
-            // 
-            // lblOfTheLabelSinglePlayerMatches
-            // 
-            this.lblOfTheLabelSinglePlayerMatches.AutoSize = true;
-            this.lblOfTheLabelSinglePlayerMatches.Location = new System.Drawing.Point(187, 349);
-            this.lblOfTheLabelSinglePlayerMatches.Name = "lblOfTheLabelSinglePlayerMatches";
-            this.lblOfTheLabelSinglePlayerMatches.Size = new System.Drawing.Size(92, 13);
-            this.lblOfTheLabelSinglePlayerMatches.TabIndex = 15;
-            this.lblOfTheLabelSinglePlayerMatches.Text = "Single player stats";
             // 
             // FrmPlayers
             // 

@@ -32,8 +32,8 @@
     <PublisherName>Mario van der Niet</PublisherName>
     <SuiteName>Suite Brosch</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>39</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -269,6 +269,7 @@
     <Content Include="Applause.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="changelog.txt" />
     <Content Include="ping-pong-icon-6.ico" />
     <Content Include="ping-pong-icon-6.jpg" />
   </ItemGroup>
