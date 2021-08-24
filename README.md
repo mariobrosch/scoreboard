@@ -9,4 +9,16 @@ Database is of course in my situation a MySql db. A schema can be based on the m
 ## Contributing
 Contributing is appreciated. Please create a pull request or ask for functionality or fixes.
 
+## Project description
 
+## Backend
+Contains the php files needed to have a simple workable rest available
+
+## Frontend
+An unfinished project, so empty for now. Idea is to put in a web application
+
+## ttManager
+Contain the forms application of the project.
+
+## ttManager.Data
+Contains all logic which is not needed in the forms application itself. So logic for calculations and logic for saving data in a datasource. It uses settings from the forms application.
