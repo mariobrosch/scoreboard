@@ -83,20 +83,18 @@ namespace ttManager.forms
 
         private void UpdateScore(bool isForLeft, bool negativeScore = false)
         {
-            if (isForLeft)
+            if (currentGame.GameWinnerId.HasValue)
+            {
+                MessageBox.Show("Set is al gespeeld, punten bewerken niet mogelijk");
+            } else if (matchSummary.Winner.HasValue) {
+                MessageBox.Show("Wedstrijd is al gepseeld, punten bewerken niet mogelijk.");
+            } else if (isForLeft)
             {
                 if (negativeScore)
                 {
-                    if (currentGame.GameWinnerId.HasValue)
+                    if (currentGame.TeamLeftScore > 0)
                     {
-                        MessageBox.Show("Set is al gespeeld, punten aftrekken niet mogelijk");
-                    }
-                    else
-                    {
-                        if (currentGame.TeamLeftScore > 0)
-                        {
-                            currentGame.TeamLeftScore--;
-                        }
+                        currentGame.TeamLeftScore--;
                     }
                 }
                 else
@@ -109,16 +107,9 @@ namespace ttManager.forms
             {
                 if (negativeScore)
                 {
-                    if (currentGame.GameWinnerId.HasValue)
+                    if (currentGame.TeamRightScore > 0)
                     {
-                        MessageBox.Show("Set is al gespeeld, punten aftrekken niet mogelijk");
-                    }
-                    else
-                    {
-                        if (currentGame.TeamRightScore > 0)
-                        {
-                            currentGame.TeamRightScore--;
-                        }
+                        currentGame.TeamRightScore--;
                     }
                 }
                 else
@@ -321,24 +312,7 @@ namespace ttManager.forms
 
         private void PlayMatch_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string backupLocation = ConfigurationManager.AppSettings["backupLocation"];
-            string localStoragePath = ConfigurationManager.AppSettings["localStoragePath"];
-            string backupDrive = ConfigurationManager.AppSettings["backupDrive"];
-
-            backupLocation = backupLocation.Replace("[computername]", Environment.MachineName);
-
-            if (Directory.Exists(backupDrive))
-            {
-                if (!Directory.Exists(backupLocation))
-                {
-                    Directory.CreateDirectory(backupLocation);
-                }
-
-                foreach (string file in Directory.GetFiles(localStoragePath, "*.*", SearchOption.AllDirectories))
-                {
-                    File.Copy(file, file.Replace(localStoragePath, backupLocation), true);
-                }
-            }
+            FormsHelper.WriteToBackupLocation();
         }
     }
 }

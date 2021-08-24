@@ -128,19 +128,23 @@ namespace ttManager
                 MessageBox.Show("Geen data gevonden");
                 return;
             }
+
             sfdZipfile.Filter = "Zip|*.zip";
             sfdZipfile.Title = "Save backup zip file";
 
             var targetLocation = sfdZipfile.ShowDialog();
-            if (DialogResult.OK != targetLocation) 
+            if (DialogResult.OK != targetLocation)
             {
                 MessageBox.Show("Opslaan geannuleerd");
+                FormsHelper.WriteToBackupLocation();
             }
-
-            using (ZipFile zip = new ZipFile())
+            else
             {
-                zip.AddDirectory(localStoragePath);
-                zip.Save(sfdZipfile.FileName);
+                using (ZipFile zip = new ZipFile())
+                {
+                    zip.AddDirectory(localStoragePath);
+                    zip.Save(sfdZipfile.FileName);
+                }
             }
         }
 
