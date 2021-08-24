@@ -44,6 +44,7 @@ namespace ttManager
             this.singlePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nieuwSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfdZipfile = new System.Windows.Forms.SaveFileDialog();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +109,8 @@ namespace ttManager
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dataExporterenToolStripMenuItem});
+            this.dataExporterenToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(79, 34);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -165,6 +167,13 @@ namespace ttManager
             this.nieuwSpelToolStripMenuItem.Text = "Nieuw spel";
             this.nieuwSpelToolStripMenuItem.Click += new System.EventHandler(this.NieuwSpelToolStripMenuItem_Click);
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(236, 34);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +213,7 @@ namespace ttManager
         private System.Windows.Forms.ToolStripMenuItem verderSpelenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nieuwSpelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem singlePlayerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 

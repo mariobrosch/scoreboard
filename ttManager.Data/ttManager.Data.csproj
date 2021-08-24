@@ -95,7 +95,7 @@
     <Compile Include="models\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="data\RequestHandler.cs" />
-    <Compile Include="SettingsHelper.cs" />
+    <Compile Include="Helpers\SettingsHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

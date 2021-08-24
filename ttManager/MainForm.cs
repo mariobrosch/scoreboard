@@ -15,6 +15,8 @@ namespace ttManager
     {
         public MainForm()
         {
+            SettingsHelper.CreateDefaultSettings();
+
             InitializeComponent();
         }
 
@@ -173,6 +175,14 @@ namespace ttManager
             var createSingleForm = new CreateSinglePlayerMatch();
             Hide();
             createSingleForm.ShowDialog();
+            Show();
+        }
+
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var settingsForm = new FrmSettings();
+            Hide();
+            settingsForm.ShowDialog();
             Show();
         }
     }

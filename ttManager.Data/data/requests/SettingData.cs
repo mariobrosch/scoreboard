@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ttManager.Data.enums;
+using ttManager.Data.Helpers;
 using ttManager.Data.models;
 using static ttManager.Data.data.Filter;
 
@@ -9,7 +10,7 @@ namespace ttManager.Data.data.requests
 {
     public static class SettingData
     {
-        private const string tableName = "Settingss";
+        private const string tableName = "Settings";
 
         public static List<Setting> Get()
         {
@@ -68,6 +69,15 @@ namespace ttManager.Data.data.requests
             var settings = JsonConvert.DeserializeObject<List<Setting>>(GetData(settingsId)).First();
             settings.SetProperty(property, value);
             return Update(settings);
+        }
+
+        public static void CreateDefault(string key, string value)
+        {
+            var setting  = SettingsHelper.GetSettingByKey(key);
+            if (setting == null)
+            {
+                SettingsHelper.Create(key, value);
+            }
         }
     }
 }

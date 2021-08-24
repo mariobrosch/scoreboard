@@ -32,7 +32,7 @@
     <PublisherName>Mario van der Niet</PublisherName>
     <SuiteName>Suite Brosch</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -71,8 +71,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>resources\scoreboard.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
@@ -166,6 +165,12 @@
     <Compile Include="forms\MatchTypes.Designer.cs">
       <DependentUpon>MatchTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Players.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MatchTypes.resx">
       <DependentUpon>MatchTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Players.resx">
       <DependentUpon>Players.cs</DependentUpon>
