@@ -30,10 +30,11 @@ The application has a list of functionality, in short these are implemented:
   - Delete matchtypes (same logic as for players)
   - See how many matches played with this matchtype
   - Backup data (for local storage)
-  - Create new match
-  - Continue an unfinished match
-  - Play single player: To record a highscore
-  - Play a sound if matchwinner or set a new highscore for the single player version
+- Create new match
+- Continue an unfinished match
+- Play single player: To record a highscore
+- Play a sound if matchwinner or set a new highscore for the single player version
+- For default match (1 vs 1 or 2 vs 2)
   - Keyboard support (press H or F1 during match play to see shortcuts)
   - If matchwinner it's properly displayed on screen
   - If setwinner it's properly displayed on screen and ability to start new set
