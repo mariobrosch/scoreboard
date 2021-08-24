@@ -1,10 +1,53 @@
 # ttManager
 
-A simple fun project so I can manage our tabletennis games at home between two or four players. Display will show who's turn it is and who the winner is based on the chosen matchtype.
+A simple fun project so I can manage our tabletennis games at home between two or four players. Display will show who's turn it is and who the winner is based on the chosen matchtype. Can be used for basically every type of game if there are two teams involved.
 
 Backend is a simple rest php application which can be used generally or local storage with json files (good enough for such a small project). Over time the php and mySql endpoint is more efficient because of parsing times of the files in JSON. 
 
 Database is of course in my situation a MySql db. A schema can be based on the models.
+
+## Functionality
+The application has a list of functionality, in short these are implemented:
+- Manage players
+  - Create players with properties:
+    -  Active (not used anywhere)
+    -  Photo (not used anywhere)
+    -  Name
+  - Update players
+  - Delete players (if player has a match played only softdelete)
+  - See simple statistics (how many matched played and won)
+- Manage match types
+  - Create matchtypes with properties:
+    - Title
+    - Description
+    - Number of sets to win the match
+    - Number of points to win a set
+    - Service change every x points
+    - Two points difference to win a set
+    - Service change during shoot out phase (how do you call it in English?)
+    - Suitable for 2 vs 2
+  - Update matchtypes
+  - Delete matchtypes (same logic as for players)
+  - See how many matches played with this matchtype
+  - Backup data (for local storage)
+  - Create new match
+  - Continue an unfinished match
+  - Play single player: To record a highscore
+  - Play a sound if matchwinner or set a new highscore for the single player version
+  - Keyboard support (press H or F1 during match play to see shortcuts)
+  - If matchwinner it's properly displayed on screen
+  - If setwinner it's properly displayed on screen and ability to start new set
+  - Service turn is displayed in yellow who to serve.
+
+### Future functionality
+On the wishlist there are currently the following functionalities:
+- Move to a higher version of .Net (didn't move earlier because my test machine was Windows 8 where I could not move higher)
+- Add tournament mode so picking players will let the system generate a tournament
+- Use player photo on play match screen
+- Extend statistics
+- Add possibility to create timed match types instead of getting to a specific score
+- Create multilingual forms application (currently only Dutch)
+- tab order in several screens
 
 ## Contributing
 Contributing is appreciated. Please create a pull request or ask for functionality or fixes.
