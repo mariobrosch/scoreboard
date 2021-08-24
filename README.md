@@ -47,7 +47,8 @@ On the wishlist there are currently the following functionalities:
 - Extend statistics
 - Add possibility to create timed match types instead of getting to a specific score
 - Create multilingual forms application (currently only Dutch)
-- tab order in several screens
+- Tab order in several screens
+- Rebrand so name of application is more general
 
 ## Contributing
 Contributing is appreciated. Please create a pull request or ask for functionality or fixes.
