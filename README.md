@@ -11,14 +11,14 @@ Contributing is appreciated. Please create a pull request or ask for functionali
 
 ## Project description
 
-## Backend
+### Backend
 Contains the php files needed to have a simple workable rest available
 
-## Frontend
+### Frontend
 An unfinished project, so empty for now. Idea is to put in a web application
 
-## ttManager
+### ttManager
 Contain the forms application of the project.
 
-## ttManager.Data
+### ttManager.Data
 Contains all logic which is not needed in the forms application itself. So logic for calculations and logic for saving data in a datasource. It uses settings from the forms application.
