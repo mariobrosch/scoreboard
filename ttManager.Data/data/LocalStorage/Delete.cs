@@ -6,153 +6,65 @@ namespace ttManager.Data.data.LocalStorage
 {
     class Delete
     {
+        private const string defaultReturnValue = "";
         internal static string Perform(string fileContent, string table, string key, string filter, out string removeCount)
         {
             removeCount = "0";
-            var filterObject = Filter.Deserialize(filter);
+
+            if (string.IsNullOrEmpty(key) && string.IsNullOrEmpty(filter))
+            {
+                return fileContent;
+            }
+
+            dynamic allEntries;
 
             switch (table)
             {
                 case "Players":
-                    var allPlayers = JsonConvert.DeserializeObject<List<Player>>(fileContent);
-                    var newPlayers = new List<Player>();
-                    foreach (var player in allPlayers)
-                    {
-                        if (!string.IsNullOrEmpty(key))
-                        {
-                            if (player.Id.ToString() != key)
-                            {
-                                newPlayers.Add(player);
-                            }
-                        }
-                        else
-                        {
-                            var value = player.GetType().GetProperty(filterObject.Column).GetValue(player, null);
-                            if (value.ToString() != filterObject.Value)
-                            {
-                                newPlayers.Add(player);
-                            }
-                        }
-                    }
-                    removeCount = (allPlayers.Count - newPlayers.Count).ToString();
-                    return JsonConvert.SerializeObject(newPlayers);
+                    allEntries = JsonConvert.DeserializeObject<List<Player>>(fileContent);
+                    break;
                 case "Matches":
-                    var allMatches = JsonConvert.DeserializeObject<List<Match>>(fileContent);
-                    var newMatches = new List<Match>();
-                    foreach (var match in allMatches)
-                    {
-                        if (!string.IsNullOrEmpty(key))
-                        {
-                            if (match.Id.ToString() != key)
-                            {
-                                newMatches.Add(match);
-                            }
-                        }
-                        else
-                        {
-                            var value = match.GetType().GetProperty(filterObject.Column).GetValue(match, null);
-                            if (value.ToString() != filterObject.Value)
-                            {
-                                newMatches.Add(match);
-                            }
-                        }
-                    }
-                    removeCount = (allMatches.Count - newMatches.Count).ToString();
-                    return JsonConvert.SerializeObject(newMatches);
+                    allEntries = JsonConvert.DeserializeObject<List<Match>>(fileContent);
+                    break;
                 case "MatchTypes":
-                    var allMatchTypes = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
-                    var newMatchTypes = new List<MatchType>();
-                    foreach (var matchType in allMatchTypes)
-                    {
-                        if (!string.IsNullOrEmpty(key))
-                        {
-                            if (matchType.Id.ToString() != key)
-                            {
-                                newMatchTypes.Add(matchType);
-                            }
-                        }
-                        else
-                        {
-                            var value = matchType.GetType().GetProperty(filterObject.Column).GetValue(matchType, null);
-                            if (value.ToString() != filterObject.Value)
-                            {
-                                newMatchTypes.Add(matchType);
-                            }
-                        }
-                    }
-                    removeCount = (allMatchTypes.Count - newMatchTypes.Count).ToString();
-                    return JsonConvert.SerializeObject(newMatchTypes);
+                    allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
+                    break;
                 case "Games":
-                    var allGames = JsonConvert.DeserializeObject<List<Game>>(fileContent);
-                    var newGames = new List<Game>();
-                    foreach (var game in allGames)
-                    {
-                        if (!string.IsNullOrEmpty(key))
-                        {
-                            if (game.Id.ToString() != key)
-                            {
-                                newGames.Add(game);
-                            }
-                        }
-                        else
-                        {
-                            var value = game.GetType().GetProperty(filterObject.Column).GetValue(game, null);
-                            if (value.ToString() != filterObject.Value)
-                            {
-                                newGames.Add(game);
-                            }
-                        }
-                    }
-                    removeCount = (allGames.Count - newGames.Count).ToString();
-                    return JsonConvert.SerializeObject(newGames);
+                    allEntries = JsonConvert.DeserializeObject<List<Game>>(fileContent);
+                    break;
                 case "SinglePlayerGames":
-                    var allSpGames = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
-                    var newSpGames = new List<SinglePlayerGame>();
-                    foreach (var game in allSpGames)
-                    {
-                        if (!string.IsNullOrEmpty(key))
-                        {
-                            if (game.Id.ToString() != key)
-                            {
-                                newSpGames.Add(game);
-                            }
-                        }
-                        else
-                        {
-                            var value = game.GetType().GetProperty(filterObject.Column).GetValue(game, null);
-                            if (value.ToString() != filterObject.Value)
-                            {
-                                newSpGames.Add(game);
-                            }
-                        }
-                    }
-                    removeCount = (allSpGames.Count - newSpGames.Count).ToString();
-                    return JsonConvert.SerializeObject(newSpGames);
+                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                    break;
                 case "Settings":
-                    var allSettings = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
-                    var newSettings = new List<Setting>();
-                    foreach (var setting in allSettings)
-                    {
-                        if (!string.IsNullOrEmpty(key))
-                        {
-                            if (setting.Id.ToString() != key)
-                            {
-                                newSettings.Add(setting);
-                            }
-                        }
-                        else
-                        {
-                            var value = setting.GetType().GetProperty(filterObject.Column).GetValue(setting, null);
-                            if (value.ToString() != filterObject.Value)
-                            {
-                                newSettings.Add(setting);
-                            }
-                        }
-                    }
-                    removeCount = (allSettings.Count - newSettings.Count).ToString();
-                    return JsonConvert.SerializeObject(newSettings);
+                    allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
+                    break;
+                default:
+                    return defaultReturnValue;
             }
-            return "";
+
+            var filterObject = Filter.Deserialize(filter);
+            var returnList = new List<dynamic>();
+
+            foreach (var entry in allEntries)
+            {
+                if (!string.IsNullOrEmpty(key))
+                {
+                    if (entry.Id.ToString() != key)
+                    {
+                        returnList.Add(entry);
+                    }
+                }
+                else
+                {
+                    var value = entry.GetType().GetProperty(filterObject.Column).GetValue(entry, null);
+                    if (value.ToString() != filterObject.Value)
+                    {
+                        returnList.Add(entry);
+                    }
+                }
+            }
+            removeCount = (allEntries.Count - returnList.Count).ToString();
+            return JsonConvert.SerializeObject(returnList);
         }
 
     }

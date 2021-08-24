@@ -136,6 +136,8 @@ namespace ttManager.forms
             pbPhoto.Image = null;
             chkEnabled.Checked = true;
             btnDelete.Visible = false;
+            lblSinglePlayerMatches.Text = "";
+            lblPlayedMatches.Text = "";
         }
 
         private void ChkDisplayRemoved_CheckedChanged(object sender, EventArgs e)

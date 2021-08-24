@@ -7,91 +7,104 @@ namespace ttManager.Data.data.LocalStorage
 {
     class Create
     {
+        private const string defaultReturnValue = "";
+
         internal static string Perform(string fileContent, string table, string data, out string newId)
         {
             newId = "0";
+            dynamic allEntries;
+
+            if (string.IsNullOrEmpty(data))
+            {
+                return defaultReturnValue;
+            }
+
             switch (table)
             {
                 case "Players":
-                    var allPlayers = JsonConvert.DeserializeObject<List<Player>>(fileContent);
-                    var newPlayerId = 1;
-                    if (allPlayers.Count > 0)
-                    {
-                        newPlayerId = allPlayers.OrderBy(p => p.Id).Last().Id + 1;
-                    }
-
-                    var newPlayer = JsonConvert.DeserializeObject<Player>(data);
-                    newPlayer.Id = newPlayerId;
-                    allPlayers.Add(newPlayer);
-                    newId = newPlayerId.ToString();
-                    return JsonConvert.SerializeObject(allPlayers);
+                    allEntries = JsonConvert.DeserializeObject<List<Player>>(fileContent);
+                    break;
                 case "Matches":
-                    var allMatches = JsonConvert.DeserializeObject<List<Match>>(fileContent);
-                    var newMatchId = 1;
-                    if (allMatches.Count > 0)
-                    {
-                        newMatchId = allMatches.OrderBy(m => m.Id).Last().Id + 1;
-                    }
-
-                    var newMatch = JsonConvert.DeserializeObject<Match>(data);
-                    newMatch.Id = newMatchId;
-                    allMatches.Add(newMatch);
-                    newId = newMatchId.ToString();
-                    return JsonConvert.SerializeObject(allMatches);
+                    allEntries = JsonConvert.DeserializeObject<List<Match>>(fileContent);
+                    break;
                 case "MatchTypes":
-                    var allMatchTypes = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
-                    var newMatchTypeId = 1;
-                    if (allMatchTypes.Count > 0)
-                    {
-                        newMatchTypeId = allMatchTypes.OrderBy(m => m.Id).Last().Id + 1;
-                    }
-
-                    var newMatchType = JsonConvert.DeserializeObject<MatchType>(data);
-                    newMatchType.Id = newMatchTypeId;
-                    allMatchTypes.Add(newMatchType);
-                    newId = newMatchTypeId.ToString();
-                    return JsonConvert.SerializeObject(allMatchTypes);
+                    allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
+                    break;
                 case "Games":
-                    var allGames = JsonConvert.DeserializeObject<List<Game>>(fileContent);
-                    var newGameId = 1;
-                    if (allGames.Count > 0)
-                    {
-                        newGameId = allGames.OrderBy(g => g.Id).Last().Id + 1;
-                    }
-
-                    var newGame = JsonConvert.DeserializeObject<Game>(data);
-                    newGame.Id = newGameId;
-                    allGames.Add(newGame);
-                    newId = newGameId.ToString();
-                    return JsonConvert.SerializeObject(allGames);
+                    allEntries = JsonConvert.DeserializeObject<List<Game>>(fileContent);
+                    break;
                 case "SinglePlayerGames":
-                    var allSpGames = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
-                    var newSpGameId = 1;
-                    if (allSpGames.Count > 0)
-                    {
-                        newSpGameId = allSpGames.OrderBy(g => g.Id).Last().Id + 1;
-                    }
-
-                    var newSpGame = JsonConvert.DeserializeObject<SinglePlayerGame>(data);
-                    newSpGame.Id = newSpGameId;
-                    allSpGames.Add(newSpGame);
-                    newId = newSpGameId.ToString();
-                    return JsonConvert.SerializeObject(allSpGames);
+                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                    break;
                 case "Settings":
-                    var allSettings = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
-                    var newSettingId = 1;
-                    if (allSettings.Count > 0)
-                    {
-                        newSettingId = allSettings.OrderBy(s => s.Id).Last().Id + 1;
-                    }
-
-                    var newSetting = JsonConvert.DeserializeObject<Setting>(data);
-                    newSetting.Id = newSettingId;
-                    allSettings.Add(newSetting);
-                    newId = newSettingId.ToString();
-                    return JsonConvert.SerializeObject(allSettings);
+                    allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
+                    break;
+                default:
+                    return defaultReturnValue;
             }
-            return "";
+
+            var newEntryId = 1;
+            if (allEntries.Count > 0)
+            {
+                switch (table)
+                {
+                    case "Players":
+                        newEntryId = (((List<Player>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
+                        break;
+                    case "Matches":
+                        newEntryId = (((List<Match>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
+                        break;
+                    case "MatchTypes":
+                        newEntryId = (((List<MatchType>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
+                        break;
+                    case "Games":
+                        newEntryId = (((List<Game>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
+                        break;
+                    case "SinglePlayerGames":
+                        newEntryId = (((List<SinglePlayerGame>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
+                        break;
+                    case "Settings":
+                        newEntryId = (((List<Setting>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
+                        break;
+                    default:
+                        return defaultReturnValue;
+                }
+            }
+
+            dynamic newEntry;
+            switch (table)
+            {
+                case "Players":
+                    newEntry = JsonConvert.DeserializeObject<Player>(data);
+                    newEntry.Id = newEntryId;
+                    break;
+                case "Matches":
+                    newEntry = JsonConvert.DeserializeObject<Match>(data);
+                    newEntry.Id = newEntryId; 
+                    break;
+                case "MatchTypes":
+                    newEntry = JsonConvert.DeserializeObject<MatchType>(data);
+                    newEntry.Id = newEntryId; 
+                    break;
+                case "Games":
+                    newEntry = JsonConvert.DeserializeObject<Game>(data);
+                    newEntry.Id = newEntryId; 
+                    break;
+                case "SinglePlayerGames":
+                    newEntry = JsonConvert.DeserializeObject<SinglePlayerGame>(data);
+                    newEntry.Id = newEntryId; 
+                    break;
+                case "Settings":
+                    newEntry = JsonConvert.DeserializeObject<Setting>(data);
+                    newEntry.Id = newEntryId; 
+                    break;
+                default:
+                    return defaultReturnValue;
+            }
+
+            allEntries.Add(newEntry);
+            newId = newEntryId.ToString();
+            return JsonConvert.SerializeObject(allEntries);
         }
 
     }

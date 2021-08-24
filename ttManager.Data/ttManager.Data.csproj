@@ -71,6 +71,7 @@
     <Compile Include="data\LocalStorage\Create.cs" />
     <Compile Include="data\LocalStorage\Delete.cs" />
     <Compile Include="data\LocalStorage\Get.cs" />
+    <Compile Include="data\LocalStorage\DataParser.cs" />
     <Compile Include="data\LocalStorage\LocalStorage.cs" />
     <Compile Include="data\LocalStorage\Update.cs" />
     <Compile Include="data\requests\SettingData.cs" />

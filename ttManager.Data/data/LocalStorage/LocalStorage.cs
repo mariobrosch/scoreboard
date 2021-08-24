@@ -25,10 +25,6 @@ namespace ttManager.Data.data.LocalStorage
             switch (method)
             {
                 case HttpMethods.GET:
-                    if (string.IsNullOrEmpty(key) && string.IsNullOrEmpty(filter))
-                    {
-                        return fileContent;
-                    }
                     return Get.Perform(fileContent, table, key, filter);
                 case HttpMethods.POST:
                     string newId;
@@ -48,8 +44,5 @@ namespace ttManager.Data.data.LocalStorage
             }
             return "";
         }
-
-     
-       
-        }
+    }
 }

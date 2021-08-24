@@ -1,3 +1,12 @@
-﻿1.1.0.0 24-08-2021
+﻿1.1.0.1 24-08-2021
+- Changed application icon
+- Changed icon of forms
+- Moved resources
+- Refactored get local storage by simplifying (use of dynamic)
+- Refactored delete local storage by simplifying (use of dynamic)
+- Refactored create local storage by simplifying (use of dynamic)
+- Refactored update local storage by simplifying (use of dynamic)
+- Clear labels when create a new player
 
-First version without significant missing functionality
+1.1.0.0 24-08-2021
+- First version without significant missing functionality

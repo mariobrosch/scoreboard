@@ -29,6 +29,7 @@ namespace ttManager.forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlaySinglePlayer));
             this.btnSave = new System.Windows.Forms.Button();
             this.lblScoreInput = new System.Windows.Forms.Label();
             this.numScore = new System.Windows.Forms.NumericUpDown();
@@ -87,6 +88,7 @@ namespace ttManager.forms
             this.Controls.Add(this.numScore);
             this.Controls.Add(this.lblScoreInput);
             this.Controls.Add(this.btnSave);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "PlaySinglePlayer";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
