@@ -8,7 +8,7 @@
     <ProjectGuid>{4BADF7D0-80F9-4EE8-911C-CE772D0703F1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Scoreboard</RootNamespace>
-    <AssemblyName>ttManager</AssemblyName>
+    <AssemblyName>Scoreboard</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -28,11 +28,11 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\nas\web\ttManager\</UpdateUrl>
-    <ProductName>ttManager</ProductName>
+    <ProductName>Scoreboard</ProductName>
     <PublisherName>Mario van der Niet</PublisherName>
     <SuiteName>Suite Brosch</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -147,39 +147,57 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FormsHelper.cs" />
-    <Compile Include="forms\ContinueMatchSelection.cs" />
+    <Compile Include="forms\ContinueMatchSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\ContinueMatchSelection.Designer.cs">
       <DependentUpon>ContinueMatchSelection.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\CreateMatch.cs" />
+    <Compile Include="forms\CreateMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\CreateMatch.Designer.cs">
       <DependentUpon>CreateMatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\MatchTypes.cs" />
+    <Compile Include="forms\MatchTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\MatchTypes.Designer.cs">
       <DependentUpon>MatchTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Settings.cs" />
+    <Compile Include="forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Players.cs" />
+    <Compile Include="forms\Players.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\Players.Designer.cs">
       <DependentUpon>Players.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\PlayMatch.cs" />
+    <Compile Include="forms\PlayMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\PlayMatch.Designer.cs">
       <DependentUpon>PlayMatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\CreateSinglePlayerMatch.cs" />
+    <Compile Include="forms\CreateSinglePlayerMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\CreateSinglePlayerMatch.Designer.cs">
       <DependentUpon>CreateSinglePlayerMatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\PlaySinglePlayer.cs" />
+    <Compile Include="forms\PlaySinglePlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\PlaySinglePlayer.Designer.cs">
       <DependentUpon>PlaySinglePlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>

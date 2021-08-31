@@ -1,5 +1,6 @@
-1.1.0.3 31-08-2021
+1.1.0.3-7 31-08-2021
  - Add multilangual support (Dutch (default) and English)
+ - Rebrand to Scoreboard
 
 1.1.0.2 31-08-2021
  - Fixed sound issues causing the application to crash
