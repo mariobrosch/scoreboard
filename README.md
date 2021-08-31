@@ -52,6 +52,7 @@ On the wishlist there are currently the following functionalities:
 - Add possibility to create timed match types instead of getting to a specific score
 - Create multilingual forms application (currently only Dutch)
 - Rebrand so name of application is more general
+- Add support for WiiMote
 
 ## Contributing
 Contributing is appreciated. Please create a pull request or ask for functionality or fixes.
