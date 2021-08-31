@@ -1,4 +1,4 @@
-# ttManager
+# Scoreboard
 
 A simple fun project so I can manage our tabletennis games at home between two or four players. Display will show who's turn it is and who the winner is based on the chosen matchtype. Can be used for basically every type of game if there are two teams involved.
 
@@ -42,6 +42,8 @@ The application has a list of functionality, in short these are implemented:
 - Data can be stored via two methods:
   - MySql database via a simple rest endpoints (provided as php script)
   - Local file storage using JSON files 
+- Support multiple languages
+  - Dutch and English
 
 ### Future functionality
 There are a lot of wishes for new functionality, they are all reported in the issue tab in Github. Please report issues or add your feature request.
@@ -57,8 +59,8 @@ Contains the php files needed to have a simple workable rest available
 ### Frontend
 An unfinished project, so empty for now. Idea is to put in a web application
 
-### ttManager
+### Scoreboard
 Contain the forms application of the project.
 
-### ttManager.Data
+### Scoreboard.Data
 Contains all logic which is not needed in the forms application itself. So logic for calculations and logic for saving data in a datasource. It uses settings from the forms application.
