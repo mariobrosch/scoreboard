@@ -13,7 +13,7 @@ namespace ttManager
             {
                 case SoundTypes.Applause:
 
-                    SoundPlayer player = new SoundPlayer("Applause.wav");
+                    SoundPlayer player = new SoundPlayer(Path.Combine("resources","Applause.wav"));
                     player.Play();
                     break;
             }
