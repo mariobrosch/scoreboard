@@ -59,10 +59,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D93A367FA795FA5264EB4A5F4B0FBCEE16C1781A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>39F6906033A8727145D283BCD24B91917A2021B2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ttManager_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Scoreboard_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -311,7 +311,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ttManager_TemporaryKey.pfx" />
+    <None Include="Scoreboard_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
