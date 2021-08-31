@@ -44,15 +44,7 @@ The application has a list of functionality, in short these are implemented:
   - Local file storage using JSON files 
 
 ### Future functionality
-On the wishlist there are currently the following functionalities:
-- Move to a higher version of .Net (didn't move earlier because my test machine was Windows 8 where I could not move higher)
-- Add tournament mode so picking players will let the system generate a tournament
-- Use player photo on play match screen
-- Extend statistics
-- Add possibility to create timed match types instead of getting to a specific score
-- Create multilingual forms application (currently only Dutch)
-- Rebrand so name of application is more general
-- Add support for WiiMote
+There are a lot of wishes for new functionality, they are all reported in the issue tab in Github. Please report issues or add your feature request.
 
 ## Contributing
 Contributing is appreciated. Please create a pull request or ask for functionality or fixes.
