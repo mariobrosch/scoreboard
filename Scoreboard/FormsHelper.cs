@@ -49,6 +49,11 @@ namespace Scoreboard
             }
         }
 
+        /// <summary>
+        /// Get resources by key for the set culture
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>String of the translated text</returns>
         internal static string GetResourceText(string key)
         {
             var resourceManager = new ResourceManager(typeof(FormsHelper).Namespace + ".Properties.Resource", Assembly.GetExecutingAssembly());
