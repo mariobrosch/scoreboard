@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Scoreboard.Data.data.requests;
@@ -10,6 +12,7 @@ namespace Scoreboard.forms
     public partial class FrmPlayers : Form
     {
         private List<Player> players;
+        private Player currentPlayer;
 
         public FrmPlayers()
         {
@@ -43,7 +46,7 @@ namespace Scoreboard.forms
         {
             txtId.Text = player.Id.ToString();
             txtName.Text = player.Name;
-            txtPhoto.Text = player.Photo;
+            txtPhotoUrl.Text = player.PhotoUrl;
             chkEnabled.Checked = player.IsEnabled;
             chkRemoved.Checked = player.IsRemoved;
 
@@ -63,18 +66,15 @@ namespace Scoreboard.forms
             var matchesForPlayer = MatchData.GetForPlayer(player.Id);
             var matchesWon = matchesForPlayer.Where(m => m.WinnerId == player.Id).ToList().Count;
             lblMatchResults.Text = matchesForPlayer.Count > 0 ? matchesForPlayer.Count.ToString() + " " + FormsHelper.GetResourceText("played") + " " + FormsHelper.GetResourceText("and") + matchesWon.ToString() + " " + FormsHelper.GetResourceText("won") : "0";
+            currentPlayer = player;
+            
+            LoadPhoto();
         }
 
-        private void TxtPhoto_TextChanged(object sender, EventArgs e)
+        private void TxtPhotoUrl_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtPhoto.Text))
-            {
-                pbPhoto.Load(txtPhoto.Text);
-            }
-            else
-            {
-                pbPhoto.Image = null;
-            }
+            currentPlayer.PhotoUrl = txtPhotoUrl.Text;
+            LoadPhoto();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace Scoreboard.forms
                 }
                 player.IsEnabled = chkEnabled.Checked;
                 player.Name = txtName.Text;
-                player.Photo = txtPhoto.Text;
+                player.PhotoUrl = txtPhotoUrl.Text;
 
                 PlayerData.Update(player);
             }
@@ -119,7 +119,7 @@ namespace Scoreboard.forms
                 {
                     IsEnabled = chkEnabled.Checked,
                     Name = txtName.Text,
-                    Photo = txtPhoto.Text,
+                    PhotoUrl = txtPhotoUrl.Text,
                     IsRemoved = chkRemoved.Checked
                 };
 
@@ -133,7 +133,7 @@ namespace Scoreboard.forms
             lbPlayers.ClearSelected();
             txtName.Text = "";
             txtId.Text = FormsHelper.GetResourceText("new");
-            txtPhoto.Text = "";
+            txtPhotoUrl.Text = "";
             pbPhoto.Image = null;
             chkEnabled.Checked = true;
             btnDelete.Visible = false;
@@ -144,6 +144,45 @@ namespace Scoreboard.forms
         private void ChkDisplayRemoved_CheckedChanged(object sender, EventArgs e)
         {
             LoadPlayers();
+        }
+
+        private void BtnUploadFile_Click(object sender, EventArgs e)
+        {
+            ofdPhoto.Filter = "Jpg|*.jpg";
+            ofdPhoto.Title = FormsHelper.GetResourceText("OpenPhoto");
+
+            if (ofdPhoto.ShowDialog() == DialogResult.OK)
+            {
+                byte[] imageArray = System.IO.File.ReadAllBytes(ofdPhoto.FileName);
+                currentPlayer.Photo = Convert.ToBase64String(imageArray);
+                PlayerData.Update(currentPlayer);
+                LoadPhoto();
+            }
+        }
+
+        private void BtnRemovePhoto_Click(object sender, EventArgs e)
+        {
+            currentPlayer.Photo = "";
+            PlayerData.Update(currentPlayer);
+            LoadPhoto();
+        }
+
+        private void LoadPhoto()
+        {
+            btnRemovePhoto.Visible = false;
+            if (!string.IsNullOrEmpty(currentPlayer.Photo))
+            {
+                pbPhoto.Image = Image.FromStream(new MemoryStream(Convert.FromBase64String(currentPlayer.Photo)));
+                btnRemovePhoto.Visible = true;
+            }
+            else if (!string.IsNullOrEmpty(currentPlayer.PhotoUrl))
+            {
+                pbPhoto.Load(currentPlayer.PhotoUrl);
+            }
+            else
+            {
+                pbPhoto.Image = null;
+            }
         }
     }
 }

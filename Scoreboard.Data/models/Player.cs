@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Drawing;
 
 namespace Scoreboard.Data.models
 {
@@ -6,6 +7,7 @@ namespace Scoreboard.Data.models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string PhotoUrl { get; set; }
         public string Photo { get; set; }
         public string Enabled { get; set; }
         [JsonIgnore]

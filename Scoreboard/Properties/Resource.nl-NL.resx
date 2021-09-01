@@ -139,19 +139,19 @@
     <value>Gebruik je toetsenbord om score op te hogen.\r\nVoor linkerteam gelden de volgende sneltoetsen:</value>
   </data>
   <data name="help2" xml:space="preserve">
-    <value>L, Linker shift, Links, Numpad 0, 1, 4 en 7</value>
+    <value>L, Linker shift, Links, Numpad 7</value>
   </data>
   <data name="help3" xml:space="preserve">
     <value>Voor het rechterteam:</value>
   </data>
   <data name="help4" xml:space="preserve">
-    <value>R, Rechter shift, Rechts, Numpad 3, 6 en 9</value>
+    <value>R, Rechter shift, Rechts, Numpad 9</value>
   </data>
   <data name="help5" xml:space="preserve">
-    <value>Z voor minpunt linker team</value>
+    <value>Z en numpad 1 voor minpunt linker team</value>
   </data>
   <data name="help6" xml:space="preserve">
-    <value>X voor minpunt rechterteam</value>
+    <value>X en numpad 3 voor minpunt rechterteam</value>
   </data>
   <data name="highscore" xml:space="preserve">
     <value>Topscore</value>
@@ -179,6 +179,9 @@
   </data>
   <data name="NoUnfinishedMatches" xml:space="preserve">
     <value>Geen wedstrijden zonder winnaar gevonden, een nieuwe starten?</value>
+  </data>
+  <data name="OpenPhoto" xml:space="preserve">
+    <value>Selecteer een foto voor de speler</value>
   </data>
   <data name="played" xml:space="preserve">
     <value>gespeeld</value>

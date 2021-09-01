@@ -32,6 +32,9 @@ namespace Scoreboard.forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlayers));
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.pnlPlayer = new System.Windows.Forms.Panel();
+            this.btnRemovePhoto = new System.Windows.Forms.Button();
+            this.btnUploadFile = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblSinglePlayerMatches = new System.Windows.Forms.Label();
             this.lblOfTheLabelSinglePlayerMatches = new System.Windows.Forms.Label();
             this.lblMatchResults = new System.Windows.Forms.Label();
@@ -42,7 +45,7 @@ namespace Scoreboard.forms
             this.chkEnabled = new System.Windows.Forms.CheckBox();
             this.pbPhoto = new System.Windows.Forms.PictureBox();
             this.lblPhoto = new System.Windows.Forms.Label();
-            this.txtPhoto = new System.Windows.Forms.TextBox();
+            this.txtPhotoUrl = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -52,6 +55,7 @@ namespace Scoreboard.forms
             this.btnNew = new System.Windows.Forms.Button();
             this.pnlPlayerlist = new System.Windows.Forms.Panel();
             this.chkDisplayRemoved = new System.Windows.Forms.CheckBox();
+            this.ofdPhoto = new System.Windows.Forms.OpenFileDialog();
             this.pnlPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.pnlPlayerlist.SuspendLayout();
@@ -67,6 +71,9 @@ namespace Scoreboard.forms
             // pnlPlayer
             // 
             resources.ApplyResources(this.pnlPlayer, "pnlPlayer");
+            this.pnlPlayer.Controls.Add(this.btnRemovePhoto);
+            this.pnlPlayer.Controls.Add(this.btnUploadFile);
+            this.pnlPlayer.Controls.Add(this.label1);
             this.pnlPlayer.Controls.Add(this.lblSinglePlayerMatches);
             this.pnlPlayer.Controls.Add(this.lblOfTheLabelSinglePlayerMatches);
             this.pnlPlayer.Controls.Add(this.lblMatchResults);
@@ -77,7 +84,7 @@ namespace Scoreboard.forms
             this.pnlPlayer.Controls.Add(this.chkEnabled);
             this.pnlPlayer.Controls.Add(this.pbPhoto);
             this.pnlPlayer.Controls.Add(this.lblPhoto);
-            this.pnlPlayer.Controls.Add(this.txtPhoto);
+            this.pnlPlayer.Controls.Add(this.txtPhotoUrl);
             this.pnlPlayer.Controls.Add(this.lblName);
             this.pnlPlayer.Controls.Add(this.txtName);
             this.pnlPlayer.Controls.Add(this.txtId);
@@ -85,6 +92,25 @@ namespace Scoreboard.forms
             this.pnlPlayer.Controls.Add(this.btnDelete);
             this.pnlPlayer.Controls.Add(this.btnSave);
             this.pnlPlayer.Name = "pnlPlayer";
+            // 
+            // btnRemovePhoto
+            // 
+            resources.ApplyResources(this.btnRemovePhoto, "btnRemovePhoto");
+            this.btnRemovePhoto.Name = "btnRemovePhoto";
+            this.btnRemovePhoto.UseVisualStyleBackColor = true;
+            this.btnRemovePhoto.Click += new System.EventHandler(this.BtnRemovePhoto_Click);
+            // 
+            // btnUploadFile
+            // 
+            resources.ApplyResources(this.btnUploadFile, "btnUploadFile");
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.UseVisualStyleBackColor = true;
+            this.btnUploadFile.Click += new System.EventHandler(this.BtnUploadFile_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // lblSinglePlayerMatches
             // 
@@ -139,11 +165,11 @@ namespace Scoreboard.forms
             resources.ApplyResources(this.lblPhoto, "lblPhoto");
             this.lblPhoto.Name = "lblPhoto";
             // 
-            // txtPhoto
+            // txtPhotoUrl
             // 
-            resources.ApplyResources(this.txtPhoto, "txtPhoto");
-            this.txtPhoto.Name = "txtPhoto";
-            this.txtPhoto.TextChanged += new System.EventHandler(this.TxtPhoto_TextChanged);
+            resources.ApplyResources(this.txtPhotoUrl, "txtPhotoUrl");
+            this.txtPhotoUrl.Name = "txtPhotoUrl";
+            this.txtPhotoUrl.TextChanged += new System.EventHandler(this.TxtPhotoUrl_TextChanged);
             // 
             // lblName
             // 
@@ -202,6 +228,11 @@ namespace Scoreboard.forms
             this.chkDisplayRemoved.UseVisualStyleBackColor = true;
             this.chkDisplayRemoved.CheckedChanged += new System.EventHandler(this.ChkDisplayRemoved_CheckedChanged);
             // 
+            // ofdPhoto
+            // 
+            this.ofdPhoto.FileName = "openFileDialog1";
+            resources.ApplyResources(this.ofdPhoto, "ofdPhoto");
+            // 
             // FrmPlayers
             // 
             resources.ApplyResources(this, "$this");
@@ -227,7 +258,7 @@ namespace Scoreboard.forms
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.PictureBox pbPhoto;
         private System.Windows.Forms.Label lblPhoto;
-        private System.Windows.Forms.TextBox txtPhoto;
+        private System.Windows.Forms.TextBox txtPhotoUrl;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtId;
@@ -244,5 +275,9 @@ namespace Scoreboard.forms
         private System.Windows.Forms.Label lblPlayedMatches;
         private System.Windows.Forms.Label lblSinglePlayerMatches;
         private System.Windows.Forms.Label lblOfTheLabelSinglePlayerMatches;
+        private System.Windows.Forms.Button btnRemovePhoto;
+        private System.Windows.Forms.Button btnUploadFile;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog ofdPhoto;
     }
 }
