@@ -66,6 +66,7 @@ namespace Scoreboard.forms
             // 
             // PlaySinglePlayer
             // 
+            this.AcceptButton = this.btnSave;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblPreviousRecord);
