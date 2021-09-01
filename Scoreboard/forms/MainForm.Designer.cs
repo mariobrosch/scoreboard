@@ -1,5 +1,5 @@
 ﻿
-namespace Scoreboard
+namespace Scoreboard.forms
 {
     partial class MainForm
     {
@@ -34,7 +34,7 @@ namespace Scoreboard
             this.btnMatchTypes = new System.Windows.Forms.Button();
             this.btnNewMatch = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataExporterenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +45,7 @@ namespace Scoreboard
             this.singlePlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nieuwSpelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfdZipfile = new System.Windows.Forms.SaveFileDialog();
-            this.menuStrip1.SuspendLayout();
+            this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPlayers
@@ -76,78 +76,74 @@ namespace Scoreboard
             this.btnContinue.UseVisualStyleBackColor = true;
             this.btnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
             // 
-            // menuStrip1
+            // mainMenuStrip
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.spelersToolStripMenuItem,
             this.speltypesToolStripMenuItem,
             this.spelenToolStripMenuItem});
-            this.menuStrip1.Name = "menuStrip1";
+            this.mainMenuStrip.Name = "mainMenuStrip";
             // 
             // menuToolStripMenuItem
             // 
-            resources.ApplyResources(this.menuToolStripMenuItem, "menuToolStripMenuItem");
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataExporterenToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            resources.ApplyResources(this.menuToolStripMenuItem, "menuToolStripMenuItem");
             // 
             // dataExporterenToolStripMenuItem
             // 
-            resources.ApplyResources(this.dataExporterenToolStripMenuItem, "dataExporterenToolStripMenuItem");
             this.dataExporterenToolStripMenuItem.Name = "dataExporterenToolStripMenuItem";
+            resources.ApplyResources(this.dataExporterenToolStripMenuItem, "dataExporterenToolStripMenuItem");
             this.dataExporterenToolStripMenuItem.Click += new System.EventHandler(this.DataExporterenToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // spelersToolStripMenuItem
             // 
-            resources.ApplyResources(this.spelersToolStripMenuItem, "spelersToolStripMenuItem");
             this.spelersToolStripMenuItem.Name = "spelersToolStripMenuItem";
+            resources.ApplyResources(this.spelersToolStripMenuItem, "spelersToolStripMenuItem");
             this.spelersToolStripMenuItem.Click += new System.EventHandler(this.SpelersToolStripMenuItem_Click);
             // 
             // speltypesToolStripMenuItem
             // 
-            resources.ApplyResources(this.speltypesToolStripMenuItem, "speltypesToolStripMenuItem");
             this.speltypesToolStripMenuItem.Name = "speltypesToolStripMenuItem";
+            resources.ApplyResources(this.speltypesToolStripMenuItem, "speltypesToolStripMenuItem");
             this.speltypesToolStripMenuItem.Click += new System.EventHandler(this.SpeltypesToolStripMenuItem_Click);
             // 
             // spelenToolStripMenuItem
             // 
-            resources.ApplyResources(this.spelenToolStripMenuItem, "spelenToolStripMenuItem");
             this.spelenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verderSpelenToolStripMenuItem,
             this.singlePlayerToolStripMenuItem,
             this.nieuwSpelToolStripMenuItem});
             this.spelenToolStripMenuItem.Name = "spelenToolStripMenuItem";
+            resources.ApplyResources(this.spelenToolStripMenuItem, "spelenToolStripMenuItem");
             // 
             // verderSpelenToolStripMenuItem
             // 
-            resources.ApplyResources(this.verderSpelenToolStripMenuItem, "verderSpelenToolStripMenuItem");
             this.verderSpelenToolStripMenuItem.Name = "verderSpelenToolStripMenuItem";
+            resources.ApplyResources(this.verderSpelenToolStripMenuItem, "verderSpelenToolStripMenuItem");
             this.verderSpelenToolStripMenuItem.Click += new System.EventHandler(this.VerderSpelenToolStripMenuItem_Click);
             // 
             // singlePlayerToolStripMenuItem
             // 
-            resources.ApplyResources(this.singlePlayerToolStripMenuItem, "singlePlayerToolStripMenuItem");
             this.singlePlayerToolStripMenuItem.Name = "singlePlayerToolStripMenuItem";
+            resources.ApplyResources(this.singlePlayerToolStripMenuItem, "singlePlayerToolStripMenuItem");
             this.singlePlayerToolStripMenuItem.Click += new System.EventHandler(this.SinglePlayerToolStripMenuItem_Click);
             // 
             // nieuwSpelToolStripMenuItem
             // 
-            resources.ApplyResources(this.nieuwSpelToolStripMenuItem, "nieuwSpelToolStripMenuItem");
             this.nieuwSpelToolStripMenuItem.Name = "nieuwSpelToolStripMenuItem";
+            resources.ApplyResources(this.nieuwSpelToolStripMenuItem, "nieuwSpelToolStripMenuItem");
             this.nieuwSpelToolStripMenuItem.Click += new System.EventHandler(this.NieuwSpelToolStripMenuItem_Click);
-            // 
-            // sfdZipfile
-            // 
-            resources.ApplyResources(this.sfdZipfile, "sfdZipfile");
             // 
             // MainForm
             // 
@@ -157,13 +153,13 @@ namespace Scoreboard
             this.Controls.Add(this.btnNewMatch);
             this.Controls.Add(this.btnMatchTypes);
             this.Controls.Add(this.btnPlayers);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mainMenuStrip);
+            this.MainMenuStrip = this.mainMenuStrip;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mainMenuStrip.ResumeLayout(false);
+            this.mainMenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +171,7 @@ namespace Scoreboard
         private System.Windows.Forms.Button btnMatchTypes;
         private System.Windows.Forms.Button btnNewMatch;
         private System.Windows.Forms.Button btnContinue;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataExporterenToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfdZipfile;

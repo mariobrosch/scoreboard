@@ -7,9 +7,8 @@ using System.Windows.Forms;
 using Scoreboard.Data.data;
 using Scoreboard.Data.data.requests;
 using Scoreboard.Data.Helpers;
-using Scoreboard.forms;
 
-namespace Scoreboard
+namespace Scoreboard.forms
 {
     public partial class MainForm : Form
     {

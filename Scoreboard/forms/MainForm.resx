@@ -117,126 +117,121 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="verderSpelenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Verder spelen</value>
-  </data>
-  <data name="singlePlayerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Single Player</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnContinue.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnPlayers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 36pt</value>
+  </data>
+  <data name="btnPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 47</value>
+  </data>
+  <data name="btnPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 229</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnPlayers.Text" xml:space="preserve">
+    <value>Spelers</value>
+  </data>
+  <data name="&gt;&gt;btnPlayers.Name" xml:space="preserve">
+    <value>btnPlayers</value>
+  </data>
+  <data name="&gt;&gt;btnPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPlayers.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnPlayers.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnMatchTypes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 36pt</value>
+  </data>
+  <data name="btnMatchTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 282</value>
+  </data>
+  <data name="btnMatchTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 229</value>
+  </data>
+  <data name="btnMatchTypes.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnMatchTypes.Text" xml:space="preserve">
+    <value>Speltypes</value>
+  </data>
+  <data name="&gt;&gt;btnMatchTypes.Name" xml:space="preserve">
+    <value>btnMatchTypes</value>
+  </data>
+  <data name="&gt;&gt;btnMatchTypes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMatchTypes.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnMatchTypes.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnNewMatch.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 36pt</value>
   </data>
   <data name="btnNewMatch.Location" type="System.Drawing.Point, System.Drawing">
     <value>329, 47</value>
   </data>
-  <data name="&gt;&gt;speltypesToolStripMenuItem.Name" xml:space="preserve">
-    <value>speltypesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;btnContinue.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnMatchTypes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 229</value>
-  </data>
-  <data name="singlePlayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 34</value>
-  </data>
-  <data name="&gt;&gt;btnPlayers.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnMatchTypes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
-  </data>
-  <data name="menuStrip1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 15.75pt</value>
-  </data>
-  <data name="btnPlayers.Text" xml:space="preserve">
-    <value>Spelers</value>
-  </data>
-  <data name="speltypesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 34</value>
-  </data>
-  <data name="&gt;&gt;btnContinue.Name" xml:space="preserve">
-    <value>btnContinue</value>
-  </data>
-  <data name="nieuwSpelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 34</value>
-  </data>
-  <data name="speltypesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Speltypes</value>
-  </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>settingsToolStripMenuItem</value>
-  </data>
-  <data name="btnContinue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 229</value>
-  </data>
-  <data name="spelenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Spelen</value>
-  </data>
-  <data name="&gt;&gt;btnMatchTypes.Name" xml:space="preserve">
-    <value>btnMatchTypes</value>
-  </data>
-  <data name="&gt;&gt;btnContinue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="&gt;&gt;sfdZipfile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="btnNewMatch.Size" type="System.Drawing.Size, System.Drawing">
     <value>311, 229</value>
   </data>
-  <data name="&gt;&gt;sfdZipfile.Name" xml:space="preserve">
-    <value>sfdZipfile</value>
+  <data name="btnNewMatch.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="btnNewMatch.Text" xml:space="preserve">
+    <value>Nieuw spel</value>
   </data>
-  <data name="&gt;&gt;btnMatchTypes.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btnNewMatch.Name" xml:space="preserve">
+    <value>btnNewMatch</value>
   </data>
   <data name="&gt;&gt;btnNewMatch.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;spelenToolStripMenuItem.Name" xml:space="preserve">
-    <value>spelenToolStripMenuItem</value>
+  <data name="&gt;&gt;btnNewMatch.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;spelersToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnNewMatch.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="btnContinue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 36pt</value>
   </data>
-  <data name="spelersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 34</value>
+  <data name="btnContinue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 282</value>
   </data>
-  <data name="verderSpelenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 34</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;dataExporterenToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnPlayers.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnContinue.Size" type="System.Drawing.Size, System.Drawing">
     <value>311, 229</value>
   </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnContinue.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;verderSpelenToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnContinue.Text" xml:space="preserve">
+    <value>Verder spelen</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnContinue.Name" xml:space="preserve">
+    <value>btnContinue</value>
+  </data>
+  <data name="&gt;&gt;btnContinue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnContinue.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnContinue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="mainMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="mainMenuStrip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
   </data>
   <data name="menuToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 34</value>
@@ -244,57 +239,89 @@
   <data name="menuToolStripMenuItem.Text" xml:space="preserve">
     <value>Menu</value>
   </data>
-  <data name="&gt;&gt;menuToolStripMenuItem.Name" xml:space="preserve">
-    <value>menuToolStripMenuItem</value>
+  <data name="spelersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 34</value>
   </data>
-  <data name="&gt;&gt;singlePlayerToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="spelersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spelers</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="speltypesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 34</value>
   </data>
-  <data name="&gt;&gt;btnNewMatch.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="nieuwSpelToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nieuw spel</value>
+  <data name="speltypesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Speltypes</value>
   </data>
   <data name="spelenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 34</value>
   </data>
-  <data name="btnPlayers.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 36pt</value>
+  <data name="spelenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Spelen</value>
   </data>
-  <data name="&gt;&gt;nieuwSpelToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="mainMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;singlePlayerToolStripMenuItem.Name" xml:space="preserve">
-    <value>singlePlayerToolStripMenuItem</value>
+  <data name="mainMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>655, 38</value>
   </data>
-  <data name="&gt;&gt;nieuwSpelToolStripMenuItem.Name" xml:space="preserve">
-    <value>nieuwSpelToolStripMenuItem</value>
+  <data name="mainMenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnPlayers.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="mainMenuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Name" xml:space="preserve">
+    <value>mainMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mainMenuStrip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="dataExporterenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 34</value>
   </data>
   <data name="dataExporterenToolStripMenuItem.Text" xml:space="preserve">
     <value>Data exporteren</value>
   </data>
-  <data name="btnMatchTypes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 36pt</value>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 34</value>
   </data>
-  <data name="&gt;&gt;btnPlayers.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
-  <data name="&gt;&gt;dataExporterenToolStripMenuItem.Name" xml:space="preserve">
-    <value>dataExporterenToolStripMenuItem</value>
+  <data name="verderSpelenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 34</value>
   </data>
-  <data name="btnPlayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 47</value>
+  <data name="verderSpelenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verder spelen</value>
   </data>
-  <data name="btnMatchTypes.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="singlePlayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 34</value>
+  </data>
+  <data name="singlePlayerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Single Player</value>
+  </data>
+  <data name="nieuwSpelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 34</value>
+  </data>
+  <data name="nieuwSpelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nieuw spel</value>
+  </data>
+  <metadata name="sfdZipfile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>655, 518</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1428,103 +1455,73 @@
         //////////////////////////////////8=
 </value>
   </data>
-  <data name="&gt;&gt;btnContinue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tabletennis Manager</value>
+  </data>
+  <data name="&gt;&gt;menuToolStripMenuItem.Name" xml:space="preserve">
+    <value>menuToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;menuToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataExporterenToolStripMenuItem.Name" xml:space="preserve">
+    <value>dataExporterenToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;dataExporterenToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>settingsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spelersToolStripMenuItem.Name" xml:space="preserve">
+    <value>spelersToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;spelersToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;speltypesToolStripMenuItem.Name" xml:space="preserve">
+    <value>speltypesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;speltypesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spelenToolStripMenuItem.Name" xml:space="preserve">
+    <value>spelenToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;spelenToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;verderSpelenToolStripMenuItem.Name" xml:space="preserve">
     <value>verderSpelenToolStripMenuItem</value>
   </data>
-  <data name="dataExporterenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 34</value>
-  </data>
-  <data name="btnMatchTypes.Text" xml:space="preserve">
-    <value>Speltypes</value>
-  </data>
-  <data name="&gt;&gt;speltypesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;verderSpelenToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnMatchTypes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 282</value>
+  <data name="&gt;&gt;singlePlayerToolStripMenuItem.Name" xml:space="preserve">
+    <value>singlePlayerToolStripMenuItem</value>
   </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="&gt;&gt;singlePlayerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnNewMatch.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;nieuwSpelToolStripMenuItem.Name" xml:space="preserve">
+    <value>nieuwSpelToolStripMenuItem</value>
   </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>655, 38</value>
+  <data name="&gt;&gt;nieuwSpelToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnContinue.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;sfdZipfile.Name" xml:space="preserve">
+    <value>sfdZipfile</value>
   </data>
-  <data name="btnNewMatch.Text" xml:space="preserve">
-    <value>Nieuw spel</value>
+  <data name="&gt;&gt;sfdZipfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;spelersToolStripMenuItem.Name" xml:space="preserve">
-    <value>spelersToolStripMenuItem</value>
-  </data>
-  <data name="btnNewMatch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 36pt</value>
-  </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnContinue.Text" xml:space="preserve">
-    <value>Verder spelen</value>
-  </data>
-  <data name="btnContinue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>329, 282</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Tabletennis Manager</value>
-  </data>
-  <data name="&gt;&gt;btnNewMatch.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="spelersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Spelers</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 34</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>655, 518</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnPlayers.Name" xml:space="preserve">
-    <value>btnPlayers</value>
-  </data>
-  <data name="&gt;&gt;btnMatchTypes.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnPlayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spelenToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnNewMatch.Name" xml:space="preserve">
-    <value>btnNewMatch</value>
-  </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>nl-NL</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="sfdZipfile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
 </root>
