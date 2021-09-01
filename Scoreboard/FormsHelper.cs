@@ -10,10 +10,14 @@ namespace Scoreboard
 {
     static class FormsHelper
     {
-        internal static void PlaySound(SoundTypes st)
+        /// <summary>
+        /// Play a sound through speakers
+        /// </summary>
+        /// <param name="soundType"></param>
+        internal static void PlaySound(SoundTypes soundType)
         {
             var audioFile = "";
-            switch (st)
+            switch (soundType)
             {
                 case SoundTypes.Applause:
                     audioFile = Path.Combine("resources", "Applause.wav");
@@ -27,6 +31,9 @@ namespace Scoreboard
             }
         }
 
+        /// <summary>
+        /// Write the json files to the backup location, does not create the backuplocation. If no backuplocation has been set the backup is not executed
+        /// </summary>
         internal static void WriteToBackupLocation()
         {
             string backupLocation = ConfigurationManager.AppSettings["backupLocation"];
@@ -50,7 +57,7 @@ namespace Scoreboard
         }
 
         /// <summary>
-        /// Get resources by key for the set culture
+        /// Get resourcetext by key for the set culture
         /// </summary>
         /// <param name="key"></param>
         /// <returns>String of the translated text</returns>
