@@ -37,6 +37,7 @@ namespace Scoreboard.forms
             {
                 LoadMatchType(((MatchType)lbMatchTypes.SelectedItem));
             }
+            SetFieldsEnabled();
         }
 
         private void LoadMatchType(MatchType matchType)
@@ -51,7 +52,8 @@ namespace Scoreboard.forms
             chkTwoPointsDifferenceToWin.Checked = matchType.NeedTwoPointsDifferenceToWin;
             numServiceChangeOnShootOutPer.Value = matchType.ServiceChangeOnShootOutPer;
             chkAvailableForTwoVsTwo.Checked = matchType.IsAvailableForTwoVsTwo;
-
+            chkTimedMatch.Checked = matchType.IsTimedMatch;
+            numTimeOfMatch.Value = matchType.MatchTime ?? 1;
             btnDelete.Visible = true;
 
             var matchesWithMatchType = MatchData.GetForMatchType(matchType.Id);
@@ -93,6 +95,8 @@ namespace Scoreboard.forms
                 matchType.NeedTwoPointsDifferenceToWin = chkTwoPointsDifferenceToWin.Checked;
                 matchType.ServiceChangeOnShootOutPer = Convert.ToInt32(numServiceChangeOnShootOutPer.Value);
                 matchType.IsAvailableForTwoVsTwo = chkAvailableForTwoVsTwo.Checked;
+                matchType.IsTimedMatch = chkTimedMatch.Checked;
+                matchType.MatchTime = Convert.ToInt32(numTimeOfMatch.Value);
 
                 MatchTypeData.Update(matchType);
             }
@@ -108,8 +112,10 @@ namespace Scoreboard.forms
                     ServiceChangeEveryNumberOfServices = Convert.ToInt32(numServiceChangeEveryNumberOfServices.Value),
                     NeedTwoPointsDifferenceToWin = chkTwoPointsDifferenceToWin.Checked,
                     ServiceChangeOnShootOutPer = Convert.ToInt32(numServiceChangeOnShootOutPer.Value),
-                    IsAvailableForTwoVsTwo = chkAvailableForTwoVsTwo.Checked
-                };
+                    IsAvailableForTwoVsTwo = chkAvailableForTwoVsTwo.Checked,
+                IsTimedMatch = chkTimedMatch.Checked,
+                MatchTime = Convert.ToInt32(numTimeOfMatch.Value)
+            };
 
                 MatchTypeData.Create(newMatchType);
             }
@@ -130,6 +136,8 @@ namespace Scoreboard.forms
             numServiceChangeOnShootOutPer.Value = 1;
             chkAvailableForTwoVsTwo.Checked = true;
             btnDelete.Visible = false;
+            numTimeOfMatch.Value = 1;
+            SetFieldsEnabled();
         }
 
         private void ChkDisplayRemoved_CheckedChanged(object sender, EventArgs e)
@@ -138,6 +146,11 @@ namespace Scoreboard.forms
         }
 
         private void ChkTimedMatch_CheckedChanged(object sender, EventArgs e)
+        {
+            SetFieldsEnabled();
+        }
+
+        private void SetFieldsEnabled()
         {
             numNumberOfSetsToWin.Enabled = !chkTimedMatch.Checked;
             numScorePerSetToWin.Enabled = !chkTimedMatch.Checked;

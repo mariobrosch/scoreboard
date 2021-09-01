@@ -14,6 +14,8 @@ namespace Scoreboard.Data.models
         public int TwoPointsDifferenceToWin { get; set; }
         public int ServiceChangeOnShootOutPer { get; set; }
         public int AvailableForTwoVsTwo { get; set; }
+        public int? TimedMatch { get; set; }
+        public int? MatchTime { get; set; }
         [JsonIgnore]
         public bool IsRemoved
         {
@@ -47,6 +49,17 @@ namespace Scoreboard.Data.models
             set
             {
                 AvailableForTwoVsTwo = value ? 1 : 0;
+            }
+        } 
+        [JsonIgnore]
+        public bool IsTimedMatch {
+            get
+            {
+                return TimedMatch == 1;
+            }
+            set
+            {
+                TimedMatch = value ? 1 : 0;
             }
         }
     }
