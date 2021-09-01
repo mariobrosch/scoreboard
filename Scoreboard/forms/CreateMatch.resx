@@ -149,7 +149,7 @@
   <data name="&gt;&gt;cboPlayerRight2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="lblTwoVsTwoPlayerGame.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblTwoVsTwoPlayerMatch.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="lblPlayerLeft.Text" xml:space="preserve">
@@ -164,7 +164,7 @@
   <data name="lblHelp.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="btnStartNewGame.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnStartNewMatch.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
   <data name="lblPlayerRight2.TabIndex" type="System.Int32, mscorlib">
@@ -182,7 +182,7 @@
   <data name="lblPlayerRight2.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;btnStartNewGame.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnStartNewMatch.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblHelp.AutoSize" type="System.Boolean, mscorlib">
@@ -206,7 +206,7 @@
   <data name="cboPlayerLeft2.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="lblTwoVsTwoPlayerGame.Text" xml:space="preserve">
+  <data name="lblTwoVsTwoPlayerMatch.Text" xml:space="preserve">
     <value>2 vs 2</value>
   </data>
   <data name="cboPlayerRight2.Visible" type="System.Boolean, mscorlib">
@@ -1353,7 +1353,7 @@
   <data name="cboPlayerLeft.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
-  <data name="&gt;&gt;lblTwoVsTwoPlayerGame.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblTwoVsTwoPlayerMatch.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPlayerLeft.ZOrder" xml:space="preserve">
@@ -1362,10 +1362,10 @@
   <data name="&gt;&gt;txtMatchTypeDescription.Name" xml:space="preserve">
     <value>txtMatchTypeDescription</value>
   </data>
-  <data name="&gt;&gt;chkTwoVsTwoGame.Name" xml:space="preserve">
-    <value>chkTwoVsTwoGame</value>
+  <data name="&gt;&gt;chkTwoVsTwoMatch.Name" xml:space="preserve">
+    <value>chkTwoVsTwoMatch</value>
   </data>
-  <data name="&gt;&gt;lblTwoVsTwoPlayerGame.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblTwoVsTwoPlayerMatch.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="&gt;&gt;lblMatchType.Parent" xml:space="preserve">
@@ -1377,14 +1377,14 @@
   <data name="&gt;&gt;lblHelp.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="chkTwoVsTwoGame.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="chkTwoVsTwoMatch.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 57</value>
   </data>
   <data name="&gt;&gt;cboPlayerLeft.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblTwoVsTwoPlayerGame.Name" xml:space="preserve">
-    <value>lblTwoVsTwoPlayerGame</value>
+  <data name="&gt;&gt;lblTwoVsTwoPlayerMatch.Name" xml:space="preserve">
+    <value>lblTwoVsTwoPlayerMatch</value>
   </data>
   <data name="&gt;&gt;cboPlayerLeft.Name" xml:space="preserve">
     <value>cboPlayerLeft</value>
@@ -1398,16 +1398,16 @@
   <data name="cboPlayerRight2.Location" type="System.Drawing.Point, System.Drawing">
     <value>434, 77</value>
   </data>
-  <data name="&gt;&gt;lblTwoVsTwoPlayerGame.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblTwoVsTwoPlayerMatch.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMatchType.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkTwoVsTwoGame.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;chkTwoVsTwoMatch.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="btnStartNewGame.Text" xml:space="preserve">
+  <data name="btnStartNewMatch.Text" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="&gt;&gt;cboMatchType.Type" xml:space="preserve">
@@ -1431,7 +1431,7 @@
   <data name="&gt;&gt;cboMatchType.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblTwoVsTwoPlayerGame.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblTwoVsTwoPlayerMatch.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 13</value>
   </data>
   <data name="&gt;&gt;cboPlayerLeft2.Parent" xml:space="preserve">
@@ -1443,7 +1443,7 @@
   <data name="cboPlayerLeft.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 12</value>
   </data>
-  <data name="&gt;&gt;chkTwoVsTwoGame.Type" xml:space="preserve">
+  <data name="&gt;&gt;chkTwoVsTwoMatch.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cboMatchType.ZOrder" xml:space="preserve">
@@ -1458,7 +1458,7 @@
   <data name="&gt;&gt;cboPlayerLeft.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="lblTwoVsTwoPlayerGame.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblTwoVsTwoPlayerMatch.Location" type="System.Drawing.Point, System.Drawing">
     <value>27, 58</value>
   </data>
   <data name="cboPlayerLeft2.Location" type="System.Drawing.Point, System.Drawing">
@@ -1500,7 +1500,7 @@
   <data name="lblPlayerRight2.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
   </data>
-  <data name="&gt;&gt;chkTwoVsTwoGame.Parent" xml:space="preserve">
+  <data name="&gt;&gt;chkTwoVsTwoMatch.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="cboPlayerRight2.Font" type="System.Drawing.Font, System.Drawing">
@@ -1512,13 +1512,13 @@
   <data name="&gt;&gt;txtMatchTypeDescription.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="chkTwoVsTwoGame.TabIndex" type="System.Int32, mscorlib">
+  <data name="chkTwoVsTwoMatch.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="txtMatchTypeDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>343, 149</value>
   </data>
-  <data name="&gt;&gt;btnStartNewGame.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnStartNewMatch.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="lblMatchType.TabIndex" type="System.Int32, mscorlib">
@@ -1533,7 +1533,7 @@
   <data name="lblMatchType.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 119</value>
   </data>
-  <data name="btnStartNewGame.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnStartNewMatch.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="lblPlayerRight2.Text" xml:space="preserve">
@@ -1572,8 +1572,8 @@
   <data name="cboMatchType.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 33</value>
   </data>
-  <data name="&gt;&gt;btnStartNewGame.Name" xml:space="preserve">
-    <value>btnStartNewGame</value>
+  <data name="&gt;&gt;btnStartNewMatch.Name" xml:space="preserve">
+    <value>btnStartNewMatch</value>
   </data>
   <data name="cboPlayerRight.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 33</value>
@@ -1596,7 +1596,7 @@
   <data name="lblPlayerRight.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnStartNewGame.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnStartNewMatch.Location" type="System.Drawing.Point, System.Drawing">
     <value>499, 271</value>
   </data>
   <data name="cboMatchType.Location" type="System.Drawing.Point, System.Drawing">
@@ -1608,16 +1608,16 @@
   <data name="&gt;&gt;lblPlayerLeft2.Name" xml:space="preserve">
     <value>lblPlayerLeft2</value>
   </data>
-  <data name="lblTwoVsTwoPlayerGame.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblTwoVsTwoPlayerMatch.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblPlayerLeft.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chkTwoVsTwoGame.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkTwoVsTwoMatch.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="btnStartNewGame.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnStartNewMatch.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 39</value>
   </data>
   <data name="lblHelp.Font" type="System.Drawing.Font, System.Drawing">
@@ -1641,10 +1641,10 @@
   <data name="lblMatchType.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
   </data>
-  <data name="&gt;&gt;btnStartNewGame.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnStartNewMatch.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="chkTwoVsTwoGame.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="chkTwoVsTwoMatch.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
   </data>
   <data name="lblPlayerRight.Size" type="System.Drawing.Size, System.Drawing">
@@ -1668,7 +1668,7 @@
   <data name="&gt;&gt;lblPlayerRight2.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="chkTwoVsTwoGame.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="chkTwoVsTwoMatch.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

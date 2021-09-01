@@ -28,11 +28,11 @@ namespace Scoreboard.Data.data.LocalStorage
                 case "MatchTypes":
                     allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
                     break;
-                case "Games":
-                    allEntries = JsonConvert.DeserializeObject<List<Game>>(fileContent);
+                case "Sets":
+                    allEntries = JsonConvert.DeserializeObject<List<Set>>(fileContent);
                     break;
-                case "SinglePlayerGames":
-                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                case "SinglePlayerMatches":
+                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerMatch>>(fileContent);
                     break;
                 case "Settings":
                     allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
@@ -56,10 +56,10 @@ namespace Scoreboard.Data.data.LocalStorage
                         return DataParser.SaveListToJsonString(((List<Match>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
                     case "MatchTypes":
                         return DataParser.SaveListToJsonString(((List<MatchType>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
-                    case "Games":
-                        return DataParser.SaveListToJsonString(((List<Game>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
-                    case "SinglePlayerGames":
-                        return DataParser.SaveListToJsonString(((List<SinglePlayerGame>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
+                    case "Sets":
+                        return DataParser.SaveListToJsonString(((List<Set>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
+                    case "SinglePlayerMatches":
+                        return DataParser.SaveListToJsonString(((List<SinglePlayerMatch>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
                     case "Settings":
                         return DataParser.SaveListToJsonString(((List<Setting>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
                     default:

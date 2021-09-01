@@ -18,14 +18,14 @@ namespace Scoreboard.forms
         {
             var selectedPlayer = (Player)(cboPlayer.SelectedItem);
 
-            var newGame = new SinglePlayerGame()
+            var newMatch = new SinglePlayerMatch()
             {
                 MatchDateParsed = DateTime.Now,
                 PlayerId = selectedPlayer.Id
             };
 
-            var newSavedGame = SinglePlayerGameData.Create(newGame);
-            var frmSinglePlayerMatch = new PlaySinglePlayer(newSavedGame);
+            var newSavedMatch = SinglePlayerMatchData.Create(newMatch);
+            var frmSinglePlayerMatch = new PlaySinglePlayer(newSavedMatch);
             Hide();
             frmSinglePlayerMatch.ShowDialog();
             Show();

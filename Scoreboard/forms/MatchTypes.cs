@@ -45,8 +45,8 @@ namespace Scoreboard.forms
             txtType.Text = matchType.Type;
             txtDescription.Text = matchType.Description;
             chkRemoved.Checked = matchType.IsRemoved;
-            numNumberOfGamesToWin.Value = matchType.NumberOfGamesToWin;
-            numScorePerGameToWin.Value = matchType.ScorePerGameToWin;
+            numNumberOfSetsToWin.Value = matchType.NumberOfSetsToWin;
+            numScorePerSetToWin.Value = matchType.ScorePerMatchToWin;
             numServiceChangeEveryNumberOfServices.Value = matchType.ServiceChangeEveryNumberOfServices;
             chkTwoPointsDifferenceToWin.Checked = matchType.NeedTwoPointsDifferenceToWin;
             numServiceChangeOnShootOutPer.Value = matchType.ServiceChangeOnShootOutPer;
@@ -55,7 +55,7 @@ namespace Scoreboard.forms
             btnDelete.Visible = true;
 
             var matchesWithMatchType = MatchData.GetForMatchType(matchType.Id);
-            lblMatchResults.Text = matchesWithMatchType.Count > 0 ? matchesWithMatchType.Count.ToString() + " "+ FormsHelper.GetResourceText("played") : "0";
+            lblMatchResults.Text = matchesWithMatchType.Count > 0 ? matchesWithMatchType.Count.ToString() + " " + FormsHelper.GetResourceText("played") : "0";
         }
 
 
@@ -87,8 +87,8 @@ namespace Scoreboard.forms
                 var matchType = (MatchType)lbMatchTypes.SelectedItem;
                 matchType.Type = txtType.Text;
                 matchType.Description = txtDescription.Text;
-                matchType.NumberOfGamesToWin = Convert.ToInt32(numNumberOfGamesToWin.Value);
-                matchType.ScorePerGameToWin = Convert.ToInt32(numScorePerGameToWin.Value);
+                matchType.NumberOfSetsToWin = Convert.ToInt32(numNumberOfSetsToWin.Value);
+                matchType.ScorePerMatchToWin = Convert.ToInt32(numScorePerSetToWin.Value);
                 matchType.ServiceChangeEveryNumberOfServices = Convert.ToInt32(numServiceChangeEveryNumberOfServices.Value);
                 matchType.NeedTwoPointsDifferenceToWin = chkTwoPointsDifferenceToWin.Checked;
                 matchType.ServiceChangeOnShootOutPer = Convert.ToInt32(numServiceChangeOnShootOutPer.Value);
@@ -103,8 +103,8 @@ namespace Scoreboard.forms
                     Type = txtType.Text,
                     Description = txtDescription.Text,
                     IsRemoved = chkRemoved.Checked,
-                    NumberOfGamesToWin = Convert.ToInt32(numNumberOfGamesToWin.Value),
-                    ScorePerGameToWin = Convert.ToInt32(numScorePerGameToWin.Value),
+                    NumberOfSetsToWin = Convert.ToInt32(numNumberOfSetsToWin.Value),
+                    ScorePerMatchToWin = Convert.ToInt32(numScorePerSetToWin.Value),
                     ServiceChangeEveryNumberOfServices = Convert.ToInt32(numServiceChangeEveryNumberOfServices.Value),
                     NeedTwoPointsDifferenceToWin = chkTwoPointsDifferenceToWin.Checked,
                     ServiceChangeOnShootOutPer = Convert.ToInt32(numServiceChangeOnShootOutPer.Value),
@@ -123,8 +123,8 @@ namespace Scoreboard.forms
             txtId.Text = FormsHelper.GetResourceText("new");
             txtDescription.Text = "";
             chkRemoved.Checked = false;
-            numNumberOfGamesToWin.Value = 1;
-            numScorePerGameToWin.Value = 1;
+            numNumberOfSetsToWin.Value = 1;
+            numScorePerSetToWin.Value = 1;
             numServiceChangeEveryNumberOfServices.Value = 1;
             chkTwoPointsDifferenceToWin.Checked = true;
             numServiceChangeOnShootOutPer.Value = 1;
@@ -135,6 +135,15 @@ namespace Scoreboard.forms
         private void ChkDisplayRemoved_CheckedChanged(object sender, EventArgs e)
         {
             LoadMatchTypes();
+        }
+
+        private void ChkTimedMatch_CheckedChanged(object sender, EventArgs e)
+        {
+            numNumberOfSetsToWin.Enabled = !chkTimedMatch.Checked;
+            numScorePerSetToWin.Enabled = !chkTimedMatch.Checked;
+            chkTwoPointsDifferenceToWin.Enabled = !chkTimedMatch.Checked;
+            numServiceChangeOnShootOutPer.Enabled = !chkTimedMatch.Checked;
+            numTimeOfMatch.Enabled = chkTimedMatch.Checked;
         }
     }
 }

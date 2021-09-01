@@ -57,7 +57,7 @@ namespace Scoreboard.forms
             txtTeamLeft.Text = matchSummary.TeamLeft;
             txtTeamRight.Text = matchSummary.TeamRight;
             txtMatchDate.Text = matchSummary.MatchDate;
-            txtGames.Text = matchSummary.GamesSummary;
+            txtSets.Text = matchSummary.SetsSummary;
             txtStandings.Text = matchSummary.Standings;
         }
 

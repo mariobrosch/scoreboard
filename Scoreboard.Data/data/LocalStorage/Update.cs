@@ -30,11 +30,11 @@ namespace Scoreboard.Data.data.LocalStorage
                 case "MatchTypes":
                     allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
                     break;
-                case "Games":
-                    allEntries = JsonConvert.DeserializeObject<List<Game>>(fileContent);
+                case "Sets":
+                    allEntries = JsonConvert.DeserializeObject<List<Set>>(fileContent);
                     break;
-                case "SinglePlayerGames":
-                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                case "SinglePlayerMatches":
+                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerMatch>>(fileContent);
                     break;
                 case "Settings":
                     allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
@@ -61,11 +61,11 @@ namespace Scoreboard.Data.data.LocalStorage
                 case "MatchTypes":
                     entryToUpdate = ((List<MatchType>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
-                case "Games":
-                    entryToUpdate = ((List<Game>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
+                case "Sets":
+                    entryToUpdate = ((List<Set>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
-                case "SinglePlayerGames":
-                    entryToUpdate = ((List<SinglePlayerGame>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
+                case "SinglePlayerMatches":
+                    entryToUpdate = ((List<SinglePlayerMatch>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
                 case "Settings":
                     entryToUpdate = ((List<Setting>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
@@ -96,11 +96,11 @@ namespace Scoreboard.Data.data.LocalStorage
                     case "MatchTypes":
                         updatedEntry = JsonConvert.DeserializeObject<MatchType>(data);
                         break;
-                    case "Games":
-                        updatedEntry = JsonConvert.DeserializeObject<Game>(data);
+                    case "Sets":
+                        updatedEntry = JsonConvert.DeserializeObject<Set>(data);
                         break;
-                    case "SinglePlayerGames":
-                        updatedEntry = JsonConvert.DeserializeObject<SinglePlayerGame>(data);
+                    case "SinglePlayerMatches":
+                        updatedEntry = JsonConvert.DeserializeObject<SinglePlayerMatch>(data);
                         break;
                     case "Settings":
                         updatedEntry = JsonConvert.DeserializeObject<Setting>(data);

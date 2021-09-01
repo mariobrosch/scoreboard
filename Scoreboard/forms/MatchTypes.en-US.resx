@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblTimeOfMatch.Text" xml:space="preserve">
+    <value>Time of match</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblTimedMatch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 195</value>
+  </data>
+  <data name="lblTimedMatch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblTimedMatch.Text" xml:space="preserve">
+    <value>Timed match</value>
+  </data>
   <data name="lblAvailableForTwoVsTwo.Location" type="System.Drawing.Point, System.Drawing">
     <value>221, 372</value>
   </data>
@@ -148,22 +160,22 @@
   <data name="lblServiceChangeEveryNumberOfServices.Text" xml:space="preserve">
     <value>Service change after</value>
   </data>
-  <data name="lblScorePerGameToWin.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblScorePerSetToWin.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 269</value>
   </data>
-  <data name="lblScorePerGameToWin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblScorePerSetToWin.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 13</value>
   </data>
-  <data name="lblScorePerGameToWin.Text" xml:space="preserve">
+  <data name="lblScorePerSetToWin.Text" xml:space="preserve">
     <value>Points per set to win</value>
   </data>
-  <data name="lblNumberOfGamesToWin.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblNumberOfSetsToWin.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 243</value>
   </data>
-  <data name="lblNumberOfGamesToWin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblNumberOfSetsToWin.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 13</value>
   </data>
-  <data name="lblNumberOfGamesToWin.Text" xml:space="preserve">
+  <data name="lblNumberOfSetsToWin.Text" xml:space="preserve">
     <value>Number of sets to win match</value>
   </data>
   <data name="lblPlayedMatches.Location" type="System.Drawing.Point, System.Drawing">

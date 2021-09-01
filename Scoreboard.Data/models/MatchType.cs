@@ -8,8 +8,8 @@ namespace Scoreboard.Data.models
         public string Type { get; set; }
         public string Description { get; set; }
         public int Removed { get; set; }
-        public int NumberOfGamesToWin { get; set; }
-        public int ScorePerGameToWin { get; set; }
+        public int NumberOfSetsToWin { get; set; }
+        public int ScorePerMatchToWin { get; set; }
         public int ServiceChangeEveryNumberOfServices { get; set; }
         public int TwoPointsDifferenceToWin { get; set; }
         public int ServiceChangeOnShootOutPer { get; set; }
