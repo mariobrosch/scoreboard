@@ -37,10 +37,10 @@ namespace Scoreboard.forms
             // 
             // cboPlayer
             // 
-            resources.ApplyResources(this.cboPlayer, "cboPlayer");
             this.cboPlayer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboPlayer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPlayer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cboPlayer, "cboPlayer");
             this.cboPlayer.FormattingEnabled = true;
             this.cboPlayer.Name = "cboPlayer";
             // 
@@ -58,6 +58,7 @@ namespace Scoreboard.forms
             // 
             // CreateSinglePlayerMatch
             // 
+            this.AcceptButton = this.btnStart;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnStart);
