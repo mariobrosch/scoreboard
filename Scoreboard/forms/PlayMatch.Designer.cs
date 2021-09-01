@@ -36,7 +36,7 @@ namespace Scoreboard.forms
             this.txtRight = new System.Windows.Forms.TextBox();
             this.btnRightScore = new System.Windows.Forms.Button();
             this.txtWinner = new System.Windows.Forms.TextBox();
-            this.btnStartNewGame = new System.Windows.Forms.Button();
+            this.btnStartNewSet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -91,18 +91,18 @@ namespace Scoreboard.forms
             resources.ApplyResources(this.txtWinner, "txtWinner");
             this.txtWinner.Name = "txtWinner";
             // 
-            // btnStartNewGame
+            // btnStartNewMatch
             // 
-            resources.ApplyResources(this.btnStartNewGame, "btnStartNewGame");
-            this.btnStartNewGame.Name = "btnStartNewGame";
-            this.btnStartNewGame.UseVisualStyleBackColor = true;
-            this.btnStartNewGame.Click += new System.EventHandler(this.BtnStartNewGame_Click);
+            resources.ApplyResources(this.btnStartNewSet, "btnStartNewMatch");
+            this.btnStartNewSet.Name = "btnStartNewMatch";
+            this.btnStartNewSet.UseVisualStyleBackColor = true;
+            this.btnStartNewSet.Click += new System.EventHandler(this.BtnStartNewSet_Click);
             // 
             // PlayMatch
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnStartNewGame);
+            this.Controls.Add(this.btnStartNewSet);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.txtWinner);
             this.KeyPreview = true;
@@ -130,6 +130,6 @@ namespace Scoreboard.forms
         private System.Windows.Forms.TextBox txtLeft;
         private System.Windows.Forms.TextBox txtRight;
         private System.Windows.Forms.TextBox txtWinner;
-        private System.Windows.Forms.Button btnStartNewGame;
+        private System.Windows.Forms.Button btnStartNewSet;
     }
 }

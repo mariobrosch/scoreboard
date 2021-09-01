@@ -7,30 +7,30 @@ using static Scoreboard.Data.data.Filter;
 
 namespace Scoreboard.Data.data.requests
 {
-    public static class GameData
+    public static class SetData
     {
-        private const string tableName = "Games";
+        private const string tableName = "Sets";
 
-        public static List<Game> Get()
+        public static List<Set> Get()
         {
             return Get("", "");
         }
 
-        public static Game Get(int key)
+        public static Set Get(int key)
         {
             return Get(key.ToString()).First();
         }
 
-        public static List<Game> Get(FilterObject filter)
+        public static List<Set> Get(FilterObject filter)
         {
             return Get("", CreateFilter(filter));
         }
 
-        public static List<Game> Get(string key, string filter = "")
+        public static List<Set> Get(string key, string filter = "")
         {
-            string games = GetData(key, filter);
+            string sets = GetData(key, filter);
 
-            return JsonConvert.DeserializeObject<List<Game>>(games);
+            return JsonConvert.DeserializeObject<List<Set>>(sets);
         }
 
         private static string GetData(int key, string filter = "")
@@ -49,28 +49,28 @@ namespace Scoreboard.Data.data.requests
             return int.Parse(numberOfRowsDeleted);
         }
 
-        public static Game Create(Game game)
+        public static Set Create(Set set)
         {
-            var data = JsonConvert.SerializeObject(game);
-            var gameId = RequestHandler.MakeRequest(HttpMethods.POST, tableName, "", "", data);
-            var newGame = GetData(gameId);
-            return JsonConvert.DeserializeObject<List<Game>>(newGame).First();
+            var data = JsonConvert.SerializeObject(set);
+            var setId = RequestHandler.MakeRequest(HttpMethods.POST, tableName, "", "", data);
+            var newSet = GetData(setId);
+            return JsonConvert.DeserializeObject<List<Set>>(newSet).First();
         }
 
-        public static bool Update(Game game)
+        public static bool Update(Set set)
         {
-            var data = JsonConvert.SerializeObject(game);
-            return RequestHandler.MakeRequest(HttpMethods.PUT, tableName, game.Id, "", data) != "0";
+            var data = JsonConvert.SerializeObject(set);
+            return RequestHandler.MakeRequest(HttpMethods.PUT, tableName, set.Id, "", data) != "0";
         }
 
-        public static bool Update(int gameId, string property, string value)
+        public static bool Update(int setId, string property, string value)
         {
-            var game = JsonConvert.DeserializeObject<List<Game>>(GetData(gameId)).First();
-            game.SetProperty(property, value);
-            return Update(game);
+            var set = JsonConvert.DeserializeObject<List<Set>>(GetData(setId)).First();
+            set.SetProperty(property, value);
+            return Update(set);
         }
 
-        public static List<Game> GetByMatch(int id)
+        public static List<Set> GetByMatch(int id)
         {
             var filter = new FilterObject
             {

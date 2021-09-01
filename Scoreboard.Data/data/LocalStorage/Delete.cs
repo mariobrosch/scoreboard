@@ -29,11 +29,11 @@ namespace Scoreboard.Data.data.LocalStorage
                 case "MatchTypes":
                     allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
                     break;
-                case "Games":
-                    allEntries = JsonConvert.DeserializeObject<List<Game>>(fileContent);
+                case "Sets":
+                    allEntries = JsonConvert.DeserializeObject<List<Set>>(fileContent);
                     break;
-                case "SinglePlayerGames":
-                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                case "SinglePlayerMatches":
+                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerMatch>>(fileContent);
                     break;
                 case "Settings":
                     allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);

@@ -39,7 +39,7 @@ namespace Scoreboard.forms
                 return true;
             }
 
-            if (chkTwoVsTwoGame.Checked == false)
+            if (chkTwoVsTwoMatch.Checked == false)
             {
                 return false;
             }
@@ -69,7 +69,7 @@ namespace Scoreboard.forms
             return false;
         }
 
-        private void BtnStartNewGame_Click(object sender, EventArgs e)
+        private void BtnStartNewSet_Click(object sender, EventArgs e)
         {
             if (IsPlayerDouble())
             {
@@ -91,7 +91,7 @@ namespace Scoreboard.forms
             selectedPlayersForMatch.Add(playerLeft.Id);
             selectedPlayersForMatch.Add(playerRight.Id);
 
-            if (chkTwoVsTwoGame.Checked)
+            if (chkTwoVsTwoMatch.Checked)
             {
                 var playerLeft2 = (Player)cboPlayerLeft2.SelectedItem;
                 var playerRight2 = (Player)cboPlayerRight2.SelectedItem;
@@ -116,12 +116,12 @@ namespace Scoreboard.forms
             Close();
         }
 
-        private void ChkTwoVsTwoGame_CheckedChanged(object sender, EventArgs e)
+        private void ChkTwoVsTwoMatch_CheckedChanged(object sender, EventArgs e)
         {
-            lblPlayerLeft2.Visible = chkTwoVsTwoGame.Checked;
-            cboPlayerLeft2.Visible = chkTwoVsTwoGame.Checked;
-            lblPlayerRight2.Visible = chkTwoVsTwoGame.Checked;
-            cboPlayerRight2.Visible = chkTwoVsTwoGame.Checked;
+            lblPlayerLeft2.Visible = chkTwoVsTwoMatch.Checked;
+            cboPlayerLeft2.Visible = chkTwoVsTwoMatch.Checked;
+            lblPlayerRight2.Visible = chkTwoVsTwoMatch.Checked;
+            cboPlayerRight2.Visible = chkTwoVsTwoMatch.Checked;
         }
 
         private void CboMatchType_SelectedIndexChanged(object sender, EventArgs e)

@@ -13,8 +13,8 @@ namespace Scoreboard.forms
     {
         private readonly Match match;
         private MatchSummary matchSummary;
-        private Game currentGame;
-        private bool gameFinished = false;
+        private Set currentSet;
+        private bool setFinished = false;
 
         public PlayMatch(Match m)
         {
@@ -26,23 +26,23 @@ namespace Scoreboard.forms
                 Close();
             }
             matchSummary = MatchHelper.GetMatchSummary(match);
-            if (matchSummary.Games.Count == 0)
+            if (matchSummary.Sets.Count == 0)
             {
-                currentGame = new Game
+                currentSet = new Set
                 {
-                    GameNumber = 1,
+                    SetNumber = 1,
                     MatchId = match.Id
                 };
-                currentGame = GameData.Create(currentGame);
+                currentSet = SetData.Create(currentSet);
             }
             else
             {
-                currentGame = matchSummary.Games[matchSummary.Games.Count - 1];
+                currentSet = matchSummary.Sets[matchSummary.Sets.Count - 1];
             }
-            btnLeftScore.Text = currentGame.TeamLeftScore.ToString();
-            btnRightScore.Text = currentGame.TeamRightScore.ToString();
+            btnLeftScore.Text = currentSet.TeamLeftScore.ToString();
+            btnRightScore.Text = currentSet.TeamRightScore.ToString();
             FillTopInfo();
-            IsGameWinner();
+            IsSetWinner();
             UpdateMatch();
         }
 
@@ -80,7 +80,7 @@ namespace Scoreboard.forms
 
         private void UpdateScore(bool isForLeft, bool negativeScore = false)
         {
-            if (currentGame.GameWinnerId.HasValue)
+            if (currentSet.SetWinnerId.HasValue)
             {
                 MessageBox.Show(FormsHelper.GetResourceText("setPlayedErrorDesc"));
             } else if (matchSummary.Winner.HasValue) {
@@ -89,34 +89,34 @@ namespace Scoreboard.forms
             {
                 if (negativeScore)
                 {
-                    if (currentGame.TeamLeftScore > 0)
+                    if (currentSet.TeamLeftScore > 0)
                     {
-                        currentGame.TeamLeftScore--;
+                        currentSet.TeamLeftScore--;
                     }
                 }
                 else
                 {
-                    currentGame.TeamLeftScore++;
+                    currentSet.TeamLeftScore++;
                 }
-                btnLeftScore.Text = currentGame.TeamLeftScore.ToString();
+                btnLeftScore.Text = currentSet.TeamLeftScore.ToString();
             }
             else
             {
                 if (negativeScore)
                 {
-                    if (currentGame.TeamRightScore > 0)
+                    if (currentSet.TeamRightScore > 0)
                     {
-                        currentGame.TeamRightScore--;
+                        currentSet.TeamRightScore--;
                     }
                 }
                 else
                 {
-                    currentGame.TeamRightScore++;
+                    currentSet.TeamRightScore++;
                 }
-                btnRightScore.Text = currentGame.TeamRightScore.ToString();
+                btnRightScore.Text = currentSet.TeamRightScore.ToString();
             }
-            IsGameWinner();
-            GameData.Update(currentGame);
+            IsSetWinner();
+            SetData.Update(currentSet);
             UpdateMatch();
             FillTopInfo();
         }
@@ -125,15 +125,15 @@ namespace Scoreboard.forms
         {
             matchSummary = MatchHelper.GetMatchSummary(match);
 
-            if (gameFinished)
+            if (setFinished)
             {
                 var matchWinner = MatchHelper.HasMatchWinner(matchSummary);
 
                 if (matchWinner == PlayerSide.None)
                 {
-                    // No update needed, all data is in the games, just refetch the summary
+                    // No update needed, all data is in the sets, just refetch the summary
                     matchSummary = MatchHelper.GetMatchSummary(match);
-                    btnStartNewGame.Visible = true;
+                    btnStartNewSet.Visible = true;
                     return;
                 }
 
@@ -167,7 +167,7 @@ namespace Scoreboard.forms
                 return;
             }
 
-            var teamToServe = GameHelper.GetPlayerToServe(matchSummary);
+            var teamToServe = SetHelper.GetPlayerToServe(matchSummary);
             if (teamToServe == PlayerSide.Left)
             {
                 btnLeftScore.BackColor = Color.Yellow;
@@ -185,60 +185,60 @@ namespace Scoreboard.forms
             }
         }
 
-        private void IsGameWinner()
+        private void IsSetWinner()
         {
-            var gameWinner = GameHelper.HasWinner(currentGame, matchSummary.MatchType);
+            var setWinner = SetHelper.HasWinner(currentSet, matchSummary.MatchType);
 
-            if (gameWinner == PlayerSide.None)
+            if (setWinner == PlayerSide.None)
             {
                 return;
             }
 
             btnLeftScore.Enabled = false;
             btnRightScore.Enabled = false;
-            gameFinished = true;
+            setFinished = true;
 
-            if (gameWinner == PlayerSide.Left)
+            if (setWinner == PlayerSide.Left)
             {
-                currentGame.GameWinnerId = match.PlayerLeftId;
+                currentSet.SetWinnerId = match.PlayerLeftId;
                 if (match.PlayerLeftId2.HasValue)
                 {
-                    currentGame.GameWinnerId2 = match.PlayerLeftId2;
+                    currentSet.SetWinnerId2 = match.PlayerLeftId2;
                 }
                 btnLeftScore.BackColor = Color.Green;
                 return;
             }
 
-            if (gameWinner == PlayerSide.Right)
+            if (setWinner == PlayerSide.Right)
             {
-                currentGame.GameWinnerId = match.PlayerRightId;
+                currentSet.SetWinnerId = match.PlayerRightId;
                 if (match.PlayerRightId2.HasValue)
                 {
-                    currentGame.GameWinnerId2 = match.PlayerRightId2;
+                    currentSet.SetWinnerId2 = match.PlayerRightId2;
                 }
                 btnRightScore.BackColor = Color.Green;
                 return;
             }
         }
 
-        private void BtnStartNewGame_Click(object sender, EventArgs e)
+        private void BtnStartNewSet_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(FormsHelper.GetResourceText("startNextSet"), FormsHelper.GetResourceText("startNextSet"), MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                btnStartNewGame.Visible = false;
+                btnStartNewSet.Visible = false;
                 btnLeftScore.Text = "0";
                 btnLeftScore.Enabled = true;
                 btnRightScore.Text = "0";
                 btnRightScore.Enabled = true;
-                var game = new Game()
+                var set = new Set()
                 {
-                    GameNumber = matchSummary.Games.Count + 1,
+                    SetNumber = matchSummary.Sets.Count + 1,
                     MatchId = match.Id,
                     TeamLeftScore = 0,
                     TeamRightScore = 0
                 };
-                currentGame = GameData.Create(game);
-                gameFinished = false;
+                currentSet = SetData.Create(set);
+                setFinished = false;
                 UpdateMatch();
                 btnLeftScore.BackColor = SystemColors.Control;
                 btnRightScore.BackColor = SystemColors.Control;

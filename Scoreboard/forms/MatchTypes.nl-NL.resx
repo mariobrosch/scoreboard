@@ -117,73 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnRemovePhoto.Text" xml:space="preserve">
-    <value>Remove photo</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 117</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Photo url</value>
-  </data>
-  <data name="lblPlayedMatches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 206</value>
-  </data>
-  <data name="lblPlayedMatches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="lblPlayedMatches.Text" xml:space="preserve">
-    <value>Played Matches</value>
-  </data>
-  <data name="lblRemoved.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 250</value>
-  </data>
-  <data name="lblRemoved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
-  </data>
-  <data name="lblRemoved.Text" xml:space="preserve">
-    <value>Is removed</value>
-  </data>
-  <data name="lblEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 228</value>
-  </data>
-  <data name="lblEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="lblEnabled.Text" xml:space="preserve">
-    <value>Active player</value>
-  </data>
-  <data name="pbPhoto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>663, 34</value>
-  </data>
-  <data name="pbPhoto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 220</value>
-  </data>
-  <data name="lblPhoto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 89</value>
-  </data>
-  <data name="lblPhoto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="lblPhoto.Text" xml:space="preserve">
-    <value>Photo url</value>
-  </data>
-  <data name="btnDelete.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="btnNew.Text" xml:space="preserve">
-    <value>New</value>
-  </data>
-  <data name="chkDisplayRemoved.Text" xml:space="preserve">
-    <value>Show removed players</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAABABMLAAATCwAAAAAAAAAA
@@ -1315,8 +1249,5 @@
         ////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////8=
 </value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Players</value>
   </data>
 </root>

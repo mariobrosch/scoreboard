@@ -52,11 +52,11 @@ namespace Scoreboard.forms
 
             btnDelete.Visible = true;
 
-            var singlePlayerMatches = SinglePlayerGameData.GetForPlayer(player.Id);
+            var singlePlayerMatches = SinglePlayerMatchData.GetForPlayer(player.Id);
             if (singlePlayerMatches.Count > 0)
             {
-                var bestGame = singlePlayerMatches.OrderBy(x => x.HighScore).Last();
-                lblSinglePlayerMatches.Text = singlePlayerMatches.Count + " " + FormsHelper.GetResourceText("singlePlayerStat") + " " + bestGame.MatchDateParsed.ToString("yyyy-MM-dd") + " met als score " + bestGame.HighScore.ToString();
+                var bestMatch = singlePlayerMatches.OrderBy(x => x.HighScore).Last();
+                lblSinglePlayerMatches.Text = singlePlayerMatches.Count + " " + FormsHelper.GetResourceText("singlePlayerStat") + " " + bestMatch.MatchDateParsed.ToString("yyyy-MM-dd") + " met als score " + bestMatch.HighScore.ToString();
             }
             else
             {

@@ -30,11 +30,11 @@ namespace Scoreboard.Data.data.LocalStorage
                 case "MatchTypes":
                     allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
                     break;
-                case "Games":
-                    allEntries = JsonConvert.DeserializeObject<List<Game>>(fileContent);
+                case "Sets":
+                    allEntries = JsonConvert.DeserializeObject<List<Set>>(fileContent);
                     break;
-                case "SinglePlayerGames":
-                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerGame>>(fileContent);
+                case "SinglePlayerMatches":
+                    allEntries = JsonConvert.DeserializeObject<List<SinglePlayerMatch>>(fileContent);
                     break;
                 case "Settings":
                     allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
@@ -57,11 +57,11 @@ namespace Scoreboard.Data.data.LocalStorage
                     case "MatchTypes":
                         newEntryId = (((List<MatchType>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
                         break;
-                    case "Games":
-                        newEntryId = (((List<Game>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
+                    case "Sets":
+                        newEntryId = (((List<Set>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
                         break;
-                    case "SinglePlayerGames":
-                        newEntryId = (((List<SinglePlayerGame>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
+                    case "SinglePlayerMatches":
+                        newEntryId = (((List<SinglePlayerMatch>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
                         break;
                     case "Settings":
                         newEntryId = (((List<Setting>)allEntries).OrderBy(x => x.Id).Last()).Id + 1;
@@ -86,12 +86,12 @@ namespace Scoreboard.Data.data.LocalStorage
                     newEntry = JsonConvert.DeserializeObject<MatchType>(data);
                     newEntry.Id = newEntryId; 
                     break;
-                case "Games":
-                    newEntry = JsonConvert.DeserializeObject<Game>(data);
+                case "Sets":
+                    newEntry = JsonConvert.DeserializeObject<Set>(data);
                     newEntry.Id = newEntryId; 
                     break;
-                case "SinglePlayerGames":
-                    newEntry = JsonConvert.DeserializeObject<SinglePlayerGame>(data);
+                case "SinglePlayerMatches":
+                    newEntry = JsonConvert.DeserializeObject<SinglePlayerMatch>(data);
                     newEntry.Id = newEntryId; 
                     break;
                 case "Settings":

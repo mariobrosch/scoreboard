@@ -32,7 +32,7 @@
     <PublisherName>Mario van der Niet</PublisherName>
     <SuiteName>Suite Brosch</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -216,30 +216,40 @@
     <Compile Include="SoundTypes.cs" />
     <EmbeddedResource Include="forms\ContinueMatchSelection.en-US.resx">
       <DependentUpon>ContinueMatchSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ContinueMatchSelection.nl-NL.resx">
       <DependentUpon>ContinueMatchSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ContinueMatchSelection.resx">
       <DependentUpon>ContinueMatchSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\CreateMatch.en-US.resx">
       <DependentUpon>CreateMatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\CreateMatch.resx">
       <DependentUpon>CreateMatch.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\CreateSinglePlayerMatch.en-US.resx">
       <DependentUpon>CreateSinglePlayerMatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MatchTypes.en-US.resx">
       <DependentUpon>MatchTypes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MatchTypes.nl-NL.resx">
+      <DependentUpon>MatchTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MatchTypes.resx">
       <DependentUpon>MatchTypes.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Players.en-US.resx">
       <DependentUpon>Players.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Players.nl-NL.resx">
       <DependentUpon>Players.cs</DependentUpon>
@@ -267,6 +277,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\PlayMatch.resx">
       <DependentUpon>PlayMatch.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\CreateSinglePlayerMatch.resx">
       <DependentUpon>CreateSinglePlayerMatch.cs</DependentUpon>
@@ -276,6 +287,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.en-US.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.nl-NL.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

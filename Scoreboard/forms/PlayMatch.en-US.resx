@@ -123,7 +123,7 @@
   <data name="btnRightScore.Text" xml:space="preserve">
     <value>Right</value>
   </data>
-  <data name="btnStartNewGame.Text" xml:space="preserve">
+  <data name="btnStartNewMatch.Text" xml:space="preserve">
     <value>Start new set</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

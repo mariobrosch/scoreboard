@@ -191,7 +191,7 @@
   <data name="&gt;&gt;lblMatchDate.Name" xml:space="preserve">
     <value>lblMatchDate</value>
   </data>
-  <data name="&gt;&gt;lblGames.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblSets.Parent" xml:space="preserve">
     <value>pnlMain</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -203,7 +203,7 @@
   <data name="&gt;&gt;txtTeamLeft.Parent" xml:space="preserve">
     <value>pnlMain</value>
   </data>
-  <data name="lblGames.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblSets.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;txtMatchDate.Name" xml:space="preserve">
@@ -245,16 +245,16 @@
   <data name="&gt;&gt;lbUnfinishedMatches.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblGames.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblSets.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
   </data>
-  <data name="&gt;&gt;lblGames.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblSets.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;lblMatchDate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtGames.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtSets.Parent" xml:space="preserve">
     <value>pnlMain</value>
   </data>
   <data name="lblStandings.Size" type="System.Drawing.Size, System.Drawing">
@@ -291,7 +291,7 @@
   <data name="btnContinueMatch.Text" xml:space="preserve">
     <value>Verder spelen</value>
   </data>
-  <data name="lblGames.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblSets.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="&gt;&gt;txtTeamRight.Type" xml:space="preserve">
@@ -300,8 +300,8 @@
   <data name="txtStandings.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 108</value>
   </data>
-  <data name="&gt;&gt;txtGames.Name" xml:space="preserve">
-    <value>txtGames</value>
+  <data name="&gt;&gt;txtSets.Name" xml:space="preserve">
+    <value>txtSets</value>
   </data>
   <data name="&gt;&gt;lblTeamLeft.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -318,10 +318,10 @@
   <data name="lblStandings.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="lblGames.Text" xml:space="preserve">
-    <value>Games</value>
+  <data name="lblSets.Text" xml:space="preserve">
+    <value>Sets</value>
   </data>
-  <data name="&gt;&gt;lblGames.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblSets.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblMatchDate.Parent" xml:space="preserve">
@@ -363,7 +363,7 @@
   <data name="pnlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtGames.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtSets.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1519,7 +1519,7 @@
   <data name="lblTeamLeft.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="lblGames.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblSets.Location" type="System.Drawing.Point, System.Drawing">
     <value>61, 137</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
@@ -1537,10 +1537,10 @@
   <data name="btnContinueMatch.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;txtGames.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtSets.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtGames.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtSets.Location" type="System.Drawing.Point, System.Drawing">
     <value>118, 134</value>
   </data>
   <data name="&gt;&gt;pnlLeft.Parent" xml:space="preserve">
@@ -1561,13 +1561,13 @@
   <data name="pnlLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <data name="&gt;&gt;lblGames.Name" xml:space="preserve">
-    <value>lblGames</value>
+  <data name="&gt;&gt;lblSets.Name" xml:space="preserve">
+    <value>lblSets</value>
   </data>
   <data name="&gt;&gt;pnlLeft.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="txtGames.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtSets.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="&gt;&gt;lblTeamRight.Type" xml:space="preserve">
@@ -1594,7 +1594,7 @@
   <data name="&gt;&gt;pnlLeft.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtGames.Multiline" type="System.Boolean, mscorlib">
+  <data name="txtSets.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblStandings.AutoSize" type="System.Boolean, mscorlib">
@@ -1603,7 +1603,7 @@
   <data name="&gt;&gt;lblStandings.Parent" xml:space="preserve">
     <value>pnlMain</value>
   </data>
-  <data name="txtGames.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtSets.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 190</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

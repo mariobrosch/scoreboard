@@ -131,7 +131,7 @@
   <data name="txtLeft.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 48pt</value>
   </data>
-  <data name="btnStartNewGame.Visible" type="System.Boolean, mscorlib">
+  <data name="btnStartNewMatch.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;splitContainer.Panel1.ZOrder" xml:space="preserve">
@@ -140,7 +140,7 @@
   <data name="&gt;&gt;splitContainer.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnStartNewGame.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnStartNewMatch.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 27.75pt</value>
   </data>
   <data name="btnLeftScore.Size" type="System.Drawing.Size, System.Drawing">
@@ -183,7 +183,7 @@
   <data name="btnLeftScore.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="btnStartNewGame.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnStartNewMatch.Location" type="System.Drawing.Point, System.Drawing">
     <value>220, 375</value>
   </data>
   <data name="btnRightScore.Size" type="System.Drawing.Size, System.Drawing">
@@ -204,7 +204,7 @@
   <data name="btnLeftScore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 128.25pt</value>
   </data>
-  <data name="&gt;&gt;btnStartNewGame.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnStartNewMatch.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="splitContainer.Size" type="System.Drawing.Size, System.Drawing">
@@ -231,7 +231,7 @@
   <data name="btnRightScore.Text" xml:space="preserve">
     <value>Rechts</value>
   </data>
-  <data name="btnStartNewGame.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnStartNewMatch.Size" type="System.Drawing.Size, System.Drawing">
     <value>362, 63</value>
   </data>
   <data name="txtWinner.TabIndex" type="System.Int32, mscorlib">
@@ -267,7 +267,7 @@
   <data name="&gt;&gt;btnRightScore.Name" xml:space="preserve">
     <value>btnRightScore</value>
   </data>
-  <data name="btnStartNewGame.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnStartNewMatch.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="txtWinner.Location" type="System.Drawing.Point, System.Drawing">
@@ -1417,7 +1417,7 @@
   <data name="&gt;&gt;btnRightScore.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnStartNewGame.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnStartNewMatch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;btnRightScore.Parent" xml:space="preserve">
@@ -1456,7 +1456,7 @@
   <data name="&gt;&gt;splitContainer.Name" xml:space="preserve">
     <value>splitContainer</value>
   </data>
-  <data name="&gt;&gt;btnStartNewGame.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnStartNewMatch.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;splitContainer.Panel1.Name" xml:space="preserve">
@@ -1486,7 +1486,7 @@
   <data name="txtRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="btnStartNewGame.Text" xml:space="preserve">
+  <data name="btnStartNewMatch.Text" xml:space="preserve">
     <value>Start nieuwe set</value>
   </data>
   <data name="txtLeft.TabIndex" type="System.Int32, mscorlib">
@@ -1495,8 +1495,8 @@
   <data name="&gt;&gt;splitContainer.Panel1.Parent" xml:space="preserve">
     <value>splitContainer</value>
   </data>
-  <data name="&gt;&gt;btnStartNewGame.Name" xml:space="preserve">
-    <value>btnStartNewGame</value>
+  <data name="&gt;&gt;btnStartNewMatch.Name" xml:space="preserve">
+    <value>btnStartNewMatch</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

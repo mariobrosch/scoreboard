@@ -3,7 +3,7 @@ using System;
 
 namespace Scoreboard.Data.models
 {
-    public class SinglePlayerGame
+    public class SinglePlayerMatch
     {
         public int Id { get; set; }
         public int PlayerId { get; set; }
