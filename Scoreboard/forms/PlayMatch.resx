@@ -149,9 +149,6 @@
   <data name="&gt;&gt;btnLeftScore.Parent" xml:space="preserve">
     <value>splitContainer.Panel1</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
-  </data>
   <data name="&gt;&gt;txtRight.Name" xml:space="preserve">
     <value>txtRight</value>
   </data>
@@ -167,6 +164,9 @@
   </data>
   <data name="&gt;&gt;splitContainer.Panel2.Parent" xml:space="preserve">
     <value>splitContainer</value>
+  </data>
+  <data name="&gt;&gt;txtWinner.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnLeftScore.Text" xml:space="preserve">
     <value>Links</value>
@@ -204,9 +204,6 @@
   <data name="btnLeftScore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 128.25pt</value>
   </data>
-  <data name="&gt;&gt;splitContainer.Name" xml:space="preserve">
-    <value>splitContainer</value>
-  </data>
   <data name="&gt;&gt;btnStartNewGame.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -215,6 +212,9 @@
   </data>
   <data name="splitContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;btnLeftScore.Name" xml:space="preserve">
+    <value>btnLeftScore</value>
   </data>
   <data name="txtWinner.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 72pt</value>
@@ -231,11 +231,14 @@
   <data name="btnRightScore.Text" xml:space="preserve">
     <value>Rechts</value>
   </data>
+  <data name="btnStartNewGame.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 63</value>
+  </data>
   <data name="txtWinner.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;btnLeftScore.Name" xml:space="preserve">
-    <value>btnLeftScore</value>
+  <data name="&gt;&gt;txtLeft.Parent" xml:space="preserve">
+    <value>splitContainer.Panel1</value>
   </data>
   <data name="&gt;&gt;splitContainer.Panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -243,14 +246,20 @@
   <data name="&gt;&gt;splitContainer.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;btnLeftScore.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;txtWinner.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="txtWinner.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;txtLeft.Parent" xml:space="preserve">
-    <value>splitContainer.Panel1</value>
+  <data name="txtWinner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
   <data name="btnRightScore.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -1423,9 +1432,6 @@
   <data name="&gt;&gt;txtLeft.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>PlayMatch</value>
-  </data>
   <data name="btnRightScore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 128.25pt</value>
   </data>
@@ -1434,9 +1440,6 @@
   </data>
   <data name="&gt;&gt;splitContainer.Panel2.Name" xml:space="preserve">
     <value>splitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;btnLeftScore.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="splitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1450,8 +1453,8 @@
   <data name="txtRight.Size" type="System.Drawing.Size, System.Drawing">
     <value>399, 80</value>
   </data>
-  <data name="txtWinner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;splitContainer.Name" xml:space="preserve">
+    <value>splitContainer</value>
   </data>
   <data name="&gt;&gt;btnStartNewGame.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1462,23 +1465,20 @@
   <data name="btnLeftScore.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="btnStartNewGame.Text" xml:space="preserve">
-    <value>Start nieuwe set</value>
-  </data>
   <data name="&gt;&gt;txtWinner.Name" xml:space="preserve">
     <value>txtWinner</value>
   </data>
   <data name="&gt;&gt;txtWinner.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnStartNewGame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 63</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
   </data>
   <data name="&gt;&gt;txtRight.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PlayMatch</value>
   </data>
   <data name="txtRight.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 48pt</value>
@@ -1486,8 +1486,8 @@
   <data name="txtRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="&gt;&gt;txtWinner.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="btnStartNewGame.Text" xml:space="preserve">
+    <value>Start nieuwe set</value>
   </data>
   <data name="txtLeft.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1500,8 +1500,5 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>nl-NL</value>
   </metadata>
 </root>

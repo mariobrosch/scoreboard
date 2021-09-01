@@ -29,6 +29,7 @@ namespace Scoreboard.forms
                 highScore = bestGame.HighScore;
                 lblPreviousRecord.Text = FormsHelper.GetResourceText("highscore") + ": " + highScore.ToString() + " (" + bestGame.MatchDateParsed.ToString("yyyy-MM-dd") + ")";
             }
+            numScore.Select(0, numScore.Value.ToString().Length);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -41,6 +42,23 @@ namespace Scoreboard.forms
             _SinglePlayerGame.HighScore = Decimal.ToInt32(numScore.Value);
             SinglePlayerGameData.Update(_SinglePlayerGame);
             Dispose();
+        }
+
+        private void PlaySinglePlayer_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Subtract)
+            {
+                if (numScore.Value < 0)
+                {
+                    numScore.Value *= -1;
+                }
+                numScore.Value--;
+            }
+            if (e.KeyCode == Keys.Add)
+            {
+                numScore.Value++;
+            }
+            numScore.Focus();
         }
     }
 }

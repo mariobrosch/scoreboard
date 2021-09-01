@@ -139,19 +139,19 @@
     <value>Use your keyboard to adjust score.\r\nLeft team has the following shortcuts:</value>
   </data>
   <data name="help2" xml:space="preserve">
-    <value>L, Left shift, Left, Numpad 0, 1, 4 and 7</value>
+    <value>L, Left shift, Left, Numpad 7</value>
   </data>
   <data name="help3" xml:space="preserve">
     <value>For the right team:</value>
   </data>
   <data name="help4" xml:space="preserve">
-    <value>R, Right shift, Right, Numpad 3, 6 and 9</value>
+    <value>R, Right shift, Right, Numpad 9</value>
   </data>
   <data name="help5" xml:space="preserve">
-    <value>Z for minus 1 for left team</value>
+    <value>Z and numpad 1 for minus 1 for left team</value>
   </data>
   <data name="help6" xml:space="preserve">
-    <value>X for minus 1 for right team</value>
+    <value>X and numpad 3 for minus 1 for right team</value>
   </data>
   <data name="highscore" xml:space="preserve">
     <value>Highscore</value>
@@ -179,6 +179,9 @@
   </data>
   <data name="NoUnfinishedMatches" xml:space="preserve">
     <value>No unfinished matches found, start new match?</value>
+  </data>
+  <data name="OpenPhoto" xml:space="preserve">
+    <value>Select a photo for the player</value>
   </data>
   <data name="played" xml:space="preserve">
     <value>played</value>

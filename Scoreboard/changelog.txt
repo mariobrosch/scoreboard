@@ -1,4 +1,9 @@
-1.1.0.8 01-09-2021
+1.1.0.10 01-09-2021
+ - Improved keyboard support for single player
+ - Improved keyboard support for multiplayer match
+ - Add possibility to load photo from disk
+
+1.1.0.8-9 01-09-2021
  - Enter press support (https://github.com/mariobrosch/scoreboard/issues/11)
 
 1.1.0.3-7 31-08-2021

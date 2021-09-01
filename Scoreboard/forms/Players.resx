@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pnlPlayer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>878, 297</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbPlayers.ItemHeight" type="System.Int32, mscorlib">
@@ -129,7 +129,7 @@
     <value>Single player stats</value>
   </data>
   <data name="btnNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 427</value>
+    <value>0, 274</value>
   </data>
   <data name="&gt;&gt;lblId.Parent" xml:space="preserve">
     <value>pnlPlayer</value>
@@ -138,7 +138,7 @@
     <value>Microsoft Sans Serif, 15.75pt</value>
   </data>
   <data name="lblOfTheLabelSinglePlayerMatches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 349</value>
+    <value>187, 184</value>
   </data>
   <data name="lblPhoto.Text" xml:space="preserve">
     <value>Foto url</value>
@@ -146,11 +146,20 @@
   <data name="lblId.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;lblSinglePlayerMatches.Name" xml:space="preserve">
-    <value>lblSinglePlayerMatches</value>
+  <data name="lblPlayedMatches.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 206</value>
+  </data>
+  <data name="&gt;&gt;txtPhotoUrl.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="btnUploadFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="chkDisplayRemoved.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="txtPhotoUrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 86</value>
   </data>
   <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
     <value>btnSave</value>
@@ -164,17 +173,18 @@
   <data name="chkRemoved.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="pbPhoto.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblOfTheLabelSinglePlayerMatches.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
   </data>
   <data name="&gt;&gt;lblEnabled.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
-  <data name="lblEnabled.Text" xml:space="preserve">
-    <value>Actieve speler</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;lblRemoved.Name" xml:space="preserve">
     <value>lblRemoved</value>
@@ -185,6 +195,18 @@
   <data name="lblEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="chkDisplayRemoved.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 17</value>
+  </data>
+  <data name="&gt;&gt;txtPhotoUrl.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="btnRemovePhoto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 23</value>
+  </data>
+  <data name="&gt;&gt;btnRemovePhoto.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
   <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 23</value>
   </data>
@@ -192,22 +214,25 @@
     <value>5</value>
   </data>
   <data name="lblMatchResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 371</value>
+    <value>292, 206</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Spelers</value>
   </data>
   <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="chkRemoved.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
   </data>
   <data name="&gt;&gt;lblPlayedMatches.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
-  <data name="txtId.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;pbPhoto.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lblEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbPlayers.Name" xml:space="preserve">
     <value>lbPlayers</value>
@@ -233,11 +258,347 @@
   <data name="&gt;&gt;pbPhoto.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 415</value>
-  </data>
   <data name="&gt;&gt;pbPhoto.Name" xml:space="preserve">
     <value>pbPhoto</value>
+  </data>
+  <data name="pbPhoto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 220</value>
+  </data>
+  <data name="lblSinglePlayerMatches.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="&gt;&gt;lblEnabled.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;pnlPlayerlist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSinglePlayerMatches.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="lblRemoved.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="&gt;&gt;lblOfTheLabelSinglePlayerMatches.Name" xml:space="preserve">
+    <value>lblOfTheLabelSinglePlayerMatches</value>
+  </data>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="&gt;&gt;chkDisplayRemoved.Parent" xml:space="preserve">
+    <value>pnlPlayerlist</value>
+  </data>
+  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="&gt;&gt;chkEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMatchResults.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>707, 260</value>
+  </data>
+  <data name="lblId.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 34</value>
+  </data>
+  <data name="pnlPlayer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chkRemoved.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 250</value>
+  </data>
+  <data name="btnNew.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;chkRemoved.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="pbPhoto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>621, 34</value>
+  </data>
+  <data name="&gt;&gt;chkEnabled.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;chkDisplayRemoved.Name" xml:space="preserve">
+    <value>chkDisplayRemoved</value>
+  </data>
+  <data name="&gt;&gt;txtId.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="lbPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblSinglePlayerMatches.Name" xml:space="preserve">
+    <value>lblSinglePlayerMatches</value>
+  </data>
+  <data name="chkEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtId.Name" xml:space="preserve">
+    <value>txtId</value>
+  </data>
+  <data name="&gt;&gt;lblPhoto.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lblPhoto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 89</value>
+  </data>
+  <data name="lblPlayedMatches.Text" xml:space="preserve">
+    <value>Gespeelde wedstrijden</value>
+  </data>
+  <data name="&gt;&gt;txtId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblRemoved.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 115</value>
+  </data>
+  <data name="&gt;&gt;ofdPhoto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlPlayer.Name" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="pnlPlayerlist.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmPlayers</value>
+  </data>
+  <data name="pnlPlayerlist.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnNew.Name" xml:space="preserve">
+    <value>btnNew</value>
+  </data>
+  <data name="txtPhotoUrl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkDisplayRemoved.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 257</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnRemovePhoto.Text" xml:space="preserve">
+    <value>Verwijder foto</value>
+  </data>
+  <data name="lblPhoto.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="chkDisplayRemoved.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnRemovePhoto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 112</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtPhotoUrl.Name" xml:space="preserve">
+    <value>txtPhotoUrl</value>
+  </data>
+  <data name="&gt;&gt;lblMatchResults.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="lblMatchResults.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMatchResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="btnRemovePhoto.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblSinglePlayerMatches.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 37</value>
+  </data>
+  <data name="txtId.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>788, 260</value>
+  </data>
+  <data name="lblEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="pnlPlayer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;pnlPlayer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblRemoved.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pnlPlayerlist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 297</value>
+  </data>
+  <data name="pbPhoto.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 228</value>
+  </data>
+  <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="chkDisplayRemoved.Text" xml:space="preserve">
+    <value>Toon verwijderde spelers</value>
+  </data>
+  <data name="lblEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="&gt;&gt;chkRemoved.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 13</value>
+  </data>
+  <data name="lblPlayedMatches.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRemoved.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 250</value>
+  </data>
+  <data name="txtPhotoUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="pnlPlayer.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnNew.Parent" xml:space="preserve">
+    <value>pnlPlayerlist</value>
+  </data>
+  <data name="&gt;&gt;btnNew.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblSinglePlayerMatches.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;txtName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="&gt;&gt;btnRemovePhoto.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbPlayers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;lblOfTheLabelSinglePlayerMatches.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblPhoto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 63</value>
+  </data>
+  <data name="&gt;&gt;lblRemoved.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;lblPlayedMatches.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRemovePhoto.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblId.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;btnUploadFile.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;btnUploadFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblPhoto.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;lblId.Name" xml:space="preserve">
+    <value>lblId</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkDisplayRemoved.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="lblSinglePlayerMatches.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnRemovePhoto.Name" xml:space="preserve">
+    <value>btnRemovePhoto</value>
+  </data>
+  <data name="lblEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>205, 228</value>
+  </data>
+  <data name="lblOfTheLabelSinglePlayerMatches.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblPhoto.Name" xml:space="preserve">
+    <value>lblPhoto</value>
+  </data>
+  <data name="&gt;&gt;chkRemoved.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1371,309 +1732,11 @@
         //////////////////////////////////8=
 </value>
   </data>
-  <data name="lblSinglePlayerMatches.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="&gt;&gt;lblEnabled.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="&gt;&gt;pnlPlayerlist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSinglePlayerMatches.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtPhoto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 86</value>
-  </data>
-  <data name="lblRemoved.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
-    <value>btnDelete</value>
-  </data>
-  <data name="&gt;&gt;lblOfTheLabelSinglePlayerMatches.Name" xml:space="preserve">
-    <value>lblOfTheLabelSinglePlayerMatches</value>
-  </data>
-  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
-    <value>txtName</value>
-  </data>
-  <data name="&gt;&gt;chkDisplayRemoved.Parent" xml:space="preserve">
-    <value>pnlPlayerlist</value>
-  </data>
-  <data name="&gt;&gt;chkEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbPlayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblPhoto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>632, 415</value>
-  </data>
-  <data name="lblId.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 34</value>
-  </data>
-  <data name="pnlPlayer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="chkRemoved.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 415</value>
-  </data>
-  <data name="lbPlayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnNew.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="&gt;&gt;chkRemoved.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="pbPhoto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 112</value>
-  </data>
-  <data name="&gt;&gt;chkEnabled.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="&gt;&gt;chkDisplayRemoved.Name" xml:space="preserve">
-    <value>chkDisplayRemoved</value>
-  </data>
-  <data name="&gt;&gt;txtId.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="lbPlayers.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtId.Name" xml:space="preserve">
-    <value>txtId</value>
-  </data>
-  <data name="&gt;&gt;lblPhoto.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="lblPhoto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 89</value>
-  </data>
-  <data name="lblPlayedMatches.Text" xml:space="preserve">
-    <value>Gespeelde wedstrijden</value>
-  </data>
-  <data name="&gt;&gt;txtId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlPlayer.Name" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="pnlPlayerlist.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FrmPlayers</value>
-  </data>
-  <data name="pnlPlayerlist.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnNew.Name" xml:space="preserve">
-    <value>btnNew</value>
-  </data>
-  <data name="chkDisplayRemoved.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 410</value>
-  </data>
-  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="lblPhoto.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="chkDisplayRemoved.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pbPhoto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 220</value>
-  </data>
-  <data name="&gt;&gt;txtPhoto.Name" xml:space="preserve">
-    <value>txtPhoto</value>
-  </data>
-  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblId.Text" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="&gt;&gt;lblMatchResults.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="lblOfTheLabelSinglePlayerMatches.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lblMatchResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="pnlPlayer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblSinglePlayerMatches.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="lblPlayedMatches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 371</value>
-  </data>
-  <data name="lblEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="pnlPlayer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;pnlPlayer.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblRemoved.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pnlPlayerlist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 450</value>
-  </data>
-  <data name="pbPhoto.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="lbPlayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 450</value>
-  </data>
-  <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="chkDisplayRemoved.Text" xml:space="preserve">
-    <value>Toon verwijderde spelers</value>
-  </data>
-  <data name="lblEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="&gt;&gt;chkRemoved.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 13</value>
-  </data>
-  <data name="lblPlayedMatches.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRemoved.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 415</value>
-  </data>
-  <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;btnNew.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblSinglePlayerMatches.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnNew.Parent" xml:space="preserve">
-    <value>pnlPlayerlist</value>
-  </data>
-  <data name="&gt;&gt;txtName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Opslaan</value>
-  </data>
-  <data name="lbPlayers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;txtPhoto.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 63</value>
-  </data>
-  <data name="&gt;&gt;lblRemoved.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="&gt;&gt;lblEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPlayedMatches.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblId.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;lblId.Name" xml:space="preserve">
-    <value>lblId</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtPhoto.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="chkDisplayRemoved.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="txtPhoto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 20</value>
-  </data>
-  <data name="&gt;&gt;pbPhoto.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="lblSinglePlayerMatches.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 393</value>
-  </data>
-  <data name="lblOfTheLabelSinglePlayerMatches.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblPhoto.Name" xml:space="preserve">
-    <value>lblPhoto</value>
-  </data>
-  <data name="&gt;&gt;chkRemoved.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
-  </data>
-  <data name="lblMatchResults.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="lblName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -1685,10 +1748,10 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;chkEnabled.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
-  <data name="chkEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 393</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Foto url</value>
   </data>
   <data name="&gt;&gt;lbPlayers.Parent" xml:space="preserve">
     <value>pnlPlayerlist</value>
@@ -1696,17 +1759,20 @@
   <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
     <value>295, 60</value>
   </data>
-  <data name="&gt;&gt;lblPhoto.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
+  <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="btnUploadFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 112</value>
   </data>
   <data name="lblSinglePlayerMatches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 349</value>
+    <value>292, 184</value>
   </data>
   <data name="txtName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;lblOfTheLabelSinglePlayerMatches.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;pnlPlayer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1720,14 +1786,20 @@
   <data name="&gt;&gt;lblMatchResults.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 37</value>
+  <data name="lbPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 297</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lblPlayedMatches.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
   </data>
   <data name="chkEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
+  </data>
+  <data name="&gt;&gt;btnUploadFile.Name" xml:space="preserve">
+    <value>btnUploadFile</value>
   </data>
   <data name="&gt;&gt;chkEnabled.Name" xml:space="preserve">
     <value>chkEnabled</value>
@@ -1736,13 +1808,13 @@
     <value>13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>878, 297</value>
   </data>
-  <data name="&gt;&gt;lblMatchResults.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;txtPhoto.Parent" xml:space="preserve">
-    <value>pnlPlayer</value>
+  <data name="lblEnabled.Text" xml:space="preserve">
+    <value>Actieve speler</value>
   </data>
   <data name="&gt;&gt;pnlPlayerlist.Name" xml:space="preserve">
     <value>pnlPlayerlist</value>
@@ -1750,17 +1822,17 @@
   <data name="&gt;&gt;lblEnabled.Name" xml:space="preserve">
     <value>lblEnabled</value>
   </data>
-  <data name="&gt;&gt;txtPhoto.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ofdPhoto.Name" xml:space="preserve">
+    <value>ofdPhoto</value>
   </data>
   <data name="lblMatchResults.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;pbPhoto.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="lblId.Text" xml:space="preserve">
+    <value>Id</value>
   </data>
-  <data name="chkDisplayRemoved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 17</value>
+  <data name="btnUploadFile.Text" xml:space="preserve">
+    <value>Browse...</value>
   </data>
   <data name="&gt;&gt;chkDisplayRemoved.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1777,8 +1849,11 @@
   <data name="lblRemoved.Text" xml:space="preserve">
     <value>Is verwijderd</value>
   </data>
-  <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 20</value>
+  <data name="lbPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;txtPhotoUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlPlayerlist.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1798,6 +1873,12 @@
   <data name="&gt;&gt;lblPhoto.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="lblOfTheLabelSinglePlayerMatches.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="pbPhoto.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
   <data name="btnDelete.Text" xml:space="preserve">
     <value>Verwijderen</value>
   </data>
@@ -1807,25 +1888,28 @@
   <data name="btnNew.Text" xml:space="preserve">
     <value>Nieuw</value>
   </data>
-  <data name="lblRemoved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
+  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
+    <value>lblName</value>
+  </data>
+  <data name="&gt;&gt;btnUploadFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chkDisplayRemoved.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblOfTheLabelSinglePlayerMatches.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pbPhoto.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
   </data>
-  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 20</value>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
-  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
-    <value>lblName</value>
+  <data name="btnUploadFile.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
+  <metadata name="ofdPhoto.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>nl-NL</value>
   </metadata>
 </root>

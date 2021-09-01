@@ -57,6 +57,11 @@ namespace Scoreboard.forms
             0,
             0,
             0});
+            this.numScore.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
             this.numScore.Name = "numScore";
             // 
             // lblPreviousRecord
@@ -73,9 +78,11 @@ namespace Scoreboard.forms
             this.Controls.Add(this.numScore);
             this.Controls.Add(this.lblScoreInput);
             this.Controls.Add(this.btnSave);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "PlaySinglePlayer";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PlaySinglePlayer_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.numScore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

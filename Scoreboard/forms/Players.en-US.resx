@@ -117,9 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnRemovePhoto.Text" xml:space="preserve">
+    <value>Remove photo</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 117</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Photo url</value>
+  </data>
   <data name="lblPlayedMatches.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 371</value>
+    <value>204, 206</value>
   </data>
   <data name="lblPlayedMatches.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
@@ -128,7 +140,7 @@
     <value>Played Games</value>
   </data>
   <data name="lblRemoved.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 415</value>
+    <value>220, 250</value>
   </data>
   <data name="lblRemoved.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -137,13 +149,19 @@
     <value>Is removed</value>
   </data>
   <data name="lblEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 393</value>
+    <value>211, 228</value>
   </data>
   <data name="lblEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
   </data>
   <data name="lblEnabled.Text" xml:space="preserve">
     <value>Active player</value>
+  </data>
+  <data name="pbPhoto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>663, 34</value>
+  </data>
+  <data name="pbPhoto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 220</value>
   </data>
   <data name="lblPhoto.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 89</value>

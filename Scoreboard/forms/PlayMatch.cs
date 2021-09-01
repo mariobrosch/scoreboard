@@ -258,9 +258,6 @@ namespace Scoreboard.forms
                 Keys.L,
                 Keys.Left,
                 Keys.LShiftKey,
-                Keys.NumPad0,
-                Keys.NumPad1,
-                Keys.NumPad4,
                 Keys.NumPad7
             };
 
@@ -269,8 +266,6 @@ namespace Scoreboard.forms
                 Keys.R,
                 Keys.RShiftKey,
                 Keys.Right,
-                Keys.NumPad3,
-                Keys.NumPad6,
                 Keys.NumPad9
             };
 
@@ -296,12 +291,12 @@ namespace Scoreboard.forms
                 UpdateScore(false);
             }
 
-            if (e.KeyCode == Keys.Z)
+            if (e.KeyCode == Keys.Z || e.KeyCode == Keys.NumPad1)
             {
                 UpdateScore(true, true);
             }
 
-            if (e.KeyCode == Keys.X)
+            if (e.KeyCode == Keys.X || e.KeyCode == Keys.NumPad3)
             {
                 UpdateScore(false, true);
             }

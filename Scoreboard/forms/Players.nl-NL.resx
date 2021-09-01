@@ -117,10 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 303</value>
+  </data>
+  <data name="pnlPlayer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>881, 303</value>
+  </data>
+  <data name="lblSinglePlayerMatches.Location" type="System.Drawing.Point, System.Drawing">
+    <value>292, 191</value>
+  </data>
+  <data name="lblOfTheLabelSinglePlayerMatches.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 191</value>
+  </data>
+  <data name="lblMatchResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>292, 213</value>
+  </data>
+  <data name="lblPlayedMatches.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 213</value>
+  </data>
+  <data name="lblRemoved.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 257</value>
+  </data>
+  <data name="chkRemoved.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 257</value>
+  </data>
+  <data name="lblEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>205, 235</value>
+  </data>
+  <data name="chkEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 235</value>
+  </data>
+  <data name="pbPhoto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>650, 34</value>
+  </data>
+  <data name="pbPhoto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 220</value>
+  </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>Naam</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>701, 260</value>
+  </data>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>782, 260</value>
+  </data>
+  <data name="btnNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 280</value>
+  </data>
+  <data name="pnlPlayerlist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 303</value>
+  </data>
+  <data name="chkDisplayRemoved.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 263</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>881, 303</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAABABMLAAATCwAAAAAAAAAA
