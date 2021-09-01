@@ -4,6 +4,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Scoreboard.Data.Helpers;
 using Scoreboard.forms;
+using Scoreboard.Data.Migrations;
 
 namespace Scoreboard
 {
@@ -30,6 +31,10 @@ namespace Scoreboard
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
                     break;
             }
+
+            var migration = new Handler();
+            migration.StartMigrations();
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

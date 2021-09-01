@@ -32,8 +32,8 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.lbUnfinishedMatches = new System.Windows.Forms.ListBox();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblGames = new System.Windows.Forms.Label();
-            this.txtGames = new System.Windows.Forms.TextBox();
+            this.lblSets = new System.Windows.Forms.Label();
+            this.txtSets = new System.Windows.Forms.TextBox();
             this.lblMatchDate = new System.Windows.Forms.Label();
             this.txtMatchDate = new System.Windows.Forms.TextBox();
             this.txtStandings = new System.Windows.Forms.TextBox();
@@ -64,8 +64,8 @@
             // pnlMain
             // 
             resources.ApplyResources(this.pnlMain, "pnlMain");
-            this.pnlMain.Controls.Add(this.lblGames);
-            this.pnlMain.Controls.Add(this.txtGames);
+            this.pnlMain.Controls.Add(this.lblSets);
+            this.pnlMain.Controls.Add(this.txtSets);
             this.pnlMain.Controls.Add(this.lblMatchDate);
             this.pnlMain.Controls.Add(this.txtMatchDate);
             this.pnlMain.Controls.Add(this.txtStandings);
@@ -77,16 +77,16 @@
             this.pnlMain.Controls.Add(this.btnContinueMatch);
             this.pnlMain.Name = "pnlMain";
             // 
-            // lblGames
+            // lblSets
             // 
-            resources.ApplyResources(this.lblGames, "lblGames");
-            this.lblGames.Name = "lblGames";
+            resources.ApplyResources(this.lblSets, "lblSets");
+            this.lblSets.Name = "lblSets";
             // 
-            // txtGames
+            // txtSets
             // 
-            resources.ApplyResources(this.txtGames, "txtGames");
-            this.txtGames.Name = "txtGames";
-            this.txtGames.ReadOnly = true;
+            resources.ApplyResources(this.txtSets, "txtSets");
+            this.txtSets.Name = "txtSets";
+            this.txtSets.ReadOnly = true;
             // 
             // lblMatchDate
             // 
@@ -161,8 +161,8 @@
         private System.Windows.Forms.ListBox lbUnfinishedMatches;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Button btnContinueMatch;
-        private System.Windows.Forms.Label lblGames;
-        private System.Windows.Forms.TextBox txtGames;
+        private System.Windows.Forms.Label lblSets;
+        private System.Windows.Forms.TextBox txtSets;
         private System.Windows.Forms.Label lblMatchDate;
         private System.Windows.Forms.TextBox txtMatchDate;
         private System.Windows.Forms.TextBox txtStandings;

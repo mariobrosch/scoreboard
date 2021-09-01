@@ -144,6 +144,114 @@
   <data name="&gt;&gt;lbMatchTypes.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="numTimeOfMatch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 215</value>
+  </data>
+  <data name="numTimeOfMatch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="numTimeOfMatch.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;numTimeOfMatch.Name" xml:space="preserve">
+    <value>numTimeOfMatch</value>
+  </data>
+  <data name="&gt;&gt;numTimeOfMatch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numTimeOfMatch.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;numTimeOfMatch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblTimeOfMatch.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTimeOfMatch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTimeOfMatch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 218</value>
+  </data>
+  <data name="lblTimeOfMatch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblTimeOfMatch.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="lblTimeOfMatch.Text" xml:space="preserve">
+    <value>Duur wedstrijd</value>
+  </data>
+  <data name="&gt;&gt;lblTimeOfMatch.Name" xml:space="preserve">
+    <value>lblTimeOfMatch</value>
+  </data>
+  <data name="&gt;&gt;lblTimeOfMatch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTimeOfMatch.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;lblTimeOfMatch.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkTimedMatch.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkTimedMatch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkTimedMatch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>313, 195</value>
+  </data>
+  <data name="chkTimedMatch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="chkTimedMatch.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;chkTimedMatch.Name" xml:space="preserve">
+    <value>chkTimedMatch</value>
+  </data>
+  <data name="&gt;&gt;chkTimedMatch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkTimedMatch.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;chkTimedMatch.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblTimedMatch.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTimedMatch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTimedMatch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 195</value>
+  </data>
+  <data name="lblTimedMatch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="lblTimedMatch.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="lblTimedMatch.Text" xml:space="preserve">
+    <value>Wedstrijd op tijd</value>
+  </data>
+  <data name="&gt;&gt;lblTimedMatch.Name" xml:space="preserve">
+    <value>lblTimedMatch</value>
+  </data>
+  <data name="&gt;&gt;lblTimedMatch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTimedMatch.Parent" xml:space="preserve">
+    <value>pnlPlayer</value>
+  </data>
+  <data name="&gt;&gt;lblTimedMatch.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="numServiceChangeOnShootOutPer.Location" type="System.Drawing.Point, System.Drawing">
     <value>314, 345</value>
   </data>
@@ -163,7 +271,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;numServiceChangeOnShootOutPer.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="chkTwoPointsDifferenceToWin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -187,7 +295,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;chkTwoPointsDifferenceToWin.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="lblAvailableForTwoVsTwo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -214,7 +322,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblAvailableForTwoVsTwo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="chkAvailableForTwoVsTwo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -238,7 +346,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;chkAvailableForTwoVsTwo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="lblServiceChangeOnShootOutPer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -265,7 +373,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblServiceChangeOnShootOutPer.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="lblTwoPointsDifferenceToWin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -292,7 +400,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblTwoPointsDifferenceToWin.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="numServiceChangeEveryNumberOfServices.Location" type="System.Drawing.Point, System.Drawing">
     <value>314, 293</value>
@@ -313,7 +421,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;numServiceChangeEveryNumberOfServices.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="lblServiceChangeEveryNumberOfServices.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -340,103 +448,103 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblServiceChangeEveryNumberOfServices.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
-  <data name="numScorePerGameToWin.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numScorePerSetToWin.Location" type="System.Drawing.Point, System.Drawing">
     <value>314, 267</value>
   </data>
-  <data name="numScorePerGameToWin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numScorePerSetToWin.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 20</value>
   </data>
-  <data name="numScorePerGameToWin.TabIndex" type="System.Int32, mscorlib">
+  <data name="numScorePerSetToWin.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;numScorePerGameToWin.Name" xml:space="preserve">
-    <value>numScorePerGameToWin</value>
+  <data name="&gt;&gt;numScorePerSetToWin.Name" xml:space="preserve">
+    <value>numScorePerSetToWin</value>
   </data>
-  <data name="&gt;&gt;numScorePerGameToWin.Type" xml:space="preserve">
+  <data name="&gt;&gt;numScorePerSetToWin.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;numScorePerGameToWin.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numScorePerSetToWin.Parent" xml:space="preserve">
     <value>pnlPlayer</value>
   </data>
-  <data name="&gt;&gt;numScorePerGameToWin.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;numScorePerSetToWin.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
-  <data name="lblScorePerGameToWin.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblScorePerSetToWin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblScorePerGameToWin.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblScorePerSetToWin.Location" type="System.Drawing.Point, System.Drawing">
     <value>180, 269</value>
   </data>
-  <data name="lblScorePerGameToWin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblScorePerSetToWin.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 13</value>
   </data>
-  <data name="lblScorePerGameToWin.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblScorePerSetToWin.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="lblScorePerGameToWin.Text" xml:space="preserve">
+  <data name="lblScorePerSetToWin.Text" xml:space="preserve">
     <value>Punten per set voor winst</value>
   </data>
-  <data name="&gt;&gt;lblScorePerGameToWin.Name" xml:space="preserve">
-    <value>lblScorePerGameToWin</value>
+  <data name="&gt;&gt;lblScorePerSetToWin.Name" xml:space="preserve">
+    <value>lblScorePerSetToWin</value>
   </data>
-  <data name="&gt;&gt;lblScorePerGameToWin.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblScorePerSetToWin.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblScorePerGameToWin.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblScorePerSetToWin.Parent" xml:space="preserve">
     <value>pnlPlayer</value>
   </data>
-  <data name="&gt;&gt;lblScorePerGameToWin.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;lblScorePerSetToWin.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
-  <data name="numNumberOfGamesToWin.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="numNumberOfSetsToWin.Location" type="System.Drawing.Point, System.Drawing">
     <value>314, 241</value>
   </data>
-  <data name="numNumberOfGamesToWin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="numNumberOfSetsToWin.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 20</value>
   </data>
-  <data name="numNumberOfGamesToWin.TabIndex" type="System.Int32, mscorlib">
+  <data name="numNumberOfSetsToWin.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;numNumberOfGamesToWin.Name" xml:space="preserve">
-    <value>numNumberOfGamesToWin</value>
+  <data name="&gt;&gt;numNumberOfSetsToWin.Name" xml:space="preserve">
+    <value>numNumberOfSetsToWin</value>
   </data>
-  <data name="&gt;&gt;numNumberOfGamesToWin.Type" xml:space="preserve">
+  <data name="&gt;&gt;numNumberOfSetsToWin.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;numNumberOfGamesToWin.Parent" xml:space="preserve">
+  <data name="&gt;&gt;numNumberOfSetsToWin.Parent" xml:space="preserve">
     <value>pnlPlayer</value>
   </data>
-  <data name="&gt;&gt;numNumberOfGamesToWin.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;numNumberOfSetsToWin.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
-  <data name="lblNumberOfGamesToWin.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblNumberOfSetsToWin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblNumberOfGamesToWin.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblNumberOfSetsToWin.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 243</value>
   </data>
-  <data name="lblNumberOfGamesToWin.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblNumberOfSetsToWin.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 13</value>
   </data>
-  <data name="lblNumberOfGamesToWin.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblNumberOfSetsToWin.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="lblNumberOfGamesToWin.Text" xml:space="preserve">
+  <data name="lblNumberOfSetsToWin.Text" xml:space="preserve">
     <value>Aantal sets voor winst</value>
   </data>
-  <data name="&gt;&gt;lblNumberOfGamesToWin.Name" xml:space="preserve">
-    <value>lblNumberOfGamesToWin</value>
+  <data name="&gt;&gt;lblNumberOfSetsToWin.Name" xml:space="preserve">
+    <value>lblNumberOfSetsToWin</value>
   </data>
-  <data name="&gt;&gt;lblNumberOfGamesToWin.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblNumberOfSetsToWin.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblNumberOfGamesToWin.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblNumberOfSetsToWin.Parent" xml:space="preserve">
     <value>pnlPlayer</value>
   </data>
-  <data name="&gt;&gt;lblNumberOfGamesToWin.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;lblNumberOfSetsToWin.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="lblMatchResults.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -460,7 +568,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblMatchResults.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="lblPlayedMatches.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -487,7 +595,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblPlayedMatches.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="lblRemoved.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -514,7 +622,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblRemoved.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>18</value>
   </data>
   <data name="chkRemoved.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -538,7 +646,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;chkRemoved.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="lblDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -565,7 +673,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblDescription.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>20</value>
   </data>
   <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>314, 86</value>
@@ -574,7 +682,7 @@
     <value>True</value>
   </data>
   <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 149</value>
+    <value>226, 103</value>
   </data>
   <data name="txtDescription.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -589,7 +697,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;txtDescription.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>21</value>
   </data>
   <data name="lblType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -616,7 +724,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblType.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>22</value>
   </data>
   <data name="txtType.Location" type="System.Drawing.Point, System.Drawing">
     <value>314, 60</value>
@@ -637,7 +745,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;txtType.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>23</value>
   </data>
   <data name="txtId.Location" type="System.Drawing.Point, System.Drawing">
     <value>314, 34</value>
@@ -658,7 +766,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>24</value>
   </data>
   <data name="lblId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -685,7 +793,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;lblId.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>25</value>
   </data>
   <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
     <value>632, 415</value>
@@ -709,7 +817,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>26</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
     <value>713, 415</value>
@@ -733,7 +841,7 @@
     <value>pnlPlayer</value>
   </data>
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>27</value>
   </data>
   <data name="pnlPlayer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

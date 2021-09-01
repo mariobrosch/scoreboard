@@ -45,7 +45,7 @@ namespace Scoreboard.forms
             {
                 if (MessageBox.Show(FormsHelper.GetResourceText("NoUnfinishedMatches"), FormsHelper.GetResourceText("NoMatchesFound"), MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (!CheckGameCanStart())
+                    if (!CheckMatchCanStart())
                     {
                         return;
                     }
@@ -64,7 +64,7 @@ namespace Scoreboard.forms
                 var matchSummary = MatchHelper.GetMatchSummary(foundMatch);
 
                 var text = FormsHelper.GetResourceText("recentMatch1") + " '" + matchSummary.TeamLeft + "' " + FormsHelper.GetResourceText("and") + " '" + matchSummary.TeamRight + "' " + FormsHelper.GetResourceText("withMatchType") + " " + matchSummary.MatchType.Type + "\r\n\r\n";
-                text += FormsHelper.GetResourceText("thereAre") + " " + matchSummary.Games.Count.ToString() + " " + FormsHelper.GetResourceText("setsPlayed") + ".\r\n";
+                text += FormsHelper.GetResourceText("thereAre") + " " + matchSummary.Sets.Count.ToString() + " " + FormsHelper.GetResourceText("setsPlayed") + ".\r\n";
                 text += "\r\n " + FormsHelper.GetResourceText("standings") + " " + matchSummary.Standings + "\r\n";
                 text += "\r\n" + FormsHelper.GetResourceText("continueMatch");
 
@@ -82,7 +82,7 @@ namespace Scoreboard.forms
             continueMatchSelection.ShowDialog();
         }
 
-        private bool CheckGameCanStart()
+        private bool CheckMatchCanStart()
         {
             var matchTypes = MatchTypeData.Get();
             if (matchTypes.Count == 0)
@@ -103,7 +103,7 @@ namespace Scoreboard.forms
 
         private void BtnNewMatch_Click(object sender, EventArgs e)
         {
-            if (!CheckGameCanStart())
+            if (!CheckMatchCanStart())
             {
                 return;
             }

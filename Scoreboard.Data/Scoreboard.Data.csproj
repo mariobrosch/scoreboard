@@ -75,8 +75,8 @@
     <Compile Include="data\LocalStorage\LocalStorage.cs" />
     <Compile Include="data\LocalStorage\Update.cs" />
     <Compile Include="data\requests\SettingData.cs" />
-    <Compile Include="data\requests\SinglePlayerGameData.cs" />
-    <Compile Include="data\requests\GameData.cs" />
+    <Compile Include="data\requests\SinglePlayerMatchData.cs" />
+    <Compile Include="data\requests\SetData.cs" />
     <Compile Include="data\requests\MatchData.cs" />
     <Compile Include="data\requests\MatchTypeData.cs" />
     <Compile Include="data\requests\PlayerData.cs" />
@@ -84,11 +84,12 @@
     <Compile Include="data\Rest\Rest.cs" />
     <Compile Include="enums\HttpMethods.cs" />
     <Compile Include="enums\PlayerSide.cs" />
-    <Compile Include="Helpers\GameHelper.cs" />
+    <Compile Include="Helpers\SetHelper.cs" />
     <Compile Include="Helpers\MatchHelper.cs" />
+    <Compile Include="Migrations\Handler.cs" />
     <Compile Include="models\Setting.cs" />
-    <Compile Include="models\SinglePlayerGame.cs" />
-    <Compile Include="models\Game.cs" />
+    <Compile Include="models\SinglePlayerMatch.cs" />
+    <Compile Include="models\Set.cs" />
     <Compile Include="models\Match.cs" />
     <Compile Include="models\MatchSummary.cs" />
     <Compile Include="models\MatchType.cs" />

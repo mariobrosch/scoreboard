@@ -9,25 +9,25 @@ namespace Scoreboard.forms
 {
     public partial class PlaySinglePlayer : Form
     {
-        private readonly SinglePlayerGame _SinglePlayerGame;
+        private readonly SinglePlayerMatch _SinglePlayerMatch;
         private readonly int highScore;
-        public PlaySinglePlayer(SinglePlayerGame singlePlayerGame)
+        public PlaySinglePlayer(SinglePlayerMatch singlePlayerMatch)
         {
-            _SinglePlayerGame = singlePlayerGame;
+            _SinglePlayerMatch = singlePlayerMatch;
             InitializeComponent();
 
             var filterObject = new FilterObject()
             {
                 Column = "PlayerId",
-                Value = _SinglePlayerGame.PlayerId.ToString()
+                Value = _SinglePlayerMatch.PlayerId.ToString()
             };
-            var allPlayedGames = SinglePlayerGameData.Get(filterObject);
-            if (allPlayedGames.Count > 1)
+            var allPlayedMatches = SinglePlayerMatchData.Get(filterObject);
+            if (allPlayedMatches.Count > 1)
             {
-                allPlayedGames = allPlayedGames.OrderBy(x => x.HighScore).ToList();
-                var bestGame = allPlayedGames[allPlayedGames.Count - 1];
-                highScore = bestGame.HighScore;
-                lblPreviousRecord.Text = FormsHelper.GetResourceText("highscore") + ": " + highScore.ToString() + " (" + bestGame.MatchDateParsed.ToString("yyyy-MM-dd") + ")";
+                allPlayedMatches = allPlayedMatches.OrderBy(x => x.HighScore).ToList();
+                var bestMatch = allPlayedMatches[allPlayedMatches.Count - 1];
+                highScore = bestMatch.HighScore;
+                lblPreviousRecord.Text = FormsHelper.GetResourceText("highscore") + ": " + highScore.ToString() + " (" + bestMatch.MatchDateParsed.ToString("yyyy-MM-dd") + ")";
             }
             numScore.Select(0, numScore.Value.ToString().Length);
         }
@@ -39,8 +39,8 @@ namespace Scoreboard.forms
                 FormsHelper.PlaySound(SoundTypes.Applause);
             }
 
-            _SinglePlayerGame.HighScore = Decimal.ToInt32(numScore.Value);
-            SinglePlayerGameData.Update(_SinglePlayerGame);
+            _SinglePlayerMatch.HighScore = Decimal.ToInt32(numScore.Value);
+            SinglePlayerMatchData.Update(_SinglePlayerMatch);
             Dispose();
         }
 

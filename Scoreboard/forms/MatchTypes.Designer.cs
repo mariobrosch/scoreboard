@@ -32,6 +32,10 @@ namespace Scoreboard.forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMatchTypes));
             this.lbMatchTypes = new System.Windows.Forms.ListBox();
             this.pnlPlayer = new System.Windows.Forms.Panel();
+            this.numTimeOfMatch = new System.Windows.Forms.NumericUpDown();
+            this.lblTimeOfMatch = new System.Windows.Forms.Label();
+            this.chkTimedMatch = new System.Windows.Forms.CheckBox();
+            this.lblTimedMatch = new System.Windows.Forms.Label();
             this.numServiceChangeOnShootOutPer = new System.Windows.Forms.NumericUpDown();
             this.chkTwoPointsDifferenceToWin = new System.Windows.Forms.CheckBox();
             this.lblAvailableForTwoVsTwo = new System.Windows.Forms.Label();
@@ -40,10 +44,10 @@ namespace Scoreboard.forms
             this.lblTwoPointsDifferenceToWin = new System.Windows.Forms.Label();
             this.numServiceChangeEveryNumberOfServices = new System.Windows.Forms.NumericUpDown();
             this.lblServiceChangeEveryNumberOfServices = new System.Windows.Forms.Label();
-            this.numScorePerGameToWin = new System.Windows.Forms.NumericUpDown();
-            this.lblScorePerGameToWin = new System.Windows.Forms.Label();
-            this.numNumberOfGamesToWin = new System.Windows.Forms.NumericUpDown();
-            this.lblNumberOfGamesToWin = new System.Windows.Forms.Label();
+            this.numScorePerSetToWin = new System.Windows.Forms.NumericUpDown();
+            this.lblScorePerSetToWin = new System.Windows.Forms.Label();
+            this.numNumberOfSetsToWin = new System.Windows.Forms.NumericUpDown();
+            this.lblNumberOfSetsToWin = new System.Windows.Forms.Label();
             this.lblMatchResults = new System.Windows.Forms.Label();
             this.lblPlayedMatches = new System.Windows.Forms.Label();
             this.lblRemoved = new System.Windows.Forms.Label();
@@ -60,10 +64,11 @@ namespace Scoreboard.forms
             this.pnlPlayerlist = new System.Windows.Forms.Panel();
             this.chkDisplayRemoved = new System.Windows.Forms.CheckBox();
             this.pnlPlayer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeOfMatch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numServiceChangeOnShootOutPer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numServiceChangeEveryNumberOfServices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numScorePerGameToWin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numNumberOfGamesToWin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numScorePerSetToWin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNumberOfSetsToWin)).BeginInit();
             this.pnlPlayerlist.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +81,10 @@ namespace Scoreboard.forms
             // 
             // pnlPlayer
             // 
+            this.pnlPlayer.Controls.Add(this.numTimeOfMatch);
+            this.pnlPlayer.Controls.Add(this.lblTimeOfMatch);
+            this.pnlPlayer.Controls.Add(this.chkTimedMatch);
+            this.pnlPlayer.Controls.Add(this.lblTimedMatch);
             this.pnlPlayer.Controls.Add(this.numServiceChangeOnShootOutPer);
             this.pnlPlayer.Controls.Add(this.chkTwoPointsDifferenceToWin);
             this.pnlPlayer.Controls.Add(this.lblAvailableForTwoVsTwo);
@@ -84,10 +93,10 @@ namespace Scoreboard.forms
             this.pnlPlayer.Controls.Add(this.lblTwoPointsDifferenceToWin);
             this.pnlPlayer.Controls.Add(this.numServiceChangeEveryNumberOfServices);
             this.pnlPlayer.Controls.Add(this.lblServiceChangeEveryNumberOfServices);
-            this.pnlPlayer.Controls.Add(this.numScorePerGameToWin);
-            this.pnlPlayer.Controls.Add(this.lblScorePerGameToWin);
-            this.pnlPlayer.Controls.Add(this.numNumberOfGamesToWin);
-            this.pnlPlayer.Controls.Add(this.lblNumberOfGamesToWin);
+            this.pnlPlayer.Controls.Add(this.numScorePerSetToWin);
+            this.pnlPlayer.Controls.Add(this.lblScorePerSetToWin);
+            this.pnlPlayer.Controls.Add(this.numNumberOfSetsToWin);
+            this.pnlPlayer.Controls.Add(this.lblNumberOfSetsToWin);
             this.pnlPlayer.Controls.Add(this.lblMatchResults);
             this.pnlPlayer.Controls.Add(this.lblPlayedMatches);
             this.pnlPlayer.Controls.Add(this.lblRemoved);
@@ -102,6 +111,38 @@ namespace Scoreboard.forms
             this.pnlPlayer.Controls.Add(this.btnSave);
             resources.ApplyResources(this.pnlPlayer, "pnlPlayer");
             this.pnlPlayer.Name = "pnlPlayer";
+            // 
+            // numTimeOfMatch
+            // 
+            resources.ApplyResources(this.numTimeOfMatch, "numTimeOfMatch");
+            this.numTimeOfMatch.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTimeOfMatch.Name = "numTimeOfMatch";
+            this.numTimeOfMatch.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblTimeOfMatch
+            // 
+            resources.ApplyResources(this.lblTimeOfMatch, "lblTimeOfMatch");
+            this.lblTimeOfMatch.Name = "lblTimeOfMatch";
+            // 
+            // chkTimedMatch
+            // 
+            resources.ApplyResources(this.chkTimedMatch, "chkTimedMatch");
+            this.chkTimedMatch.Name = "chkTimedMatch";
+            this.chkTimedMatch.UseVisualStyleBackColor = true;
+            this.chkTimedMatch.CheckedChanged += new System.EventHandler(this.ChkTimedMatch_CheckedChanged);
+            // 
+            // lblTimedMatch
+            // 
+            resources.ApplyResources(this.lblTimedMatch, "lblTimedMatch");
+            this.lblTimedMatch.Name = "lblTimedMatch";
             // 
             // numServiceChangeOnShootOutPer
             // 
@@ -165,45 +206,45 @@ namespace Scoreboard.forms
             resources.ApplyResources(this.lblServiceChangeEveryNumberOfServices, "lblServiceChangeEveryNumberOfServices");
             this.lblServiceChangeEveryNumberOfServices.Name = "lblServiceChangeEveryNumberOfServices";
             // 
-            // numScorePerGameToWin
+            // numScorePerSetToWin
             // 
-            resources.ApplyResources(this.numScorePerGameToWin, "numScorePerGameToWin");
-            this.numScorePerGameToWin.Minimum = new decimal(new int[] {
+            resources.ApplyResources(this.numScorePerSetToWin, "numScorePerSetToWin");
+            this.numScorePerSetToWin.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numScorePerGameToWin.Name = "numScorePerGameToWin";
-            this.numScorePerGameToWin.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lblScorePerGameToWin
-            // 
-            resources.ApplyResources(this.lblScorePerGameToWin, "lblScorePerGameToWin");
-            this.lblScorePerGameToWin.Name = "lblScorePerGameToWin";
-            // 
-            // numNumberOfGamesToWin
-            // 
-            resources.ApplyResources(this.numNumberOfGamesToWin, "numNumberOfGamesToWin");
-            this.numNumberOfGamesToWin.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numNumberOfGamesToWin.Name = "numNumberOfGamesToWin";
-            this.numNumberOfGamesToWin.Value = new decimal(new int[] {
+            this.numScorePerSetToWin.Name = "numScorePerSetToWin";
+            this.numScorePerSetToWin.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // lblNumberOfGamesToWin
+            // lblScorePerSetToWin
             // 
-            resources.ApplyResources(this.lblNumberOfGamesToWin, "lblNumberOfGamesToWin");
-            this.lblNumberOfGamesToWin.Name = "lblNumberOfGamesToWin";
+            resources.ApplyResources(this.lblScorePerSetToWin, "lblScorePerSetToWin");
+            this.lblScorePerSetToWin.Name = "lblScorePerSetToWin";
+            // 
+            // numNumberOfSetsToWin
+            // 
+            resources.ApplyResources(this.numNumberOfSetsToWin, "numNumberOfSetsToWin");
+            this.numNumberOfSetsToWin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numNumberOfSetsToWin.Name = "numNumberOfSetsToWin";
+            this.numNumberOfSetsToWin.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblNumberOfSetsToWin
+            // 
+            resources.ApplyResources(this.lblNumberOfSetsToWin, "lblNumberOfSetsToWin");
+            this.lblNumberOfSetsToWin.Name = "lblNumberOfSetsToWin";
             // 
             // lblMatchResults
             // 
@@ -304,10 +345,11 @@ namespace Scoreboard.forms
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.pnlPlayer.ResumeLayout(false);
             this.pnlPlayer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimeOfMatch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numServiceChangeOnShootOutPer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numServiceChangeEveryNumberOfServices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numScorePerGameToWin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numNumberOfGamesToWin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numScorePerSetToWin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNumberOfSetsToWin)).EndInit();
             this.pnlPlayerlist.ResumeLayout(false);
             this.pnlPlayerlist.PerformLayout();
             this.ResumeLayout(false);
@@ -341,9 +383,13 @@ namespace Scoreboard.forms
         private System.Windows.Forms.Label lblTwoPointsDifferenceToWin;
         private System.Windows.Forms.NumericUpDown numServiceChangeEveryNumberOfServices;
         private System.Windows.Forms.Label lblServiceChangeEveryNumberOfServices;
-        private System.Windows.Forms.NumericUpDown numScorePerGameToWin;
-        private System.Windows.Forms.Label lblScorePerGameToWin;
-        private System.Windows.Forms.NumericUpDown numNumberOfGamesToWin;
-        private System.Windows.Forms.Label lblNumberOfGamesToWin;
+        private System.Windows.Forms.NumericUpDown numScorePerSetToWin;
+        private System.Windows.Forms.Label lblScorePerSetToWin;
+        private System.Windows.Forms.NumericUpDown numNumberOfSetsToWin;
+        private System.Windows.Forms.Label lblNumberOfSetsToWin;
+        private System.Windows.Forms.NumericUpDown numTimeOfMatch;
+        private System.Windows.Forms.Label lblTimeOfMatch;
+        private System.Windows.Forms.CheckBox chkTimedMatch;
+        private System.Windows.Forms.Label lblTimedMatch;
     }
 }

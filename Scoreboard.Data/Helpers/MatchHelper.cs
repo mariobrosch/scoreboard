@@ -28,37 +28,37 @@ namespace Scoreboard.Data.Helpers
                 matchSummary.TeamRight += "+" + playerRight2.Name;
             }
 
-            matchSummary.Games = GameData.GetByMatch(match.Id).OrderBy(m => m.GameNumber).ToList();
+            matchSummary.Sets = SetData.GetByMatch(match.Id).OrderBy(m => m.SetNumber).ToList();
 
-            var gamesLeft = 0;
-            var gamesRight = 0;
+            var setsLeft = 0;
+            var setsRight = 0;
             var text = "";
 
-            foreach (var game in matchSummary.Games)
+            foreach (var set in matchSummary.Sets)
             {
-                if (game.GameWinnerId != null)
+                if (set.SetWinnerId != null)
                 {
-                    if (game.GameWinnerId == match.PlayerLeftId)
+                    if (set.SetWinnerId == match.PlayerLeftId)
                     {
-                        gamesLeft++;
-                        text += game.TeamLeftScore + "* - " + game.TeamRightScore + "\r\n";
+                        setsLeft++;
+                        text += set.TeamLeftScore + "* - " + set.TeamRightScore + "\r\n";
                     }
                     else
                     {
-                        gamesRight++;
-                        text += game.TeamLeftScore + " - " + game.TeamRightScore + "*\r\n";
+                        setsRight++;
+                        text += set.TeamLeftScore + " - " + set.TeamRightScore + "*\r\n";
                     }
 
                 }
                 else
                 {
-                    text += game.TeamLeftScore + " - " + game.TeamRightScore + "\r\n";
+                    text += set.TeamLeftScore + " - " + set.TeamRightScore + "\r\n";
                 }
             }
 
             matchSummary.MatchType = MatchTypeData.Get(match.MatchTypeId);
-            matchSummary.GamesSummary = text;
-            matchSummary.Standings = gamesLeft + "-" + gamesRight;
+            matchSummary.SetsSummary = text;
+            matchSummary.Standings = setsLeft + "-" + setsRight;
             matchSummary.MatchDate = match.MatchDate;
             matchSummary.Match = match;
             return matchSummary;
@@ -66,52 +66,52 @@ namespace Scoreboard.Data.Helpers
 
         public static PlayerSide HasMatchWinner(MatchSummary matchSummary)
         {
-            var games = matchSummary.Games;
-            var gamesWonLeft = Convert.ToInt32(matchSummary.Standings.Split('-')[0]);
-            var gamesWonRight = Convert.ToInt32(matchSummary.Standings.Split('-')[1]);
+            var sets = matchSummary.Sets;
+            var setsWonLeft = Convert.ToInt32(matchSummary.Standings.Split('-')[0]);
+            var setsWonRight = Convert.ToInt32(matchSummary.Standings.Split('-')[1]);
 
-            var totalGamesPlayed = gamesWonLeft + gamesWonRight;
-            if (totalGamesPlayed == games.Count 
-                && gamesWonLeft != matchSummary.MatchType.NumberOfGamesToWin 
-                && gamesWonRight != matchSummary.MatchType.NumberOfGamesToWin)
+            var totalSetsPlayed = setsWonLeft + setsWonRight;
+            if (totalSetsPlayed == sets.Count 
+                && setsWonLeft != matchSummary.MatchType.NumberOfSetsToWin 
+                && setsWonRight != matchSummary.MatchType.NumberOfSetsToWin)
             {
                 return PlayerSide.None;
             }
 
-            gamesWonLeft = 0;
-            gamesWonRight = 0;
-            foreach(Game game in games)
+            setsWonLeft = 0;
+            setsWonRight = 0;
+            foreach(Set set in sets)
             {
-                if (game.GameWinnerId != null)
+                if (set.SetWinnerId != null)
                 {
-                    if (game.GameWinnerId == matchSummary.Match.PlayerLeftId) // We don't need a check for second player
+                    if (set.SetWinnerId == matchSummary.Match.PlayerLeftId) // We don't need a check for second player
                     {
-                        gamesWonLeft++;
+                        setsWonLeft++;
                     }
                     else
                     {
-                        gamesWonRight++;
+                        setsWonRight++;
                     }
                 }
-                // in theory game winner should already be filled in before we start this method
+                // in theory set winner should already be filled in before we start this method
                 else
                 {
-                    switch (GameHelper.HasWinner(game, matchSummary.MatchType))
+                    switch (SetHelper.HasWinner(set, matchSummary.MatchType))
                     {
                         case PlayerSide.Left:
-                            gamesWonLeft++;
+                            setsWonLeft++;
                             break;
                         case PlayerSide.Right:
-                            gamesWonRight++;
+                            setsWonRight++;
                             break;
                     }
                 }
             }
 
-            if (gamesWonLeft >= matchSummary.MatchType.NumberOfGamesToWin)
+            if (setsWonLeft >= matchSummary.MatchType.NumberOfSetsToWin)
             {
                 return PlayerSide.Left;
-            } else if (gamesWonRight >= matchSummary.MatchType.NumberOfGamesToWin)
+            } else if (setsWonRight >= matchSummary.MatchType.NumberOfSetsToWin)
             {
                 return PlayerSide.Right;
             }

@@ -38,12 +38,12 @@ namespace Scoreboard.forms
             this.lblPlayerRight2 = new System.Windows.Forms.Label();
             this.cboPlayerLeft2 = new System.Windows.Forms.ComboBox();
             this.lblPlayerLeft2 = new System.Windows.Forms.Label();
-            this.chkTwoVsTwoGame = new System.Windows.Forms.CheckBox();
-            this.lblTwoVsTwoPlayerGame = new System.Windows.Forms.Label();
+            this.chkTwoVsTwoMatch = new System.Windows.Forms.CheckBox();
+            this.lblTwoVsTwoPlayerMatch = new System.Windows.Forms.Label();
             this.cboMatchType = new System.Windows.Forms.ComboBox();
             this.lblMatchType = new System.Windows.Forms.Label();
             this.txtMatchTypeDescription = new System.Windows.Forms.TextBox();
-            this.btnStartNewGame = new System.Windows.Forms.Button();
+            this.btnStartNewMatch = new System.Windows.Forms.Button();
             this.lblHelp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -103,17 +103,17 @@ namespace Scoreboard.forms
             resources.ApplyResources(this.lblPlayerLeft2, "lblPlayerLeft2");
             this.lblPlayerLeft2.Name = "lblPlayerLeft2";
             // 
-            // chkTwoVsTwoGame
+            // chkTwoVsTwoMatch
             // 
-            resources.ApplyResources(this.chkTwoVsTwoGame, "chkTwoVsTwoGame");
-            this.chkTwoVsTwoGame.Name = "chkTwoVsTwoGame";
-            this.chkTwoVsTwoGame.UseVisualStyleBackColor = true;
-            this.chkTwoVsTwoGame.CheckedChanged += new System.EventHandler(this.ChkTwoVsTwoGame_CheckedChanged);
+            resources.ApplyResources(this.chkTwoVsTwoMatch, "chkTwoVsTwoMatch");
+            this.chkTwoVsTwoMatch.Name = "chkTwoVsTwoMatch";
+            this.chkTwoVsTwoMatch.UseVisualStyleBackColor = true;
+            this.chkTwoVsTwoMatch.CheckedChanged += new System.EventHandler(this.ChkTwoVsTwoMatch_CheckedChanged);
             // 
-            // lblTwoVsTwoPlayerGame
+            // lblTwoVsTwoPlayerMatch
             // 
-            resources.ApplyResources(this.lblTwoVsTwoPlayerGame, "lblTwoVsTwoPlayerGame");
-            this.lblTwoVsTwoPlayerGame.Name = "lblTwoVsTwoPlayerGame";
+            resources.ApplyResources(this.lblTwoVsTwoPlayerMatch, "lblTwoVsTwoPlayerMatch");
+            this.lblTwoVsTwoPlayerMatch.Name = "lblTwoVsTwoPlayerMatch";
             // 
             // cboMatchType
             // 
@@ -136,12 +136,12 @@ namespace Scoreboard.forms
             this.txtMatchTypeDescription.Name = "txtMatchTypeDescription";
             this.txtMatchTypeDescription.ReadOnly = true;
             // 
-            // btnStartNewGame
+            // btnStartNewMatch
             // 
-            resources.ApplyResources(this.btnStartNewGame, "btnStartNewGame");
-            this.btnStartNewGame.Name = "btnStartNewGame";
-            this.btnStartNewGame.UseVisualStyleBackColor = true;
-            this.btnStartNewGame.Click += new System.EventHandler(this.BtnStartNewGame_Click);
+            resources.ApplyResources(this.btnStartNewMatch, "btnStartNewMatch");
+            this.btnStartNewMatch.Name = "btnStartNewMatch";
+            this.btnStartNewMatch.UseVisualStyleBackColor = true;
+            this.btnStartNewMatch.Click += new System.EventHandler(this.BtnStartNewSet_Click);
             // 
             // lblHelp
             // 
@@ -153,12 +153,12 @@ namespace Scoreboard.forms
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblHelp);
-            this.Controls.Add(this.btnStartNewGame);
+            this.Controls.Add(this.btnStartNewMatch);
             this.Controls.Add(this.txtMatchTypeDescription);
             this.Controls.Add(this.lblMatchType);
             this.Controls.Add(this.cboMatchType);
-            this.Controls.Add(this.lblTwoVsTwoPlayerGame);
-            this.Controls.Add(this.chkTwoVsTwoGame);
+            this.Controls.Add(this.lblTwoVsTwoPlayerMatch);
+            this.Controls.Add(this.chkTwoVsTwoMatch);
             this.Controls.Add(this.cboPlayerLeft2);
             this.Controls.Add(this.lblPlayerLeft2);
             this.Controls.Add(this.cboPlayerRight2);
@@ -185,12 +185,12 @@ namespace Scoreboard.forms
         private System.Windows.Forms.Label lblPlayerRight2;
         private System.Windows.Forms.ComboBox cboPlayerLeft2;
         private System.Windows.Forms.Label lblPlayerLeft2;
-        private System.Windows.Forms.CheckBox chkTwoVsTwoGame;
-        private System.Windows.Forms.Label lblTwoVsTwoPlayerGame;
+        private System.Windows.Forms.CheckBox chkTwoVsTwoMatch;
+        private System.Windows.Forms.Label lblTwoVsTwoPlayerMatch;
         private System.Windows.Forms.ComboBox cboMatchType;
         private System.Windows.Forms.Label lblMatchType;
         private System.Windows.Forms.TextBox txtMatchTypeDescription;
-        private System.Windows.Forms.Button btnStartNewGame;
+        private System.Windows.Forms.Button btnStartNewMatch;
         private System.Windows.Forms.Label lblHelp;
     }
 }
