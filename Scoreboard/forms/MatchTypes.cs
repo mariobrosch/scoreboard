@@ -137,6 +137,7 @@ namespace Scoreboard.forms
             chkAvailableForTwoVsTwo.Checked = true;
             btnDelete.Visible = false;
             numTimeOfMatch.Value = 1;
+            lblMatchResults.Text = "-";
             SetFieldsEnabled();
         }
 
