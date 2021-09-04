@@ -1,6 +1,9 @@
 1.1.0.11 -
  - Migrate game naming to set/match naming
  - Added possibility to define a matchtype timed
+ - UI fix for creating new match type
+ - Settings with default options are shown in a dropdown
+ - Display time played for each match on top of playmatch screen
 
 1.1.0.10 01-09-2021
  - Improved keyboard support for single player

@@ -37,10 +37,15 @@ namespace Scoreboard.forms
             this.btnRightScore = new System.Windows.Forms.Button();
             this.txtWinner = new System.Windows.Forms.TextBox();
             this.btnStartNewSet = new System.Windows.Forms.Button();
+            this.pnlTime = new System.Windows.Forms.Panel();
+            this.lblTimePlayed = new System.Windows.Forms.Label();
+            this.pnlButtons = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            this.pnlTime.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer
@@ -50,13 +55,11 @@ namespace Scoreboard.forms
             // 
             // splitContainer.Panel1
             // 
-            resources.ApplyResources(this.splitContainer.Panel1, "splitContainer.Panel1");
             this.splitContainer.Panel1.Controls.Add(this.txtLeft);
             this.splitContainer.Panel1.Controls.Add(this.btnLeftScore);
             // 
             // splitContainer.Panel2
             // 
-            resources.ApplyResources(this.splitContainer.Panel2, "splitContainer.Panel2");
             this.splitContainer.Panel2.Controls.Add(this.txtRight);
             this.splitContainer.Panel2.Controls.Add(this.btnRightScore);
             // 
@@ -91,19 +94,37 @@ namespace Scoreboard.forms
             resources.ApplyResources(this.txtWinner, "txtWinner");
             this.txtWinner.Name = "txtWinner";
             // 
-            // btnStartNewMatch
+            // btnStartNewSet
             // 
-            resources.ApplyResources(this.btnStartNewSet, "btnStartNewMatch");
-            this.btnStartNewSet.Name = "btnStartNewMatch";
+            resources.ApplyResources(this.btnStartNewSet, "btnStartNewSet");
+            this.btnStartNewSet.Name = "btnStartNewSet";
             this.btnStartNewSet.UseVisualStyleBackColor = true;
             this.btnStartNewSet.Click += new System.EventHandler(this.BtnStartNewSet_Click);
+            // 
+            // pnlTime
+            // 
+            this.pnlTime.Controls.Add(this.lblTimePlayed);
+            resources.ApplyResources(this.pnlTime, "pnlTime");
+            this.pnlTime.Name = "pnlTime";
+            // 
+            // lblTimePlayed
+            // 
+            resources.ApplyResources(this.lblTimePlayed, "lblTimePlayed");
+            this.lblTimePlayed.Name = "lblTimePlayed";
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.Controls.Add(this.splitContainer);
+            resources.ApplyResources(this.pnlButtons, "pnlButtons");
+            this.pnlButtons.Name = "pnlButtons";
             // 
             // PlayMatch
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnlButtons);
+            this.Controls.Add(this.pnlTime);
             this.Controls.Add(this.btnStartNewSet);
-            this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.txtWinner);
             this.KeyPreview = true;
             this.Name = "PlayMatch";
@@ -117,6 +138,8 @@ namespace Scoreboard.forms
             this.splitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
+            this.pnlTime.ResumeLayout(false);
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +154,8 @@ namespace Scoreboard.forms
         private System.Windows.Forms.TextBox txtRight;
         private System.Windows.Forms.TextBox txtWinner;
         private System.Windows.Forms.Button btnStartNewSet;
+        private System.Windows.Forms.Panel pnlTime;
+        private System.Windows.Forms.Label lblTimePlayed;
+        private System.Windows.Forms.Panel pnlButtons;
     }
 }

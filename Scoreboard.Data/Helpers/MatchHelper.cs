@@ -61,6 +61,7 @@ namespace Scoreboard.Data.Helpers
             matchSummary.Standings = setsLeft + "-" + setsRight;
             matchSummary.MatchDate = match.MatchDate;
             matchSummary.Match = match;
+            matchSummary.SecondsPlayed = match.PlayTimeSeconds;
             return matchSummary;
         }
 
