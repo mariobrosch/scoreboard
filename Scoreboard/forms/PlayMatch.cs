@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Timers;
 using System.Windows.Forms;
 using Scoreboard.Data.data.requests;
 using Scoreboard.Data.enums;
@@ -15,10 +16,16 @@ namespace Scoreboard.forms
         private MatchSummary matchSummary;
         private Set currentSet;
         private bool setFinished = false;
+        private readonly System.Timers.Timer matchTimer = new System.Timers.Timer(1000);
+        private readonly DateTime sessionStart;
+        private int secondsPlayedThisSession = 0;
 
         public PlayMatch(Match m)
         {
             InitializeComponent();
+            sessionStart = DateTime.Now;
+            matchTimer.Elapsed += UpdateMatchTime;
+            matchTimer.Start();
 
             match = m;
             if (match.Id == 0)
@@ -26,6 +33,7 @@ namespace Scoreboard.forms
                 Close();
             }
             matchSummary = MatchHelper.GetMatchSummary(match);
+            UpdateMatchTime(null, null);
             if (matchSummary.Sets.Count == 0)
             {
                 currentSet = new Set
@@ -44,6 +52,69 @@ namespace Scoreboard.forms
             FillTopInfo();
             IsSetWinner();
             UpdateMatch();
+        }
+
+        private void UpdateMatchTime(object sender, ElapsedEventArgs e)
+        {
+            if (!InvokeRequired)
+            {
+                if (matchSummary == null )
+                {
+                    return;
+                }
+
+                var interval = Convert.ToInt32((DateTime.Now - sessionStart).TotalSeconds);
+                var maxMatchTime = "";
+                if (!match.WinnerId.HasValue)
+                {
+                    secondsPlayedThisSession = interval;
+                }
+
+                if (matchSummary.SecondsPlayed > 0)
+                {
+                    interval += matchSummary.SecondsPlayed;
+                }
+
+                if (matchSummary.MatchType.MatchTime.HasValue 
+                    && matchSummary.MatchType.MatchTime.Value > 0 
+                    && matchSummary.MatchType.IsTimedMatch)
+                {
+                    maxMatchTime = " / ";
+                    var maxMatchTimeInSeconds = matchSummary.MatchType.MatchTime.Value * 60;
+                    TimeSpan timeMax = TimeSpan.FromSeconds(maxMatchTimeInSeconds);
+                    if (maxMatchTimeInSeconds > 3599)
+                    {
+                        maxMatchTime += timeMax.ToString(@"hh\:mm\:ss");
+                    }
+                    else
+                    {
+                        maxMatchTime += timeMax.ToString(@"mm\:ss");
+                    }
+                }
+
+                TimeSpan time = TimeSpan.FromSeconds(interval);
+                string str;
+                if (interval > 3599)
+                {
+                    str = time.ToString(@"hh\:mm\:ss");
+                }
+                else
+                {
+                    str = time.ToString(@"mm\:ss");
+                }
+
+                lblTimePlayed.Text = str + maxMatchTime;
+            }
+            else
+            {
+                try
+                {
+                    Invoke(new Action<object, ElapsedEventArgs>(UpdateMatchTime), sender, e);
+                }
+#pragma warning disable CA1031 // Do not catch general exception types
+                catch (Exception) { }
+#pragma warning restore CA1031 // Do not catch general exception types
+            }
         }
 
         private void PlayMatch_Resize(object sender, EventArgs e)
@@ -83,9 +154,12 @@ namespace Scoreboard.forms
             if (currentSet.SetWinnerId.HasValue)
             {
                 MessageBox.Show(FormsHelper.GetResourceText("setPlayedErrorDesc"));
-            } else if (matchSummary.Winner.HasValue) {
+            }
+            else if (matchSummary.Winner.HasValue)
+            {
                 MessageBox.Show(FormsHelper.GetResourceText("matchPlayedErrorDesc"));
-            } else if (isForLeft)
+            }
+            else if (isForLeft)
             {
                 if (negativeScore)
                 {
@@ -127,7 +201,7 @@ namespace Scoreboard.forms
 
             if (setFinished)
             {
-                var matchWinner = MatchHelper.HasMatchWinner(matchSummary);
+                var matchWinner = MatchHelper.HasMatchWinner(matchSummary, secondsPlayedThisSession);
 
                 if (matchWinner == PlayerSide.None)
                 {
@@ -187,7 +261,7 @@ namespace Scoreboard.forms
 
         private void IsSetWinner()
         {
-            var setWinner = SetHelper.HasWinner(currentSet, matchSummary.MatchType);
+            var setWinner = SetHelper.HasWinner(currentSet, matchSummary.MatchType, secondsPlayedThisSession + matchSummary.SecondsPlayed);
 
             if (setWinner == PlayerSide.None)
             {
@@ -271,14 +345,14 @@ namespace Scoreboard.forms
 
             if (helpKeys.Contains(e.KeyCode))
             {
-                var helpText = FormsHelper.GetResourceText("help1")+ "\r\n";
+                var helpText = FormsHelper.GetResourceText("help1") + "\r\n";
                 helpText += FormsHelper.GetResourceText("help2") + "\r\n\r\n";
                 helpText += FormsHelper.GetResourceText("help3") + "\r\n";
                 helpText += FormsHelper.GetResourceText("help4") + "\r\n";
-                helpText += FormsHelper.GetResourceText("help5")+  "\r\n\r\n";
+                helpText += FormsHelper.GetResourceText("help5") + "\r\n\r\n";
                 helpText += FormsHelper.GetResourceText("help6") + "\r\n\r\n";
 
-                MessageBox.Show(helpText,  FormsHelper.GetResourceText("help"));
+                MessageBox.Show(helpText, FormsHelper.GetResourceText("help"));
             }
 
             if (playerLeftKeys.Contains(e.KeyCode))
@@ -304,6 +378,9 @@ namespace Scoreboard.forms
 
         private void PlayMatch_FormClosing(object sender, FormClosingEventArgs e)
         {
+            match.PlayTimeSeconds = secondsPlayedThisSession + matchSummary.SecondsPlayed;
+            MatchData.Update(match);
+
             FormsHelper.WriteToBackupLocation();
         }
     }

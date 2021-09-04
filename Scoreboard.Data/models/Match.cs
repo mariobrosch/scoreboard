@@ -14,6 +14,7 @@ namespace Scoreboard.Data.models
         public int PlayerFirstServiceId { get; set; }
         public int MatchTypeId { get; set; }
         public string MatchDate { get; set; }
+        public int PlayTimeSeconds { get; set; }
         public int? WinnerId { get; set; }
         public int? WinnerId2 { get; set; }
         [JsonIgnore]

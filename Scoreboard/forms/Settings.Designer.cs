@@ -43,6 +43,7 @@ namespace Scoreboard.forms
             this.lblId = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnlPlayerlist = new System.Windows.Forms.Panel();
+            this.cboValue = new System.Windows.Forms.ComboBox();
             this.pnlPlayer.SuspendLayout();
             this.pnlPlayerlist.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,7 @@ namespace Scoreboard.forms
             // 
             // pnlPlayer
             // 
-            resources.ApplyResources(this.pnlPlayer, "pnlPlayer");
+            this.pnlPlayer.Controls.Add(this.cboValue);
             this.pnlPlayer.Controls.Add(this.label1);
             this.pnlPlayer.Controls.Add(this.lblForPossibleValuesLabel);
             this.pnlPlayer.Controls.Add(this.lblPossibleValues);
@@ -67,6 +68,7 @@ namespace Scoreboard.forms
             this.pnlPlayer.Controls.Add(this.txtId);
             this.pnlPlayer.Controls.Add(this.lblId);
             this.pnlPlayer.Controls.Add(this.btnSave);
+            resources.ApplyResources(this.pnlPlayer, "pnlPlayer");
             this.pnlPlayer.Name = "pnlPlayer";
             // 
             // label1
@@ -125,9 +127,16 @@ namespace Scoreboard.forms
             // 
             // pnlPlayerlist
             // 
-            resources.ApplyResources(this.pnlPlayerlist, "pnlPlayerlist");
             this.pnlPlayerlist.Controls.Add(this.lbSettings);
+            resources.ApplyResources(this.pnlPlayerlist, "pnlPlayerlist");
             this.pnlPlayerlist.Name = "pnlPlayerlist";
+            // 
+            // cboValue
+            // 
+            this.cboValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboValue.FormattingEnabled = true;
+            resources.ApplyResources(this.cboValue, "cboValue");
+            this.cboValue.Name = "cboValue";
             // 
             // FrmSettings
             // 
@@ -160,5 +169,6 @@ namespace Scoreboard.forms
         private System.Windows.Forms.Label lblForPossibleValuesLabel;
         private System.Windows.Forms.Label lblPossibleValues;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboValue;
     }
 }

@@ -46,6 +46,9 @@ namespace Scoreboard.forms
             txtId.Text = setting.Id.ToString();
             Key.Text = setting.Key;
             txtValue.Text = setting.Value;
+            cboValue.Items.Clear();
+            txtValue.Visible = true;
+            cboValue.Visible = false;
 
             if (theDefault == null)
             {
@@ -53,6 +56,25 @@ namespace Scoreboard.forms
             } else
             {
                 lblPossibleValues.Text = theDefault.PossibleValues;
+
+                if (theDefault.PossibleValues.Split(',').Length > 1)
+                {
+                    var selected = 0;
+                    var index = 0;
+                    foreach(var option in theDefault.PossibleValues.Split(','))
+                    {
+                        cboValue.Items.Add(option.Trim(' '));
+                        cboValue.Visible = true;
+                        txtValue.Visible = false;
+                        if (setting.Value == option.Trim(' '))
+                        {
+                            selected = index;
+                        }
+                        index++;
+                    }
+
+                    cboValue.SelectedIndex = selected;
+                }
             }
         }
 
@@ -65,8 +87,17 @@ namespace Scoreboard.forms
                 {
                     return;
                 }
+                string value;
+                if (txtValue.Visible)
+                {
+                    value = txtValue.Text;
+                } else
+                {
+                    value = (string)(cboValue.SelectedItem);
+                }
+
                 setting.Key = Key.Text;
-                setting.Value = txtValue.Text;
+                setting.Value = value;
 
                 SettingData.Update(setting);
             }

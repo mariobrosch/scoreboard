@@ -8,6 +8,7 @@ namespace Scoreboard.Data.models
         public string TeamLeft { get; set; }
         public string TeamRight { get; set; }
         public string MatchDate { get; set; }
+        public int SecondsPlayed { get; set; }
         public string Standings { get; set; }
         public PlayerSide? Winner { get; set; }
         public List<Set> Sets { get; set; }
