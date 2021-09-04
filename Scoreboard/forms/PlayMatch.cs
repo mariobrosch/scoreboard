@@ -201,7 +201,7 @@ namespace Scoreboard.forms
 
             if (setFinished)
             {
-                var matchWinner = MatchHelper.HasMatchWinner(matchSummary);
+                var matchWinner = MatchHelper.HasMatchWinner(matchSummary, secondsPlayedThisSession);
 
                 if (matchWinner == PlayerSide.None)
                 {
@@ -261,7 +261,7 @@ namespace Scoreboard.forms
 
         private void IsSetWinner()
         {
-            var setWinner = SetHelper.HasWinner(currentSet, matchSummary.MatchType);
+            var setWinner = SetHelper.HasWinner(currentSet, matchSummary.MatchType, secondsPlayedThisSession + matchSummary.SecondsPlayed);
 
             if (setWinner == PlayerSide.None)
             {

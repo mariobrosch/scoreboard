@@ -65,7 +65,7 @@ namespace Scoreboard.Data.Helpers
             return matchSummary;
         }
 
-        public static PlayerSide HasMatchWinner(MatchSummary matchSummary)
+        public static PlayerSide HasMatchWinner(MatchSummary matchSummary, int secondsPlayedThisSession)
         {
             var sets = matchSummary.Sets;
             var setsWonLeft = Convert.ToInt32(matchSummary.Standings.Split('-')[0]);
@@ -97,7 +97,7 @@ namespace Scoreboard.Data.Helpers
                 // in theory set winner should already be filled in before we start this method
                 else
                 {
-                    switch (SetHelper.HasWinner(set, matchSummary.MatchType))
+                    switch (SetHelper.HasWinner(set, matchSummary.MatchType, secondsPlayedThisSession + matchSummary.SecondsPlayed))
                     {
                         case PlayerSide.Left:
                             setsWonLeft++;

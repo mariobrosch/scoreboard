@@ -6,8 +6,25 @@ namespace Scoreboard.Data.Helpers
 {
     public static class SetHelper
     {
-        public static PlayerSide HasWinner(Set set, MatchType matchType)
+        public static PlayerSide HasWinner(Set set, MatchType matchType, int playedSeconds)
         {
+            if (matchType.IsTimedMatch)
+            {
+                var matchTimeInSeconds = matchType.MatchTime * 60;
+                if (playedSeconds > matchTimeInSeconds)
+                {
+                    if (set.TeamLeftScore > set.TeamRightScore)
+                    {
+                        return PlayerSide.Left;
+                    } else if (set.TeamRightScore > set.TeamLeftScore)
+                    {
+                        return PlayerSide.Right;
+                    }
+                    return PlayerSide.None;
+                }
+                return PlayerSide.None;
+            }
+
             if (set.TeamLeftScore > set.TeamRightScore)
             {
                 if (set.TeamLeftScore >= matchType.ScorePerSetToWin)
@@ -71,7 +88,7 @@ namespace Scoreboard.Data.Helpers
             if (currentSet.TeamLeftScore > matchType.ScorePerSetToWin || currentSet.TeamRightScore > matchType.ScorePerSetToWin)
             {
                 var totalServicesUntilSuddenDeath = matchType.ScorePerSetToWin * 2 / matchType.ServiceChangeEveryNumberOfServices;
-                var startPlayerDuringSuddenDeath = playersInMatch[(positionFirstServicePlayerThisSet + totalServicesUntilSuddenDeath - 1) % playersInMatch.Count];
+                var startPlayerDuringSuddenDeath = playersInMatch[(positionFirstServicePlayerThisSet + totalServicesUntilSuddenDeath - (totalServicesUntilSuddenDeath == 0 ? 0: 1)) % playersInMatch.Count];
                 var numberOfPointsDuringSuddenDeath = currentSet.TeamLeftScore + currentSet.TeamRightScore - matchType.ScorePerSetToWin * 2;
 
                 int numberOfServiceTurns = numberOfPointsDuringSuddenDeath / matchType.ServiceChangeOnShootOutPer;
