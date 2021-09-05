@@ -20,8 +20,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scoreboard.Data", "Scoreboa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{967730B6-C5F7-43BC-86C9-40A8F94600F8}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scoreboard.Wpf", "Scoreboard.Wpf\Scoreboard.Wpf.csproj", "{7B7E7A18-A8A6-4CE1-895D-B15443A61307}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scoreboard.DataCore", "Scoreboard.DataCore\Scoreboard.DataCore.csproj", "{91E9BA7F-F89F-4E0E-9750-54EE8AE08D36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +42,14 @@ Global
 		{7498F369-7F4D-4973-8515-7E5BDF97623B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7498F369-7F4D-4973-8515-7E5BDF97623B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7498F369-7F4D-4973-8515-7E5BDF97623B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7E7A18-A8A6-4CE1-895D-B15443A61307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7E7A18-A8A6-4CE1-895D-B15443A61307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7E7A18-A8A6-4CE1-895D-B15443A61307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7E7A18-A8A6-4CE1-895D-B15443A61307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E9BA7F-F89F-4E0E-9750-54EE8AE08D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E9BA7F-F89F-4E0E-9750-54EE8AE08D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E9BA7F-F89F-4E0E-9750-54EE8AE08D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E9BA7F-F89F-4E0E-9750-54EE8AE08D36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Applause.wav" />
+    <None Remove="Resources\scoreboard.ico" />
+    <None Remove="Resources\scoreboard.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Applause.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\scoreboard.ico" />
+    <Content Include="Resources\scoreboard.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Scoreboard.DataCore\Scoreboard.DataCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\LanguageStrings.en-US.Designer.cs">
+      <DependentUpon>LanguageStrings.en-US.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\LanguageStrings.nl-NL.Designer.cs">
+      <DependentUpon>LanguageStrings.nl-NL.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="scoreboard.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>scoreboard.json</DependentUpon>
+    </Compile>
+    <Compile Update="Windows\MatchTypes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\LanguageStrings.en-US.resx">
+      <LastGenOutput>LanguageStrings.en-US.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\LanguageStrings.nl-NL.resx">
+      <LastGenOutput>LanguageStrings.nl-NL.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Lang\en-US.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Lang\nl-NL.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="scoreboard.json">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>scoreboard.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Windows\MatchTypes.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
