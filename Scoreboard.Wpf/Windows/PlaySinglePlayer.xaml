@@ -1,0 +1,24 @@
+﻿<Window x:Class="Scoreboard.Wpf.Windows.PlaySinglePlayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Enkelspel" Height="224" Width="464">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="0" Name="lblPreviousRecord" >-</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0"  Name="lblScoreInput" >Score voor speler</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="numScore" KeyUp="NumScore_KeyUp"></TextBox>
+        <Button Name="btnSave" Grid.Column="1" Grid.Row="1" Click="BtnSave_Click">
+            <TextBlock>Opslaan</TextBlock>
+        </Button>
+    </Grid>
+</Window>

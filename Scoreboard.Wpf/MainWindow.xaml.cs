@@ -181,8 +181,8 @@ namespace Scoreboard.Wpf
         private void SinglePlayerToolStripMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            //var createSingleForm = new CreateSinglePlayerMatch();
-            //createSingleForm.ShowDialog();
+            Windows.CreateSingleMatch createSingleForm = new();
+            _ = createSingleForm.ShowDialog();
             Show();
         }
 
