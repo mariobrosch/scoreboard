@@ -1,0 +1,39 @@
+﻿<Window x:Class="Scoreboard.Wpf.Windows.PlayMatch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scoreboard.Wpf.Windows"
+        mc:Ignorable="d"
+        Title="Wedstrijd spelen" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        ResizeMode="NoResize" KeyUp="Window_KeyUp" Closing="Window_Closing"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Name="txtLeftTeam">-</TextBlock>
+            <TextBlock Grid.Column="1" Name="txtTimePlayed">-</TextBlock>
+            <TextBlock Grid.Column="2" Name="txtRightTime">-</TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Name="txtScoreLeft" MouseUp="TxtScoreLeft_MouseUp">0</TextBlock>
+            <TextBlock Grid.Column="1" Name="txtScoreRight" MouseUp="TxtScoreRight_MouseUp">0</TextBlock>
+        </Grid>
+        <TextBlock Grid.Row="2" Name="txtWinner"></TextBlock>
+    </Grid>
+</Window>

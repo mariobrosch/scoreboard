@@ -124,11 +124,11 @@ namespace Scoreboard.Wpf.Windows
             newMatch.PlayerFirstServiceId = selectedPlayersForMatch[index];
 
             newMatch.MatchDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            _ = MatchData.Create(newMatch);
+            Match m = MatchData.Create(newMatch);
 
             Hide();
-            //var frmPlayMatch = new PlayMatch(m);
-            //frmPlayMatch.ShowDialog();
+            PlayMatch frmPlayMatch = new(m);
+            frmPlayMatch.ShowDialog();
             Close();
         }
     }

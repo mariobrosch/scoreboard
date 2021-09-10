@@ -46,8 +46,8 @@ namespace Scoreboard.Wpf
                     }
 
                     Hide();
-                    //var frmCreateMatch = new CreateMatch();
-                    //frmCreateMatch.ShowDialog();
+                    Windows.CreateMatch frmCreateMatch = new();
+                    _ = frmCreateMatch.ShowDialog();
                     Show();
                 }
                 return;
@@ -66,15 +66,15 @@ namespace Scoreboard.Wpf
                 if (MessageBox.Show(text, WpfHelper.GetResourceText("continueMatch"), MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     Hide();
-                    //    //PlayMatch playMatch = new PlayMatch(foundMatch);
-                    //    //playMatch.ShowDialog();
+                    Windows.PlayMatch playMatch = new(foundMatch);
+                    _ = playMatch.ShowDialog();
                     Show();
                 }
             }
 
             // Now we are at a place where we always have multiple matches unfinished found.
-            //ContinueMatchSelection continueMatchSelection = new ContinueMatchSelection();
-            //continueMatchSelection.ShowDialog();
+            Windows.ContinueMatchSelection continueMatchSelection = new();
+            _ = continueMatchSelection.ShowDialog();
         }
 
         private void BtnNewMatch_Click(object sender, RoutedEventArgs e)
