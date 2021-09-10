@@ -59,13 +59,13 @@ namespace Scoreboard.Wpf.Windows
                 playerRight2.Id
             };
 
-            var result = playerList.GroupBy(id => id)
+            IOrderedEnumerable<(int Value, int Count)> result = playerList.GroupBy(id => id)
                         .Select(g => (Value: g.Key, Count: g.Count()))
                         .OrderByDescending(x => x.Count);
 
-            foreach (var c in result)
+            foreach ((int Value, int Count) in result)
             {
-                if (c.Count > 1)
+                if (Count > 1)
                 {
                     return true;
                 }

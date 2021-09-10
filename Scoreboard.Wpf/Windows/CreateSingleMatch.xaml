@@ -1,0 +1,24 @@
+﻿<Window x:Class="Scoreboard.Wpf.Windows.CreateSingleMatch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scoreboard.Wpf.Windows"
+        mc:Ignorable="d"
+        Title="Eenspeler spel starten" Height="282" Width="503">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="1" Grid.Row="1" Name="btnStart"  Click="BtnStart_Click" >
+            <TextBlock>Start spel</TextBlock>
+        </Button>
+        <TextBlock Grid.Row="0" Grid.Column="0" Name="lblSelectPlayer"  ></TextBlock>
+        <ComboBox Grid.Row="0" Grid.Column="1" Name="cboPlayer"/>
+    </Grid>
+</Window>
