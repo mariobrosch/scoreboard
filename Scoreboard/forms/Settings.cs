@@ -44,7 +44,7 @@ namespace Scoreboard.forms
             var theDefault = SettingsHelper.GetDefaultSettings().FirstOrDefault(s => s.Key == setting.Key);
             
             txtId.Text = setting.Id.ToString();
-            Key.Text = setting.Key;
+            txtKey.Text = setting.Key;
             txtValue.Text = setting.Value;
             cboValue.Items.Clear();
             txtValue.Visible = true;
@@ -96,7 +96,7 @@ namespace Scoreboard.forms
                     value = (string)(cboValue.SelectedItem);
                 }
 
-                setting.Key = Key.Text;
+                setting.Key = txtKey.Text;
                 setting.Value = value;
 
                 SettingData.Update(setting);
@@ -105,7 +105,7 @@ namespace Scoreboard.forms
             {
                 var newSetting = new Setting
                 {
-                    Key = Key.Text,
+                    Key = txtKey.Text,
                     Value = txtValue.Text
                 };
 

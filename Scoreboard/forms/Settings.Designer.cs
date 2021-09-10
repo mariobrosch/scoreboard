@@ -38,7 +38,7 @@ namespace Scoreboard.forms
             this.lblValue = new System.Windows.Forms.Label();
             this.txtValue = new System.Windows.Forms.TextBox();
             this.lblKey = new System.Windows.Forms.Label();
-            this.Key = new System.Windows.Forms.TextBox();
+            this.txtKey = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@ namespace Scoreboard.forms
             this.pnlPlayer.Controls.Add(this.lblValue);
             this.pnlPlayer.Controls.Add(this.txtValue);
             this.pnlPlayer.Controls.Add(this.lblKey);
-            this.pnlPlayer.Controls.Add(this.Key);
+            this.pnlPlayer.Controls.Add(this.txtKey);
             this.pnlPlayer.Controls.Add(this.txtId);
             this.pnlPlayer.Controls.Add(this.lblId);
             this.pnlPlayer.Controls.Add(this.btnSave);
@@ -103,9 +103,9 @@ namespace Scoreboard.forms
             // 
             // Key
             // 
-            resources.ApplyResources(this.Key, "Key");
-            this.Key.Name = "Key";
-            this.Key.ReadOnly = true;
+            resources.ApplyResources(this.txtKey, "Key");
+            this.txtKey.Name = "Key";
+            this.txtKey.ReadOnly = true;
             // 
             // txtId
             // 
@@ -161,7 +161,7 @@ namespace Scoreboard.forms
         private System.Windows.Forms.Label lblValue;
         private System.Windows.Forms.TextBox txtValue;
         private System.Windows.Forms.Label lblKey;
-        private System.Windows.Forms.TextBox Key;
+        private System.Windows.Forms.TextBox txtKey;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnSave;

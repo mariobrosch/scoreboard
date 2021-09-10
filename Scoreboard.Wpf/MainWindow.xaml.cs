@@ -189,8 +189,8 @@ namespace Scoreboard.Wpf
         private void SettingsToolStripMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            //var settingsForm = new FrmSettings();
-            //settingsForm.ShowDialog();
+            Windows.Settings settingsForm = new();
+            _ = settingsForm.ShowDialog();
             Show();
         }
     }
