@@ -44,6 +44,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>scoreboard.json</DependentUpon>
     </Compile>
+    <Compile Update="Windows\CreateMatch.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\MatchTypes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -75,6 +78,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Windows\CreateMatch.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\MatchTypes.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

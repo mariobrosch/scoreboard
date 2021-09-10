@@ -85,8 +85,8 @@ namespace Scoreboard.Wpf
             }
 
             Hide();
-            //var frmCreateMatch = new CreateMatch();
-            //frmCreateMatch.ShowDialog();
+            Windows.CreateMatch frmCreateMatch = new();
+            _ = frmCreateMatch.ShowDialog();
             Show();
         }
 
