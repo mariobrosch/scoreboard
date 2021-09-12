@@ -1,17 +1,18 @@
-﻿<Window x:Class="Scoreboard.Wpf.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
-        Title="Scoreboard" 
-        Height="477" Width="808"
-        WindowStartupLocation="CenterScreen"
-        WindowState="Normal"
-        WindowStyle="ToolWindow"
-        ResizeMode="NoResize"
-        >
-    
+﻿<Window
+    x:Class="Scoreboard.Wpf.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Scoreboard"
+    Width="808"
+    Height="477"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -21,20 +22,41 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid>
-            <Menu FontSize="16" Name="mainMenuStrip" Margin="0,0,0,0">
-                <MenuItem Header="Menu" Name="menuToolStripMenuItem" >
-                    <MenuItem Header="Data exporteren" Name="dataExporterenToolStripMenuItem" Click="DataExporterenToolStripMenuItem_Click" ></MenuItem>
-                    <MenuItem Header="Instellingen" Name="settingsToolStripMenuItem" Click="SettingsToolStripMenuItem_Click" ></MenuItem>
+            <Menu
+                Name="mainMenuStrip"
+                Margin="0,0,0,0"
+                FontSize="16">
+                <MenuItem Name="menuToolStripMenuItem" Header="Menu">
+                    <MenuItem
+                        Name="dataExporterenToolStripMenuItem"
+                        Click="DataExporterenToolStripMenuItem_Click"
+                        Header="Data exporteren" />
+                    <MenuItem
+                        Name="settingsToolStripMenuItem"
+                        Click="SettingsToolStripMenuItem_Click"
+                        Header="Instellingen" />
                 </MenuItem>
-                <MenuItem Header="Spelers" Name="spelersToolStripMenuItem" Click="SpelersToolStripMenuItem_Click" ></MenuItem>
-                <MenuItem Header="Speltypes" Name="speltypesToolStripMenuItem" Click="SpeltypesToolStripMenuItem_Click" ></MenuItem>
-                <MenuItem Header="Spelen" Name="spelenToolStripMenuItem" >
-                    <MenuItem Header="Verder spelen" 
-                          Name="verderSpelenToolStripMenuItem" Click="VerderSpelenToolStripMenuItem_Click"></MenuItem>
-                    <MenuItem Header="Single player" 
-                          Name="singlePlayerToolStripMenuItem" Click="SinglePlayerToolStripMenuItem_Click" ></MenuItem>
-                    <MenuItem Header="Nieuw spel" 
-                          Name="nieuwSpelToolStripMenuItem" Click="NieuwSpelToolStripMenuItem_Click" ></MenuItem>
+                <MenuItem
+                    Name="spelersToolStripMenuItem"
+                    Click="SpelersToolStripMenuItem_Click"
+                    Header="Spelers" />
+                <MenuItem
+                    Name="speltypesToolStripMenuItem"
+                    Click="SpeltypesToolStripMenuItem_Click"
+                    Header="Speltypes" />
+                <MenuItem Name="spelenToolStripMenuItem" Header="Spelen">
+                    <MenuItem
+                        Name="verderSpelenToolStripMenuItem"
+                        Click="VerderSpelenToolStripMenuItem_Click"
+                        Header="Verder spelen" />
+                    <MenuItem
+                        Name="singlePlayerToolStripMenuItem"
+                        Click="SinglePlayerToolStripMenuItem_Click"
+                        Header="Single player" />
+                    <MenuItem
+                        Name="nieuwSpelToolStripMenuItem"
+                        Click="NieuwSpelToolStripMenuItem_Click"
+                        Header="Nieuw spel" />
                 </MenuItem>
             </Menu>
         </Grid>
@@ -48,25 +70,40 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Button Grid.Column="1" Grid.Row="1" 
-                Name="btnContinue"  
-                Click="BtnContinue_Click" 
-                Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                <TextBlock FontSize="50"  Text="Verder spelen" />
+            <Button
+                Name="btnContinue"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Click="BtnContinue_Click">
+                <TextBlock FontSize="50" Text="Verder spelen" />
             </Button>
-            <Button Grid.Column="1"  Name="btnNewMatch"  
-                Click="BtnNewMatch_Click" Margin="10" 
-                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                <TextBlock FontSize="50"  Text="Nieuw spel" />
+            <Button
+                Name="btnNewMatch"
+                Grid.Column="1"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Click="BtnNewMatch_Click">
+                <TextBlock FontSize="50" Text="Nieuw spel" />
             </Button>
-            <Button  Grid.Row="1" Name="btnMatchTypes" 
-                Click="BtnMatchTypes_Click" Margin="10" 
-                HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <TextBlock FontSize="50"  Text="Speltypes" />
+            <Button
+                Name="btnMatchTypes"
+                Grid.Row="1"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Click="BtnMatchTypes_Click">
+                <TextBlock FontSize="50" Text="Speltypes" />
             </Button>
-            <Button Name="btnPlayers" 
-                Click="BtnPlayers_Click" Margin="10" 
-                HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button
+                Name="btnPlayers"
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Click="BtnPlayers_Click">
                 <TextBlock FontSize="50" Text="Spelers" />
             </Button>
         </Grid>

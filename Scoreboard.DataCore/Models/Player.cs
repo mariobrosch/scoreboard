@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Scoreboard.DataCore.Data.Requests;
 using System.Drawing;
+using System.Linq;
 
 namespace Scoreboard.DataCore.Models
 {
@@ -33,6 +35,14 @@ namespace Scoreboard.DataCore.Models
             set
             {
                 Removed = value ? "1" : "0";
+            }
+        }
+        [JsonIgnore]
+        public int PlayedGames
+        {
+            get
+            {
+                return MatchData.GetForPlayer(Id).Count();
             }
         }
     }

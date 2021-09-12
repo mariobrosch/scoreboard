@@ -1,155 +1,191 @@
-﻿<Window x:Class="Scoreboard.Wpf.Windows.Players"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
-        Title="Spelers"
-        Height="477" Width="808"
-        WindowStartupLocation="CenterScreen"
-        WindowState="Normal"
-        WindowStyle="ToolWindow"
-        ResizeMode="NoResize">
+﻿<Window
+    x:Class="Scoreboard.Wpf.Windows.Players"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Spelers"
+    Width="808"
+    Height="477"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="16*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="16*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
-            <ListBox Grid.Row="0"  x:Name="lbPlayers" DataContextChanged="LbPlayers_DataContextChanged" SelectionChanged="LbPlayers_SelectionChanged">
-            </ListBox>
-            <CheckBox Grid.Row="1" x:Name="ChkShowRemoved" Click="ChkShowRemoved_Click">
-                <TextBlock >
+            <ListBox
+                x:Name="lbPlayers"
+                Grid.Row="0"
+                DataContextChanged="LbPlayers_DataContextChanged"
+                SelectionChanged="LbPlayers_SelectionChanged" />
+            <CheckBox
+                x:Name="ChkShowRemoved"
+                Grid.Row="1"
+                Click="ChkShowRemoved_Click">
+                <TextBlock>
                     Toon verwijderde spelers
                 </TextBlock>
             </CheckBox>
-            <Button  Grid.Row="2" x:Name="BtnNew" Click="BtnNew_Click">
-                <TextBlock >Nieuw</TextBlock>
+            <Button
+                x:Name="BtnNew"
+                Grid.Row="2"
+                Click="BtnNew_Click">
+                <TextBlock>Nieuw</TextBlock>
             </Button>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="6*"/>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="6*" />
             </Grid.RowDefinitions>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock  Grid.Column="1">Id</TextBlock>
-                <TextBox  Grid.Column="2" x:Name="txtId" IsReadOnly="True"/>
+                <TextBlock Grid.Column="1">Id</TextBlock>
+                <TextBox
+                    x:Name="txtId"
+                    Grid.Column="2"
+                    IsReadOnly="True" />
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock  Grid.Column="1">Naam</TextBlock>
-                <TextBox  Grid.Column="2" x:Name="txtName"/>
+                <TextBlock Grid.Column="1">Naam</TextBlock>
+                <TextBox x:Name="txtName" Grid.Column="2" />
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1" >Foto url</TextBlock>
-                <TextBox  Grid.Column="2" x:Name="txtPhotoUrl" LostFocus="TxtPhotoUrl_LostFocus"/>
+                <TextBlock Grid.Column="1">Foto url</TextBlock>
+                <TextBox
+                    x:Name="txtPhotoUrl"
+                    Grid.Column="2"
+                    LostFocus="TxtPhotoUrl_LostFocus" />
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock  Grid.Column="1">Foto</TextBlock>
+                <TextBlock Grid.Column="1">Foto</TextBlock>
                 <Grid Grid.Column="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
-                    <Button  Grid.Column="0" x:Name="btnUploadPhoto" Click="BtnUploadPhoto_Click">
-                        <TextBlock >Upload foto</TextBlock>
+                    <Button
+                        x:Name="btnUploadPhoto"
+                        Grid.Column="0"
+                        Click="BtnUploadPhoto_Click">
+                        <TextBlock>Upload foto</TextBlock>
                     </Button>
-                    <Button  Grid.Column="1" Name="btnRemovePhoto" Click="BtnRemovePhoto_Click">
-                        <TextBlock >Verwijder foto</TextBlock>
+                    <Button
+                        Name="btnRemovePhoto"
+                        Grid.Column="1"
+                        Click="BtnRemovePhoto_Click">
+                        <TextBlock>Verwijder foto</TextBlock>
                     </Button>
                 </Grid>
-                
+
             </Grid>
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock  Grid.Column="1">Single player stats</TextBlock>
-                <TextBlock  Grid.Column="2" x:Name="lblSinglePlayerStats">-</TextBlock>
+                <TextBlock Grid.Column="1">Single player stats</TextBlock>
+                <TextBlock x:Name="lblSinglePlayerStats" Grid.Column="2">-</TextBlock>
             </Grid>
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock  Grid.Column="1">Player stats</TextBlock>
-                <TextBlock  Grid.Column="2" x:Name="lblPlayerStats">-</TextBlock>
+                <TextBlock Grid.Column="1">Player stats</TextBlock>
+                <TextBlock x:Name="lblPlayerStats" Grid.Column="2">-</TextBlock>
             </Grid>
             <Grid Grid.Row="6">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock  Grid.Column="1">Actieve speler</TextBlock>
-                <CheckBox VerticalAlignment="Center" Grid.Column="2" x:Name="chkActivePlayer"/>
+                <TextBlock Grid.Column="1">Actieve speler</TextBlock>
+                <CheckBox
+                    x:Name="chkActivePlayer"
+                    Grid.Column="2"
+                    VerticalAlignment="Center" />
             </Grid>
             <Grid Grid.Row="7">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock  Grid.Column="1">Verwijderde speler</TextBlock>
-                <CheckBox VerticalAlignment="Center" Grid.Column="2" x:Name="chkRemovedPlayer"/>
+                <TextBlock Grid.Column="1">Verwijderde speler</TextBlock>
+                <CheckBox
+                    x:Name="chkRemovedPlayer"
+                    Grid.Column="2"
+                    VerticalAlignment="Center" />
             </Grid>
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="16*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="16*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" x:Name="pbPhoto"></Image>
-            <Button  Grid.Row="1" x:Name="BtnRemove" Click="BtnRemove_Click">
-                <TextBlock >Verwijderen</TextBlock>
+            <Image x:Name="pbPhoto" Grid.Row="0" />
+            <Button
+                x:Name="BtnRemove"
+                Grid.Row="1"
+                Click="BtnRemove_Click">
+                <TextBlock>Verwijderen</TextBlock>
             </Button>
-            <Button  Grid.Row="2" IsDefault="true" x:Name="BtnSave" Click="BtnSave_Click">
-                <TextBlock >Opslaan</TextBlock>
+            <Button
+                x:Name="BtnSave"
+                Grid.Row="2"
+                Click="BtnSave_Click"
+                IsDefault="true">
+                <TextBlock>Opslaan</TextBlock>
             </Button>
         </Grid>
     </Grid>
