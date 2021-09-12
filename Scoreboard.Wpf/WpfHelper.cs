@@ -2,7 +2,7 @@
 using Scoreboard.Wpf.Resources.Lang;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
+using Scoreboard.DataCore.Settings;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -41,9 +41,9 @@ namespace Scoreboard.Wpf
         /// </summary>
         internal static void WriteToBackupLocation()
         {
-            string backupLocation = ConfigurationManager.AppSettings["backupLocation"];
-            string localStoragePath = ConfigurationManager.AppSettings["localStoragePath"];
-            string backupDrive = ConfigurationManager.AppSettings["backupDrive"];
+            string backupLocation = Logic.GetSetting("backupLocation");
+            string localStoragePath = Logic.GetSetting("localStoragePath");
+            string backupDrive = Logic.GetSetting("backupDrive");
 
             backupLocation = backupLocation.Replace("[computername]", Environment.MachineName);
 

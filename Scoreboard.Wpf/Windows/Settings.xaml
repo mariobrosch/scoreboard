@@ -20,7 +20,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="20*"/>
             </Grid.RowDefinitions>
-            <ListBox Grid.Row="0" x:Name="lbSettings" DataContextChanged="LbSettings_DataContextChanged" SelectionChanged="LbSettings_SelectionChanged">
+            <ListBox Grid.Row="0" x:Name="lbSettings" SelectionChanged="LbSettings_SelectionChanged">
             </ListBox>
         </Grid>
         <Grid Grid.Column="1">

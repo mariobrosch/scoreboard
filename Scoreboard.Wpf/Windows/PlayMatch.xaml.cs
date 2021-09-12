@@ -20,7 +20,7 @@ namespace Scoreboard.Wpf.Windows
         private MatchSummary matchSummary;
         private Set currentSet;
         private bool setFinished;
-        private readonly Timer matchTimer;
+        private readonly Timer matchTimer = new(1000);
         private readonly DateTime sessionStart;
         private int secondsPlayedThisSession;
         public PlayMatch(Match m)
@@ -59,43 +59,46 @@ namespace Scoreboard.Wpf.Windows
 
         private void UpdateMatchTime(object sender, ElapsedEventArgs e)
         {
-            if (matchSummary == null)
+            this.Dispatcher.Invoke(() =>
             {
-                return;
-            }
-
-            int interval = Convert.ToInt32((DateTime.Now - sessionStart).TotalSeconds);
-            string maxMatchTime = "";
-            if (!match.WinnerId.HasValue)
-            {
-                secondsPlayedThisSession = interval;
-            }
-
-            if (matchSummary.SecondsPlayed > 0)
-            {
-                interval += matchSummary.SecondsPlayed;
-            }
-
-            if (matchSummary.MatchType.MatchTime.HasValue
-                && matchSummary.MatchType.MatchTime.Value > 0
-                && matchSummary.MatchType.IsTimedMatch)
-            {
-                maxMatchTime = " / ";
-                int maxMatchTimeInSeconds = matchSummary.MatchType.MatchTime.Value * 60;
-                TimeSpan timeMax = TimeSpan.FromSeconds(maxMatchTimeInSeconds);
-                if (maxMatchTimeInSeconds > 3599)
+                if (matchSummary == null)
                 {
-                    maxMatchTime += timeMax.ToString(@"hh\:mm\:ss");
+                    return;
                 }
-                else
-                {
-                    maxMatchTime += timeMax.ToString(@"mm\:ss");
-                }
-            }
 
-            TimeSpan time = TimeSpan.FromSeconds(interval);
-            string str = interval > 3599 ? time.ToString(@"hh\:mm\:ss") : time.ToString(@"mm\:ss");
-            txtTimePlayed.Text = str + maxMatchTime;
+                int interval = Convert.ToInt32((DateTime.Now - sessionStart).TotalSeconds);
+                string maxMatchTime = "";
+                if (!match.WinnerId.HasValue)
+                {
+                    secondsPlayedThisSession = interval;
+                }
+
+                if (matchSummary.SecondsPlayed > 0)
+                {
+                    interval += matchSummary.SecondsPlayed;
+                }
+
+                if (matchSummary.MatchType.MatchTime.HasValue
+                    && matchSummary.MatchType.MatchTime.Value > 0
+                    && matchSummary.MatchType.IsTimedMatch)
+                {
+                    maxMatchTime = " / ";
+                    int maxMatchTimeInSeconds = matchSummary.MatchType.MatchTime.Value * 60;
+                    TimeSpan timeMax = TimeSpan.FromSeconds(maxMatchTimeInSeconds);
+                    if (maxMatchTimeInSeconds > 3599)
+                    {
+                        maxMatchTime += timeMax.ToString(@"hh\:mm\:ss");
+                    }
+                    else
+                    {
+                        maxMatchTime += timeMax.ToString(@"mm\:ss");
+                    }
+                }
+
+                TimeSpan time = TimeSpan.FromSeconds(interval);
+                string str = interval > 3599 ? time.ToString(@"hh\:mm\:ss") : time.ToString(@"mm\:ss");
+                txtTimePlayed.Text = str + maxMatchTime;
+            });
         }
 
         private void FillTopInfo()
