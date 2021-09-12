@@ -29,8 +29,10 @@ namespace Scoreboard.Wpf.Windows
             if (settings.Count == 0)
             {
                 txtId.Text = WpfHelper.GetResourceText("new");
+            } else
+            {
+                lbSettings.SelectedIndex = 0;
             }
-            lbSettings.SelectedIndex = 0;
         }
 
         private void LbSettings_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

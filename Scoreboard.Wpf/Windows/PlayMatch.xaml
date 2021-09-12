@@ -3,11 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Scoreboard.Wpf.Windows"
         mc:Ignorable="d"
         Title="Wedstrijd spelen" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized"
+        WindowState="Maximized" WindowStyle="ToolWindow"
         ResizeMode="NoResize" KeyUp="Window_KeyUp" Closing="Window_Closing"
         >
     <Grid>
@@ -22,18 +21,18 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Name="txtLeftTeam">-</TextBlock>
-            <TextBlock Grid.Column="1" Name="txtTimePlayed">-</TextBlock>
-            <TextBlock Grid.Column="2" Name="txtRightTime">-</TextBlock>
+            <TextBlock Grid.Column="0" FontSize="32"  Name="txtLeftTeam">-</TextBlock>
+            <TextBlock Grid.Column="1" FontSize="32" HorizontalAlignment="Center" Name="txtTimePlayed">-</TextBlock>
+            <TextBlock Grid.Column="2" FontSize="32" HorizontalAlignment="Right" Name="txtRightTime">-</TextBlock>
         </Grid>
         <Grid Grid.Row="1" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Name="txtScoreLeft" MouseUp="TxtScoreLeft_MouseUp">0</TextBlock>
-            <TextBlock Grid.Column="1" Name="txtScoreRight" MouseUp="TxtScoreRight_MouseUp">0</TextBlock>
+            <TextBlock Grid.Column="0" FontSize="200" HorizontalAlignment="Center" Name="txtScoreLeft" MouseUp="TxtScoreLeft_MouseUp">0</TextBlock>
+            <TextBlock Grid.Column="1" FontSize="200" HorizontalAlignment="Center" Name="txtScoreRight" MouseUp="TxtScoreRight_MouseUp">0</TextBlock>
         </Grid>
-        <TextBlock Grid.Row="2" Name="txtWinner"></TextBlock>
+        <TextBlock Grid.Row="2" FontSize="48" Name="txtWinner" HorizontalAlignment="Center">-</TextBlock>
     </Grid>
 </Window>

@@ -31,6 +31,11 @@ namespace Scoreboard.Wpf.Windows
             cboPlayerRight2.DisplayMemberPath = "Name";
             cboMatchType.ItemsSource = MatchTypeData.Get().OrderBy(m => m.Type).ToList();
             cboMatchType.DisplayMemberPath = "Type";
+            cboPlayerLeft.SelectedIndex = 0;
+            cboPlayerLeft2.SelectedIndex = 0;
+            cboPlayerRight.SelectedIndex = 0;
+            cboPlayerRight2.SelectedIndex = 0;
+            cboMatchType.SelectedIndex = 0;
         }
 
         private bool IsPlayerDouble()
@@ -128,7 +133,7 @@ namespace Scoreboard.Wpf.Windows
 
             Hide();
             PlayMatch frmPlayMatch = new(m);
-            frmPlayMatch.ShowDialog();
+            _ = frmPlayMatch.ShowDialog();
             Close();
         }
     }

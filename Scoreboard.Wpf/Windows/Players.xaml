@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Scoreboard.Wpf.Windows"
         mc:Ignorable="d"
         Title="Spelers"
         Height="477" Width="808"
@@ -19,18 +18,19 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <ListBox Grid.Row="0" x:Name="lbPlayers" DataContextChanged="LbPlayers_DataContextChanged" SelectionChanged="LbPlayers_SelectionChanged">
-
+            <ListBox Grid.Row="0"  x:Name="lbPlayers" DataContextChanged="LbPlayers_DataContextChanged" SelectionChanged="LbPlayers_SelectionChanged">
             </ListBox>
             <CheckBox Grid.Row="1" x:Name="ChkShowRemoved" Click="ChkShowRemoved_Click">
-                <TextBlock>Toon verwijderde spelers</TextBlock>
+                <TextBlock >
+                    Toon verwijderde spelers
+                </TextBlock>
             </CheckBox>
-            <Button Grid.Row="2" x:Name="BtnNew" Click="BtnNew_Click">
-                <TextBlock>Nieuw</TextBlock>
+            <Button  Grid.Row="2" x:Name="BtnNew" Click="BtnNew_Click">
+                <TextBlock >Nieuw</TextBlock>
             </Button>
         </Grid>
         <Grid Grid.Column="1">
@@ -52,8 +52,8 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Id"/>
-                <TextBox Grid.Column="2" x:Name="txtId" IsReadOnly="True"/>
+                <TextBlock  Grid.Column="1">Id</TextBlock>
+                <TextBox  Grid.Column="2" x:Name="txtId" IsReadOnly="True"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -62,8 +62,8 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Naam"/>
-                <TextBox Grid.Column="2" x:Name="txtName"/>
+                <TextBlock  Grid.Column="1">Naam</TextBlock>
+                <TextBox  Grid.Column="2" x:Name="txtName"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
@@ -72,8 +72,8 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Foto url"/>
-                <TextBox Grid.Column="2" x:Name="txtPhotoUrl" LostFocus="TxtPhotoUrl_LostFocus"/>
+                <TextBlock Grid.Column="1" >Foto url</TextBlock>
+                <TextBox  Grid.Column="2" x:Name="txtPhotoUrl" LostFocus="TxtPhotoUrl_LostFocus"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
@@ -82,17 +82,17 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Foto"/>
+                <TextBlock  Grid.Column="1">Foto</TextBlock>
                 <Grid Grid.Column="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" x:Name="btnUploadPhoto" Click="BtnUploadPhoto_Click">
-                        <TextBlock>Upload foto</TextBlock>
+                    <Button  Grid.Column="0" x:Name="btnUploadPhoto" Click="BtnUploadPhoto_Click">
+                        <TextBlock >Upload foto</TextBlock>
                     </Button>
-                    <Button Grid.Column="1" Name="btnRemovePhoto" Click="BtnRemovePhoto_Click">
-                        <TextBlock>Verwijder foto</TextBlock>
+                    <Button  Grid.Column="1" Name="btnRemovePhoto" Click="BtnRemovePhoto_Click">
+                        <TextBlock >Verwijder foto</TextBlock>
                     </Button>
                 </Grid>
                 
@@ -104,8 +104,8 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Single Player stats"/>
-                <TextBlock Grid.Column="2" x:Name="lblSinglePlayerStats"/>
+                <TextBlock  Grid.Column="1">Single player stats</TextBlock>
+                <TextBlock  Grid.Column="2" x:Name="lblSinglePlayerStats">-</TextBlock>
             </Grid>
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
@@ -114,8 +114,8 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Player stats"/>
-                <TextBlock Grid.Column="2" x:Name="lblPlayerStats"/>
+                <TextBlock  Grid.Column="1">Player stats</TextBlock>
+                <TextBlock  Grid.Column="2" x:Name="lblPlayerStats">-</TextBlock>
             </Grid>
             <Grid Grid.Row="6">
                 <Grid.ColumnDefinitions>
@@ -124,7 +124,7 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Actieve speler"/>
+                <TextBlock  Grid.Column="1">Actieve speler</TextBlock>
                 <CheckBox VerticalAlignment="Center" Grid.Column="2" x:Name="chkActivePlayer"/>
             </Grid>
             <Grid Grid.Row="7">
@@ -134,25 +134,23 @@
                     <ColumnDefinition Width="6*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Verwijderde speler"/>
+                <TextBlock  Grid.Column="1">Verwijderde speler</TextBlock>
                 <CheckBox VerticalAlignment="Center" Grid.Column="2" x:Name="chkRemovedPlayer"/>
             </Grid>
-
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Image Grid.Row="0" x:Name="pbPhoto"></Image>
-            <Button Grid.Row="1" x:Name="BtnRemove" Click="BtnRemove_Click">
-                <TextBlock>Verwijderen</TextBlock>
+            <Button  Grid.Row="1" x:Name="BtnRemove" Click="BtnRemove_Click">
+                <TextBlock >Verwijderen</TextBlock>
             </Button>
-            <Button Grid.Row="2" IsDefault="true" x:Name="BtnSave" Click="BtnSave_Click">
-                <TextBlock>Opslaan</TextBlock>
+            <Button  Grid.Row="2" IsDefault="true" x:Name="BtnSave" Click="BtnSave_Click">
+                <TextBlock >Opslaan</TextBlock>
             </Button>
-
         </Grid>
     </Grid>
 </Window>

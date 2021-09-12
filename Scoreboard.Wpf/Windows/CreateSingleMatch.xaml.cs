@@ -26,10 +26,10 @@ namespace Scoreboard.Wpf.Windows
                 MatchDateParsed = DateTime.Now,
                 PlayerId = selectedPlayer.Id
             };
-            var newSavedMatch = SinglePlayerMatchData.Create(newMatch);
-            var frmSinglePlayerMatch = new PlaySinglePlayer(newSavedMatch);
+            SinglePlayerMatch newSavedMatch = SinglePlayerMatchData.Create(newMatch);
+            PlaySinglePlayer frmSinglePlayerMatch = new(newSavedMatch);
             Hide();
-            frmSinglePlayerMatch.ShowDialog();
+            _ = frmSinglePlayerMatch.ShowDialog();
             Show();
         }
 

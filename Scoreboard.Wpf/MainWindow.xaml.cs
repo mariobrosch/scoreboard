@@ -2,6 +2,7 @@
 using Scoreboard.DataCore.Data;
 using Scoreboard.DataCore.Data.Requests;
 using Scoreboard.DataCore.Helpers;
+using Scoreboard.DataCore.Settings;
 using Scoreboard.Wpf.Helpers;
 using System;
 using System.Configuration;
@@ -127,8 +128,8 @@ namespace Scoreboard.Wpf
 
         private void DataExporterenToolStripMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            string dataLocation = ConfigurationManager.AppSettings["dataLocation"];
-            string localStoragePath = ConfigurationManager.AppSettings["localStoragePath"];
+            string dataLocation = Logic.GetSetting("dataLocation");
+            string localStoragePath = Logic.GetSetting("localStoragePath");
             if (dataLocation != "local")
             {
                 _ = MessageBox.Show(WpfHelper.GetResourceText("exportOnlyLocalstorage"));

@@ -321,7 +321,7 @@ namespace Scoreboard.forms
 
         private void PlayMatch_KeyUp(object sender, KeyEventArgs e)
         {
-            var helpKeys = new List<Keys>
+            List<Keys> helpKeys = new List<Keys>
             {
                 Keys.H,
                 Keys.F1

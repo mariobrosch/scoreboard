@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Scoreboard.Wpf.Windows" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Speltypes"
         Height="477" Width="808"
@@ -19,12 +18,11 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <ListBox Grid.Row="0" x:Name="lbMatchTypes" DataContextChanged="LbMatchTypes_DataContextChanged" SelectionChanged="LbMatchTypes_SelectionChanged">
-
+            <ListBox Grid.Row="0" x:Name="lbMatchTypes" SelectionChanged="LbMatchTypes_SelectionChanged">
             </ListBox>
             <CheckBox Grid.Row="1" x:Name="ChkShowRemoved" Click="ChkShowRemoved_Click">
                 <TextBlock>Toon verwijderde types</TextBlock>
@@ -52,142 +50,141 @@
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Id"/>
+                <TextBlock Grid.Column="1">Id</TextBlock>
                 <TextBox Grid.Column="2" x:Name="txtId" IsReadOnly="True"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Titel"/>
+                <TextBlock Grid.Column="1">Titel</TextBlock>
                 <TextBox Grid.Column="2" x:Name="txtTitle"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Omschrijving"/>
+                <TextBlock Grid.Column="1" >Omschrijving</TextBlock>
                 <TextBox Grid.Column="2" x:Name="txtDescription"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Wedstrijd op tijd"/>
+                <TextBlock Grid.Column="1">Wedstrijd op tijd</TextBlock>
                 <CheckBox Grid.Column="2" x:Name="chkTimedMatch" Click="ChkTimedMatch_Click"/>
             </Grid>
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Duur wedstrijd"/>
+                <TextBlock Grid.Column="1">Duur wedstrijd</TextBlock>
                 <TextBox Grid.Column="2" Name="numMatchTime" IsReadOnly="true" />
             </Grid>
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Aantal sets voor winst"/>
+                <TextBlock Grid.Column="1">Aantal sets voor winst</TextBlock>
                 <TextBox Grid.Column="2" Name="numSetsToWin" />
             </Grid>
             <Grid Grid.Row="6">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Punten per set"/>
+                <TextBlock Grid.Column="1">Punten per set</TextBlock>
                 <TextBox Grid.Column="2" Name="numPointsPerSet" />
             </Grid>
             <Grid Grid.Row="7">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Service wissel na"/>
+                <TextBlock Grid.Column="1">Service wissel na</TextBlock>
                 <TextBox Grid.Column="2" Name="numServiceChangeAfter" />
             </Grid>
             <Grid Grid.Row="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Twee punten verschil"/>
+                <TextBlock Grid.Column="1">Twee punten verschil</TextBlock>
                 <CheckBox Grid.Column="2" Name="chkTwoPointDifference" />
             </Grid>
             <Grid Grid.Row="9">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Service wissel (shoot out) na"/>
+                <TextBlock Grid.Column="1">Service wissel (shoot out) na</TextBlock>
                 <TextBox Grid.Column="2" Name="numServiceChangeShootOutAfter" />
             </Grid>
             <Grid Grid.Row="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Suitable for 2vs2"/>
+                <TextBlock Grid.Column="1" >Suitable for 2vs2</TextBlock>
                 <CheckBox Grid.Column="2" Name="chk2vs2" />
             </Grid>
             <Grid Grid.Row="11">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Aantal keer gespeeld"/>
+                <TextBlock Grid.Column="1">Aantal keer gespeeld</TextBlock>
                 <TextBlock Grid.Column="2" Name="lblPlayed" />
             </Grid>
             <Grid Grid.Row="12">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1" Content="Is verwijderd"/>
+                <TextBlock Grid.Column="1">Is verwijderd</TextBlock>
                 <CheckBox Grid.Column="2" Name="chkIsRemoved" />
             </Grid>
 
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" x:Name="pbPhoto"></Image>
             <Button Grid.Row="1" x:Name="BtnRemove" Click="BtnRemove_Click">
                 <TextBlock>Verwijderen</TextBlock>
             </Button>

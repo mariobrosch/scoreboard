@@ -36,6 +36,10 @@ namespace Scoreboard.Wpf.Windows
             {
                 txtId.Text = WpfHelper.GetResourceText("new");
             }
+            else
+            {
+                lbPlayers.SelectedIndex = 0;
+            }
         }
 
         private void ChkShowRemoved_Click(object sender, RoutedEventArgs e)

@@ -4,7 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Enkelspel" Height="224" Width="464">
+        Title="Enkelspel" Height="224" Width="464"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>

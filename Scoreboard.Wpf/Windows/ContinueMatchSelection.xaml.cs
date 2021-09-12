@@ -45,7 +45,10 @@ namespace Scoreboard.Wpf.Windows
             {
                 Close();
             }
-            lbUnfinishedMatches.SelectedIndex = 0;
+            else
+            {
+                lbUnfinishedMatches.SelectedIndex = 0;
+            }
         }
 
         private void BtnContinue_Click(object sender, RoutedEventArgs e)

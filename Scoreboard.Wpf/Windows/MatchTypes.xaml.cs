@@ -19,7 +19,6 @@ namespace Scoreboard.Wpf.Windows
             InitializeComponent();
 
             LoadMatchTypes();
-
         }
         private void LoadMatchTypes()
         {
@@ -31,6 +30,9 @@ namespace Scoreboard.Wpf.Windows
             if (matchTypes.Count == 0)
             {
                 txtId.Text = WpfHelper.GetResourceText("new");
+            } else
+            {
+                lbMatchTypes.SelectedIndex = 0;
             }
         }
 
