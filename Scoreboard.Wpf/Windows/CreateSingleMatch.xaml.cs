@@ -35,7 +35,7 @@ namespace Scoreboard.Wpf.Windows
 
         private void LoadData()
         {
-            cboPlayer.ItemsSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
+            cboPlayer.ItemsSource = PlayerData.Get().OrderByDescending(p => p.PlayedGames).ThenBy(p => p.Name).ToList();
             cboPlayer.DisplayMemberPath = "Name";
             cboPlayer.SelectedIndex = 0;
         }

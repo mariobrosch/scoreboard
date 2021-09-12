@@ -21,15 +21,15 @@ namespace Scoreboard.Wpf.Windows
 
         private void LoadData()
         {
-            cboPlayerLeft.ItemsSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
-            cboPlayerLeft2.ItemsSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
-            cboPlayerRight.ItemsSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
-            cboPlayerRight2.ItemsSource = PlayerData.Get().OrderBy(p => p.Name).ToList();
+            cboPlayerLeft.ItemsSource = PlayerData.Get().OrderByDescending(p => p.PlayedGames).ThenBy(p => p.Name).ToList();
+            cboPlayerLeft2.ItemsSource = PlayerData.Get().OrderByDescending(p => p.PlayedGames).ThenBy(p => p.Name).ToList();
+            cboPlayerRight.ItemsSource = PlayerData.Get().OrderByDescending(p => p.PlayedGames).ThenBy(p => p.Name).ToList();
+            cboPlayerRight2.ItemsSource = PlayerData.Get().OrderByDescending(p => p.PlayedGames).ThenBy(p => p.Name).ToList();
             cboPlayerLeft.DisplayMemberPath = "Name";
             cboPlayerLeft2.DisplayMemberPath = "Name";
             cboPlayerRight.DisplayMemberPath = "Name";
             cboPlayerRight2.DisplayMemberPath = "Name";
-            cboMatchType.ItemsSource = MatchTypeData.Get().OrderBy(m => m.Type).ToList();
+            cboMatchType.ItemsSource = MatchTypeData.Get().OrderByDescending(m => m.PlayedMatches).ThenBy(m => m.Type).ToList();
             cboMatchType.DisplayMemberPath = "Type";
             cboPlayerLeft.SelectedIndex = 0;
             cboPlayerLeft2.SelectedIndex = 0;
