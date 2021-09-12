@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Threading;
+using System.Windows;
 
 namespace Scoreboard.Wpf
 {
@@ -35,6 +36,8 @@ namespace Scoreboard.Wpf
                 player.Play();
             }
         }
+
+  
 
         /// <summary>
         /// Write the json files to the backup location, does not create the backuplocation. If no backuplocation has been set the backup is not executed
@@ -71,6 +74,11 @@ namespace Scoreboard.Wpf
             LanguageValues.Clear();
         }
 
+        internal static string GetCurrentLanguage()
+        {
+            return Thread.CurrentThread.CurrentUICulture.ToString();
+        }
+
         /// <summary>
         /// Get resourcetext by key for the set culture
         /// </summary>
@@ -80,7 +88,7 @@ namespace Scoreboard.Wpf
         {
             if (LanguageValues.Count == 0)
             {
-                string languagePath = Path.Combine(".", "Resources", "Lang", Thread.CurrentThread.CurrentUICulture + ".json");
+                string languagePath = Path.Combine(".", "Resources", "Lang", GetCurrentLanguage() + ".json");
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(languagePath));
                 foreach (KeyValuePair<string, string> kv in dict)
                 {
@@ -94,6 +102,38 @@ namespace Scoreboard.Wpf
             }
 
             return LanguageValues.FirstOrDefault(l => l.Key == key).Value;
+        }
+
+        internal static Uri GetResourceFile(string windowName)
+        {
+            return new Uri("..\\Resources\\Lang\\Windows\\" + windowName + "." + GetCurrentLanguage() + ".xaml", UriKind.Relative);
+        }
+
+        internal static void SetLanguageResourceDictionary(FrameworkElement element, string windowName)
+        {
+            ResourceDictionary languageDictionary = new();
+            languageDictionary.Source = WpfHelper.GetResourceFile(windowName);
+            int langDictId = -1;
+            for (int i = 0; i < element.Resources.MergedDictionaries.Count; i++)
+            {
+                ResourceDictionary md = element.Resources.MergedDictionaries[i];
+                if (md.Contains("ResourceDictionaryName"))
+                {
+                    if (md["ResourceDictionaryName"].ToString().StartsWith("Loc-"))
+                    {
+                        langDictId = i;
+                        break;
+                    }
+                }
+            }
+            if (langDictId == -1)
+            {
+                element.Resources.MergedDictionaries.Add(languageDictionary);
+            }
+            else
+            {
+                element.Resources.MergedDictionaries[langDictId] = languageDictionary;
+            }
         }
 
         private static readonly List<Text> LanguageValues = new();

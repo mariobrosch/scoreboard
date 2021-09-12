@@ -12,7 +12,13 @@
     WindowState="Normal"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
-
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources\Lang\Windows\MainWindow.en-US.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -26,37 +32,37 @@
                 Name="mainMenuStrip"
                 Margin="0,0,0,0"
                 FontSize="16">
-                <MenuItem Name="menuToolStripMenuItem" Header="Menu">
+                <MenuItem Name="menuToolStripMenuItem" Header="{DynamicResource menu}">
                     <MenuItem
                         Name="dataExporterenToolStripMenuItem"
                         Click="DataExporterenToolStripMenuItem_Click"
-                        Header="Data exporteren" />
+                        Header="{DynamicResource exportdata}" />
                     <MenuItem
                         Name="settingsToolStripMenuItem"
                         Click="SettingsToolStripMenuItem_Click"
-                        Header="Instellingen" />
+                        Header="{DynamicResource settings}" />
                 </MenuItem>
                 <MenuItem
                     Name="spelersToolStripMenuItem"
                     Click="SpelersToolStripMenuItem_Click"
-                    Header="Spelers" />
+                    Header="{DynamicResource players}" />
                 <MenuItem
                     Name="speltypesToolStripMenuItem"
                     Click="SpeltypesToolStripMenuItem_Click"
-                    Header="Speltypes" />
-                <MenuItem Name="spelenToolStripMenuItem" Header="Spelen">
+                    Header="{DynamicResource matchtypes}" />
+                <MenuItem Name="spelenToolStripMenuItem" Header="{DynamicResource playmatch}">
                     <MenuItem
                         Name="verderSpelenToolStripMenuItem"
                         Click="VerderSpelenToolStripMenuItem_Click"
-                        Header="Verder spelen" />
+                        Header="{DynamicResource continuematch}" />
                     <MenuItem
                         Name="singlePlayerToolStripMenuItem"
                         Click="SinglePlayerToolStripMenuItem_Click"
-                        Header="Single player" />
+                        Header="{DynamicResource singleplayer}" />
                     <MenuItem
                         Name="nieuwSpelToolStripMenuItem"
                         Click="NieuwSpelToolStripMenuItem_Click"
-                        Header="Nieuw spel" />
+                        Header="{DynamicResource newmatch}" />
                 </MenuItem>
             </Menu>
         </Grid>
@@ -78,7 +84,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Click="BtnContinue_Click">
-                <TextBlock FontSize="50" Text="Verder spelen" />
+                <TextBlock FontSize="50" Text="{DynamicResource continuematch}" />
             </Button>
             <Button
                 Name="btnNewMatch"
@@ -87,7 +93,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Click="BtnNewMatch_Click">
-                <TextBlock FontSize="50" Text="Nieuw spel" />
+                <TextBlock FontSize="50" Text="{DynamicResource newmatch}" />
             </Button>
             <Button
                 Name="btnMatchTypes"
@@ -96,7 +102,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Click="BtnMatchTypes_Click">
-                <TextBlock FontSize="50" Text="Speltypes" />
+                <TextBlock FontSize="50" Text="{DynamicResource matchtypes}" />
             </Button>
             <Button
                 Name="btnPlayers"
@@ -104,7 +110,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Click="BtnPlayers_Click">
-                <TextBlock FontSize="50" Text="Spelers" />
+                <TextBlock FontSize="50" Text="{DynamicResource players}" />
             </Button>
         </Grid>
     </Grid>

@@ -13,11 +13,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="Resources\Lang\Windows\MainWindow.en-US.xaml" />
+    <Page Remove="Resources\Lang\Windows\MainWindow.nl-NL.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Resources\Applause.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\scoreboard.ico" />
     <Content Include="Resources\scoreboard.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Lang\Windows\mainwindow.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\mainwindow.nl-nl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator></Generator>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

@@ -5,10 +5,10 @@ using Scoreboard.DataCore.Helpers;
 using Scoreboard.DataCore.Settings;
 using Scoreboard.Wpf.Helpers;
 using System;
-using System.Configuration;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 
 namespace Scoreboard.Wpf
@@ -25,6 +25,7 @@ namespace Scoreboard.Wpf
 
             SettingsHelper.CreateDefaultSettings();
             InitializeComponent();
+            WpfHelper.SetLanguageResourceDictionary(this, MethodBase.GetCurrentMethod().DeclaringType.Name);
         }
 
         private void BtnContinue_Click(object sender, RoutedEventArgs e)

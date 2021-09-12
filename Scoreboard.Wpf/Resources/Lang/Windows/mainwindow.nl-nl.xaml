@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="ResourceDirectoryName">Loc-nl-NL</sys:String>
+
+    <sys:String x:Key="menu">Menu</sys:String>
+    <sys:String x:Key="exportdata">Exporteer gegevens</sys:String>
+    <sys:String x:Key="settings">Instellingen</sys:String>
+    <sys:String x:Key="players">Spelers</sys:String>
+    <sys:String x:Key="matchtypes">Speltypes</sys:String>
+    <sys:String x:Key="playmatch">Speel wedstrijd</sys:String>
+    <sys:String x:Key="continuematch">Verder spelen</sys:String>
+    <sys:String x:Key="singleplayer">Eén speler spel</sys:String>
+    <sys:String x:Key="newmatch">Nieuw spel</sys:String>
+</ResourceDictionary>
