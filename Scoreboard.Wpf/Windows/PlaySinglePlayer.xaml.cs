@@ -4,6 +4,7 @@ using Scoreboard.DataCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
 
@@ -22,6 +23,8 @@ namespace Scoreboard.Wpf.Windows
             _SinglePlayerMatch = singlePlayerMatch;
 
             InitializeComponent();
+
+            WpfHelper.SetLanguageResourceDictionary(this, MethodBase.GetCurrentMethod().DeclaringType.Name);
 
             FilterObject filterObject = new()
             {

@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="ResourceDirectoryName">Loc-en-US</sys:String>
+
+    <sys:String x:Key="title">Start single player match</sys:String>
+    <sys:String x:Key="pickplayer">Pick player to play</sys:String>
+    <sys:String x:Key="start">Start match</sys:String>
+</ResourceDictionary>

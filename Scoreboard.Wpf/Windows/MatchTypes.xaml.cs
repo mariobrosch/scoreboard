@@ -3,6 +3,7 @@ using Scoreboard.DataCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 
 namespace Scoreboard.Wpf.Windows
@@ -17,6 +18,7 @@ namespace Scoreboard.Wpf.Windows
         public MatchTypes()
         {
             InitializeComponent();
+            WpfHelper.SetLanguageResourceDictionary(this, MethodBase.GetCurrentMethod().DeclaringType.Name);
 
             LoadMatchTypes();
         }
@@ -153,15 +155,6 @@ namespace Scoreboard.Wpf.Windows
             chkTwoPointDifference.IsEnabled = !chkTimedMatch.IsChecked.GetValueOrDefault();
             numServiceChangeShootOutAfter.IsReadOnly = !chkTimedMatch.IsChecked.GetValueOrDefault();
             numMatchTime.IsReadOnly = chkTimedMatch.IsChecked.GetValueOrDefault();
-        }
-
-        private void LbMatchTypes_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if ((MatchType)lbMatchTypes.SelectedItem != null)
-            {
-                LoadMatchType((MatchType)lbMatchTypes.SelectedItem);
-            }
-            SetFieldsEnabled();
         }
 
         private void LbMatchTypes_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

@@ -13,13 +13,109 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="Resources\Lang\Windows\continuematchselection.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\continuematchselection.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\creatematch.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\creatematch.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\createsinglematch.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\createsinglematch.nl-nl.xaml" />
     <Page Remove="Resources\Lang\Windows\MainWindow.en-US.xaml" />
     <Page Remove="Resources\Lang\Windows\MainWindow.nl-NL.xaml" />
+    <Page Remove="Resources\Lang\Windows\matchtypes.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\matchtypes.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\players.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\players.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\playmatch.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\playmatch.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\playsingleplayer.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\playsingleplayer.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\settings.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\settings.nl-nl.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\Applause.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Lang\Windows\continuematchselection.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\creatematch.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\createsinglematch.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\matchtypes.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\players.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\players.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\matchtypes.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\createsinglematch.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\creatematch.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\continuematchselection.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\playmatch.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\playmatch.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\playsingleplayer.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\playsingleplayer.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\settings.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\settings.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
     </Content>
     <Content Include="Resources\scoreboard.ico" />
     <Content Include="Resources\scoreboard.png" />

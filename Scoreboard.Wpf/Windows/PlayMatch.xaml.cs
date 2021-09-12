@@ -4,6 +4,7 @@ using Scoreboard.DataCore.Helpers;
 using Scoreboard.DataCore.Models;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Timers;
 using System.Windows;
 using System.Windows.Input;
@@ -26,6 +27,8 @@ namespace Scoreboard.Wpf.Windows
         public PlayMatch(Match m)
         {
             InitializeComponent();
+            WpfHelper.SetLanguageResourceDictionary(this, MethodBase.GetCurrentMethod().DeclaringType.Name);
+
             sessionStart = DateTime.Now;
             matchTimer.Elapsed += UpdateMatchTime;
             matchTimer.Start();

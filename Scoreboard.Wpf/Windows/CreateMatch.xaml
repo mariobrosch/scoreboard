@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Spel aanmaken"
+    Title="{DynamicResource title}"
     Width="808"
     Height="477"
     ResizeMode="NoResize"
@@ -12,6 +12,13 @@
     WindowState="Normal"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\creatematch.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*" />
@@ -36,9 +43,8 @@
             <TextBlock
                 Name="lblPlayerLeft"
                 Grid.Row="0"
-                Grid.Column="0">
-                Speler links
-            </TextBlock>
+                Grid.Column="0"
+                Text="{DynamicResource playerleft}" />
             <ComboBox
                 Name="cboPlayerLeft"
                 Grid.Row="0"
@@ -46,9 +52,8 @@
             <TextBlock
                 Name="lblTwoVsTwoPlayerMatch"
                 Grid.Row="1"
-                Grid.Column="0">
-                2 vs 2
-            </TextBlock>
+                Grid.Column="0"
+                Text="{DynamicResource 2vs2}" />
             <CheckBox
                 Name="chkTwoVsTwoMatch"
                 Grid.Row="1"
@@ -58,9 +63,8 @@
                 Name="lblPlayerLeft2"
                 Grid.Row="2"
                 Grid.Column="0"
-                Visibility="Hidden">
-                Speler 2 links
-            </TextBlock>
+                Text="{DynamicResource playerleft}"
+                Visibility="Hidden" />
             <ComboBox
                 Name="cboPlayerLeft2"
                 Grid.Row="2"
@@ -81,9 +85,8 @@
             <TextBlock
                 Name="lblPlayerRight"
                 Grid.Row="0"
-                Grid.Column="0">
-                Speler rechts
-            </TextBlock>
+                Grid.Column="0"
+                Text="{DynamicResource playerright}" />
             <ComboBox
                 Name="cboPlayerRight"
                 Grid.Row="0"
@@ -92,9 +95,8 @@
                 Name="lblPlayerRight2"
                 Grid.Row="2"
                 Grid.Column="0"
-                Visibility="Hidden">
-                Speler 2 rechts
-            </TextBlock>
+                Text="{DynamicResource playerright}"
+                Visibility="Hidden" />
             <ComboBox
                 Name="cboPlayerRight2"
                 Grid.Row="2"
@@ -117,7 +119,7 @@
                 Grid.ColumnSpan="2"
                 IsReadOnly="True"
                 TextWrapping="Wrap" />
-            <TextBlock Name="lblMatchType">Speltype</TextBlock>
+            <TextBlock Name="lblMatchType" Text="{DynamicResource matchtype}" />
             <ComboBox
                 Name="cboMatchType"
                 Grid.Column="1"
@@ -144,7 +146,7 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Click="BtnStartNewSet_Click">
-                <TextBlock>Start new spel</TextBlock>
+                <TextBlock Text="{DynamicResource start}" />
             </Button>
         </Grid>
     </Grid>

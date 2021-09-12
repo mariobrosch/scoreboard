@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Spelers"
+    Title="{DynamicResource title}"
     Width="808"
     Height="477"
     ResizeMode="NoResize"
@@ -12,6 +12,13 @@
     WindowState="Normal"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\players.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -33,15 +40,13 @@
                 x:Name="ChkShowRemoved"
                 Grid.Row="1"
                 Click="ChkShowRemoved_Click">
-                <TextBlock>
-                    Toon verwijderde spelers
-                </TextBlock>
+                <TextBlock Text="{DynamicResource showremoved}" />
             </CheckBox>
             <Button
                 x:Name="BtnNew"
                 Grid.Row="2"
                 Click="BtnNew_Click">
-                <TextBlock>Nieuw</TextBlock>
+                <TextBlock Text="{DynamicResource new}" />
             </Button>
         </Grid>
         <Grid Grid.Column="1">
@@ -63,7 +68,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Id</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource id}" />
                 <TextBox
                     x:Name="txtId"
                     Grid.Column="2"
@@ -76,7 +81,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Naam</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource name}" />
                 <TextBox x:Name="txtName" Grid.Column="2" />
             </Grid>
             <Grid Grid.Row="2">
@@ -86,7 +91,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Foto url</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource photourl}" />
                 <TextBox
                     x:Name="txtPhotoUrl"
                     Grid.Column="2"
@@ -99,7 +104,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Foto</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource photo}" />
                 <Grid Grid.Column="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
@@ -109,13 +114,13 @@
                         x:Name="btnUploadPhoto"
                         Grid.Column="0"
                         Click="BtnUploadPhoto_Click">
-                        <TextBlock>Upload foto</TextBlock>
+                        <TextBlock Text="{DynamicResource uploadphoto}" />
                     </Button>
                     <Button
                         Name="btnRemovePhoto"
                         Grid.Column="1"
                         Click="BtnRemovePhoto_Click">
-                        <TextBlock>Verwijder foto</TextBlock>
+                        <TextBlock Text="{DynamicResource removephoto}" />
                     </Button>
                 </Grid>
 
@@ -127,7 +132,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Single player stats</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource singleplayerstats}" />
                 <TextBlock x:Name="lblSinglePlayerStats" Grid.Column="2">-</TextBlock>
             </Grid>
             <Grid Grid.Row="5">
@@ -137,7 +142,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Player stats</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource playerstats}" />
                 <TextBlock x:Name="lblPlayerStats" Grid.Column="2">-</TextBlock>
             </Grid>
             <Grid Grid.Row="6">
@@ -147,7 +152,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Actieve speler</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource activeplayer}" />
                 <CheckBox
                     x:Name="chkActivePlayer"
                     Grid.Column="2"
@@ -160,7 +165,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Verwijderde speler</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource removedplayer}" />
                 <CheckBox
                     x:Name="chkRemovedPlayer"
                     Grid.Column="2"
@@ -178,14 +183,14 @@
                 x:Name="BtnRemove"
                 Grid.Row="1"
                 Click="BtnRemove_Click">
-                <TextBlock>Verwijderen</TextBlock>
+                <TextBlock Text="{DynamicResource delete}" />
             </Button>
             <Button
                 x:Name="BtnSave"
                 Grid.Row="2"
                 Click="BtnSave_Click"
                 IsDefault="true">
-                <TextBlock>Opslaan</TextBlock>
+                <TextBlock Text="{DynamicResource save}" />
             </Button>
         </Grid>
     </Grid>

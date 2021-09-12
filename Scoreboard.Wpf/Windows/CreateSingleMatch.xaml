@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Eenspeler spel starten"
+    Title="{DynamicResource title}"
     Width="503"
     Height="282"
     ResizeMode="NoResize"
@@ -12,6 +12,13 @@
     WindowState="Normal"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\createsinglematch.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -26,14 +33,13 @@
             Grid.Row="1"
             Grid.Column="1"
             Click="BtnStart_Click">
-            <TextBlock>Start spel</TextBlock>
+            <TextBlock Text="{DynamicResource start}" />
         </Button>
         <TextBlock
             Name="lblSelectPlayer"
             Grid.Row="0"
-            Grid.Column="0">
-            Kies speler
-        </TextBlock>
+            Grid.Column="0"
+            Text="{DynamicResource pickplayer}" />
         <ComboBox
             Name="cboPlayer"
             Grid.Row="0"

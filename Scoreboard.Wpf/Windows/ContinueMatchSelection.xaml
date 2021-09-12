@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Verder spelen"
+    Title="{DynamicResource title}"
     Width="800"
     Height="450"
     ResizeMode="NoResize"
@@ -12,6 +12,13 @@
     WindowState="Normal"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\continuematchselection.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -43,7 +50,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Team links</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource teamleft}" />
                 <TextBox
                     x:Name="txtTeamLeft"
                     Grid.Column="2"
@@ -56,7 +63,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Team rechts</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource teamright}" />
                 <TextBox
                     x:Name="txtTeamRight"
                     Grid.Column="2"
@@ -69,7 +76,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Datum</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource date}" />
                 <TextBox
                     x:Name="txtMatchDate"
                     Grid.Column="2"
@@ -82,7 +89,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Stand</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource standings}" />
                 <TextBox
                     x:Name="txtStandings"
                     Grid.Column="2"
@@ -95,7 +102,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Gespeelde minuten</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource timeplayed}" />
                 <TextBox
                     x:Name="txtPlayedMinutes"
                     Grid.Column="2"
@@ -108,7 +115,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Speltype</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource matchtype}" />
                 <TextBox
                     x:Name="txtMatchType"
                     Grid.Column="2"
@@ -121,7 +128,7 @@
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="1">Sets</TextBlock>
+                <TextBlock Grid.Column="1" Text="{DynamicResource sets}" />
                 <TextBlock x:Name="txtSets" Grid.Column="2">-</TextBlock>
             </Grid>
         </Grid>
@@ -137,7 +144,7 @@
                 Grid.Row="2"
                 Click="BtnContinue_Click"
                 IsDefault="true">
-                <TextBlock>Verder spelen</TextBlock>
+                <TextBlock Text="{DynamicResource continue}" />
             </Button>
         </Grid>
     </Grid>

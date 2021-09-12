@@ -3,6 +3,7 @@ using Scoreboard.DataCore.Data.Requests;
 using Scoreboard.DataCore.Helpers;
 using Scoreboard.DataCore.Models;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -16,7 +17,8 @@ namespace Scoreboard.Wpf.Windows
     {
         public ContinueMatchSelection()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            WpfHelper.SetLanguageResourceDictionary(this, MethodBase.GetCurrentMethod().DeclaringType.Name);
 
             LoadUnfinishedMatches();
         }

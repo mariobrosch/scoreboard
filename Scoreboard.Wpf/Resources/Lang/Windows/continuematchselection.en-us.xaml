@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="ResourceDirectoryName">Loc-en-US</sys:String>
+
+    <sys:String x:Key="title">Continue match</sys:String>
+    <sys:String x:Key="teamleft">Team left</sys:String>
+    <sys:String x:Key="teamright">Team right</sys:String>
+    <sys:String x:Key="date">Date</sys:String>
+    <sys:String x:Key="standings">Standings</sys:String>
+    <sys:String x:Key="timeplayed">Time played (min.)</sys:String>
+    <sys:String x:Key="matchtype">Matchtype</sys:String>
+    <sys:String x:Key="sets">Sets</sys:String>
+    <sys:String x:Key="continue">Continue match</sys:String>
+</ResourceDictionary>

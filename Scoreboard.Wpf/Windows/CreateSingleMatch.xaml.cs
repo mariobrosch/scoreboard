@@ -2,6 +2,7 @@
 using Scoreboard.DataCore.Models;
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 
 namespace Scoreboard.Wpf.Windows
@@ -14,6 +15,8 @@ namespace Scoreboard.Wpf.Windows
         public CreateSingleMatch()
         {
             InitializeComponent();
+            WpfHelper.SetLanguageResourceDictionary(this, MethodBase.GetCurrentMethod().DeclaringType.Name);
+
             LoadData();
         }
 

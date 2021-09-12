@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="ResourceDirectoryName">Loc-nl-NL</sys:String>
+
+    <sys:String x:Key="title">Spelers</sys:String>
+    <sys:String x:Key="showremoved">Toon verwijderde spelers</sys:String>
+    <sys:String x:Key="new">Nieuw</sys:String>
+    <sys:String x:Key="id">Id</sys:String>
+    <sys:String x:Key="name">Naam</sys:String>
+    <sys:String x:Key="photourl">Foto url</sys:String>
+    <sys:String x:Key="photo">Foto</sys:String>
+    <sys:String x:Key="uploadphoto">Upload foto</sys:String>
+    <sys:String x:Key="removephoto">Verwijder foto</sys:String>
+    <sys:String x:Key="singleplayerstats">Enkelspel statistieken</sys:String>
+    <sys:String x:Key="playerstats">Spelers statistieken</sys:String>
+    <sys:String x:Key="activeplayer">Actieve speler</sys:String>
+    <sys:String x:Key="removedplayer">Verwijderde speler</sys:String>
+    <sys:String x:Key="delete">Verwijderen</sys:String>
+    <sys:String x:Key="save">Opslaan</sys:String>
+</ResourceDictionary>

@@ -3,6 +3,7 @@ using Scoreboard.DataCore.Helpers;
 using Scoreboard.DataCore.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 
 namespace Scoreboard.Wpf.Windows
@@ -16,6 +17,8 @@ namespace Scoreboard.Wpf.Windows
         public Settings()
         {
             InitializeComponent();
+            WpfHelper.SetLanguageResourceDictionary(this, MethodBase.GetCurrentMethod().DeclaringType.Name);
+
             LoadSettings();
         }
 
