@@ -33,55 +33,58 @@
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="4*" />
             </Grid.ColumnDefinitions>
-            <TextBlock
-                Name="txtLeftTeam"
-                Grid.Column="0"
-                FontSize="32">
-                -
-            </TextBlock>
-            <TextBlock
-                Name="txtTimePlayed"
-                Grid.Column="1"
-                HorizontalAlignment="Center"
-                FontSize="32">
-                -
-            </TextBlock>
-            <TextBlock
-                Name="txtRightTime"
-                Grid.Column="2"
-                HorizontalAlignment="Right"
-                FontSize="32">
-                -
-            </TextBlock>
+            <Border Name="pnlLeftTeam">
+                <Viewbox>
+                    <TextBlock Name="txtLeftTeam">
+                        -
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border x:Name="pnlTime" Grid.Column="1">
+                <Viewbox>
+                    <TextBlock Name="txtTimePlayed" HorizontalAlignment="Center">
+                        -
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border Name="pnlRightTeam" Grid.Column="2">
+                <Viewbox>
+                    <TextBlock Name="txtRightTime" HorizontalAlignment="Right">
+                        -
+                    </TextBlock>
+                </Viewbox>
+            </Border>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <TextBlock
-                Name="txtScoreLeft"
-                Grid.Column="0"
-                HorizontalAlignment="Center"
-                FontSize="200"
-                MouseUp="TxtScoreLeft_MouseUp">
-                0
-            </TextBlock>
-            <TextBlock
-                Name="txtScoreRight"
+            <Border Name="pnlLeftScore" Background="White">
+                <Viewbox Grid.Column="0">
+                    <TextBlock Name="txtScoreLeft" MouseUp="TxtScoreLeft_MouseUp">
+                        0
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border
+                Name="pnlRightScore"
                 Grid.Column="1"
-                HorizontalAlignment="Center"
-                FontSize="200"
-                MouseUp="TxtScoreRight_MouseUp">
-                0
-            </TextBlock>
+                Background="White">
+                <Viewbox Grid.Column="1">
+                    <TextBlock Name="txtScoreRight" MouseUp="TxtScoreRight_MouseUp">
+                        0
+                    </TextBlock>
+                </Viewbox>
+            </Border>
         </Grid>
-        <TextBlock
-            Name="txtWinner"
-            Grid.Row="2"
-            HorizontalAlignment="Center"
-            FontSize="48">
-            -
-        </TextBlock>
+        <Border x:Name="pnlWinner" Grid.Row="2">
+            <Viewbox>
+                <TextBlock Name="txtWinner" HorizontalAlignment="Center">
+                    -
+                </TextBlock>
+            </Viewbox>
+        </Border>
+
     </Grid>
 </Window>

@@ -187,7 +187,7 @@ namespace Scoreboard.Wpf.Windows
                     WpfHelper.PlaySound(SoundTypes.Applause);
                     match.WinnerId = match.PlayerLeftId;
                     match.WinnerId2 = match.PlayerLeftId2;
-                    txtLeftTeam.Background = new SolidColorBrush(Colors.Green);
+                    pnlLeftTeam.Background = new SolidColorBrush(Colors.Green);
                     txtWinner.Text = WpfHelper.GetResourceText("team") + " '" + matchSummary.TeamLeft + "' " + WpfHelper.GetResourceText("hasWon");
                     txtWinner.Visibility = Visibility.Visible;
                 }
@@ -197,7 +197,7 @@ namespace Scoreboard.Wpf.Windows
                     WpfHelper.PlaySound(SoundTypes.Applause);
                     match.WinnerId = match.PlayerRightId;
                     match.WinnerId2 = match.PlayerRightId2;
-                    txtRightTime.Background = new SolidColorBrush(Colors.Green);
+                    pnlRightTeam.Background = new SolidColorBrush(Colors.Green);
                     txtWinner.Text = WpfHelper.GetResourceText("team") + " '" + matchSummary.TeamRight + "' " + WpfHelper.GetResourceText("hasWon");
                     txtWinner.Visibility = Visibility.Visible;
                 }
@@ -211,18 +211,18 @@ namespace Scoreboard.Wpf.Windows
             PlayerSide teamToServe = SetHelper.GetPlayerToServe(matchSummary);
             if (teamToServe == PlayerSide.Left)
             {
-                txtScoreLeft.Background = new SolidColorBrush(Colors.Yellow);
-                txtScoreRight.Background = new SolidColorBrush(Colors.White);
+                pnlLeftScore.Background = new SolidColorBrush(Colors.Yellow);
+                pnlRightScore.Background = new SolidColorBrush(Colors.White);
             }
             else if (teamToServe == PlayerSide.Right)
             {
-                txtScoreLeft.Background = new SolidColorBrush(Colors.White);
-                txtScoreRight.Background = new SolidColorBrush(Colors.Yellow);
+                pnlLeftScore.Background = new SolidColorBrush(Colors.White);
+                pnlRightScore.Background = new SolidColorBrush(Colors.Yellow);
             }
             else
             {
-                txtScoreLeft.Background = new SolidColorBrush(Colors.White);
-                txtScoreRight.Background = new SolidColorBrush(Colors.White);
+                pnlLeftScore.Background = new SolidColorBrush(Colors.White);
+                pnlRightScore.Background = new SolidColorBrush(Colors.White);
             }
         }
 
@@ -246,7 +246,7 @@ namespace Scoreboard.Wpf.Windows
                 {
                     currentSet.SetWinnerId2 = match.PlayerLeftId2;
                 }
-                txtScoreLeft.Background = new SolidColorBrush(Colors.Green);
+                pnlLeftScore.Background = new SolidColorBrush(Colors.Green);
                 return;
             }
 
@@ -257,7 +257,7 @@ namespace Scoreboard.Wpf.Windows
                 {
                     currentSet.SetWinnerId2 = match.PlayerRightId2;
                 }
-                txtScoreRight.Background = new SolidColorBrush(Colors.Green);
+                pnlRightScore.Background = new SolidColorBrush(Colors.Green);
                 return;
             }
         }
@@ -346,8 +346,8 @@ namespace Scoreboard.Wpf.Windows
                 currentSet = SetData.Create(set);
                 setFinished = false;
                 UpdateMatch();
-                txtScoreRight.Background = new SolidColorBrush(Colors.White);
-                txtScoreLeft.Background = new SolidColorBrush(Colors.White);
+                pnlRightScore.Background = new SolidColorBrush(Colors.White);
+                pnlLeftScore.Background = new SolidColorBrush(Colors.White);
             }
         }
     }
