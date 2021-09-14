@@ -169,7 +169,7 @@ namespace Scoreboard.Wpf.Windows
 
             List<Match> matchesForPlayer = MatchData.GetForPlayer(player.Id);
             int matchesWon = matchesForPlayer.Where(m => m.WinnerId == player.Id).ToList().Count;
-            lblPlayerStats.Text = matchesForPlayer.Count > 0 ? matchesForPlayer.Count.ToString() + " " + WpfHelper.GetResourceText("played") + " " + WpfHelper.GetResourceText("and") + matchesWon.ToString() + " " + WpfHelper.GetResourceText("won") : "0";
+            lblPlayerStats.Text = matchesForPlayer.Count > 0 ? matchesForPlayer.Count.ToString() + " " + WpfHelper.GetResourceText("played") + " " + WpfHelper.GetResourceText("and") + " " + matchesWon.ToString() + " " + WpfHelper.GetResourceText("won") : "0";
             currentPlayer = player;
 
             LoadPhoto();

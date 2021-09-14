@@ -5,8 +5,9 @@
     <sys:String x:Key="ResourceDirectoryName">Loc-nl-NL</sys:String>
 
     <sys:String x:Key="title">Speltypes</sys:String>
+
     <sys:String x:Key="id">Id</sys:String>
-    <sys:String x:Key="title">Titel</sys:String>
+    <sys:String x:Key="type">Titel</sys:String>
     <sys:String x:Key="description">Omschrijving</sys:String>
     <sys:String x:Key="timedmatch">Wedstrijd op tijd</sys:String>
     <sys:String x:Key="matchtime">Duur wedstrijd (minuten)</sys:String>

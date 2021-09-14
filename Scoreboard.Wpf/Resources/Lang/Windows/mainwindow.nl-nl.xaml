@@ -4,6 +4,8 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String x:Key="ResourceDirectoryName">Loc-nl-NL</sys:String>
 
+    <sys:String x:Key="title">Scoreboard</sys:String>
+
     <sys:String x:Key="menu">Menu</sys:String>
     <sys:String x:Key="exportdata">Exporteer gegevens</sys:String>
     <sys:String x:Key="settings">Instellingen</sys:String>

@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <None Remove="Resources\Applause.wav" />
+    <None Remove="Resources\Lang\en-US.json" />
+    <None Remove="Resources\Lang\nl-NL.json" />
     <None Remove="Resources\scoreboard.ico" />
     <None Remove="Resources\scoreboard.png" />
+    <None Remove="scoreboard.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -132,6 +135,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Generator></Generator>
     </Content>
+    <Content Include="scoreboard.json">
+      <Generator></Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -140,6 +147,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Scoreboard.DataCore\Scoreboard.DataCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Lang\en-US.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Lang\nl-NL.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -152,11 +171,6 @@
       <DependentUpon>LanguageStrings.nl-NL.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="scoreboard.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>scoreboard.json</DependentUpon>
     </Compile>
     <Compile Update="Windows\CreateMatch.xaml.cs">
       <SubType>Code</SubType>
@@ -181,20 +195,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resources\Lang\en-US.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Lang\nl-NL.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="scoreboard.json">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>scoreboard.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <Page Update="Windows\CreateMatch.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
@@ -208,5 +208,5 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-
+  
 </Project>

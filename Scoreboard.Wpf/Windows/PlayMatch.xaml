@@ -60,9 +60,12 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Border Name="pnlLeftScore" Background="White">
+            <Border
+                Name="pnlLeftScore"
+                Background="White"
+                MouseUp="TxtScoreLeft_MouseUp">
                 <Viewbox Grid.Column="0">
-                    <TextBlock Name="txtScoreLeft" MouseUp="TxtScoreLeft_MouseUp">
+                    <TextBlock Name="txtScoreLeft">
                         0
                     </TextBlock>
                 </Viewbox>
@@ -70,9 +73,10 @@
             <Border
                 Name="pnlRightScore"
                 Grid.Column="1"
-                Background="White">
+                Background="White"
+                MouseUp="TxtScoreRight_MouseUp">
                 <Viewbox Grid.Column="1">
-                    <TextBlock Name="txtScoreRight" MouseUp="TxtScoreRight_MouseUp">
+                    <TextBlock Name="txtScoreRight">
                         0
                     </TextBlock>
                 </Viewbox>
