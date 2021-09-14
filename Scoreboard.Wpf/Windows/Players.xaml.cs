@@ -122,7 +122,7 @@ namespace Scoreboard.Wpf.Windows
                 Title = WpfHelper.GetResourceText("OpenPhoto")
             };
 
-            if (ofdPhoto.ShowDialog() ==true)
+            if (ofdPhoto.ShowDialog() == true)
             {
                 byte[] imageArray = File.ReadAllBytes(ofdPhoto.FileName);
                 currentPlayer.Photo = Convert.ToBase64String(imageArray);
@@ -195,7 +195,7 @@ namespace Scoreboard.Wpf.Windows
 
                 Image img = new();
                 img.Source = bi;
-                
+
                 btnRemovePhoto.Visibility = Visibility.Visible;
             }
             else if (!string.IsNullOrEmpty(currentPlayer.PhotoUrl))

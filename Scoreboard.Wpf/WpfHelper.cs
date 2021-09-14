@@ -37,8 +37,6 @@ namespace Scoreboard.Wpf
             }
         }
 
-  
-
         /// <summary>
         /// Write the json files to the backup location, does not create the backuplocation. If no backuplocation has been set the backup is not executed
         /// </summary>
@@ -112,7 +110,7 @@ namespace Scoreboard.Wpf
         internal static void SetLanguageResourceDictionary(FrameworkElement element, string windowName)
         {
             ResourceDictionary languageDictionary = new();
-            languageDictionary.Source = WpfHelper.GetResourceFile(windowName);
+            languageDictionary.Source = GetResourceFile(windowName);
             int langDictId = -1;
             for (int i = 0; i < element.Resources.MergedDictionaries.Count; i++)
             {

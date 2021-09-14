@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Scoreboard.DataCore.Data;
+using Scoreboard.DataCore.Data.Requests;
+using Scoreboard.DataCore.Helpers;
+using Scoreboard.DataCore.Models;
+using System;
 using System.Windows.Forms;
-using Scoreboard.Data.data;
-using Scoreboard.Data.data.requests;
-using Scoreboard.Data.Helpers;
-using Scoreboard.Data.models;
 
 namespace Scoreboard.forms
 {
@@ -20,18 +20,18 @@ namespace Scoreboard.forms
         {
             if ((Match)lbUnfinishedMatches.SelectedItem != null)
             {
-                LoadMatch(((Match)lbUnfinishedMatches.SelectedItem));
+                LoadMatch((Match)lbUnfinishedMatches.SelectedItem);
             }
         }
 
         private void LoadUnfinishedMatches()
         {
-            var filter = new FilterObject
+            FilterObject filter = new FilterObject
             {
                 Column = "WinnerId",
                 Value = "ISNULL"
             };
-            var matchesWithoutWinner = MatchData.Get(filter);
+            System.Collections.Generic.List<Match> matchesWithoutWinner = MatchData.Get(filter);
 
             lbUnfinishedMatches.DataSource = matchesWithoutWinner;
             lbUnfinishedMatches.DisplayMember = "MatchDescription";
@@ -45,14 +45,14 @@ namespace Scoreboard.forms
         private void BtnContinueMatch_Click(object sender, EventArgs e)
         {
             Hide();
-            PlayMatch playMatch = new PlayMatch(((Match)lbUnfinishedMatches.SelectedItem));
-            playMatch.ShowDialog();
+            PlayMatch playMatch = new PlayMatch((Match)lbUnfinishedMatches.SelectedItem);
+            _ = playMatch.ShowDialog();
             Close();
         }
 
         private void LoadMatch(Match match)
         {
-            var matchSummary = MatchHelper.GetMatchSummary(match);
+            MatchSummary matchSummary = MatchHelper.GetMatchSummary(match);
 
             txtTeamLeft.Text = matchSummary.TeamLeft;
             txtTeamRight.Text = matchSummary.TeamRight;

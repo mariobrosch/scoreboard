@@ -1,6 +1,6 @@
 ﻿namespace Scoreboard
 {
-    enum SoundTypes
+    internal enum SoundTypes
     {
         Applause
     }

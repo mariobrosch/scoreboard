@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Scoreboard.DataCore.Data;
+using Scoreboard.DataCore.Data.Requests;
+using Scoreboard.DataCore.Models;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using Scoreboard.Data.data;
-using Scoreboard.Data.data.requests;
-using Scoreboard.Data.models;
 
 namespace Scoreboard.forms
 {
@@ -16,16 +16,16 @@ namespace Scoreboard.forms
             _SinglePlayerMatch = singlePlayerMatch;
             InitializeComponent();
 
-            var filterObject = new FilterObject()
+            FilterObject filterObject = new FilterObject()
             {
                 Column = "PlayerId",
                 Value = _SinglePlayerMatch.PlayerId.ToString()
             };
-            var allPlayedMatches = SinglePlayerMatchData.Get(filterObject);
+            System.Collections.Generic.List<SinglePlayerMatch> allPlayedMatches = SinglePlayerMatchData.Get(filterObject);
             if (allPlayedMatches.Count > 1)
             {
                 allPlayedMatches = allPlayedMatches.OrderBy(x => x.HighScore).ToList();
-                var bestMatch = allPlayedMatches[allPlayedMatches.Count - 1];
+                SinglePlayerMatch bestMatch = allPlayedMatches[allPlayedMatches.Count - 1];
                 highScore = bestMatch.HighScore;
                 lblPreviousRecord.Text = FormsHelper.GetResourceText("highscore") + ": " + highScore.ToString() + " (" + bestMatch.MatchDateParsed.ToString("yyyy-MM-dd") + ")";
             }
@@ -39,8 +39,8 @@ namespace Scoreboard.forms
                 FormsHelper.PlaySound(SoundTypes.Applause);
             }
 
-            _SinglePlayerMatch.HighScore = Decimal.ToInt32(numScore.Value);
-            SinglePlayerMatchData.Update(_SinglePlayerMatch);
+            _SinglePlayerMatch.HighScore = decimal.ToInt32(numScore.Value);
+            _ = SinglePlayerMatchData.Update(_SinglePlayerMatch);
             Dispose();
         }
 
@@ -58,7 +58,7 @@ namespace Scoreboard.forms
             {
                 numScore.Value++;
             }
-            numScore.Focus();
+            _ = numScore.Focus();
         }
     }
 }

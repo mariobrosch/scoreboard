@@ -2,27 +2,27 @@
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
-using Scoreboard.Data.Helpers;
+using Scoreboard.DataCore.Helpers;
+using Scoreboard.DataCore.Migrations;
 using Scoreboard.forms;
-using Scoreboard.Data.Migrations;
 
 namespace Scoreboard
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            var language = SettingsHelper.GetSettingByKey("Language")?.Value;
+            string language = SettingsHelper.GetSettingByKey("Language")?.Value;
             if (language == null)
             {
                 language = "Dutch";
             }
 
-            switch(language)
+            switch (language)
             {
                 case "Dutch":
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
@@ -30,9 +30,14 @@ namespace Scoreboard
                 case "English":
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
                     break;
+                // case "Dutch":
+                default:
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
+                    break;
+
             }
 
-            var migration = new Handler();
+            Handler migration = new Handler();
             migration.StartMigrations();
 
 

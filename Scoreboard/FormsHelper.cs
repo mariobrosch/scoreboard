@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace Scoreboard
 {
-    static class FormsHelper
+    internal static class FormsHelper
     {
         /// <summary>
         /// Play a sound through speakers
@@ -16,7 +16,7 @@ namespace Scoreboard
         /// <param name="soundType"></param>
         internal static void PlaySound(SoundTypes soundType)
         {
-            var audioFile = "";
+            string audioFile = "";
             switch (soundType)
             {
                 case SoundTypes.Applause:
@@ -46,7 +46,7 @@ namespace Scoreboard
             {
                 if (!Directory.Exists(backupLocation))
                 {
-                    Directory.CreateDirectory(backupLocation);
+                    _ = Directory.CreateDirectory(backupLocation);
                 }
 
                 foreach (string file in Directory.GetFiles(localStoragePath, "*.*", SearchOption.AllDirectories))
@@ -63,7 +63,7 @@ namespace Scoreboard
         /// <returns>String of the translated text</returns>
         internal static string GetResourceText(string key)
         {
-            var resourceManager = new ResourceManager(typeof(FormsHelper).Namespace + ".Properties.Resource", Assembly.GetExecutingAssembly());
+            ResourceManager resourceManager = new ResourceManager(typeof(FormsHelper).Namespace + ".Properties.Resource", Assembly.GetExecutingAssembly());
             return resourceManager.GetString(key, Thread.CurrentThread.CurrentUICulture);
         }
     }

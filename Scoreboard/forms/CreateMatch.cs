@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Scoreboard.DataCore.Data.Requests;
+using Scoreboard.DataCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Scoreboard.Data.data.requests;
-using Scoreboard.Data.models;
 
 namespace Scoreboard.forms
 {
@@ -31,8 +31,8 @@ namespace Scoreboard.forms
 
         private bool IsPlayerDouble()
         {
-            var playerLeft = (Player)cboPlayerLeft.SelectedItem;
-            var playerRight = (Player)cboPlayerRight.SelectedItem;
+            Player playerLeft = (Player)cboPlayerLeft.SelectedItem;
+            Player playerRight = (Player)cboPlayerRight.SelectedItem;
 
             if (playerLeft.Id == playerRight.Id)
             {
@@ -44,10 +44,10 @@ namespace Scoreboard.forms
                 return false;
             }
 
-            var playerLeft2 = (Player)cboPlayerLeft2.SelectedItem;
-            var playerRight2 = (Player)cboPlayerRight2.SelectedItem;
+            Player playerLeft2 = (Player)cboPlayerLeft2.SelectedItem;
+            Player playerRight2 = (Player)cboPlayerRight2.SelectedItem;
 
-            var playerList = new List<int>
+            List<int> playerList = new List<int>
             {
                 playerLeft.Id,
                 playerRight.Id,
@@ -55,13 +55,13 @@ namespace Scoreboard.forms
                 playerRight2.Id
             };
 
-            var result = playerList.GroupBy(id => id)
-                        .Select(g => new { Value = g.Key, Count = g.Count() })
+            IOrderedEnumerable<(int Value, int Count)> result = playerList.GroupBy(id => id)
+                        .Select(g => (Value: g.Key, Count: g.Count()))
                         .OrderByDescending(x => x.Count);
 
-            foreach (var c in result)
+            foreach ((int Value, int Count) in result)
             {
-                if (c.Count > 1)
+                if (Count > 1)
                 {
                     return true;
                 }
@@ -73,15 +73,15 @@ namespace Scoreboard.forms
         {
             if (IsPlayerDouble())
             {
-                MessageBox.Show(FormsHelper.GetResourceText("setupErrorDescription"), FormsHelper.GetResourceText("setupErrorTitle"));
+                _ = MessageBox.Show(FormsHelper.GetResourceText("setupErrorDescription"), FormsHelper.GetResourceText("setupErrorTitle"));
                 return;
             }
-            var selectedPlayersForMatch = new List<int>();
-            var playerLeft = (Player)cboPlayerLeft.SelectedItem;
-            var playerRight = (Player)cboPlayerRight.SelectedItem;
-            var matchType = (MatchType)cboMatchType.SelectedItem;
+            List<int> selectedPlayersForMatch = new List<int>();
+            Player playerLeft = (Player)cboPlayerLeft.SelectedItem;
+            Player playerRight = (Player)cboPlayerRight.SelectedItem;
+            MatchType matchType = (MatchType)cboMatchType.SelectedItem;
 
-            var newMatch = new Match()
+            Match newMatch = new Match()
             {
                 MatchTypeId = matchType.Id,
                 PlayerLeftId = playerLeft.Id,
@@ -93,8 +93,8 @@ namespace Scoreboard.forms
 
             if (chkTwoVsTwoMatch.Checked)
             {
-                var playerLeft2 = (Player)cboPlayerLeft2.SelectedItem;
-                var playerRight2 = (Player)cboPlayerRight2.SelectedItem;
+                Player playerLeft2 = (Player)cboPlayerLeft2.SelectedItem;
+                Player playerRight2 = (Player)cboPlayerRight2.SelectedItem;
                 newMatch.PlayerLeftId2 = playerLeft2.Id;
                 newMatch.PlayerRightId2 = playerRight2.Id;
                 selectedPlayersForMatch.Add(playerLeft2.Id);
@@ -102,17 +102,17 @@ namespace Scoreboard.forms
             }
 
             // Randomize player first serve
-            var random = new Random();
+            Random random = new Random();
             int index = random.Next(selectedPlayersForMatch.Count);
             newMatch.PlayerFirstServiceId = selectedPlayersForMatch[index];
 
             newMatch.MatchDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            var m = MatchData.Create(newMatch);
+            Match m = MatchData.Create(newMatch);
 
             Hide();
-            var frmPlayMatch = new PlayMatch(m);
-            frmPlayMatch.ShowDialog();
+            PlayMatch frmPlayMatch = new PlayMatch(m);
+            _ = frmPlayMatch.ShowDialog();
             Close();
         }
 
@@ -126,7 +126,7 @@ namespace Scoreboard.forms
 
         private void CboMatchType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var matchType = (MatchType)cboMatchType.SelectedItem;
+            MatchType matchType = (MatchType)cboMatchType.SelectedItem;
             txtMatchTypeDescription.Text = matchType.Description;
         }
     }

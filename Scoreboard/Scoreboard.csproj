@@ -352,9 +352,9 @@
     <Content Include="resources\scoreboard.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Scoreboard.Data\Scoreboard.Data.csproj">
-      <Project>{7498f369-7f4d-4973-8515-7e5bdf97623b}</Project>
-      <Name>Scoreboard.Data</Name>
+    <ProjectReference Include="..\Scoreboard.DataCore\Scoreboard.DataCore.csproj">
+      <Project>{91e9ba7f-f89f-4e0e-9750-54ee8ae08d36}</Project>
+      <Name>Scoreboard.DataCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
