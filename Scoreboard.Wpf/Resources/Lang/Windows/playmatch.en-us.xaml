@@ -5,4 +5,8 @@
     <sys:String x:Key="ResourceDirectoryName">Loc-en-US</sys:String>
 
     <sys:String x:Key="title">Play match</sys:String>
+    <sys:String x:Key="rematch">Rematch</sys:String>
+    <sys:String x:Key="close">Close</sys:String>
+    <sys:String x:Key="undo">Undo</sys:String>
+    
 </ResourceDictionary>

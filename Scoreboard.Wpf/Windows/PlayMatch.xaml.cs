@@ -64,7 +64,7 @@ namespace Scoreboard.Wpf.Windows
         {
             Dispatcher.Invoke(() =>
             {
-                if (matchSummary != null)
+                if (matchSummary != null && matchSummary.Winner.HasValue == false)
                 {
                     int interval = Convert.ToInt32((DateTime.Now - sessionStart).TotalSeconds);
                     string maxMatchTime = "";
@@ -120,9 +120,42 @@ namespace Scoreboard.Wpf.Windows
 
         }
 
-        private void UpdateScore(bool isForLeft, bool negativeScore = false)
+        private void UpdateScore(bool isForLeft, bool negativeScore = false, bool undo = false)
         {
-            if (currentSet.SetWinnerId.HasValue)
+            if (undo)
+            {
+                // Only if match or set winner
+                if (currentSet.SetWinnerId.HasValue)
+                {
+                    // Reset matchwinner if set
+                    if (matchSummary.Winner.HasValue)
+                    {
+                        var match = matchSummary.Match;
+                        match.WinnerId = null;
+                        match.WinnerId2 = null;
+                        MatchData.Update(match);
+                    }
+                    currentSet.SetWinnerId = null;
+                    currentSet.SetWinnerId2 = null;
+                    if (currentSet.TeamLeftScore > currentSet.TeamRightScore)
+                    {
+                        currentSet.TeamLeftScore--;
+                    }
+                    else
+                    {
+                        currentSet.TeamRightScore--;
+                    }
+                    setFinished = false;
+                }
+                _ = SetData.Update(currentSet);
+                UpdateMatch();
+                txtScoreLeft.Text = currentSet.TeamLeftScore.ToString();
+                txtScoreRight.Text = currentSet.TeamRightScore.ToString();
+                BtnClose.Visibility = Visibility.Hidden;
+                BtnUndo.Visibility = Visibility.Hidden;
+                BtnRematch.Visibility = Visibility.Hidden;
+            }
+            else if (currentSet.SetWinnerId.HasValue)
             {
                 _ = MessageBox.Show(WpfHelper.GetResourceText("setPlayedErrorDesc"));
             }
@@ -247,7 +280,6 @@ namespace Scoreboard.Wpf.Windows
                     currentSet.SetWinnerId2 = match.PlayerLeftId2;
                 }
                 pnlLeftScore.Background = new SolidColorBrush(Colors.Green);
-                return;
             }
 
             if (setWinner == PlayerSide.Right)
@@ -258,7 +290,14 @@ namespace Scoreboard.Wpf.Windows
                     currentSet.SetWinnerId2 = match.PlayerRightId2;
                 }
                 pnlRightScore.Background = new SolidColorBrush(Colors.Green);
-                return;
+            }
+
+
+            if (setFinished)
+            {
+                BtnClose.Visibility = Visibility.Visible;
+                BtnRematch.Visibility = Visibility.Visible;
+                BtnUndo.Visibility = Visibility.Visible;
             }
         }
 
@@ -330,7 +369,8 @@ namespace Scoreboard.Wpf.Windows
 
         private void StartNewSet()
         {
-            if (MessageBox.Show(WpfHelper.GetResourceText("startNextSet"), WpfHelper.GetResourceText("startNextSet"), MessageBoxButton.OK) == MessageBoxResult.OK)
+            var boxResult = MessageBox.Show(WpfHelper.GetResourceText("startNextSet"), WpfHelper.GetResourceText("startNextSet"), MessageBoxButton.YesNo);
+            if (boxResult == MessageBoxResult.Yes)
             {
                 txtScoreLeft.Text = "0";
                 txtScoreLeft.IsEnabled = true;
@@ -348,7 +388,71 @@ namespace Scoreboard.Wpf.Windows
                 UpdateMatch();
                 pnlRightScore.Background = new SolidColorBrush(Colors.White);
                 pnlLeftScore.Background = new SolidColorBrush(Colors.White);
+
+                BtnClose.Visibility = Visibility.Hidden;
+                BtnRematch.Visibility = Visibility.Hidden;
+                BtnUndo.Visibility = Visibility.Hidden;
             }
+
+            if (boxResult == MessageBoxResult.No)
+            {
+                UpdateScore(false, false, true);
+            }
+        }
+
+
+        private void Rematch(bool changeSide)
+        {
+            var newMatch = new Match()
+            {
+                MatchDateParsed = DateTime.Now,
+                MatchTypeId = matchSummary.MatchType.Id,
+                PlayTimeSeconds = 0,
+                WinnerId = null,
+                WinnerId2 = null,
+                PlayerLeftId = changeSide ? matchSummary.Match.PlayerRightId : matchSummary.Match.PlayerLeftId,
+                PlayerLeftId2 = changeSide ? matchSummary.Match.PlayerRightId2 : matchSummary.Match.PlayerLeftId2,
+                PlayerRightId = changeSide ? matchSummary.Match.PlayerLeftId : matchSummary.Match.PlayerRightId,
+                PlayerRightId2 = changeSide ? matchSummary.Match.PlayerLeftId2 : matchSummary.Match.PlayerRightId2,
+                PlayerFirstServiceId = matchSummary.Match.PlayerLeftId == matchSummary.Match.PlayerFirstServiceId ? matchSummary.Match.PlayerRightId : matchSummary.Match.PlayerLeftId
+            };
+            newMatch = MatchData.Create(newMatch);
+
+            this.Close();
+            PlayMatch frmPlayMatch = new(newMatch);
+            _ = frmPlayMatch.ShowDialog();
+
+        }
+
+
+        private void BtnRematch_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (currentSet.SetWinnerId.HasValue && matchSummary.Match.WinnerId.HasValue)
+            {
+                var boxResult = MessageBox.Show(WpfHelper.GetResourceText("rematch"), WpfHelper.GetResourceText("rematchTitle"), MessageBoxButton.YesNoCancel);
+                switch (boxResult)
+                {
+                    case MessageBoxResult.Yes:
+                        Rematch(false);
+                        break;
+                    case MessageBoxResult.No:
+                        Rematch(true);
+                        break;
+                    default:
+                        // Do nothing
+                        break;
+                }
+            }
+        }
+
+        private void BtnUndo_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            UpdateScore(false, false, true);
+        }
+
+        private void BtnClose_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }

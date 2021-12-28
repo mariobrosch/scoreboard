@@ -1,7 +1,9 @@
-
+﻿1.1.0.12 28-12-2012
  - Add switch side button for new match window
  - Add Rematch and close button to match window (after match)
  - Undo button when finished a match
+ - Removed old project files from solution
+ - Added changelog to wpf project
 
 1.1.0.11 04-09-2021
  - Migrate game naming to set/match naming

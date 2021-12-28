@@ -5,4 +5,7 @@
     <sys:String x:Key="ResourceDirectoryName">Loc-nl-NL</sys:String>
 
     <sys:String x:Key="title">Speel wedstrijd</sys:String>
+    <sys:String x:Key="rematch">Opnieuw spelen</sys:String>
+    <sys:String x:Key="close">Sluiten</sys:String>
+    <sys:String x:Key="undo">Ongedaan maken</sys:String>
 </ResourceDictionary>
