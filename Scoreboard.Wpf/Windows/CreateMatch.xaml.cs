@@ -32,6 +32,10 @@ namespace Scoreboard.Wpf.Windows
             cboPlayerLeft2.DisplayMemberPath = "Name";
             cboPlayerRight.DisplayMemberPath = "Name";
             cboPlayerRight2.DisplayMemberPath = "Name";
+            cboPlayerLeft.SelectedValuePath = "Id";
+            cboPlayerRight.SelectedValuePath = "Id";
+            cboPlayerLeft2.SelectedValuePath = "Id";
+            cboPlayerRight2.SelectedValuePath= "Id";
             cboMatchType.ItemsSource = MatchTypeData.Get().OrderByDescending(m => m.PlayedMatches).ThenBy(m => m.Type).ToList();
             cboMatchType.DisplayMemberPath = "Type";
             cboPlayerLeft.SelectedIndex = 0;
@@ -138,6 +142,22 @@ namespace Scoreboard.Wpf.Windows
             PlayMatch frmPlayMatch = new(m);
             _ = frmPlayMatch.ShowDialog();
             Close();
+        }
+
+        private void BtnSwitchSide_Click(object sender, RoutedEventArgs e)
+        {
+            var playerLeft = (Player)cboPlayerLeft.SelectedItem;
+            var playerLeft2 = (Player)cboPlayerLeft2.SelectedItem;
+            var playerRight = (Player)cboPlayerRight.SelectedItem;
+            var playerRight2 = (Player)cboPlayerRight2.SelectedItem;
+
+            cboPlayerRight.SelectedValue = playerLeft.Id;
+            cboPlayerLeft.SelectedValue = playerRight.Id;
+            if (chkTwoVsTwoMatch.IsChecked == true)
+            {
+                cboPlayerLeft2.SelectedValue = playerRight2.Id;
+                cboPlayerRight2.SelectedValue = playerLeft2.Id;
+            }
         }
     }
 }

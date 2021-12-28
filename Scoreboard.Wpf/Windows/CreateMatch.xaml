@@ -23,6 +23,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*" />
             <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="5*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -48,7 +50,8 @@
             <ComboBox
                 Name="cboPlayerLeft"
                 Grid.Row="0"
-                Grid.Column="1" />
+                Grid.Column="1" >
+            </ComboBox>
             <TextBlock
                 Name="lblTwoVsTwoPlayerMatch"
                 Grid.Row="1"
@@ -72,6 +75,15 @@
                 Visibility="Hidden" />
         </Grid>
         <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnSwitchSide" Click="BtnSwitchSide_Click">
+                <TextBlock>&lt;--&gt;</TextBlock>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
@@ -125,7 +137,7 @@
                 Grid.Column="1"
                 SelectionChanged="CboMatchType_SelectedIndexChanged" />
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="2">
+        <Grid Grid.Row="1" Grid.Column="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
