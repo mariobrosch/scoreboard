@@ -41,6 +41,9 @@
                         Name="settingsToolStripMenuItem"
                         Click="SettingsToolStripMenuItem_Click"
                         Header="{DynamicResource settings}" />
+                    <MenuItem
+                        Name="statisticsToolStripMenuItem"
+                        Header="{DynamicResource statistics}" Click="StatisticsToolStripMenuItem_Click" />
                 </MenuItem>
                 <MenuItem
                     Name="spelersToolStripMenuItem"

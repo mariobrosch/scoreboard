@@ -15,4 +15,5 @@
     <sys:String x:Key="continuematch">Verder spelen</sys:String>
     <sys:String x:Key="singleplayer">Eén speler spel</sys:String>
     <sys:String x:Key="newmatch">Nieuw spel</sys:String>
+    <sys:String x:Key="statistics">Statistieken</sys:String>
 </ResourceDictionary>

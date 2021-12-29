@@ -195,5 +195,13 @@ namespace Scoreboard.Wpf
             _ = settingsForm.ShowDialog();
             Show();
         }
+
+        private void StatisticsToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            Windows.Statistics statisticsForm = new();
+            _ = statisticsForm.ShowDialog();
+            Show();
+        }
     }
 }

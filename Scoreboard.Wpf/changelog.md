@@ -1,4 +1,7 @@
-﻿1.1.0.12 28-12-2012
+﻿1.1.0.13 29-12-2021
+ - Added statistics screen
+
+1.1.0.12 28-12-2021
  - Add switch side button for new match window
  - Add Rematch and close button to match window (after match)
  - Undo button when finished a match
