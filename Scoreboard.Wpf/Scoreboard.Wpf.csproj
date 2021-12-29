@@ -1,0 +1,231 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Applause.wav" />
+    <None Remove="Resources\Lang\en-US.json" />
+    <None Remove="Resources\Lang\nl-NL.json" />
+    <None Remove="Resources\scoreboard.ico" />
+    <None Remove="Resources\scoreboard.png" />
+    <None Remove="scoreboard.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resources\Lang\Windows\continuematchselection.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\continuematchselection.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\creatematch.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\creatematch.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\createsinglematch.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\createsinglematch.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\MainWindow.en-US.xaml" />
+    <Page Remove="Resources\Lang\Windows\MainWindow.nl-NL.xaml" />
+    <Page Remove="Resources\Lang\Windows\matchtypes.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\matchtypes.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\players.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\players.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\playmatch.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\playmatch.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\playsingleplayer.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\playsingleplayer.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\settings.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\settings.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\statistics.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\statistics.nl-nl.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Applause.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Lang\Windows\continuematchselection.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\creatematch.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\createsinglematch.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\matchtypes.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\players.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\players.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\matchtypes.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\createsinglematch.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\creatematch.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\continuematchselection.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\playmatch.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\playmatch.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\playsingleplayer.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\playsingleplayer.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\statistics.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\statistics.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\settings.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\settings.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\scoreboard.ico" />
+    <Content Include="Resources\scoreboard.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Lang\Windows\mainwindow.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\mainwindow.nl-nl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator></Generator>
+    </Content>
+    <Content Include="scoreboard.json">
+      <Generator></Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Scoreboard.DataCore\Scoreboard.DataCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Lang\en-US.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Lang\nl-NL.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\LanguageStrings.en-US.Designer.cs">
+      <DependentUpon>LanguageStrings.en-US.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\LanguageStrings.nl-NL.Designer.cs">
+      <DependentUpon>LanguageStrings.nl-NL.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Windows\CreateMatch.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\MatchTypes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Statistics.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Settings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\LanguageStrings.en-US.resx">
+      <LastGenOutput>LanguageStrings.en-US.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\LanguageStrings.nl-NL.resx">
+      <LastGenOutput>LanguageStrings.nl-NL.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Windows\CreateMatch.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\MatchTypes.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Statistics.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Settings.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  
+</Project>

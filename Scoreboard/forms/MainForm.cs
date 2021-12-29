@@ -4,9 +4,9 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Scoreboard.Data.data;
-using Scoreboard.Data.data.requests;
-using Scoreboard.Data.Helpers;
+using Scoreboard.DataCore.Data;
+using Scoreboard.DataCore.Helpers;
+using Scoreboard.DataCore.Data.Requests;
 
 namespace Scoreboard.forms
 {
@@ -22,24 +22,24 @@ namespace Scoreboard.forms
         private void BtnPlayers_Click(object sender, EventArgs e)
         {
             FrmPlayers frmPlayers = new FrmPlayers();
-            frmPlayers.ShowDialog();
+            _ = frmPlayers.ShowDialog();
         }
 
         private void BtnMatchTypes_Click(object sender, EventArgs e)
         {
             FrmMatchTypes frmMatchTypes = new FrmMatchTypes();
-            frmMatchTypes.ShowDialog();
+            _ = frmMatchTypes.ShowDialog();
         }
 
         private void BtnContinue_Click(object sender, EventArgs e)
         {
-            var filter = new FilterObject
+            FilterObject filter = new FilterObject
             {
                 Column = "WinnerId",
                 Value = "ISNULL"
             };
-            var matchesWithoutWinner = MatchData.Get(filter);
-            var matchesWitoutWinnerLastWeek = matchesWithoutWinner.Where(m => m.MatchDateParsed > DateTime.Now.AddDays(-7)).ToList();
+            System.Collections.Generic.List<DataCore.Models.Match> matchesWithoutWinner = MatchData.Get(filter);
+            System.Collections.Generic.List<DataCore.Models.Match> matchesWitoutWinnerLastWeek = matchesWithoutWinner.Where(m => m.MatchDateParsed > DateTime.Now.AddDays(-7)).ToList();
 
             if (matchesWithoutWinner.Count == 0)
             {
@@ -51,8 +51,8 @@ namespace Scoreboard.forms
                     }
 
                     Hide();
-                    var frmCreateMatch = new CreateMatch();
-                    frmCreateMatch.ShowDialog();
+                    CreateMatch frmCreateMatch = new CreateMatch();
+                    _ = frmCreateMatch.ShowDialog();
                     Show();
                 }
                 return;
@@ -60,10 +60,10 @@ namespace Scoreboard.forms
 
             if (matchesWitoutWinnerLastWeek.Count == 1)
             {
-                var foundMatch = matchesWithoutWinner.First();
-                var matchSummary = MatchHelper.GetMatchSummary(foundMatch);
+                DataCore.Models.Match foundMatch = matchesWithoutWinner.First();
+                DataCore.Models.MatchSummary matchSummary = MatchHelper.GetMatchSummary(foundMatch);
 
-                var text = FormsHelper.GetResourceText("recentMatch1") + " '" + matchSummary.TeamLeft + "' " + FormsHelper.GetResourceText("and") + " '" + matchSummary.TeamRight + "' " + FormsHelper.GetResourceText("withMatchType") + " " + matchSummary.MatchType.Type + "\r\n\r\n";
+                string text = FormsHelper.GetResourceText("recentMatch1") + " '" + matchSummary.TeamLeft + "' " + FormsHelper.GetResourceText("and") + " '" + matchSummary.TeamRight + "' " + FormsHelper.GetResourceText("withMatchType") + " " + matchSummary.MatchType.Type + "\r\n\r\n";
                 text += FormsHelper.GetResourceText("thereAre") + " " + matchSummary.Sets.Count.ToString() + " " + FormsHelper.GetResourceText("setsPlayed") + ".\r\n";
                 text += "\r\n " + FormsHelper.GetResourceText("standings") + " " + matchSummary.Standings + "\r\n";
                 text += "\r\n" + FormsHelper.GetResourceText("continueMatch");
@@ -72,29 +72,29 @@ namespace Scoreboard.forms
                 {
                     Hide();
                     PlayMatch playMatch = new PlayMatch(foundMatch);
-                    playMatch.ShowDialog();
+                    _ = playMatch.ShowDialog();
                     Show();
                 }
             }
 
             // Now we are at a place where we always have multiple matches unfinished found.
             ContinueMatchSelection continueMatchSelection = new ContinueMatchSelection();
-            continueMatchSelection.ShowDialog();
+            _ = continueMatchSelection.ShowDialog();
         }
 
         private bool CheckMatchCanStart()
         {
-            var matchTypes = MatchTypeData.Get();
+            System.Collections.Generic.List<DataCore.Models.MatchType> matchTypes = MatchTypeData.Get();
             if (matchTypes.Count == 0)
             {
-                MessageBox.Show(FormsHelper.GetResourceText("noMatchTypesFound"));
+                _ = MessageBox.Show(FormsHelper.GetResourceText("noMatchTypesFound"));
                 return false;
             }
 
-            var players = PlayerData.Get();
+            System.Collections.Generic.List<DataCore.Models.Player> players = PlayerData.Get();
             if (players.Count < 2)
             {
-                MessageBox.Show(FormsHelper.GetResourceText("notEnoughPlayers"));
+                _ = MessageBox.Show(FormsHelper.GetResourceText("notEnoughPlayers"));
                 return false;
             }
 
@@ -109,8 +109,8 @@ namespace Scoreboard.forms
             }
 
             Hide();
-            var frmCreateMatch = new CreateMatch();
-            frmCreateMatch.ShowDialog();
+            CreateMatch frmCreateMatch = new CreateMatch();
+            _ = frmCreateMatch.ShowDialog();
             Show();
         }
 
@@ -120,30 +120,30 @@ namespace Scoreboard.forms
             string localStoragePath = ConfigurationManager.AppSettings["localStoragePath"];
             if (dataLocation != "local")
             {
-                MessageBox.Show(FormsHelper.GetResourceText("exportOnlyLocalstorage"));
+                _ = MessageBox.Show(FormsHelper.GetResourceText("exportOnlyLocalstorage"));
                 return;
             }
 
             if (Directory.GetFiles(localStoragePath).Length == 0)
             {
-                MessageBox.Show(FormsHelper.GetResourceText("NoDataFound"));
+                _ = MessageBox.Show(FormsHelper.GetResourceText("NoDataFound"));
                 return;
             }
 
             sfdZipfile.Filter = "Zip|*.zip";
             sfdZipfile.Title = FormsHelper.GetResourceText("SaveZip");
 
-            var targetLocation = sfdZipfile.ShowDialog();
+            DialogResult targetLocation = sfdZipfile.ShowDialog();
             if (DialogResult.OK != targetLocation)
             {
-                MessageBox.Show(FormsHelper.GetResourceText("SaveCanceled"));
+                _ = MessageBox.Show(FormsHelper.GetResourceText("SaveCanceled"));
                 FormsHelper.WriteToBackupLocation();
             }
             else
             {
                 using (ZipFile zip = new ZipFile())
                 {
-                    zip.AddDirectory(localStoragePath);
+                    _ = zip.AddDirectory(localStoragePath);
                     zip.Save(sfdZipfile.FileName);
                 }
             }
@@ -171,17 +171,17 @@ namespace Scoreboard.forms
 
         private void SinglePlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var createSingleForm = new CreateSinglePlayerMatch();
+            CreateSinglePlayerMatch createSingleForm = new CreateSinglePlayerMatch();
             Hide();
-            createSingleForm.ShowDialog();
+            _ = createSingleForm.ShowDialog();
             Show();
         }
 
         private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var settingsForm = new FrmSettings();
+            FrmSettings settingsForm = new FrmSettings();
             Hide();
-            settingsForm.ShowDialog();
+            _ = settingsForm.ShowDialog();
             Show();
         }
     }

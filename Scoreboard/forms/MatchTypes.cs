@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Scoreboard.DataCore.Data.Requests;
+using Scoreboard.DataCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Scoreboard.Data.data.requests;
-using Scoreboard.Data.models;
 
 namespace Scoreboard.forms
 {
@@ -35,7 +35,7 @@ namespace Scoreboard.forms
         {
             if ((MatchType)lbMatchTypes.SelectedItem != null)
             {
-                LoadMatchType(((MatchType)lbMatchTypes.SelectedItem));
+                LoadMatchType((MatchType)lbMatchTypes.SelectedItem);
             }
             SetFieldsEnabled();
         }
@@ -56,28 +56,28 @@ namespace Scoreboard.forms
             numTimeOfMatch.Value = matchType.MatchTime ?? 1;
             btnDelete.Visible = true;
 
-            var matchesWithMatchType = MatchData.GetForMatchType(matchType.Id);
+            List<Match> matchesWithMatchType = MatchData.GetForMatchType(matchType.Id);
             lblMatchResults.Text = matchesWithMatchType.Count > 0 ? matchesWithMatchType.Count.ToString() + " " + FormsHelper.GetResourceText("played") : "0";
         }
 
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            var matchesForMatchType = MatchData.GetForMatchType(Int32.Parse(txtId.Text));
+            List<Match> matchesForMatchType = MatchData.GetForMatchType(int.Parse(txtId.Text));
 
             if (matchesForMatchType.Count == 0)
             {
                 if (MessageBox.Show(FormsHelper.GetResourceText("matchTypeRemovedDescription"), FormsHelper.GetResourceText("completeRemove"), MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    MatchTypeData.Delete(txtId.Text);
+                    _ = MatchTypeData.Delete(txtId.Text);
                     LoadMatchTypes();
                 }
             }
             else if (MessageBox.Show(FormsHelper.GetResourceText("RemoveMatchType"), FormsHelper.GetResourceText("remove"), MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                var matchType = (MatchType)lbMatchTypes.SelectedItem;
+                MatchType matchType = (MatchType)lbMatchTypes.SelectedItem;
                 matchType.IsRemoved = true;
-                MatchTypeData.Update(matchType);
+                _ = MatchTypeData.Update(matchType);
                 LoadMatchTypes();
             }
         }
@@ -86,7 +86,7 @@ namespace Scoreboard.forms
         {
             if (txtId.Text != FormsHelper.GetResourceText("new"))
             {
-                var matchType = (MatchType)lbMatchTypes.SelectedItem;
+                MatchType matchType = (MatchType)lbMatchTypes.SelectedItem;
                 matchType.Type = txtType.Text;
                 matchType.Description = txtDescription.Text;
                 matchType.NumberOfSetsToWin = Convert.ToInt32(numNumberOfSetsToWin.Value);
@@ -98,7 +98,7 @@ namespace Scoreboard.forms
                 matchType.IsTimedMatch = chkTimedMatch.Checked;
                 matchType.MatchTime = Convert.ToInt32(numTimeOfMatch.Value);
 
-                MatchTypeData.Update(matchType);
+                _ = MatchTypeData.Update(matchType);
             }
             else
             {
@@ -113,11 +113,11 @@ namespace Scoreboard.forms
                     NeedTwoPointsDifferenceToWin = chkTwoPointsDifferenceToWin.Checked,
                     ServiceChangeOnShootOutPer = Convert.ToInt32(numServiceChangeOnShootOutPer.Value),
                     IsAvailableForTwoVsTwo = chkAvailableForTwoVsTwo.Checked,
-                IsTimedMatch = chkTimedMatch.Checked,
-                MatchTime = Convert.ToInt32(numTimeOfMatch.Value)
-            };
+                    IsTimedMatch = chkTimedMatch.Checked,
+                    MatchTime = Convert.ToInt32(numTimeOfMatch.Value)
+                };
 
-                MatchTypeData.Create(newMatchType);
+                _ = MatchTypeData.Create(newMatchType);
             }
             LoadMatchTypes();
         }

@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Scoreboard</RootNamespace>
     <AssemblyName>Scoreboard</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -313,6 +313,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.nl-NL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -349,9 +352,9 @@
     <Content Include="resources\scoreboard.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Scoreboard.Data\Scoreboard.Data.csproj">
-      <Project>{7498f369-7f4d-4973-8515-7e5bdf97623b}</Project>
-      <Name>Scoreboard.Data</Name>
+    <ProjectReference Include="..\Scoreboard.DataCore\Scoreboard.DataCore.csproj">
+      <Project>{91e9ba7f-f89f-4e0e-9750-54ee8ae08d36}</Project>
+      <Name>Scoreboard.DataCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

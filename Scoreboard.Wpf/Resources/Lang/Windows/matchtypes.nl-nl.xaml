@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="ResourceDirectoryName">Loc-nl-NL</sys:String>
+
+    <sys:String x:Key="title">Speltypes</sys:String>
+
+    <sys:String x:Key="id">Id</sys:String>
+    <sys:String x:Key="type">Titel</sys:String>
+    <sys:String x:Key="description">Omschrijving</sys:String>
+    <sys:String x:Key="timedmatch">Wedstrijd op tijd</sys:String>
+    <sys:String x:Key="matchtime">Duur wedstrijd (minuten)</sys:String>
+    <sys:String x:Key="setsforwin">Sets om te winnen</sys:String>
+    <sys:String x:Key="pointsperset">Punten per set</sys:String>
+    <sys:String x:Key="servicechange">Service change na</sys:String>
+    <sys:String x:Key="twopointsdifference">Twee punten verschil</sys:String>
+    <sys:String x:Key="servicechangeshootout">Service change tijdens shootout</sys:String>
+    <sys:String x:Key="suitable2vs2">Geschikt voor 2vs2</sys:String>
+    <sys:String x:Key="playedstats">Wedstrijden gespeeld</sys:String>
+    <sys:String x:Key="isremoved">Is verwijderd</sys:String>
+    <sys:String x:Key="delete">Verwijderen</sys:String>
+    <sys:String x:Key="save">Opslaan</sys:String>
+    <sys:String x:Key="new">Nieuw</sys:String>
+    <sys:String x:Key="displayremoved">Toon verwijderde types</sys:String>
+</ResourceDictionary>

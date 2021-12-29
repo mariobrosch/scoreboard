@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="ResourceDirectoryName">Loc-en-US</sys:String>
+
+    <sys:String x:Key="title">Players</sys:String>
+    <sys:String x:Key="showremoved">Display removed players</sys:String>
+    <sys:String x:Key="new">New</sys:String>
+    <sys:String x:Key="id">Id</sys:String>
+    <sys:String x:Key="name">Name</sys:String>
+    <sys:String x:Key="photourl">Photo url</sys:String>
+    <sys:String x:Key="photo">Photo</sys:String>
+    <sys:String x:Key="uploadphoto">Upload photo</sys:String>
+    <sys:String x:Key="removephoto">Remove photo</sys:String>
+    <sys:String x:Key="singleplayerstats">Single player stats</sys:String>
+    <sys:String x:Key="playerstats">Player stats</sys:String>
+    <sys:String x:Key="activeplayer">Active player</sys:String>
+    <sys:String x:Key="removedplayer">Removed player</sys:String>
+    <sys:String x:Key="delete">Delete</sys:String>
+    <sys:String x:Key="save">Save</sys:String>
+</ResourceDictionary>

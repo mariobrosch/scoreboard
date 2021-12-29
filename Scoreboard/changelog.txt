@@ -1,3 +1,8 @@
+
+ - Add switch side button for new match window
+ - Add Rematch and close button to match window (after match)
+ - Undo button when finished a match
+
 1.1.0.11 04-09-2021
  - Migrate game naming to set/match naming
  - Added possibility to define a matchtype timed

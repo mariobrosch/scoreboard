@@ -1,0 +1,165 @@
+﻿<Window
+    x:Class="Scoreboard.Wpf.Windows.CreateMatch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource title}"
+    Width="808"
+    Height="477"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\creatematch.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Name="lblPlayerLeft"
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="{DynamicResource playerleft}" />
+            <ComboBox
+                Name="cboPlayerLeft"
+                Grid.Row="0"
+                Grid.Column="1" >
+            </ComboBox>
+            <TextBlock
+                Name="lblTwoVsTwoPlayerMatch"
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="{DynamicResource 2vs2}" />
+            <CheckBox
+                Name="chkTwoVsTwoMatch"
+                Grid.Row="1"
+                Grid.Column="1"
+                Click="ChkTwoVsTwoMatch_CheckedChanged" />
+            <TextBlock
+                Name="lblPlayerLeft2"
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="{DynamicResource playerleft}"
+                Visibility="Hidden" />
+            <ComboBox
+                Name="cboPlayerLeft2"
+                Grid.Row="2"
+                Grid.Column="1"
+                Visibility="Hidden" />
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnSwitchSide" Click="BtnSwitchSide_Click">
+                <TextBlock>&lt;--&gt;</TextBlock>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Name="lblPlayerRight"
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="{DynamicResource playerright}" />
+            <ComboBox
+                Name="cboPlayerRight"
+                Grid.Row="0"
+                Grid.Column="1" />
+            <TextBlock
+                Name="lblPlayerRight2"
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="{DynamicResource playerright}"
+                Visibility="Hidden" />
+            <ComboBox
+                Name="cboPlayerRight2"
+                Grid.Row="2"
+                Grid.Column="1"
+                Visibility="Hidden" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <TextBox
+                Name="txtMatchTypeDescription"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                IsReadOnly="True"
+                TextWrapping="Wrap" />
+            <TextBlock Name="lblMatchType" Text="{DynamicResource matchtype}" />
+            <ComboBox
+                Name="cboMatchType"
+                Grid.Column="1"
+                SelectionChanged="CboMatchType_SelectedIndexChanged" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Name="lblHelp"
+                Grid.Row="0"
+                Grid.ColumnSpan="2">
+                -
+            </TextBlock>
+            <Button
+                Name="btnStartNewMatch"
+                Grid.Row="2"
+                Grid.Column="1"
+                Click="BtnStartNewSet_Click">
+                <TextBlock Text="{DynamicResource start}" />
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="ResourceDirectoryName">Loc-en-US</sys:String>
+
+    <sys:String x:Key="title">Matchtypes</sys:String>
+    
+    <sys:String x:Key="id">Id</sys:String>
+    <sys:String x:Key="type">Title</sys:String>
+    <sys:String x:Key="description">Description</sys:String>
+    <sys:String x:Key="timedmatch">Timed match</sys:String>
+    <sys:String x:Key="matchtime">Matchtime (minutes)</sys:String>
+    <sys:String x:Key="setsforwin">Sets to win</sys:String>
+    <sys:String x:Key="pointsperset">Points per set</sys:String>
+    <sys:String x:Key="servicechange">Service change after</sys:String>
+    <sys:String x:Key="twopointsdifference">Two points difference</sys:String>
+    <sys:String x:Key="servicechangeshootout">Service change during shoot out</sys:String>
+    <sys:String x:Key="suitable2vs2">Suitable for 2vs2</sys:String>
+    <sys:String x:Key="playedstats">Number of played matches</sys:String>
+    <sys:String x:Key="isremoved">Is removed</sys:String>
+    <sys:String x:Key="delete">Remove</sys:String>
+    <sys:String x:Key="save">Save</sys:String>
+    <sys:String x:Key="new">New</sys:String>
+    <sys:String x:Key="displayremoved">Display removed types</sys:String>
+</ResourceDictionary>

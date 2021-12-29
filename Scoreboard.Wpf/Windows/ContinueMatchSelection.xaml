@@ -1,0 +1,151 @@
+﻿<Window
+    x:Class="Scoreboard.Wpf.Windows.ContinueMatchSelection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource title}"
+    Width="800"
+    Height="450"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\continuematchselection.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <ListBox
+                x:Name="lbUnfinishedMatches"
+                Grid.Row="0"
+                MouseDoubleClick="LbUnfinishedMatches_MouseDoubleClick"
+                SelectionChanged="LbMatches_SelectionChanged" />
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource teamleft}" />
+                <TextBox
+                    x:Name="txtTeamLeft"
+                    Grid.Column="2"
+                    IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource teamright}" />
+                <TextBox
+                    x:Name="txtTeamRight"
+                    Grid.Column="2"
+                    IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource date}" />
+                <TextBox
+                    x:Name="txtMatchDate"
+                    Grid.Column="2"
+                    IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource standings}" />
+                <TextBox
+                    x:Name="txtStandings"
+                    Grid.Column="2"
+                    IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource timeplayed}" />
+                <TextBox
+                    x:Name="txtPlayedMinutes"
+                    Grid.Column="2"
+                    IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource matchtype}" />
+                <TextBox
+                    x:Name="txtMatchType"
+                    Grid.Column="2"
+                    IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="6" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource sets}" />
+                <TextBlock x:Name="txtSets" Grid.Column="2">-</TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Image x:Name="pbPhoto" Grid.Row="0" />
+            <Button
+                x:Name="BtnContinue"
+                Grid.Row="2"
+                Click="BtnContinue_Click"
+                IsDefault="true">
+                <TextBlock Text="{DynamicResource continue}" />
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

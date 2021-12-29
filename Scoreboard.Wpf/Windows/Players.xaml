@@ -1,0 +1,197 @@
+﻿<Window
+    x:Class="Scoreboard.Wpf.Windows.Players"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource title}"
+    Width="808"
+    Height="477"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\players.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="16*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <ListBox
+                x:Name="lbPlayers"
+                Grid.Row="0"
+                DataContextChanged="LbPlayers_DataContextChanged"
+                SelectionChanged="LbPlayers_SelectionChanged" />
+            <CheckBox
+                x:Name="ChkShowRemoved"
+                Grid.Row="1"
+                Click="ChkShowRemoved_Click">
+                <TextBlock Text="{DynamicResource showremoved}" />
+            </CheckBox>
+            <Button
+                x:Name="BtnNew"
+                Grid.Row="2"
+                Click="BtnNew_Click">
+                <TextBlock Text="{DynamicResource new}" />
+            </Button>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="4*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource id}" />
+                <TextBox
+                    x:Name="txtId"
+                    Grid.Column="2"
+                    IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource name}" />
+                <TextBox x:Name="txtName" Grid.Column="2" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource photourl}" />
+                <TextBox
+                    x:Name="txtPhotoUrl"
+                    Grid.Column="2"
+                    LostFocus="TxtPhotoUrl_LostFocus" />
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource photo}" />
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        x:Name="btnUploadPhoto"
+                        Grid.Column="0"
+                        Click="BtnUploadPhoto_Click">
+                        <TextBlock Text="{DynamicResource uploadphoto}" />
+                    </Button>
+                    <Button
+                        Name="btnRemovePhoto"
+                        Grid.Column="1"
+                        Click="BtnRemovePhoto_Click">
+                        <TextBlock Text="{DynamicResource removephoto}" />
+                    </Button>
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource singleplayerstats}" />
+                <TextBlock x:Name="lblSinglePlayerStats" Grid.Column="2">-</TextBlock>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource playerstats}" />
+                <TextBlock x:Name="lblPlayerStats" Grid.Column="2">-</TextBlock>
+            </Grid>
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource activeplayer}" />
+                <CheckBox
+                    x:Name="chkActivePlayer"
+                    Grid.Column="2"
+                    VerticalAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{DynamicResource removedplayer}" />
+                <CheckBox
+                    x:Name="chkRemovedPlayer"
+                    Grid.Column="2"
+                    VerticalAlignment="Center" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="16*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Image x:Name="pbPhoto" Grid.Row="0" />
+            <Button
+                x:Name="BtnRemove"
+                Grid.Row="1"
+                Click="BtnRemove_Click">
+                <TextBlock Text="{DynamicResource delete}" />
+            </Button>
+            <Button
+                x:Name="BtnSave"
+                Grid.Row="2"
+                Click="BtnSave_Click"
+                IsDefault="true">
+                <TextBlock Text="{DynamicResource save}" />
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

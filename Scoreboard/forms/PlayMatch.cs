@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Scoreboard.DataCore.Data.Requests;
+using Scoreboard.DataCore.Enums;
+using Scoreboard.DataCore.Helpers;
+using Scoreboard.DataCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Timers;
 using System.Windows.Forms;
-using Scoreboard.Data.data.requests;
-using Scoreboard.Data.enums;
-using Scoreboard.Data.Helpers;
-using Scoreboard.Data.models;
 
 namespace Scoreboard.forms
 {
@@ -58,13 +58,13 @@ namespace Scoreboard.forms
         {
             if (!InvokeRequired)
             {
-                if (matchSummary == null )
+                if (matchSummary == null)
                 {
                     return;
                 }
 
-                var interval = Convert.ToInt32((DateTime.Now - sessionStart).TotalSeconds);
-                var maxMatchTime = "";
+                int interval = Convert.ToInt32((DateTime.Now - sessionStart).TotalSeconds);
+                string maxMatchTime = "";
                 if (!match.WinnerId.HasValue)
                 {
                     secondsPlayedThisSession = interval;
@@ -75,12 +75,12 @@ namespace Scoreboard.forms
                     interval += matchSummary.SecondsPlayed;
                 }
 
-                if (matchSummary.MatchType.MatchTime.HasValue 
-                    && matchSummary.MatchType.MatchTime.Value > 0 
+                if (matchSummary.MatchType.MatchTime.HasValue
+                    && matchSummary.MatchType.MatchTime.Value > 0
                     && matchSummary.MatchType.IsTimedMatch)
                 {
                     maxMatchTime = " / ";
-                    var maxMatchTimeInSeconds = matchSummary.MatchType.MatchTime.Value * 60;
+                    int maxMatchTimeInSeconds = matchSummary.MatchType.MatchTime.Value * 60;
                     TimeSpan timeMax = TimeSpan.FromSeconds(maxMatchTimeInSeconds);
                     if (maxMatchTimeInSeconds > 3599)
                     {
@@ -93,23 +93,14 @@ namespace Scoreboard.forms
                 }
 
                 TimeSpan time = TimeSpan.FromSeconds(interval);
-                string str;
-                if (interval > 3599)
-                {
-                    str = time.ToString(@"hh\:mm\:ss");
-                }
-                else
-                {
-                    str = time.ToString(@"mm\:ss");
-                }
-
+                string str = interval > 3599 ? time.ToString(@"hh\:mm\:ss") : time.ToString(@"mm\:ss");
                 lblTimePlayed.Text = str + maxMatchTime;
             }
             else
             {
                 try
                 {
-                    Invoke(new Action<object, ElapsedEventArgs>(UpdateMatchTime), sender, e);
+                    _ = Invoke(new Action<object, ElapsedEventArgs>(UpdateMatchTime), sender, e);
                 }
 #pragma warning disable CA1031 // Do not catch general exception types
                 catch (Exception) { }
@@ -153,11 +144,11 @@ namespace Scoreboard.forms
         {
             if (currentSet.SetWinnerId.HasValue)
             {
-                MessageBox.Show(FormsHelper.GetResourceText("setPlayedErrorDesc"));
+                _ = MessageBox.Show(FormsHelper.GetResourceText("setPlayedErrorDesc"));
             }
             else if (matchSummary.Winner.HasValue)
             {
-                MessageBox.Show(FormsHelper.GetResourceText("matchPlayedErrorDesc"));
+                _ = MessageBox.Show(FormsHelper.GetResourceText("matchPlayedErrorDesc"));
             }
             else if (isForLeft)
             {
@@ -190,7 +181,7 @@ namespace Scoreboard.forms
                 btnRightScore.Text = currentSet.TeamRightScore.ToString();
             }
             IsSetWinner();
-            SetData.Update(currentSet);
+            _ = SetData.Update(currentSet);
             UpdateMatch();
             FillTopInfo();
         }
@@ -201,7 +192,7 @@ namespace Scoreboard.forms
 
             if (setFinished)
             {
-                var matchWinner = MatchHelper.HasMatchWinner(matchSummary, secondsPlayedThisSession);
+                PlayerSide matchWinner = MatchHelper.HasMatchWinner(matchSummary, secondsPlayedThisSession);
 
                 if (matchWinner == PlayerSide.None)
                 {
@@ -235,13 +226,13 @@ namespace Scoreboard.forms
                     txtWinner.SelectionLength = 0;
                 }
 
-                MatchData.Update(match);
+                _ = MatchData.Update(match);
                 matchSummary = MatchHelper.GetMatchSummary(match);
 
                 return;
             }
 
-            var teamToServe = SetHelper.GetPlayerToServe(matchSummary);
+            PlayerSide teamToServe = SetHelper.GetPlayerToServe(matchSummary);
             if (teamToServe == PlayerSide.Left)
             {
                 btnLeftScore.BackColor = Color.Yellow;
@@ -261,7 +252,7 @@ namespace Scoreboard.forms
 
         private void IsSetWinner()
         {
-            var setWinner = SetHelper.HasWinner(currentSet, matchSummary.MatchType, secondsPlayedThisSession + matchSummary.SecondsPlayed);
+            PlayerSide setWinner = SetHelper.HasWinner(currentSet, matchSummary.MatchType, secondsPlayedThisSession + matchSummary.SecondsPlayed);
 
             if (setWinner == PlayerSide.None)
             {
@@ -304,7 +295,7 @@ namespace Scoreboard.forms
                 btnLeftScore.Enabled = true;
                 btnRightScore.Text = "0";
                 btnRightScore.Enabled = true;
-                var set = new Set()
+                Set set = new Set()
                 {
                     SetNumber = matchSummary.Sets.Count + 1,
                     MatchId = match.Id,
@@ -321,13 +312,13 @@ namespace Scoreboard.forms
 
         private void PlayMatch_KeyUp(object sender, KeyEventArgs e)
         {
-            var helpKeys = new List<Keys>
+            List<Keys> helpKeys = new List<Keys>
             {
                 Keys.H,
                 Keys.F1
             };
 
-            var playerLeftKeys = new List<Keys>
+            List<Keys> playerLeftKeys = new List<Keys>
             {
                 Keys.L,
                 Keys.Left,
@@ -335,7 +326,7 @@ namespace Scoreboard.forms
                 Keys.NumPad7
             };
 
-            var playerRightKeys = new List<Keys>
+            List<Keys> playerRightKeys = new List<Keys>
             {
                 Keys.R,
                 Keys.RShiftKey,
@@ -345,14 +336,14 @@ namespace Scoreboard.forms
 
             if (helpKeys.Contains(e.KeyCode))
             {
-                var helpText = FormsHelper.GetResourceText("help1") + "\r\n";
+                string helpText = FormsHelper.GetResourceText("help1") + "\r\n";
                 helpText += FormsHelper.GetResourceText("help2") + "\r\n\r\n";
                 helpText += FormsHelper.GetResourceText("help3") + "\r\n";
                 helpText += FormsHelper.GetResourceText("help4") + "\r\n";
                 helpText += FormsHelper.GetResourceText("help5") + "\r\n\r\n";
                 helpText += FormsHelper.GetResourceText("help6") + "\r\n\r\n";
 
-                MessageBox.Show(helpText, FormsHelper.GetResourceText("help"));
+                _ = MessageBox.Show(helpText, FormsHelper.GetResourceText("help"));
             }
 
             if (playerLeftKeys.Contains(e.KeyCode))
@@ -379,7 +370,7 @@ namespace Scoreboard.forms
         private void PlayMatch_FormClosing(object sender, FormClosingEventArgs e)
         {
             match.PlayTimeSeconds = secondsPlayedThisSession + matchSummary.SecondsPlayed;
-            MatchData.Update(match);
+            _ = MatchData.Update(match);
 
             FormsHelper.WriteToBackupLocation();
         }

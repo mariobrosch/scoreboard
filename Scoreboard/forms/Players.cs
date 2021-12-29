@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Scoreboard.DataCore.Data.Requests;
+using Scoreboard.DataCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Scoreboard.Data.data.requests;
-using Scoreboard.Data.models;
 
 namespace Scoreboard.forms
 {
@@ -38,7 +38,7 @@ namespace Scoreboard.forms
         {
             if ((Player)lbPlayers.SelectedItem != null)
             {
-                LoadPlayer(((Player)lbPlayers.SelectedItem));
+                LoadPlayer((Player)lbPlayers.SelectedItem);
             }
         }
 
@@ -52,10 +52,10 @@ namespace Scoreboard.forms
 
             btnDelete.Visible = true;
 
-            var singlePlayerMatches = SinglePlayerMatchData.GetForPlayer(player.Id);
+            List<SinglePlayerMatch> singlePlayerMatches = SinglePlayerMatchData.GetForPlayer(player.Id);
             if (singlePlayerMatches.Count > 0)
             {
-                var bestMatch = singlePlayerMatches.OrderBy(x => x.HighScore).Last();
+                SinglePlayerMatch bestMatch = singlePlayerMatches.OrderBy(x => x.HighScore).Last();
                 lblSinglePlayerMatches.Text = singlePlayerMatches.Count + " " + FormsHelper.GetResourceText("singlePlayerStat") + " " + bestMatch.MatchDateParsed.ToString("yyyy-MM-dd") + " met als score " + bestMatch.HighScore.ToString();
             }
             else
@@ -63,11 +63,11 @@ namespace Scoreboard.forms
                 lblSinglePlayerMatches.Text = "-";
             }
 
-            var matchesForPlayer = MatchData.GetForPlayer(player.Id);
-            var matchesWon = matchesForPlayer.Where(m => m.WinnerId == player.Id).ToList().Count;
+            List<Match> matchesForPlayer = MatchData.GetForPlayer(player.Id);
+            object matchesWon = matchesForPlayer.Where(m => m.WinnerId == player.Id).ToList().Count;
             lblMatchResults.Text = matchesForPlayer.Count > 0 ? matchesForPlayer.Count.ToString() + " " + FormsHelper.GetResourceText("played") + " " + FormsHelper.GetResourceText("and") + matchesWon.ToString() + " " + FormsHelper.GetResourceText("won") : "0";
             currentPlayer = player;
-            
+
             LoadPhoto();
         }
 
@@ -79,21 +79,21 @@ namespace Scoreboard.forms
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            var matchesForPlayer = MatchData.GetForPlayer(Int32.Parse(txtId.Text));
+            List<Match> matchesForPlayer = MatchData.GetForPlayer(int.Parse(txtId.Text));
 
             if (matchesForPlayer.Count == 0)
             {
                 if (MessageBox.Show(FormsHelper.GetResourceText("RemovePlayerCompletely"), FormsHelper.GetResourceText("RemovePlayerCompletelyTitle"), MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    PlayerData.Delete(txtId.Text);
+                    _ = PlayerData.Delete(txtId.Text);
                     LoadPlayers();
                 }
             }
             else if (MessageBox.Show(FormsHelper.GetResourceText("removePlayer"), FormsHelper.GetResourceText("remove"), MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                var player = (Player)lbPlayers.SelectedItem;
+                Player player = (Player)lbPlayers.SelectedItem;
                 player.IsRemoved = true;
-                PlayerData.Update(player);
+                _ = PlayerData.Update(player);
                 LoadPlayers();
             }
         }
@@ -102,7 +102,7 @@ namespace Scoreboard.forms
         {
             if (txtId.Text != FormsHelper.GetResourceText("new"))
             {
-                var player = (Player)lbPlayers.SelectedItem;
+                Player player = (Player)lbPlayers.SelectedItem;
                 if (player == null)
                 {
                     return;
@@ -111,7 +111,7 @@ namespace Scoreboard.forms
                 player.Name = txtName.Text;
                 player.PhotoUrl = txtPhotoUrl.Text;
 
-                PlayerData.Update(player);
+                _ = PlayerData.Update(player);
             }
             else
             {
@@ -123,7 +123,7 @@ namespace Scoreboard.forms
                     IsRemoved = chkRemoved.Checked
                 };
 
-                PlayerData.Create(newPlayer);
+                _ = PlayerData.Create(newPlayer);
             }
             LoadPlayers();
         }
@@ -153,9 +153,9 @@ namespace Scoreboard.forms
 
             if (ofdPhoto.ShowDialog() == DialogResult.OK)
             {
-                byte[] imageArray = System.IO.File.ReadAllBytes(ofdPhoto.FileName);
+                byte[] imageArray = File.ReadAllBytes(ofdPhoto.FileName);
                 currentPlayer.Photo = Convert.ToBase64String(imageArray);
-                PlayerData.Update(currentPlayer);
+                _ = PlayerData.Update(currentPlayer);
                 LoadPhoto();
             }
         }
@@ -163,7 +163,7 @@ namespace Scoreboard.forms
         private void BtnRemovePhoto_Click(object sender, EventArgs e)
         {
             currentPlayer.Photo = "";
-            PlayerData.Update(currentPlayer);
+            _ = PlayerData.Update(currentPlayer);
             LoadPhoto();
         }
 

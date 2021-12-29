@@ -1,0 +1,77 @@
+﻿<Window
+    x:Class="Scoreboard.Wpf.Windows.Statistics"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource title}"
+    Width="720"
+    Height="414"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\statistics.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*" />
+            </Grid.RowDefinitions>
+            <ListBox
+                x:Name="LbStatistics"
+                Grid.Row="0"
+                 >
+                <ListBoxItem Name="MostMatchesWon" MouseUp="MostMatchesWon_MouseUp">
+                    <TextBlock Name="TxtMostMatchesWon" Text="{DynamicResource mostMatchesWon}"/>
+                </ListBoxItem>
+                <ListBoxItem Name="MostMatchesLost" MouseUp="MostMatchesLost_MouseUp">
+                    <TextBlock Name="TxtMostMatchesLost" Text="{DynamicResource mostMatchesLost}"/>
+                </ListBoxItem>
+                <ListBoxItem Name="BestWinRatio" MouseUp="BestWinRatio_MouseUp">
+                    <TextBlock Name="TxtBestWinRatio" Text="{DynamicResource bestWinRatio}"/>
+                </ListBoxItem>
+                <ListBoxItem Name="MostPlayed" MouseUp="MostPlayed_MouseUp">
+                    <TextBlock Name="TxtMostPlayed" Text="{DynamicResource mostPlayed}"/>
+                </ListBoxItem>
+                <ListBoxItem Name="BestSinglePlayer" MouseUp="BestSinglePlayer_MouseUp">
+                    <TextBlock Name="TxtBestSinglePlayer" Text="{DynamicResource bestSinglePlayer}"/>
+                </ListBoxItem>
+            </ListBox>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="15*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{DynamicResource selectedStats}" />               
+                <TextBlock Grid.Column="1" Name="TxtSelectedStats" Text="-"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border>
+                    <Viewbox>
+                        <TextBlock Name="TxtStatistics">
+                            -
+                        </TextBlock>
+                    </Viewbox>
+                </Border>
+            </Grid>
+        </Grid>
+      
+    </Grid>
+</Window>
