@@ -9,7 +9,7 @@ namespace Scoreboard.DataCore.Data.Requests
 {
     public static class SetData
     {
-        private const string tableName = "Sets";
+        private const ModelType tableName = ModelType.Sets;
 
         public static List<Set> Get()
         {

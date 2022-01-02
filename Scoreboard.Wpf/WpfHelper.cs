@@ -27,6 +27,12 @@ namespace Scoreboard.Wpf
                 case SoundTypes.Applause:
                     audioFile = Path.Combine("resources", "Applause.wav");
                     break;
+                case SoundTypes.ThugLife:
+                    audioFile = Path.Combine("resources", "thuglife.wav");
+                    break;
+                case SoundTypes.Ahem:
+                    audioFile = Path.Combine("resources", "ahem.wav");
+                    break;
                 default:
                     break;
             }

@@ -9,7 +9,7 @@ namespace Scoreboard.DataCore.Data.Requests
 {
     public static class PlayerData
     {
-        private const string tableName = "Players";
+        private const ModelType tableName = ModelType.Players;
 
         public static List<Player> Get(bool displayRemoved = false)
         {

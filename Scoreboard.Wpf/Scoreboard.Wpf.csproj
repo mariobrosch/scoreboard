@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\ahem.wav" />
     <None Remove="Resources\Applause.wav" />
     <None Remove="Resources\Lang\en-US.json" />
     <None Remove="Resources\Lang\nl-NL.json" />
     <None Remove="Resources\scoreboard.ico" />
     <None Remove="Resources\scoreboard.png" />
+    <None Remove="Resources\thuglife.wav" />
     <None Remove="scoreboard.json" />
   </ItemGroup>
 
@@ -22,6 +24,8 @@
     <Page Remove="Resources\Lang\Windows\creatematch.nl-nl.xaml" />
     <Page Remove="Resources\Lang\Windows\createsinglematch.en-us.xaml" />
     <Page Remove="Resources\Lang\Windows\createsinglematch.nl-nl.xaml" />
+    <Page Remove="Resources\Lang\Windows\createtournament.en-us.xaml" />
+    <Page Remove="Resources\Lang\Windows\createtournament.nl-nl.xaml" />
     <Page Remove="Resources\Lang\Windows\MainWindow.en-US.xaml" />
     <Page Remove="Resources\Lang\Windows\MainWindow.nl-NL.xaml" />
     <Page Remove="Resources\Lang\Windows\matchtypes.en-us.xaml" />
@@ -39,6 +43,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\ahem.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Applause.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -46,6 +53,16 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
       <Generator></Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\createtournament.nl-nl.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="Resources\Lang\Windows\createtournament.en-us.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Content>
     <Content Include="Resources\Lang\Windows\creatematch.nl-nl.xaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -147,6 +164,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Generator></Generator>
     </Content>
+    <Content Include="Resources\thuglife.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="scoreboard.json">
       <Generator></Generator>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -184,6 +204,9 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Windows\CreateTournament.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\CreateMatch.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -210,6 +233,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Windows\CreateTournament.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\CreateMatch.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

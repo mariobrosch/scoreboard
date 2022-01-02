@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Scoreboard.DataCore.Models;
+using Scoreboard.DataCore.Enums;
 
 namespace Scoreboard.DataCore.Data.LocalStorage
 {
@@ -9,7 +10,7 @@ namespace Scoreboard.DataCore.Data.LocalStorage
     {
         private const string defaultReturnValue = "[]";
 
-        internal static string Perform(string fileContent, string table, string key, string filter)
+        internal static string Perform(string fileContent, ModelType table, string key, string filter)
         {
             if (string.IsNullOrEmpty(key) && string.IsNullOrEmpty(filter))
             {
@@ -20,23 +21,29 @@ namespace Scoreboard.DataCore.Data.LocalStorage
 
             switch (table)
             {
-                case "Players":
+                case ModelType.Players:
                     allEntries = JsonConvert.DeserializeObject<List<Player>>(fileContent);
                     break;
-                case "Matches":
+                case ModelType.Matches:
                     allEntries = JsonConvert.DeserializeObject<List<Match>>(fileContent);
                     break;
-                case "MatchTypes":
+                case ModelType.MatchTypes:
                     allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
                     break;
-                case "Sets":
+                case ModelType.Sets:
                     allEntries = JsonConvert.DeserializeObject<List<Set>>(fileContent);
                     break;
-                case "SinglePlayerMatches":
+                case ModelType.SinglePlayerMatches:
                     allEntries = JsonConvert.DeserializeObject<List<SinglePlayerMatch>>(fileContent);
                     break;
-                case "Settings":
+                case ModelType.Settings:
                     allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
+                    break;
+                case ModelType.Tournaments:
+                    allEntries = JsonConvert.DeserializeObject<List<Tournament>>(fileContent);
+                    break;
+                case ModelType.TournamentPlayers:
+                    allEntries = JsonConvert.DeserializeObject<List<TournamentPlayer>>(fileContent);
                     break;
                 default:
                     return defaultReturnValue;
@@ -51,18 +58,22 @@ namespace Scoreboard.DataCore.Data.LocalStorage
             {
                 switch (table)
                 {
-                    case "Players":
+                    case ModelType.Players:
                         return DataParser.SaveListToJsonString(((List<Player>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
-                    case "Matches":
+                    case ModelType.Matches:
                         return DataParser.SaveListToJsonString(((List<Match>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
-                    case "MatchTypes":
+                    case ModelType.MatchTypes:
                         return DataParser.SaveListToJsonString(((List<MatchType>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
-                    case "Sets":
+                    case ModelType.Sets:
                         return DataParser.SaveListToJsonString(((List<Set>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
-                    case "SinglePlayerMatches":
+                    case ModelType.SinglePlayerMatches:
                         return DataParser.SaveListToJsonString(((List<SinglePlayerMatch>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
-                    case "Settings":
+                    case ModelType.Settings:
                         return DataParser.SaveListToJsonString(((List<Setting>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
+                    case ModelType.Tournaments:
+                        return DataParser.SaveListToJsonString(((List<Tournament>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
+                    case ModelType.TournamentPlayers:
+                        return DataParser.SaveListToJsonString(((List<TournamentPlayer>)allEntries).Where(x => x.Id == int.Parse(key)).ToList());
                     default:
                         return defaultReturnValue;
                 }
@@ -78,7 +89,7 @@ namespace Scoreboard.DataCore.Data.LocalStorage
                 {
                     entrySelection.Add(entry);
                 }
-                else if (value.ToString() == filterObject.Value)
+                else if (value != null && value.ToString() == filterObject.Value)
                 {
                     entrySelection.Add(entry);
                 }

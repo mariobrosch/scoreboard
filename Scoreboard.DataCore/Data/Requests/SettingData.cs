@@ -10,7 +10,7 @@ namespace Scoreboard.DataCore.Data.Requests
 {
     public static class SettingData
     {
-        private const string tableName = "Settings";
+        private const ModelType tableName = ModelType.Settings;
 
         public static List<Setting> Get()
         {

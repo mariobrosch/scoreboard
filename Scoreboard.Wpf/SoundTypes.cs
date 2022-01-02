@@ -2,6 +2,8 @@
 {
     internal enum SoundTypes
     {
-        Applause
+        Applause,
+        ThugLife,
+        Ahem
     }
 }

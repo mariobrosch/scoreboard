@@ -4,12 +4,13 @@ using System.Linq;
 using Scoreboard.DataCore.Enums;
 using Scoreboard.DataCore.Models;
 using static Scoreboard.DataCore.Data.Filter;
+using System;
 
 namespace Scoreboard.DataCore.Data.Requests
 {
     public static class MatchData
     {
-        private const string tableName = "Matches";
+        private const ModelType tableName = ModelType.Matches;
 
         public static List<Match> Get()
         {
@@ -92,6 +93,18 @@ namespace Scoreboard.DataCore.Data.Requests
             matchesWhereLeftPlayer.AddRange(matchesWhereRightPlayer);
 
             return matchesWhereLeftPlayer;
+        }
+
+        public static List<Match> GetForTournament(int tournamentId)
+        {
+            FilterObject filter = new FilterObject
+            {
+                Column = "TournamentId",
+                Value = tournamentId.ToString()
+            };
+            List<Match> matchesForTournament = Get(filter);
+
+            return matchesForTournament;
         }
     }
 }

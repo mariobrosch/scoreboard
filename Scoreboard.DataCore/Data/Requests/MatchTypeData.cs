@@ -9,7 +9,7 @@ namespace Scoreboard.DataCore.Data.Requests
 {
     public static class MatchTypeData
     {
-        private const string tableName = "MatchTypes";
+        private const ModelType tableName = ModelType.MatchTypes;
 
         public static List<MatchType> Get(bool displayRemoved = false)
         {

@@ -6,7 +6,7 @@ namespace Scoreboard.DataCore.Data
     {
         private static readonly string dataLocation = Settings.Logic.GetSetting("dataLocation");
 
-        public static string MakeRequest(HttpMethods method, string table, string key, string filter, string data = "")
+        public static string MakeRequest(HttpMethods method, ModelType table, string key, string filter, string data = "")
         {
             switch (dataLocation)
             {
@@ -20,7 +20,7 @@ namespace Scoreboard.DataCore.Data
             return "";
         }
 
-        public static string MakeRequest(HttpMethods method, string table, int key, string filter, string data = "")
+        public static string MakeRequest(HttpMethods method, ModelType table, int key, string filter, string data = "")
         {
             return MakeRequest(method, table, key.ToString(), filter, data);
         }

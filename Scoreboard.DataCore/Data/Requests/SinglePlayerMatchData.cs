@@ -9,7 +9,7 @@ namespace Scoreboard.DataCore.Data.Requests
 {
     public static class SinglePlayerMatchData
     {
-        private const string tableName = "SinglePlayerMatches";
+        private const ModelType tableName = ModelType.SinglePlayerMatches;
 
         public static List<SinglePlayerMatch> Get()
         {

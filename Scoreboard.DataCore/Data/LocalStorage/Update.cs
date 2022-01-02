@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Scoreboard.DataCore.Models;
+using Scoreboard.DataCore.Enums;
 
 namespace Scoreboard.DataCore.Data.LocalStorage
 {
@@ -9,7 +10,7 @@ namespace Scoreboard.DataCore.Data.LocalStorage
     {
         private const string defaultReturnValue = "";
 
-        internal static string Perform(string fileContent, string table, string key, string data, out string isUpdated)
+        internal static string Perform(string fileContent, ModelType table, string key, string data, out string isUpdated)
         {
             isUpdated = "0";
             dynamic allEntries;
@@ -21,23 +22,29 @@ namespace Scoreboard.DataCore.Data.LocalStorage
 
             switch (table)
             {
-                case "Players":
+                case ModelType.Players:
                     allEntries = JsonConvert.DeserializeObject<List<Player>>(fileContent);
                     break;
-                case "Matches":
+                case ModelType.Matches:
                     allEntries = JsonConvert.DeserializeObject<List<Match>>(fileContent);
                     break;
-                case "MatchTypes":
+                case ModelType.MatchTypes:
                     allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
                     break;
-                case "Sets":
+                case ModelType.Sets:
                     allEntries = JsonConvert.DeserializeObject<List<Set>>(fileContent);
                     break;
-                case "SinglePlayerMatches":
+                case ModelType.SinglePlayerMatches:
                     allEntries = JsonConvert.DeserializeObject<List<SinglePlayerMatch>>(fileContent);
                     break;
-                case "Settings":
+                case ModelType.Settings:
                     allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
+                    break;
+                case ModelType.Tournaments:
+                    allEntries = JsonConvert.DeserializeObject<List<Tournament>>(fileContent);
+                    break;
+                case ModelType.TournamentPlayers:
+                    allEntries = JsonConvert.DeserializeObject<List<TournamentPlayer>>(fileContent);
                     break;
                 default:
                     return defaultReturnValue;
@@ -52,23 +59,29 @@ namespace Scoreboard.DataCore.Data.LocalStorage
 
             switch (table)
             {
-                case "Players":
+                case ModelType.Players:
                     entryToUpdate = ((List<Player>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
-                case "Matches":
+                case ModelType.Matches:
                     entryToUpdate = ((List<Match>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
-                case "MatchTypes":
+                case ModelType.MatchTypes:
                     entryToUpdate = ((List<MatchType>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
-                case "Sets":
+                case ModelType.Sets:
                     entryToUpdate = ((List<Set>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
-                case "SinglePlayerMatches":
+                case ModelType.SinglePlayerMatches:
                     entryToUpdate = ((List<SinglePlayerMatch>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
-                case "Settings":
+                case ModelType.Settings:
                     entryToUpdate = ((List<Setting>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
+                    break;
+                case ModelType.Tournaments:
+                    entryToUpdate = ((List<Tournament>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
+                    break;
+                case ModelType.TournamentPlayers:
+                    entryToUpdate = ((List<TournamentPlayer>)allEntries).FirstOrDefault(x => x.Id == int.Parse(key));
                     break;
                 default:
                     return defaultReturnValue;
@@ -87,23 +100,29 @@ namespace Scoreboard.DataCore.Data.LocalStorage
                 dynamic updatedEntry;
                 switch (table)
                 {
-                    case "Players":
+                    case ModelType.Players:
                         updatedEntry = JsonConvert.DeserializeObject<Player>(data);
                         break;
-                    case "Matches":
+                    case ModelType.Matches:
                         updatedEntry = JsonConvert.DeserializeObject<Match>(data);
                         break;
-                    case "MatchTypes":
+                    case ModelType.MatchTypes:
                         updatedEntry = JsonConvert.DeserializeObject<MatchType>(data);
                         break;
-                    case "Sets":
+                    case ModelType.Sets:
                         updatedEntry = JsonConvert.DeserializeObject<Set>(data);
                         break;
-                    case "SinglePlayerMatches":
+                    case ModelType.SinglePlayerMatches:
                         updatedEntry = JsonConvert.DeserializeObject<SinglePlayerMatch>(data);
                         break;
-                    case "Settings":
+                    case ModelType.Settings:
                         updatedEntry = JsonConvert.DeserializeObject<Setting>(data);
+                        break;
+                    case ModelType.Tournaments:
+                        updatedEntry = JsonConvert.DeserializeObject<Tournament>(data);
+                        break;
+                    case ModelType.TournamentPlayers:
+                        updatedEntry = JsonConvert.DeserializeObject<TournamentPlayer>(data);
                         break;
                     default:
                         return defaultReturnValue;

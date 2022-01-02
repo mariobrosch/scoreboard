@@ -112,7 +112,7 @@
                 Background="Gray"
                 MouseUp="BtnClose_MouseUp">
                 <Viewbox >
-                    <TextBlock Text="{DynamicResource close}"></TextBlock>
+                    <TextBlock Name="TxtButtonClose" Text="{DynamicResource close}"></TextBlock>
                 </Viewbox>
             </Border>
         </Grid>

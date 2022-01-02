@@ -17,6 +17,7 @@ namespace Scoreboard.DataCore.Models
         public int PlayTimeSeconds { get; set; }
         public int? WinnerId { get; set; }
         public int? WinnerId2 { get; set; }
+        public int? TournamentId { get; set; }
         [JsonIgnore]
         public DateTime MatchDateParsed
         {

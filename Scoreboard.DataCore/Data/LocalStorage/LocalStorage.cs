@@ -7,7 +7,7 @@ namespace Scoreboard.DataCore.Data.LocalStorage
     {
         private static readonly string localStoragePath = Settings.Logic.GetSetting("localStoragePath");
 
-        internal static string MakeRequest(HttpMethods method, string table, string key, string filter, string data)
+        internal static string MakeRequest(HttpMethods method, ModelType table, string key, string filter, string data)
         {
 
             string filePath = Path.Combine(localStoragePath, table + ".json");

@@ -10,7 +10,7 @@ namespace Scoreboard.DataCore.Data.Rest
     {
         private static readonly string baseUrl = Settings.Logic.GetSetting("baseUrl");
 
-        public static string MakeRestRequest(HttpMethods method, string table, string key, string filter, string data = "")
+        public static string MakeRestRequest(HttpMethods method, ModelType table, string key, string filter, string data = "")
         {
             //ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
 
@@ -21,10 +21,10 @@ namespace Scoreboard.DataCore.Data.Rest
                 case HttpMethods.GET:
                 case HttpMethods.DELETE:
                 case HttpMethods.PUT:
-                    url = !string.IsNullOrEmpty(filter) ? Path.Combine(url, table) : Path.Combine(url, table, key);
+                    url = !string.IsNullOrEmpty(filter) ? Path.Combine(url, table.ToString()) : Path.Combine(url, table.ToString(), key);
                     break;
                 case HttpMethods.POST:
-                    url = Path.Combine(url, table);
+                    url = Path.Combine(url, table.ToString());
                     break;
                 default:
                     break;

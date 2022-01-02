@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using Scoreboard.DataCore.Models;
+using Scoreboard.DataCore.Enums;
 
 namespace Scoreboard.DataCore.Data.LocalStorage
 {
     internal class Delete
     {
         private const string defaultReturnValue = "";
-        internal static string Perform(string fileContent, string table, string key, string filter, out string removeCount)
+        internal static string Perform(string fileContent, ModelType table, string key, string filter, out string removeCount)
         {
             removeCount = "0";
 
@@ -20,23 +21,29 @@ namespace Scoreboard.DataCore.Data.LocalStorage
 
             switch (table)
             {
-                case "Players":
+                case ModelType.Players:
                     allEntries = JsonConvert.DeserializeObject<List<Player>>(fileContent);
                     break;
-                case "Matches":
+                case ModelType.Matches:
                     allEntries = JsonConvert.DeserializeObject<List<Match>>(fileContent);
                     break;
-                case "MatchTypes":
+                case ModelType.MatchTypes:
                     allEntries = JsonConvert.DeserializeObject<List<MatchType>>(fileContent);
                     break;
-                case "Sets":
+                case ModelType.Sets:
                     allEntries = JsonConvert.DeserializeObject<List<Set>>(fileContent);
                     break;
-                case "SinglePlayerMatches":
+                case ModelType.SinglePlayerMatches:
                     allEntries = JsonConvert.DeserializeObject<List<SinglePlayerMatch>>(fileContent);
                     break;
-                case "Settings":
+                case ModelType.Settings:
                     allEntries = JsonConvert.DeserializeObject<List<Setting>>(fileContent);
+                    break;
+                case ModelType.TournamentPlayers:
+                    allEntries = JsonConvert.DeserializeObject<List<TournamentPlayer>>(fileContent);
+                    break;
+                case ModelType.Tournaments:
+                    allEntries = JsonConvert.DeserializeObject<List<Tournament>>(fileContent);
                     break;
                 default:
                     return defaultReturnValue;

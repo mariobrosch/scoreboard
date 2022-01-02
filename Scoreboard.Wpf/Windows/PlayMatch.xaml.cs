@@ -24,8 +24,10 @@ namespace Scoreboard.Wpf.Windows
         private readonly Timer matchTimer = new(1000);
         private readonly DateTime sessionStart;
         private int secondsPlayedThisSession;
-        public PlayMatch(Match m)
+        private bool isTournamentMatch;
+        public PlayMatch(Match m, Boolean IsTournamentMatch = false)
         {
+            isTournamentMatch= IsTournamentMatch;
             InitializeComponent();
             WpfHelper.SetLanguageResourceDictionary(this, MethodBase.GetCurrentMethod().DeclaringType.Name);
 
@@ -296,7 +298,8 @@ namespace Scoreboard.Wpf.Windows
             if (setFinished)
             {
                 BtnClose.Visibility = Visibility.Visible;
-                BtnRematch.Visibility = Visibility.Visible;
+                TxtButtonClose.Text = WpfHelper.GetResourceText("NextMatch");
+                BtnRematch.Visibility = isTournamentMatch ? Visibility.Hidden : Visibility.Visible;
                 BtnUndo.Visibility = Visibility.Visible;
             }
         }
@@ -356,6 +359,16 @@ namespace Scoreboard.Wpf.Windows
             if (e.Key is Key.X or Key.NumPad3)
             {
                 UpdateScore(false, true);
+            }
+
+            if (e.Key is Key.NumPad5)
+            {
+                WpfHelper.PlaySound(SoundTypes.ThugLife);
+            }
+
+            if (e.Key is Key.NumPad0)
+            {
+                WpfHelper.PlaySound(SoundTypes.Ahem);
             }
         }
 
@@ -448,6 +461,12 @@ namespace Scoreboard.Wpf.Windows
         private void BtnUndo_MouseUp(object sender, MouseButtonEventArgs e)
         {
             UpdateScore(false, false, true);
+            BtnClose.Visibility = Visibility.Hidden;
+            BtnRematch.Visibility = Visibility.Hidden;
+            BtnUndo.Visibility = Visibility.Hidden;
+            txtWinner.Text = "";
+            pnlLeftTeam.Background = new SolidColorBrush(Colors.White);
+            pnlRightTeam.Background = new SolidColorBrush(Colors.White);
         }
 
         private void BtnClose_MouseUp(object sender, MouseButtonEventArgs e)

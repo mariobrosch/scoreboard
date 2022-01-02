@@ -1,0 +1,101 @@
+﻿<Window
+    x:Class="Scoreboard.Wpf.Windows.CreateTournament"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{DynamicResource title}"
+    Width="808"
+    Height="477"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Normal"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Lang\Windows\createtournament.en-us.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <TextBlock Name="lblSourcePlayers" Text="{DynamicResource availableplayers}" />
+            <ListBox
+                x:Name="lbAvailablePlayers"
+                Grid.Row="1" MouseUp="LbAvailablePlayers_MouseUp" />
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <TextBlock Name="lblSelectedPlayers" Text="{DynamicResource selectedplayers}" />
+            <ListBox
+                x:Name="lbSelectedPlayers"
+                Grid.Row="1" MouseUp="LbSelectedPlayers_MouseUp"  />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <TextBox
+                Name="txtMatchTypeDescription"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                IsReadOnly="True"
+                TextWrapping="Wrap" />
+            <TextBlock Name="lblMatchType" Text="{DynamicResource matchtype}" />
+            <ComboBox
+                Name="cboMatchType"
+                Grid.Column="1"
+                SelectionChanged="CboMatchType_SelectedIndexChanged" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Name="lblHelp"
+                Grid.Row="0"
+                Grid.ColumnSpan="2">
+                -
+            </TextBlock>
+            <Button
+                Name="BtnStartNewTournament"
+                Grid.Row="2"
+                Grid.Column="1" Click="BtnStartNewTournament_Click"
+                >
+                <TextBlock Text="{DynamicResource start}" />
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

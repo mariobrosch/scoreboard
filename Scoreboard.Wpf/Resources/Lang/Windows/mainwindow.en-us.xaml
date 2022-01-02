@@ -16,4 +16,5 @@
     <sys:String x:Key="singleplayer">Single player</sys:String>
     <sys:String x:Key="newmatch">New match</sys:String>
     <sys:String x:Key="statistics">Statistics</sys:String>
+    <sys:String x:Key="tournament">Tournament</sys:String>
 </ResourceDictionary>

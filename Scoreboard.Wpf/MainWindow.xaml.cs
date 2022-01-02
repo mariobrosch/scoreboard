@@ -203,5 +203,13 @@ namespace Scoreboard.Wpf
             _ = statisticsForm.ShowDialog();
             Show();
         }
+
+        private void BtnTournament_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            Windows.CreateTournament tournamentForm = new();
+            _= tournamentForm.ShowDialog();
+            Show();
+        }
     }
 }

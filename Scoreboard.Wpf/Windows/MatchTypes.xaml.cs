@@ -151,7 +151,7 @@ namespace Scoreboard.Wpf.Windows
         private void SetFieldsEnabled()
         {
             numSetsToWin.IsReadOnly = !chkTimedMatch.IsChecked.GetValueOrDefault();
-            numPointsPerSet.IsReadOnly = !chkTimedMatch.IsChecked.GetValueOrDefault();
+            numPointsPerSet.IsReadOnly = chkTimedMatch.IsChecked.GetValueOrDefault();
             chkTwoPointDifference.IsEnabled = !chkTimedMatch.IsChecked.GetValueOrDefault();
             numServiceChangeShootOutAfter.IsReadOnly = !chkTimedMatch.IsChecked.GetValueOrDefault();
             numMatchTime.IsReadOnly = chkTimedMatch.IsChecked.GetValueOrDefault();

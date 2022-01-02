@@ -99,13 +99,12 @@
                 <TextBlock FontSize="50" Text="{DynamicResource newmatch}" />
             </Button>
             <Button
-                Name="btnMatchTypes"
+                Name="BtnTournament"
                 Grid.Row="1"
                 Margin="10"
                 HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Click="BtnMatchTypes_Click">
-                <TextBlock FontSize="50" Text="{DynamicResource matchtypes}" />
+                VerticalAlignment="Stretch" Click="BtnTournament_Click">
+                <TextBlock FontSize="50" Text="{DynamicResource tournament}" />
             </Button>
             <Button
                 Name="btnPlayers"
