@@ -9,5 +9,6 @@
         public int? SetWinnerId { get; set; }
         public int? SetWinnerId2 { get; set; }
         public int MatchId { get; set; }
+        public int? PlayerFirstServiceId { get; set; }
     }
 }

@@ -298,9 +298,13 @@ namespace Scoreboard.Wpf.Windows
             if (setFinished)
             {
                 BtnClose.Visibility = Visibility.Visible;
-                TxtButtonClose.Text = WpfHelper.GetResourceText("NextMatch");
                 BtnRematch.Visibility = isTournamentMatch ? Visibility.Hidden : Visibility.Visible;
                 BtnUndo.Visibility = Visibility.Visible;
+
+                if (isTournamentMatch)
+                {
+                    TxtButtonClose.Text = WpfHelper.GetResourceText("NextMatch");
+                }
             }
         }
 
@@ -398,9 +402,9 @@ namespace Scoreboard.Wpf.Windows
                 };
                 currentSet = SetData.Create(set);
                 setFinished = false;
-                UpdateMatch();
                 pnlRightScore.Background = new SolidColorBrush(Colors.White);
                 pnlLeftScore.Background = new SolidColorBrush(Colors.White);
+                UpdateMatch();
 
                 BtnClose.Visibility = Visibility.Hidden;
                 BtnRematch.Visibility = Visibility.Hidden;
@@ -431,7 +435,7 @@ namespace Scoreboard.Wpf.Windows
             };
             newMatch = MatchData.Create(newMatch);
 
-            this.Close();
+            Close();
             PlayMatch frmPlayMatch = new(newMatch, false);
             _ = frmPlayMatch.ShowDialog();
 
@@ -471,7 +475,7 @@ namespace Scoreboard.Wpf.Windows
 
         private void BtnClose_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Scoreboard.DataCore.Data.Requests;
 using Scoreboard.DataCore.Enums;
 using Scoreboard.DataCore.Models;
 
@@ -55,90 +56,119 @@ namespace Scoreboard.DataCore.Helpers
 
         public static PlayerSide GetPlayerToServe(MatchSummary matchSummary)
         {
+            // Match finished? No player to serve
             if (matchSummary.Winner.HasValue)
             {
                 return PlayerSide.None;
             }
 
-            List<Set> sets = matchSummary.Sets;
+            List<Set> sets = SetData.GetByMatch(matchSummary.Match.Id);
             Set currentSet = sets[sets.Count - 1];
+            int numberOfSets = sets.Count;
 
             if (currentSet.SetWinnerId.HasValue)
             {
                 return PlayerSide.None;
             }
 
-            int playerFirstService = matchSummary.Match.PlayerFirstServiceId;
-            MatchType matchType = matchSummary.MatchType;
-            List<int> playersInMatch = new List<int>
+            // Put the players of the in the service order
+            var playerServiceOrder = new List<int>
             {
-                matchSummary.Match.PlayerLeftId,
-                matchSummary.Match.PlayerRightId
+                matchSummary.Match.PlayerFirstServiceId
             };
-
-            if (matchSummary.Match.PlayerLeftId2.HasValue)
+            if (matchSummary.Match.PlayerLeftId == matchSummary.Match.PlayerFirstServiceId) // Only check for first player on a side, second player never starts a match
             {
-                playersInMatch.Add(matchSummary.Match.PlayerLeftId2.Value);
-                playersInMatch.Add(matchSummary.Match.PlayerRightId2.Value);
-            }
-
-            int positionFirstServicePlayer = playersInMatch.IndexOf(playerFirstService);
-            int playerFirstServeThisSet = playersInMatch[(positionFirstServicePlayer + currentSet.SetNumber - 1) % playersInMatch.Count];
-            int positionFirstServicePlayerThisSet = playersInMatch.IndexOf(playerFirstServeThisSet);
-
-            if (currentSet.TeamLeftScore > matchType.ScorePerSetToWin || currentSet.TeamRightScore > matchType.ScorePerSetToWin)
-            {
-                int totalServicesUntilSuddenDeath = matchType.ScorePerSetToWin * 2 / matchType.ServiceChangeEveryNumberOfServices;
-                int startPlayerDuringSuddenDeath = playersInMatch[(positionFirstServicePlayerThisSet + totalServicesUntilSuddenDeath - (totalServicesUntilSuddenDeath == 0 ? 0 : 1)) % playersInMatch.Count];
-                int numberOfPointsDuringSuddenDeath = currentSet.TeamLeftScore + currentSet.TeamRightScore - matchType.ScorePerSetToWin * 2;
-
-                int numberOfServiceTurns = numberOfPointsDuringSuddenDeath / matchType.ServiceChangeOnShootOutPer;
-                int playerToServe = playersInMatch[(startPlayerDuringSuddenDeath + numberOfServiceTurns - 1) % playersInMatch.Count];
-                if (playersInMatch.IndexOf(playerToServe) % 2 == 0)
+                playerServiceOrder.Add(matchSummary.Match.PlayerRightId);
+                if (matchSummary.Match.PlayerLeftId2.HasValue)
                 {
-                    return PlayerSide.Left;
-                }
-                else
-                {
-                    return PlayerSide.Right;
-                }
-            }
-            else if (currentSet.TeamLeftScore == 0 && currentSet.TeamRightScore == 0)
-            {
-                if (playersInMatch.IndexOf(playerFirstServeThisSet) % 2 == 0)
-                {
-                    return PlayerSide.Left;
-                }
-                else
-                {
-                    return PlayerSide.Right;
+                    playerServiceOrder.Add(matchSummary.Match.PlayerLeftId2.Value);
+                    playerServiceOrder.Add(matchSummary.Match.PlayerRightId2.Value);
                 }
             }
             else
             {
-                int numberOfServiceTurns = (currentSet.TeamRightScore + currentSet.TeamLeftScore) / matchType.ServiceChangeEveryNumberOfServices;
-                if (numberOfServiceTurns == 0)
+                playerServiceOrder.Add(matchSummary.Match.PlayerLeftId);
+                if (matchSummary.Match.PlayerLeftId2.HasValue)
                 {
-                    int playerToServeFirst = playersInMatch[positionFirstServicePlayer];
-                    if (playersInMatch.IndexOf(playerToServeFirst) % 2 == 0)
-                    {
-                        return PlayerSide.Left;
-                    }
-                    else
-                    {
-                        return PlayerSide.Right;
-                    }
-                }
-                int playerToServe = playersInMatch[(positionFirstServicePlayerThisSet + numberOfServiceTurns - 1) % playersInMatch.Count];
-                if (playersInMatch.IndexOf(playerToServe) % 2 == 0)
-                {
-                    return PlayerSide.Right;
-                }
-                else
-                {
-                    return PlayerSide.Left;
+                    playerServiceOrder.Add(matchSummary.Match.PlayerRightId2.Value);
+                    playerServiceOrder.Add(matchSummary.Match.PlayerLeftId2.Value);
                 }
             }
+            var numberOfPlayers = playerServiceOrder.Count;
+
+            // Add players in the shifted order for each set to simplify logic
+            if (numberOfSets > 1)
+            {
+                for (int setNumber = 1; setNumber <= numberOfSets; setNumber++)
+                {
+                    // First set we already have, because thats the basis playerorderlist
+                    if (setNumber == 1)
+                    {
+                        continue;
+                    }
+                    for (int playerNumber = 1; playerNumber <= numberOfPlayers; playerNumber++)
+                    {
+                        // Shift the position per set, so the first set 1st player to serve, Second set 2nd player
+                        var playerPositionInList = playerNumber + (setNumber);
+                        // Position can be higher than the number of player. Third set with 2 players needs adjustment
+                        playerPositionInList %= numberOfPlayers;
+
+                        playerServiceOrder.Add(playerServiceOrder[playerPositionInList]);
+                    }
+                }
+            }
+
+            // Get the players to serve for the current set
+            var playerServiceOrderThisSet = new List<int>();
+            for (int playerNumber = 1; playerNumber <= numberOfPlayers; playerNumber++)
+            {
+                playerServiceOrderThisSet.Add(playerServiceOrder[((numberOfSets - 1) * numberOfPlayers) + (playerNumber - 1)]);
+            }
+
+            // Set the first player to serve this set if not available yet
+            if (!currentSet.PlayerFirstServiceId.HasValue)
+            {
+                currentSet.PlayerFirstServiceId = playerServiceOrderThisSet[0];
+                SetData.Update(currentSet);
+            }
+
+            // Both players above or equal score to win? => Sudden Death!
+            if (currentSet.TeamLeftScore > matchSummary.MatchType.ScorePerSetToWin && currentSet.TeamRightScore > matchSummary.MatchType.ScorePerSetToWin)
+            {
+                int totalServicesUntilSuddenDeath = matchSummary.MatchType.ScorePerSetToWin * 2 / matchSummary.MatchType.ServiceChangeEveryNumberOfServices;
+                int numberOfPointsDuringSuddenDeath = currentSet.TeamLeftScore + currentSet.TeamRightScore - matchSummary.MatchType.ScorePerSetToWin * 2;
+                int numberOfServiceTurnsDuringSuddenDeath = numberOfPointsDuringSuddenDeath /  matchSummary.MatchType.ServiceChangeOnShootOutPer;
+                int totalNumberOfServiceChangesThisSet = numberOfServiceTurnsDuringSuddenDeath + totalServicesUntilSuddenDeath;
+
+                int playerToServe = playerServiceOrderThisSet[(totalNumberOfServiceChangesThisSet % numberOfPlayers)];
+                return GetPlayerSideForPlayer(matchSummary.Match, playerToServe);
+            }
+            // No score this set so far
+            else if (currentSet.TeamLeftScore == 0 && currentSet.TeamRightScore == 0)
+            {
+                return GetPlayerSideForPlayer(matchSummary.Match, currentSet.PlayerFirstServiceId.Value);
+            }
+            else
+            {
+                int numberOfServiceTurns = (currentSet.TeamRightScore + currentSet.TeamLeftScore) / matchSummary.MatchType.ServiceChangeEveryNumberOfServices;
+                if (numberOfServiceTurns == 0)
+                {
+                    return GetPlayerSideForPlayer(matchSummary.Match, currentSet.PlayerFirstServiceId.Value);
+                }
+
+                int playerToServe = playerServiceOrderThisSet[(numberOfServiceTurns) % numberOfPlayers];
+                return GetPlayerSideForPlayer(matchSummary.Match, playerToServe);
+            }
+        }
+
+        private static PlayerSide GetPlayerSideForPlayer(Match match, int playerId)
+        {
+            if (playerId == match.PlayerLeftId || (match.PlayerLeftId2.HasValue && match.PlayerLeftId2.Value == playerId))
+            {
+                return PlayerSide.Left;
+            }
+
+            return PlayerSide.Right;
         }
     }
 }
