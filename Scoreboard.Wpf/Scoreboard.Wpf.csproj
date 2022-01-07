@@ -4,6 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\scoreboard.ico</ApplicationIcon>
+    <PackageId>Scoreboard</PackageId>
+    <Authors>Mario Brosch</Authors>
+    <Company />
+    <Product>Scoreboard</Product>
+    <Description>Software to keep scoring between two players/teams possible via diverse modes. Even singleplayer and tournament modes</Description>
+    <PackageIcon>scoreboard.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +19,6 @@
     <None Remove="Resources\Lang\en-US.json" />
     <None Remove="Resources\Lang\nl-NL.json" />
     <None Remove="Resources\scoreboard.ico" />
-    <None Remove="Resources\scoreboard.png" />
     <None Remove="Resources\thuglife.wav" />
     <None Remove="scoreboard.json" />
   </ItemGroup>
@@ -230,6 +236,13 @@
       <LastGenOutput>LanguageStrings.nl-NL.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\scoreboard.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
