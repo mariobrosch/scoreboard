@@ -68,7 +68,7 @@ namespace Scoreboard.Wpf
                 if (MessageBox.Show(text, WpfHelper.GetResourceText("continueMatch"), MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     Hide();
-                    Windows.PlayMatch playMatch = new(foundMatch);
+                    Windows.PlayMatch playMatch = new(foundMatch, false);
                     _ = playMatch.ShowDialog();
                     Show();
                 }

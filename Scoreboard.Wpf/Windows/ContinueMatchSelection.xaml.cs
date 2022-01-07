@@ -56,7 +56,7 @@ namespace Scoreboard.Wpf.Windows
         private void BtnContinue_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            PlayMatch playMatch = new((Match)lbUnfinishedMatches.SelectedItem);
+            PlayMatch playMatch = new((Match)lbUnfinishedMatches.SelectedItem, false);
             _ = playMatch.ShowDialog();
             Close();
         }

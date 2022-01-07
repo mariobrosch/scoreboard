@@ -136,10 +136,10 @@ namespace Scoreboard.Wpf.Windows
             newMatch.PlayerFirstServiceId = selectedPlayersForMatch[index];
 
             newMatch.MatchDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            Match m = MatchData.Create(newMatch);
+            Match newMatchCreated = MatchData.Create(newMatch);
 
             Hide();
-            PlayMatch frmPlayMatch = new(m);
+            PlayMatch frmPlayMatch = new(newMatchCreated, false);
             _ = frmPlayMatch.ShowDialog();
             Close();
         }

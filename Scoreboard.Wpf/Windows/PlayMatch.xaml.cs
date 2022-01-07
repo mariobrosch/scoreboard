@@ -24,8 +24,8 @@ namespace Scoreboard.Wpf.Windows
         private readonly Timer matchTimer = new(1000);
         private readonly DateTime sessionStart;
         private int secondsPlayedThisSession;
-        private bool isTournamentMatch;
-        public PlayMatch(Match m, Boolean IsTournamentMatch = false)
+        private readonly bool isTournamentMatch;
+        public PlayMatch(Match matchInput, Boolean IsTournamentMatch)
         {
             isTournamentMatch= IsTournamentMatch;
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace Scoreboard.Wpf.Windows
             matchTimer.Elapsed += UpdateMatchTime;
             matchTimer.Start();
 
-            match = m;
+            match = matchInput;
             if (match.Id == 0)
             {
                 Close();
@@ -432,7 +432,7 @@ namespace Scoreboard.Wpf.Windows
             newMatch = MatchData.Create(newMatch);
 
             this.Close();
-            PlayMatch frmPlayMatch = new(newMatch);
+            PlayMatch frmPlayMatch = new(newMatch, false);
             _ = frmPlayMatch.ShowDialog();
 
         }
