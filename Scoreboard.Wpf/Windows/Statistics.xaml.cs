@@ -18,6 +18,7 @@ namespace Scoreboard.Wpf.Windows
         readonly List<Player> Players = new();
         readonly List<Match> Matches = new();
         readonly List<SinglePlayerMatch> SinglePlayerMatches = new();
+        readonly List<Tournament> Tournaments = new();
         List<StatsModel> StatsModels = new();
 
         public Statistics()
@@ -29,6 +30,7 @@ namespace Scoreboard.Wpf.Windows
             Players = PlayerData.Get();
             Matches = MatchData.Get();
             SinglePlayerMatches = SinglePlayerMatchData.Get();
+            Tournaments = TournamentData.Get();
         }
 
         private void SetStatisticsInWindow(string title, SelectedValueType type, bool descending = true)
@@ -234,6 +236,30 @@ namespace Scoreboard.Wpf.Windows
             }
 
             return highestScore;
+        }
+
+        private void MostTournamentWon_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var foundTextBox = GetChildTextblock(sender);
+            ClearPreviousStats();
+
+            foreach (var player in Players)
+            {
+                var statsModel = new StatsModel
+                {
+                    KeyId = player.Id,
+                    KeyValue = player.Name,
+                    ValueAsInt = GetNumberOfTournamentsWonByPlayer(player.Id)
+                };
+                StatsModels.Add(statsModel);
+            }
+
+            SetStatisticsInWindow(foundTextBox.Text, SelectedValueType.INT);
+        }
+
+        private int GetNumberOfTournamentsWonByPlayer(int id)
+        {
+            return Tournaments.Count(t => t.WinnerId == id);
         }
     }
 

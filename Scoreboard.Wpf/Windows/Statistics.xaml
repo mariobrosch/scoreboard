@@ -47,6 +47,9 @@
                 <ListBoxItem Name="BestSinglePlayer" MouseUp="BestSinglePlayer_MouseUp">
                     <TextBlock Name="TxtBestSinglePlayer" Text="{DynamicResource bestSinglePlayer}"/>
                 </ListBoxItem>
+                <ListBoxItem Name="MostTournamentWon" MouseUp="MostTournamentWon_MouseUp">
+                    <TextBlock Name="TxtMostTournamentWon" Text="{DynamicResource mostTournamentWon}"/>
+                </ListBoxItem>
             </ListBox>
         </Grid>
         <Grid Grid.Column="1">

@@ -365,7 +365,7 @@ namespace Scoreboard.Wpf.Windows
                 UpdateScore(false, true);
             }
 
-            if (e.Key is Key.NumPad5)
+            if (e.Key is Key.T)
             {
                 WpfHelper.PlaySound(SoundTypes.ThugLife);
             }

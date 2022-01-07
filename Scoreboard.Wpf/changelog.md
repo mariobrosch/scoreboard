@@ -1,5 +1,8 @@
 ﻿1.1.0.13 29-12-2021
  - Added statistics screen
+ - Added tournament mode
+ - Added statistic for tournament wins
+ - Fixed issues player to serve desider
 
 1.1.0.12 28-12-2021
  - Add switch side button for new match window

@@ -11,4 +11,5 @@
     <sys:String x:Key="bestWinRatio">Beste win ratio</sys:String>
     <sys:String x:Key="mostPlayed">Meeste gespeeld</sys:String>
     <sys:String x:Key="bestSinglePlayer">Beste enkelspel</sys:String>
+    <sys:String x:Key="mostTournamentWon">Meeste toernooiwinst</sys:String>
 </ResourceDictionary>
