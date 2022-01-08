@@ -1,6 +1,6 @@
 # Scoreboard
 
-A simple fun project so I can manage our tabletennis games at home between two or four players. Display will show who's turn it is and who the winner is based on the chosen matchtype. Can be used for basically every type of game if there are two teams involved.
+A simple application which gives you the ability to manage matches between two players/teams. It allows you to setup game types (number of sets, number of points, two points difference, 2 vs 2 games, timed matches and tournaments) and play the game. It is providing colors to show which player is serving, but for games which doesnt apply, this can be ignored of course (there is no functionality to turn this of, please create a feature request if needed). We use it for table tennis (ping pong), but can be basically used for every game where a match has fixed time or a fixed number of points to win a set.
 
 Backend is a simple rest php application which can be used generally or local storage with json files (good enough for such a small project). Over time the php and mySql endpoint is more efficient because of parsing times of the files in JSON. Over time my experience is using JSON as a backend type is fast enough. Didn't gave me any performance issues whatsoever.
 
