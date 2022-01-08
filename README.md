@@ -2,7 +2,7 @@
 
 A simple fun project so I can manage our tabletennis games at home between two or four players. Display will show who's turn it is and who the winner is based on the chosen matchtype. Can be used for basically every type of game if there are two teams involved.
 
-Backend is a simple rest php application which can be used generally or local storage with json files (good enough for such a small project). Over time the php and mySql endpoint is more efficient because of parsing times of the files in JSON. 
+Backend is a simple rest php application which can be used generally or local storage with json files (good enough for such a small project). Over time the php and mySql endpoint is more efficient because of parsing times of the files in JSON. Over time my experience is using JSON as a backend type is fast enough. Didn't gave me any performance issues whatsoever.
 
 Database is of course in my situation a MySql db. A schema can be based on the models.
 
@@ -54,13 +54,10 @@ Contributing is appreciated. Please create a pull request or ask for functionali
 ## Project description
 
 ### Backend
-Contains the php files needed to have a simple workable rest available
+Contains the php files needed to have a simple workable rest available. I don't use this method since I can't get my hosting to work, it keeps blocking requests. Any tips appreciated.
 
-### Frontend
-An unfinished project, so empty for now. Idea is to put in a web application
+### Scoreboard.Wpf
+Contain the WPF application of the project. Basically the frontend on your windows machine. Contains some logic, but mostly to set all UI elements correct.
 
-### Scoreboard
-Contain the forms application of the project.
-
-### Scoreboard.Data
-Contains all logic which is not needed in the forms application itself. So logic for calculations and logic for saving data in a datasource. It uses settings from the forms application.
+### Scoreboard.DataCore
+Contains all logic which is not needed in the forms application itself. So logic for calculations and logic for saving data in a datasource. It uses settings from the WPF application, so if you create a new layer for the frontend you have to keep in mind this is needed for fully functional software.
